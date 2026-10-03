@@ -101,7 +101,7 @@ Status: Approved for implementation handoff. Not yet implemented or approved for
 - Make email suppression depend on the site's fulfillment method.
 - Boxes: default suppression period = 30 days.
 - Labels: default suppression period = 14 days.
-- Calculate suppression from the actual qualifying email sent date, not calendar weeks or calendar months.
+- Measure the suppression period from the most recent applicable Boxes Sent Date or Labels Sent Date for the site, not from the email sent date and not from calendar weeks or calendar months.
 - Add administrator-configurable settings for both suppression periods so each can be changed without a code change.
 - Preserve the existing manual override so an authorized user can deliberately send another email during the suppression period.
 - Validate configured values and reject invalid values such as negative durations.
