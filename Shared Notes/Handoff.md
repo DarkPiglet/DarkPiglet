@@ -96,7 +96,7 @@
 
 ## Proposed Weekly Logger Feature — Configurable Email Suppression
 
-Status: Brainstorming / handoff test only. Do not treat as implemented or approved for production.
+Status: Approved for implementation handoff. Not yet implemented or approved for production.
 
 - Make email suppression depend on the site's fulfillment method.
 - Boxes: default suppression period = 30 days.
@@ -108,4 +108,4 @@ Status: Brainstorming / handoff test only. Do not treat as implemented or approv
 - Log the suppression decision and the configured period used for traceability.
 - This proposal is intended to reduce unnecessary follow-up emails when a site recently requested boxes or labels.
 
-Next step: review the current Weekly Logger source before implementation and confirm the existing email-history/suppression logic and Settings structure.
+Next step: Codex should review the current Weekly Logger source, confirm the existing email-history/suppression logic and Settings structure, then implement the feature on a dedicated feature branch. Do not merge to main until review and testing are complete.
