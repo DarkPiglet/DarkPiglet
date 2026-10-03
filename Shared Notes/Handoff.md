@@ -93,3 +93,19 @@
 
 - Implement authentication and Monthly Inquiry behavior in a later authorized phase using the schema-21 foundation, preserving current recipient eligibility, idempotency, FollowUp recording, and detailed internal logs.
 - Keep this file current after meaningful implementation, testing, discoveries, or decisions.
+
+## Proposed Weekly Logger Feature — Configurable Email Suppression
+
+Status: Brainstorming / handoff test only. Do not treat as implemented or approved for production.
+
+- Make email suppression depend on the site's fulfillment method.
+- Boxes: default suppression period = 30 days.
+- Labels: default suppression period = 14 days.
+- Calculate suppression from the actual qualifying email sent date, not calendar weeks or calendar months.
+- Add administrator-configurable settings for both suppression periods so each can be changed without a code change.
+- Preserve the existing manual override so an authorized user can deliberately send another email during the suppression period.
+- Validate configured values and reject invalid values such as negative durations.
+- Log the suppression decision and the configured period used for traceability.
+- This proposal is intended to reduce unnecessary follow-up emails when a site recently requested boxes or labels.
+
+Next step: review the current Weekly Logger source before implementation and confirm the existing email-history/suppression logic and Settings structure.
