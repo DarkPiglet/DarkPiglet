@@ -5,7 +5,7 @@
 - The solution targets .NET 10 Windows Forms and contains CRM plus GoGreenMonthlyDrafts as separate executables, with CRM data/UI tests and Monthly Drafts tests.
 - The current application version is `10.0.0-test.17`.
 - Test.17 manual acceptance completed successfully on October 3, 2026; all four remaining manual test areas passed.
-- The packaged seed database and migration tooling support the current development build at schema version 22. The schema-22 guardrail work is implemented on `codex/business-rule-guardrails` and is awaiting review; it is not merged into `master`.
+- The packaged seed database and migration tooling support the current `master` build at schema version 22. The schema-22 business-rule guardrails are merged and pushed.
 - Maintenance now provides verified database backup/restore, archived company/site/contact restoration, user-confirmed duplicate merging, and privacy-conscious diagnostic logs.
 - Agreement attention status is limited to missing documents and missing site assignments; renewal dates are not used.
 - Shared contact email addresses are supported across sites. Before saving a newly reused email, the UI names the other active sites and asks Yes/No; No cancels the entire save and leaves the edits unsaved.
@@ -88,9 +88,9 @@
 - Corrected the CRM UI harness to launch the executable beside the referenced current CRM assembly, reject assembly/executable version mismatches, surface startup errors, and use deterministic native Win32 interaction and top-level-window discovery where FlaUI input or discovery is restricted. The shipping-browser test now waits for the local page request and finds the Edge/Chrome app window by native title before verifying that browser tabs and the address bar are absent.
 - Complete verification on October 3, 2026 passes 46/46 CRM data tests, 138/138 Monthly Drafts tests, and 67/67 CRM UI tests. The Release solution build succeeds with zero warnings and errors. The UI suite must run outside the process sandbox so its child Edge process is permitted to launch; this is a test-host constraint, not an application failure.
 - Implemented configurable fulfillment-specific email suppression on `codex/configurable-email-suppression`, including Boxes/Labels activity-date rules, 30/14-day defaults, administrator settings, per-run override, fingerprint invalidation, decision reporting/logging, and the combined boxes-plus-labels regression case. It was committed, merged into `master`, and pushed on October 3, 2026. Verification passed 46/46 CRM data tests, 147/147 Monthly Drafts tests, 67/67 CRM UI tests, and a warning-free Release build.
-- Implemented business-rule guardrails on `codex/business-rule-guardrails` from `master` commit `6410af2`. The completed feature is committed as `90d6a102d5eb97aeb17af7f90641e1d79a0bdc0b` (`Add business rule guardrails`) and pushed to `origin/codex/business-rule-guardrails`; the verified remote branch points to the same hash. It remains awaiting review and is not merged into `master`. Files changed: `AgreementDocumentsForm.Designer.vb`, `AgreementDocumentsForm.vb`, `CRM.vbproj`, `Data/CRMDatabase.vb`, `Data/CRMRepository.Maintenance.vb`, `Data/CRMRepository.vb`, new `Data/PhoneNumberRules.vb`, new `Database/CRM_v22.sql`, `ExcelOrderFormGenerator.vb`, `Form1.vb`, Monthly Drafts settings/Graph source and tests, CRM data/UI tests, and the repository handoff. The pre-existing untracked `output\` directory was excluded from the commit and remains untouched.
+- Implemented business-rule guardrails on `codex/business-rule-guardrails` from `master` commit `6410af2`. The feature commit is `90d6a102d5eb97aeb17af7f90641e1d79a0bdc0b` (`Add business rule guardrails`). It was merged into `master` with merge commit `0408b15463236c484588240257b59b2d763b0317` (`Merge business rule guardrails`) and pushed to GitHub; the verified remote `master` points to the same merge hash. Files changed: `AgreementDocumentsForm.Designer.vb`, `AgreementDocumentsForm.vb`, `CRM.vbproj`, `Data/CRMDatabase.vb`, `Data/CRMRepository.Maintenance.vb`, `Data/CRMRepository.vb`, new `Data/PhoneNumberRules.vb`, new `Database/CRM_v22.sql`, `ExcelOrderFormGenerator.vb`, `Form1.vb`, Monthly Drafts settings/Graph source and tests, CRM data/UI tests, and the repository handoff. The pre-existing untracked `output\` directory was excluded and remains untouched.
 - Guardrails details: suppression settings enforce 0-90 while preserving 30/14 defaults; site names/aliases enforce 100 characters with migration preflight and replacement triggers; country-aware phone validation and duplicate normalization reject US 8/9-digit values; agreement amounts enforce $100; legacy `Check` payments migrate and normalize to `Payment`; order templates are structurally validated before staging output; controlled smoke Graph POSTs retry one timeout while production POSTs do not. Migration v22 adds no tables or columns, replaces four legacy length triggers with two consolidated triggers, migrates payment values, records schema 22, and sets `PRAGMA user_version=22`.
-- Final guardrails verification on October 4, 2026: Release solution build passed with 0 warnings and 0 errors; CRM data tests passed 57/57; Monthly Drafts tests passed 149/149; CRM UI tests passed 67/67; `git diff --check` found no whitespace errors. Risks: a smoke-only POST timeout after server acceptance can theoretically create a duplicate test draft; existing agreement rates above $100 remain readable but cannot be newly saved through guarded paths; template checks validate required structural anchors rather than every label/style.
+- Final post-merge verification on `master` on October 4, 2026: `dotnet build CRM.sln -c Release --no-restore` passed with 0 warnings and 0 errors; CRM data tests passed 57/57; Monthly Drafts tests passed 149/149; CRM UI tests passed 67/67. No new warnings, failures, or regressions were observed. Risks: a smoke-only POST timeout after server acceptance can theoretically create a duplicate test draft; existing agreement rates above $100 remain readable but cannot be newly saved through guarded paths; template checks validate required structural anchors rather than every label/style.
 
 ## Outstanding Issues
 
@@ -102,22 +102,6 @@
 
 ## Next Actions
 
-- Review and, when explicitly approved, commit and merge `codex/business-rule-guardrails`; do not merge it implicitly. After any task, perform the shared-handoff update/commit/push/remote-verification procedure above unless explicitly instructed otherwise.
+- After any task, perform the shared-handoff update/commit/push/remote-verification procedure above unless explicitly instructed otherwise.
 - Implement authentication and Monthly Inquiry behavior in a later authorized phase using the schema-21 foundation, preserving current recipient eligibility, idempotency, FollowUp recording, and detailed internal logs.
 - Keep this file current after meaningful implementation, testing, discoveries, or decisions.
-
-## Proposed Weekly Logger Feature — Configurable Email Suppression
-
-Status: Approved for implementation handoff. Not yet implemented or approved for production.
-
-- Make email suppression depend on the site's fulfillment method.
-- Boxes: default suppression period = 30 days.
-- Labels: default suppression period = 14 days.
-- Measure the suppression period from the most recent applicable Boxes Sent Date or Labels Sent Date for the site, not from the email sent date and not from calendar weeks or calendar months.
-- Add administrator-configurable settings for both suppression periods so each can be changed without a code change.
-- Preserve the existing manual override so an authorized user can deliberately send another email during the suppression period.
-- Validate configured values and reject invalid values such as negative durations.
-- Log the suppression decision and the configured period used for traceability.
-- This proposal is intended to reduce unnecessary follow-up emails when a site recently requested boxes or labels.
-
-Next step: Codex should review the current Weekly Logger source, confirm the existing email-history/suppression logic and Settings structure, then implement the feature on a dedicated feature branch. Do not merge to main until review and testing are complete.
