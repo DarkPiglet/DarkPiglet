@@ -5,7 +5,7 @@
 - The solution targets .NET 10 Windows Forms and contains CRM plus GoGreenMonthlyDrafts as separate executables, with CRM data/UI tests and Monthly Drafts tests.
 - The current application version is `10.0.0-test.17`.
 - Test.17 manual acceptance completed successfully on October 3, 2026; all four remaining manual test areas passed.
-- The packaged seed database and migration tooling support the current practice build at schema version 21.
+- The packaged seed database and migration tooling support the current development build at schema version 22. The schema-22 guardrail work is implemented on `codex/business-rule-guardrails` and is awaiting review; it is not merged into `master`.
 - Maintenance now provides verified database backup/restore, archived company/site/contact restoration, user-confirmed duplicate merging, and privacy-conscious diagnostic logs.
 - Agreement attention status is limited to missing documents and missing site assignments; renewal dates are not used.
 - Shared contact email addresses are supported across sites. Before saving a newly reused email, the UI names the other active sites and asks Yes/No; No cancels the entire save and leaves the edits unsaved.
@@ -15,6 +15,13 @@
 
 ## Recent Decisions
 
+- Standard completion procedure: after every Weekly Logger project task, update this shared handoff with the task result and current project status, including what changed, branch and commit information, files changed, test results, risks, and whether the work is merged or awaiting review. Commit and push the handoff-only update to this shared GitHub repository, then verify the remote commit so ChatGPT can retrieve it without a separate verbal handoff. Follow an explicit contrary instruction when one is given.
+- Monthly Drafts email suppression is fulfillment-specific: Boxes sites default to 30 days from the most recent applicable boxes sent (`BoxOrder`) activity date, and Labels sites default to 14 days from the most recent applicable labels sent (`ShippingLabel`) activity date. A Boxes site receiving both in one fulfillment records both activities but remains controlled by the Boxes activity and period. Both settings accept only 0 through 90 days; zero disables the applicable clock. The confirmed per-run override remains non-persistent, and every decision is logged.
+- Site names and aliases are limited to 100 trimmed characters in UI, repository validation, and schema triggers. Migration v22 aborts rather than truncating if existing data exceeds that limit.
+- New or changed US phone values accept common formatting and extensions, normalize the main number to digits, and require 7 or 10 digits, or 11 beginning with 1. Eight- and nine-digit US numbers are rejected. Non-US values do not use US length rules, duplicate matching uses the same normalization without cross-context US/non-US matches, and unchanged legacy values remain editable.
+- Agreement per-unit amounts are capped at $100 in UI and repository validation. The former $1,000,000 UI maximum had no dependent business logic. Payment type `Check` is now `Payment`; migration v22 and the repository compatibility path preserve existing behavior.
+- Order-form templates must contain the exact `Order Form` worksheet and merged structural anchors `C8:D8` and `H12:J12` before any output is written. Fields are not auto-mapped.
+- Microsoft Graph retains its 60-second timeout. Controlled smoke draft creation may retry once after a timeout not caused by caller cancellation; real batch draft creation never retries automatically.
 - A contact email is not globally unique. The same normalized email may be used at multiple sites when intentional.
 - Reused-email detection is advisory: show the associated sites and allow the save to continue.
 - The reused-email advisory is a pre-save Yes/No confirmation, not a validation error. Yes saves all pending changes; No saves nothing and leaves the edits available for correction.
@@ -80,6 +87,10 @@
 - Migration v21 verification passes 46/46 CRM data tests and 138/138 Monthly Drafts tests; the Release solution build succeeds with zero warnings and errors. A temporary copy of the refreshed authoritative database upgraded from schema 20 to 21 with integrity OK, zero foreign-key issues, seven administrator permissions, no premature credentials, and no remaining exact old/misspelled site-associate values. The source SHA-256 remained `3B1EA639EE420F9C6F406C29DB41D8C57235C6C575B89D21D2E1A89F98B57C64` before and after.
 - Corrected the CRM UI harness to launch the executable beside the referenced current CRM assembly, reject assembly/executable version mismatches, surface startup errors, and use deterministic native Win32 interaction and top-level-window discovery where FlaUI input or discovery is restricted. The shipping-browser test now waits for the local page request and finds the Edge/Chrome app window by native title before verifying that browser tabs and the address bar are absent.
 - Complete verification on October 3, 2026 passes 46/46 CRM data tests, 138/138 Monthly Drafts tests, and 67/67 CRM UI tests. The Release solution build succeeds with zero warnings and errors. The UI suite must run outside the process sandbox so its child Edge process is permitted to launch; this is a test-host constraint, not an application failure.
+- Implemented configurable fulfillment-specific email suppression on `codex/configurable-email-suppression`, including Boxes/Labels activity-date rules, 30/14-day defaults, administrator settings, per-run override, fingerprint invalidation, decision reporting/logging, and the combined boxes-plus-labels regression case. It was committed, merged into `master`, and pushed on October 3, 2026. Verification passed 46/46 CRM data tests, 147/147 Monthly Drafts tests, 67/67 CRM UI tests, and a warning-free Release build.
+- Implemented business-rule guardrails on `codex/business-rule-guardrails` from `master` commit `6410af2`. Work remains uncommitted, unpushed, and awaiting review; nothing is merged into `master`. Files changed: `AgreementDocumentsForm.Designer.vb`, `AgreementDocumentsForm.vb`, `CRM.vbproj`, `Data/CRMDatabase.vb`, `Data/CRMRepository.Maintenance.vb`, `Data/CRMRepository.vb`, new `Data/PhoneNumberRules.vb`, new `Database/CRM_v22.sql`, `ExcelOrderFormGenerator.vb`, `Form1.vb`, Monthly Drafts settings/Graph source and tests, CRM data/UI tests, and the repository handoff. The pre-existing untracked `output\` directory was untouched.
+- Guardrails details: suppression settings enforce 0-90 while preserving 30/14 defaults; site names/aliases enforce 100 characters with migration preflight and replacement triggers; country-aware phone validation and duplicate normalization reject US 8/9-digit values; agreement amounts enforce $100; legacy `Check` payments migrate and normalize to `Payment`; order templates are structurally validated before staging output; controlled smoke Graph POSTs retry one timeout while production POSTs do not. Migration v22 adds no tables or columns, replaces four legacy length triggers with two consolidated triggers, migrates payment values, records schema 22, and sets `PRAGMA user_version=22`.
+- Final guardrails verification on October 4, 2026: Release solution build passed with 0 warnings and 0 errors; CRM data tests passed 57/57; Monthly Drafts tests passed 149/149; CRM UI tests passed 67/67; `git diff --check` found no whitespace errors. Risks: a smoke-only POST timeout after server acceptance can theoretically create a duplicate test draft; existing agreement rates above $100 remain readable but cannot be newly saved through guarded paths; template checks validate required structural anchors rather than every label/style.
 
 ## Outstanding Issues
 
@@ -91,6 +102,7 @@
 
 ## Next Actions
 
+- Review and, when explicitly approved, commit and merge `codex/business-rule-guardrails`; do not merge it implicitly. After any task, perform the shared-handoff update/commit/push/remote-verification procedure above unless explicitly instructed otherwise.
 - Implement authentication and Monthly Inquiry behavior in a later authorized phase using the schema-21 foundation, preserving current recipient eligibility, idempotency, FollowUp recording, and detailed internal logs.
 - Keep this file current after meaningful implementation, testing, discoveries, or decisions.
 
