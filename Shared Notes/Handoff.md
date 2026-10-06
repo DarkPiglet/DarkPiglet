@@ -107,6 +107,8 @@
 
 - CRM General tab / Contact Information grid data-loss fix requested October 6, 2026: deleting one persisted contact must affect only that selected contact. Any other unsaved contact edits and newly entered unsaved contacts must remain intact in the grid and continue to require the normal Save action. Do not auto-save or discard unrelated pending changes and do not add an unnecessary warning dialog. Investigate the delete path for a full grid reload/rebind after deletion; prefer removing/updating only the deleted persisted row while preserving dirty/new rows and leaving Save enabled. Add regression coverage proving pending edits/new rows survive deletion of another existing contact.
 
+- CRM General tab / left-side site-card layout issue requested October 6, 2026: site cards must not clip long or multi-line addresses. Allow each card to grow vertically based on its displayed content so the complete address remains visible (example: Kroger Layton, Utah #19, where the second address line is currently cut off). Keep shorter-address cards at their normal compact height rather than increasing the fixed height of every card. Preserve the existing card width/layout unless implementation shows a change is necessary. Add focused regression coverage for both a multi-line address that requires extra height and a normal short address that remains compact.
+
 ## Next Actions
 
 - After any task, perform the shared-handoff update/commit/push/remote-verification procedure above unless explicitly instructed otherwise.
