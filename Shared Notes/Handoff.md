@@ -105,6 +105,8 @@
 - Monthly Inquiry uses the local calendar month as its duplicate-prevention cycle. Pause and Stop take effect after the current Graph request; Pause retains the run for Resume, while Stop ends the run and a later run resumes only unsent or failed sites. Final confirmation, progress/failure display, resumable retry behavior, duplicate prevention, and Advanced/Diagnostics placement are decided.
 - Authentication behavior remains unimplemented by explicit scope: first-run password/recovery enrollment, login, one-action elevation and its explanatory message, authorization enforcement, security-audit writers, and user/role management UI are future work. Migration v21 provides their storage model only.
 
+- CRM General tab / Contact Information grid data-loss fix requested October 6, 2026: deleting one persisted contact must affect only that selected contact. Any other unsaved contact edits and newly entered unsaved contacts must remain intact in the grid and continue to require the normal Save action. Do not auto-save or discard unrelated pending changes and do not add an unnecessary warning dialog. Investigate the delete path for a full grid reload/rebind after deletion; prefer removing/updating only the deleted persisted row while preserving dirty/new rows and leaving Save enabled. Add regression coverage proving pending edits/new rows survive deletion of another existing contact.
+
 ## Next Actions
 
 - After any task, perform the shared-handoff update/commit/push/remote-verification procedure above unless explicitly instructed otherwise.
