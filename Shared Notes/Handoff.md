@@ -118,6 +118,15 @@
 
 ## Next Actions
 
+### Immediate CRM task — read-only implementation/test audit
+
+- Before any additional CRM feature work, audit the current CRM `master` implementation and existing automated/manual test coverage. This task is inspection and reporting only: do not implement, refactor, migrate, repackage, or change application behavior as part of the audit.
+- Classify each reviewed item as: **Already implemented and tested**, **Implemented but needs verification/testing**, **Partially implemented**, or **Not implemented**. Cite the relevant source/tests for each classification and identify only the genuinely manual checks that remain.
+- Audit at minimum: Agreement Documents storage-path setting and unavailable-path behavior; RCLog export workbook path; Recycle Agreement Table export workbook path; Order Processing email To/CC recipient configuration and any configurable subject/body/format behavior; Graph authentication/email behavior; shared-email save behavior; box-order approval and optional Order Processing send; contact deletion preserving other unsaved edits; blank-contact handling; variable-height site cards; removal of the contact-save success popup; preservation of existing SQLite data and test.19 settings across deployment/update.
+- Treat existing working behavior as authoritative unless an agreed requirement clearly differs. Do not rebuild or modify functionality merely because it appears in this audit list.
+- Data safety is mandatory. Do not modify the authoritative `Z:\\CRM.sqlite`, production/practice source files, or established user settings. If any execution is required to verify behavior, use isolated disposable copies only.
+- At the end of the audit, report the classification matrix, evidence, existing automated coverage, remaining manual-only tests, and any conflicts/ambiguities found, then **stop for Rob's review before implementing anything**.
+
 - After any task, perform the shared-handoff update/commit/push/remote-verification procedure above unless explicitly instructed otherwise.
 - Implement authentication and Monthly Inquiry behavior in a later authorized phase using the schema-21 foundation, preserving current recipient eligibility, idempotency, FollowUp recording, and detailed internal logs.
 - Keep this file current after meaningful implementation, testing, discoveries, or decisions.
