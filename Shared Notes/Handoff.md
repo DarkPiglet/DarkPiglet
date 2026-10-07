@@ -2,6 +2,7 @@
 
 ## Current Status
 
+- On October 7, 2026, Rob authorized the next Test 20 work package. Treat the newly updated `Z:\CRM.sqlite` as authoritative and never replace it with an older copy. The package covers completed-action interaction dates, multi-contact email interaction dates, attachment-note separation, Costco Covington quick-search diagnosis, company/site edit-button behavior assessment, form tab order, structured site carriers, carrier/box-size order-form mapping, full regression verification, and verified packaging of the current Z-drive data.
 - The solution targets .NET 10 Windows Forms and contains CRM plus GoGreenMonthlyDrafts as separate executables, with CRM data/UI tests and Monthly Drafts tests.
 - The current application version is `10.0.0-test.20`.
 - Test.17 manual acceptance completed successfully on October 3, 2026; all four remaining manual test areas passed.
@@ -125,6 +126,14 @@
 - Authentication behavior remains unimplemented by explicit scope: first-run password/recovery enrollment, login, one-action elevation and its explanatory message, authorization enforcement, security-audit writers, and user/role management UI are future work. Migration v21 provides their storage model only.
 
 ## Next Actions
+
+### Authorized October 7 Test 20 work package
+
+- Implement safe, fully specified items from Rob's October 7 package and investigate the remaining items. Completed customer-facing right-click actions update Last Interaction to the current local date, but opening alone does not. Last Interaction, Boxes Ordered, and Label Sent may share a date while remaining distinct fields/activities.
+- For email actions involving multiple contacts, update Last Interaction for every contact on the live sender-through-CC thread. Do not change fulfillment fields unless fulfillment actually occurred. General document attachments must not be copied into site/company notes; notes may retain an email subject reference.
+- Diagnose exact-case quick search for `Costco Covington, Washington` by ZIP and street address, assess removal of Edit Company/Edit Site only after preserving any required audit/revision/validation behavior, and correct tab order to logical data-entry flow. Add structured site Preferred Carrier with FedEx as default and UPS as the alternative; do not implement any notes bypass.
+- Box ordering must use site carrier plus Small/Large box size and populate the template at `A29` item number, `C29` description, and `H16` ship via (`FedEx Ground` or `UPS Ground`). There are four mappings—FedEx Small, FedEx Large, UPS Small, UPS Large. Do not invent part numbers or descriptions; report exactly which values Rob still needs to supply. FedEx/UPS API integration remains out of scope.
+- Build, run regression checks, prepare the next Test 20 package as appropriate, then verify that the included CRM database came from the authoritative `Z:\CRM.sqlite` and contains its newer records. Preserve the source database byte-for-byte and migrate only a package copy.
 
 ### Immediate CRM task — read-only implementation/test audit
 
