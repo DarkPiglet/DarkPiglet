@@ -16,6 +16,12 @@
 - The main form now has an `Export Data` command beside `Settings`. It exports active database records into two separately configured `.xlsx` workbooks: the `RCLog` sheet in one file and `Recycle Agreement Table` in the other.
 - `Z:\CRM.sqlite` is the authoritative user-populated practice database. Do not overwrite it; copy it into packages and migrate only the copy. The October 6 source is schema 22, 2,068,480 bytes, SHA-256 `002B63B6877F360226B56F8C309D58F889EDDA812EFA8AD4C8A1FACA16A01C94`, and contains 141 active companies, 424 active sites, 491 active contacts, and 41 active agreements.
 
+## Test 20 Manual Test Findings — October 8, 2026
+
+- The first Test 20 manual Microsoft Graph authentication check did not achieve the intended silent sign-in. The Microsoft sign-in webpage appeared. During interactive sign-in, a permissions/authorization issue was reported. Rob captured screenshots of the exact messages and will upload them to Codex; use those screenshots as the authoritative error details rather than inferring the tenant/permission failure.
+- After the authentication problem, the smoke test attempted to continue but appeared hung for roughly 20 minutes. When Rob attempted to exit, the application told him to allow the test to continue and provided only an OK/wait path, with no user-accessible Cancel/Stop option. Treat this as a usability/recovery defect: a stalled smoke test must not be able to wait indefinitely without a user cancellation path and bounded failure handling.
+- Manual use changed the box-order workflow decision. Remove the planned four-way carrier/box-size preselection behavior that automatically fills the order form. Although it sounded useful in design, it interrupted the real workflow. The user should instead open/review the order form, verify the order details, and change the box/order selections there as needed. Do not force or pre-populate one of the four box configurations until a better workflow is explicitly approved.
+
 ## Recent Decisions
 
 - Standard completion procedure: after every Weekly Logger project task, update this shared handoff with the task result and current project status, including what changed, branch and commit information, files changed, test results, risks, and whether the work is merged or awaiting review. Commit and push the handoff-only update to this shared GitHub repository, then verify the remote commit so ChatGPT can retrieve it without a separate verbal handoff. Follow an explicit contrary instruction when one is given.
