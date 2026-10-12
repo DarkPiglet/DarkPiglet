@@ -179,3 +179,13 @@
 - After any task, perform the shared-handoff update/commit/push/remote-verification procedure above unless explicitly instructed otherwise.
 - Keep this file current after meaningful implementation, testing, discoveries, or decisions.
 
+
+
+## Test 20 Manual Acceptance Findings — October 12, 2026
+
+- Rob resumed CRM Manual Acceptance Test Plan 20 and began Test 1.
+- In Tools/Settings, the approved Tenant ID, Client ID, shared mailbox, and other displayed settings were present. Settings were saved and checked.
+- Blocking finding: `Create Email Drafts` is disabled, preventing continuation of the smoke-test step. Test 1 is BLOCKED / NOT COMPLETED. Do not change unrelated settings to work around this until the enablement condition is identified.
+- Because the remaining Test 20 Graph/manual checks depend on establishing the controlled Graph draft path first, leave the dependent tests NOT RUN — BLOCKED BY TEST 1 rather than recording cascading failures.
+- Recovery behavior still needs verification when testing can resume: the October 8 recovery was intended to provide a user-accessible `Stop Test` control and a three-minute maximum test duration. If either is absent, record it separately as a recovery regression.
+- UI finding: on the GoGreen Monthly Recycle Email Draft form, the label beside the checkboxes for `Manual Override / Include Recently Sent Boxes/Label Sites` appears slightly clipped along the bottom. Rob captured that portion of the screen and plans to upload the screenshot later. Review the screenshot before diagnosing or changing the layout.
