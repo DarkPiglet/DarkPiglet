@@ -223,3 +223,39 @@
 - Treat this as a separate CRM defect/regression; do not fold it into the already completed archived-name-reuse fix. Before implementation, verify the current site-name derivation/update behavior so manually meaningful site names or aliases are not unintentionally overwritten.
 - Required regression coverage: rename a company with multiple associated sites and verify all applicable derived site names receive the new company prefix; verify each site's location-specific portion is unchanged; verify unrelated companies/sites are untouched; verify save/history/audit integrity remains correct; and verify the archived-name-reuse scenario continues to pass.
 - Rob is continuing manual testing of the October 12 recovery package and will provide additional findings as available. The Microsoft Entra/IT approval dependency remains pending unless separately confirmed resolved.
+
+
+## October 13, 2026 — Test 20 Results and Next CRM Work
+
+### Verified / deferred testing
+- Rob completed Test 20 work with IT present. The controlled Microsoft Graph smoke test passed, and the single test email send passed with no issue. Treat Graph SEND as verified for the tested path.
+- Do not mark mailbox READ as verified; a read test has not been performed.
+- Tests 3 and 4 were intentionally NOT RUN / DEFERRED, not failed. They would send a larger batch of real customer emails outside the normal monthly cycle. Rob plans to exercise the larger live-send path during the next normal monthly send, expected in roughly one week.
+- IT indicated send permission may already have existed and simply had not been confirmed. The October 13 successful send is the authoritative evidence that sending currently works.
+
+### CRM Graph access
+- GoGreen Monthly Drafts currently has the working Graph email path. Rob is speaking with IT about ensuring the CRM portion also has the required Microsoft Graph/mail access so CRM-originated workflows can send email.
+- Do not assume CRM Graph access is complete until Rob/IT confirms it and CRM itself is tested.
+
+### Next implementation: Box Order emails
+- After the Excel box order form is generated, reviewed, and approved, support two separate CRM-originated emails.
+- Email 1: Order Processing. Send the approved order form as an attachment and request that Order Processing process the request.
+- Email 2: Customer acknowledgment. Tell the customer that the box request/order has been submitted/approved using the approved standard wording.
+- Preserve the existing approval gate. Approval of the order must complete before either email can be sent; email automation must never approve the underlying order.
+- Both emails use the same optional review/edit behavior. Provide a checkbox such as `Review/Edit Email Before Sending`. Unchecked: use the approved standard template without opening the extra editor. Checked: open a small editor populated with the complete generated email, allow the user to add special instructions or modify wording, then explicitly Send or Cancel. Cancel must send nothing.
+- Keep Order Processing and customer messages as separate sends; do not combine them into one message.
+- Reuse the existing configurable Order Processing recipient settings where applicable rather than hard-coding addresses.
+
+### Explicitly deferred / out of scope
+- Do not implement FedEx/UPS shipping-label email automation as part of this task. Rob wants FedEx and UPS API integration working before that workflow is designed/automated.
+- Do not expand this work into carrier-label generation or other unrelated email automation.
+
+### Application naming decision
+- Rob has decided to rename the entire Weekly Logger Search Application project/application to **CRM**, rather than using CRM only as a form/user-facing label.
+- Treat the application-wide rename as a separate implementation task from Graph/Box Order email work. Before changing names, inventory the solution/project/executable/root namespace/settings/deployment/test/documentation references so the rename is complete and does not break persisted settings, database paths, packaging, tests, or deployment behavior.
+
+### Codex execution guidance
+- Before implementation, read this handoff and inspect the current code paths for order approval, order-form generation/attachment, Graph sending, recipient settings, and existing email templates. Preserve current business rules unless this section explicitly changes them.
+- Keep the implementation lean: use the existing Graph/email infrastructure where practical rather than introducing a parallel mail subsystem.
+- Add regression tests for the approval gate, automatic-template path, review/edit path, Cancel-without-send, attachment handling for Order Processing, separate customer send, and send failures. A send failure must not reverse an already committed order approval.
+- Do not claim mailbox read support, batch-send completion, CRM Graph authorization, carrier API integration, or the application rename as complete until each is separately implemented/tested and confirmed.
