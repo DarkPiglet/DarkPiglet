@@ -214,3 +214,12 @@
 - Confirmed duplicates should use the existing user-confirmed merge workflow, preserving related sites, contacts, agreements, activities, revision/audit history, and other associations.
 - A surviving active record must be correctable, including renaming it to the name of a previously soft-deleted record, without a database UNIQUE-constraint failure solely because the archived row remains present.
 - Regression testing must cover normal company/site creation, soft deletion, active-name reuse, rename-after-deletion, duplicate warnings, legitimate same-address/different-company sites, and confirmed merge behavior, while verifying that history is preserved and no unrelated record is reactivated, overwritten, or reassigned.
+
+
+## CRM Testing Finding — October 13, 2026
+
+- During manual testing of the October 12 recovery fixes, Rob confirmed that renaming/correcting a company now succeeds when the new company name matches a previously soft-deleted company. A follow-up synchronization defect was discovered: after saving the company rename, the associated site names retained the old company-name prefix instead of following the renamed company.
+- Expected behavior: when an existing company is renamed, associated site display names that follow the CRM convention `Company - City, State/Province` should update the company-name segment to the newly saved company name while preserving each site's site-specific/location portion. Example: renaming `Old Company` to `New Company` should change `Old Company - Modesto, California` to `New Company - Modesto, California` without changing the location portion.
+- Treat this as a separate CRM defect/regression; do not fold it into the already completed archived-name-reuse fix. Before implementation, verify the current site-name derivation/update behavior so manually meaningful site names or aliases are not unintentionally overwritten.
+- Required regression coverage: rename a company with multiple associated sites and verify all applicable derived site names receive the new company prefix; verify each site's location-specific portion is unchanged; verify unrelated companies/sites are untouched; verify save/history/audit integrity remains correct; and verify the archived-name-reuse scenario continues to pass.
+- Rob is continuing manual testing of the October 12 recovery package and will provide additional findings as available. The Microsoft Entra/IT approval dependency remains pending unless separately confirmed resolved.
