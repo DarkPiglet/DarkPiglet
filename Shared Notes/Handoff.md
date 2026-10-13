@@ -225,6 +225,15 @@
 - Rob is continuing manual testing of the October 12 recovery package and will provide additional findings as available. The Microsoft Entra/IT approval dependency remains pending unless separately confirmed resolved.
 
 
+## October 13, 2026 — Merge Checkpoint Before Next CRM Work
+
+- **FIRST ACTION FOR CODEX:** Before implementing any of the new October 13 CRM/Graph/Box Order email/application-rename instructions below, merge the current tested Test 20 recovery state into the appropriate main/base branch using the normal project merge/review workflow.
+- Treat the current Test 20 state as the stable pre-change checkpoint. Rob has manually verified the controlled Microsoft Graph smoke test and the single test email send. Tests 3 and 4 were intentionally deferred because they would send a larger batch of real customer emails; they are not failures. Mailbox READ remains unverified.
+- Do not mix the upcoming implementation work into the Test 20 recovery branch before establishing this merge checkpoint. The purpose is to preserve a clean, known baseline for comparison and rollback before the larger next-phase changes begin.
+- After merging, verify the merge/base branch is current and builds/tests at the same expected baseline before creating or using the next implementation branch.
+- Record the merge result, branch/commit identifiers, verification results, and any exception/blocker in this shared handoff before proceeding.
+- Once that checkpoint is confirmed, proceed with the remaining October 13 instructions below, including CRM Graph access work, Box Order emails and review/edit behavior, required regression/failure handling, deferred FedEx/UPS scope, and the separate application-wide rename to **CRM**.
+
 ## October 13, 2026 — Test 20 Results and Next CRM Work
 
 ### Verified / deferred testing
