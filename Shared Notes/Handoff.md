@@ -2,7 +2,7 @@
 
 ## Current Status
 
-- The October 12 Test 20 recovery is complete on project branch `codex/test20-october12-recovery`, pushed at project handoff commit `359d9b15f694f14e92e812eec20e60eeb7320f48`, and awaiting review/merge. The corrected package is ready for resumed manual acceptance; Test 1's controlled Graph smoke test still requires Microsoft Entra administrator approval.
+- The October 12 Test 20 recovery is merged into project `master` at `436a43340eebd94a95fbf1bbe9af2fb8a799c5d0`, pushed, and remotely verified. This is the stable checkpoint before October 13 Box Order email and application-wide rename work.
 - The solution targets .NET 10 Windows Forms and contains CRM plus GoGreenMonthlyDrafts as separate executables, with CRM data/UI tests and Monthly Drafts tests.
 - The current application version is `10.0.0-test.20`.
 - Test.17 manual acceptance completed successfully on October 3, 2026; all four remaining manual test areas passed.
@@ -233,6 +233,12 @@
 - After merging, verify the merge/base branch is current and builds/tests at the same expected baseline before creating or using the next implementation branch.
 - Record the merge result, branch/commit identifiers, verification results, and any exception/blocker in this shared handoff before proceeding.
 - Once that checkpoint is confirmed, proceed with the remaining October 13 instructions below, including CRM Graph access work, Box Order emails and review/edit behavior, required regression/failure handling, deferred FedEx/UPS scope, and the separate application-wide rename to **CRM**.
+
+### Merge checkpoint result
+
+- Completed before new implementation: merged `codex/test20-october12-recovery` into project `master` as `436a43340eebd94a95fbf1bbe9af2fb8a799c5d0`, pushed it, and verified local `master` equals `origin/master`.
+- Baseline verification on the merge: Release build 0 warnings/errors; CRM data 60/60; Monthly Drafts 154/154; deployment safety 3/3. The full UI run passed 79/80 and the deterministic subset passed 77/78 because two separate automation races occurred (a transient null button reference and a temporary settings-file lock); both affected tests passed in isolated reruns, with no product assertion failure.
+- The pre-existing untracked project `output\` directory and shared-repository `Test\` directory were preserved. October 13 implementation may now proceed from this checkpoint on a new branch.
 
 ## October 13, 2026 — Test 20 Results and Next CRM Work
 
