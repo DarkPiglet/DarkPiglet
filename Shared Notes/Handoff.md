@@ -317,3 +317,28 @@
 - Relationship/integrity verification: explicit orphan counts were zero for Site→Company, SiteContact→Site/Contact, RecycleAgreement→Company, AgreementSite→Agreement/Site, AgreementDocument→Agreement, and AgreementItemRate→Agreement/Item. `PRAGMA foreign_key_check` returned zero rows and `PRAGMA integrity_check` returned `ok`.
 - The review database contains 142 active companies, 425 active sites, 497 active contacts, and 40 active agreements. Latest preserved update timestamps are Company `2026-10-13T16:48:11.6258047+00:00`, Site `2026-10-13T16:48:11.6279972+00:00`, Contact `2026-10-13T16:48:11.6329955+00:00`, and RecycleAgreement `2026-10-13T13:45:54.2635172+00:00`.
 - Result: no missing, extra, or altered record or relationship was found. The new Schema 24 database contains all current production records and updates and is ready for review. The production source retained SHA-256 `8548BC4660ADEBC386770F932900AF230DE2A4618639AEE225FF42FD0E765C19` after verification.
+
+
+## October 14, 2026 — Next Task: Create Test 21 Manual Acceptance Test Plan
+
+Codex: execute only the documentation/test-plan task below. Do not make application code changes, database changes, migrations, merges, packaging changes, or unrelated changes.
+
+- Create a **Test 21 Manual Acceptance Test Plan** for the current CRM build.
+- Carry forward **Test 20 Tests 3 and 4**, which were intentionally deferred until the next normal monthly send. Clearly identify them as **carried forward / deferred**, not previous failures.
+- Review **all changes implemented since Test 20** and the existing automated test results. Identify the items that still require manual acceptance testing because automation could not perform them or could not conclusively prove the real-world result.
+- Do **not** make Rob manually repeat behavior already conclusively covered by automated regression unless a manual check provides unique validation that automation cannot provide. For every included manual test, state why manual validation is required.
+- Include all applicable live/manual boundaries, especially:
+  - CRM-originated Microsoft Graph authorization in the real environment.
+  - Actual live delivery of the **Box Order Order Processing email**.
+  - Actual live delivery of the **customer acknowledgment email**.
+  - Verification of actual recipients (To/Cc as applicable), subject, body/content, and delivery outcome.
+  - Verification that the approved Excel order file is attached to the Order Processing message where required, and that the customer acknowledgment remains separate and does not receive the internal attachment.
+  - Any new or changed UI behavior since Test 20 for which automated UI testing cannot conclusively establish the real user experience or visual/operational result.
+  - Any other current feature/change that Codex could not fully test itself because it requires human interaction, visual judgment, production configuration, Microsoft Graph authorization, a real mailbox, or actual email delivery.
+- Do not claim mailbox-read support, live email sending, or any other live behavior has passed unless Rob actually performs and confirms the applicable Test 21 step. Mailbox READ remains unverified unless separately proven.
+- For **every Test 21 test case**, include: **ID, purpose, preconditions, exact numbered steps, expected result, actual result, Pass/Fail, and notes**.
+- Clearly label each case as either **Carried Forward from Test 20** or **New for Test 21**.
+- Keep the plan practical and focused on manual acceptance gaps; it is **not** another automated regression plan. Preserve the existing automated results as evidence rather than duplicating all automated coverage.
+- Produce the Test 21 plan in the same practical manual-acceptance format used for prior CRM test plans. Prefer an editable Word document if the existing project workflow supports it; otherwise use the established test-plan format and report the exact file location.
+- After creating the plan, update this authoritative shared handoff with the Test 21 file location, a concise summary of included coverage, and any remaining prerequisites/blockers. Commit/push the handoff update and verify the remote saved content/commit before reporting completion.
+- Then **stop**. Do not execute Test 21, send live emails, alter production data, merge branches, or begin additional development.
