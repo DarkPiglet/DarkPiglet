@@ -2,13 +2,19 @@
 
 ## Active Authorized Task
 
-**Status: paused. No implementation task is currently authorized.**
+**Status: Test 22 implementation authorized by Rob on October 15, 2026; execution not yet started.**
 
-The October 14 incident handoff correction was completed and verified at commit `30b5ccd0ea987a178bf0e8d8423df078da82c544`. The October 15 documentation-only update recording Rob's Test 21 observations and proposed Test 22 scope was separately approved. After that handoff-only update, the authorized stopping point is reached: **stop; no CRM implementation or other task is authorized**.
+**Authorized deliverable:** Implement the seven requirements in "Proposed Test 22 Requirements — Planning Only (October 15, 2026)", now activated **only by this Active Authorized Task**, subject to the limits below. Historical Test 21 documentation instructions are not active.
 
-Test 21 observations were reported by Rob as already performed. The earlier queued Test 21 documentation instruction below is historical and is **not** activated by this update. Any additional Test 21 documentation or Test 22 implementation requires separate explicit authorization.
+**Phase 1 — mandatory verification before any code change:** Retrieve and read the complete active task and every referenced instruction; stop on missing, truncated, or ambiguous information. Identify the last verified approved CRM source branch and commit and confirm the unauthorized `codex/application-authentication` changes are excluded. Inspect existing implementations of all seven requirements to avoid redundant changes. Before the first change, restate the deliverable, allowed files/systems, prohibited actions, verified source branch/commit, and stopping point. Stop and request clarification if the source baseline, requirements, conflicts, or migration risks cannot be resolved safely.
 
-Keep the local `codex/application-authentication` branch isolated as evidence. Do not continue, merge, push, package, deploy, run, or use it for Test 21 without separate explicit authorization.
+**Phase 2 — implementation:** Work only on an isolated development branch from the verified approved CRM baseline. Implement the seven documented requirements: settings persistence; safe Agreement Documents directory changes; access to existing shipping/tracking history; failed Order Processing email recovery without duplicate submissions; configurable Order Processing subject/body; separate diagnostic troubleshooting logs without credentials; and non-blocking suspicious company/email checks. Preserve existing behavior, data, architecture, and naming where practical. Do not automatically move, overwrite, or delete documents. Stop for approval on significant schema migration, conflict, or unforeseen risk. No merges or deployment.
+
+**Phase 3 — testing:** Run relevant automated regression tests and document exact results. Prepare targeted manual acceptance cases only where automation cannot establish the real-world result, including ID, purpose, preconditions, steps, expected result, actual result, pass/fail, and notes. Preserve confirmed Test 21 outcomes. Do not send live email or modify production databases without separate explicit authorization; do not claim live behavior passed without Rob's confirmation. Customer acknowledgment emails are out of scope.
+
+**Phase 4 — completion:** Document modifications, test results, and remaining limitations. Update the shared handoff. Commit and push only authorized development-branch changes and the handoff update, verify the remote content and commit IDs, then **stop**. Do not merge, package, deploy, send live email, alter production data, or begin unrelated work without separate authorization.
+
+Keep the local `codex/application-authentication` branch isolated as evidence. Do not continue, merge, push, package, deploy, run, or use it for Test 22.
 
 ### Mandatory execution safeguards
 
