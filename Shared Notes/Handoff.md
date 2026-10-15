@@ -4,11 +4,11 @@
 
 **Status: Test 22 implementation authorized by Rob on October 15, 2026; execution not yet started.**
 
-**Authorized deliverable:** Implement the seven requirements in "Proposed Test 22 Requirements — Planning Only (October 15, 2026)", now activated **only by this Active Authorized Task**, subject to the limits below. Historical Test 21 documentation instructions are not active.
+**Authorized deliverable:** Implement the seven requirements in "Approved Test 22 Requirements", activated **only by this Active Authorized Task**, subject to the limits below. Historical Test 21 documentation instructions are not active.
 
-**Phase 1 — mandatory verification before any code change:** Retrieve and read the complete active task and every referenced instruction; stop on missing, truncated, or ambiguous information. Identify the last verified approved CRM source branch and commit and confirm the unauthorized `codex/application-authentication` changes are excluded. Inspect existing implementations of all seven requirements to avoid redundant changes. Before the first change, restate the deliverable, allowed files/systems, prohibited actions, verified source branch/commit, and stopping point. Stop and request clarification if the source baseline, requirements, conflicts, or migration risks cannot be resolved safely.
+**Phase 1 — mandatory verification before any code change:** Retrieve and read the complete Active Authorized Task and every referenced instruction; stop on missing, truncated, or ambiguous information. Use only the last verified approved CRM source baseline: branch `codex/october13-crm-work` at commit `3db33ca6ad96ecf72075dc2428069c2d8918ba0c`, verified to match its remote. Confirm the unauthorized `codex/application-authentication` changes are excluded. Inspect the existing implementation only to establish the source baseline and avoid redundant changes. Before the first code change, restate the authorized deliverable, allowed files and systems, prohibited actions, verified source branch and commit, verification plan, and stopping point. Stop and request clarification if the baseline, a requirement, a conflict, or a migration risk cannot be confirmed safely.
 
-**Phase 2 — implementation:** Work only on an isolated development branch from the verified approved CRM baseline. Implement the seven documented requirements: settings persistence; safe Agreement Documents directory changes; access to existing shipping/tracking history; failed Order Processing email recovery without duplicate submissions; configurable Order Processing subject/body; separate diagnostic troubleshooting logs without credentials; and non-blocking suspicious company/email checks. Preserve existing behavior, data, architecture, and naming where practical. Do not automatically move, overwrite, or delete documents. Stop for approval on significant schema migration, conflict, or unforeseen risk. No merges or deployment.
+**Phase 2 — implementation:** Work only on an isolated development branch from the verified approved CRM baseline. Implement only the seven requirements stated verbatim in "Approved Test 22 Requirements" below. Do not infer or add requirements beyond those seven. Preserve existing behavior, data, architecture, and naming where practical. Stop and request clarification before any significant schema migration, scope conflict, missing requirement detail, or unforeseen risk. No merges or deployment.
 
 **Phase 3 — testing:** Run relevant automated regression tests and document exact results. Prepare targeted manual acceptance cases only where automation cannot establish the real-world result, including ID, purpose, preconditions, steps, expected result, actual result, pass/fail, and notes. Preserve confirmed Test 21 outcomes. Do not send live email or modify production databases without separate explicit authorization; do not claim live behavior passed without Rob's confirmation. Customer acknowledgment emails are out of scope.
 
@@ -26,21 +26,19 @@ Before any repository or external-state change:
 4. Confirmation of facts, assumptions, credentials, configuration, or prerequisites does not expand scope. Additional work requires explicit authorization of that action.
 5. If a planned action does not directly produce the active authorized deliverable, stop and request authorization.
 
-## Proposed Test 22 Requirements — Planning Only (October 15, 2026)
+## Approved Test 22 Requirements
 
-**Not an active implementation task.** The following records Rob's Test 21 observations and proposed follow-up. Do not modify application code, databases, settings, documents, packaging, branches, or deployment based on this section. Before any implementation, obtain a separately approved active task defining scope, source state, allowed changes, tests, and stopping point.
+This section is activated only by the Active Authorized Task above. It defines the complete approved Test 22 requirement set and does not authorize any additional or implied work.
 
-1. **Settings persistence:** Investigate why existing configuration needed reentry in Test 21; preserve valid settings across updates. Establish the cause before changing behavior.
-2. **Agreement Documents folder:** Changing the configured directory must not automatically move, replace, or delete files. Detect missing or outdated documents; require explicit user approval for any proposed migration.
-3. **Shipping and tracking history:** Surface previously stored shipment details in the relevant company/site view, newest first, including date, carrier, shipment type, tracking number, and applicable FedEx/UPS tracking links. Prefer existing records over duplicate storage.
-4. **Failed Order Processing email recovery:** Keep the generated order form available after sending failure, allowing retry without rebuilding it. Distinguish confirmed failure from uncertain delivery to avoid duplicate orders.
-5. **Order Processing email template settings:** Allow configuration of default subject and body; prefill outgoing messages and permit per-message edits.
-6. **Diagnostic troubleshooting logs:** Add separate technical diagnostics, not a replacement for the user-facing History Log. Record useful operation context, processing steps, and failures for startup, settings, database, documents, and Microsoft Graph email handling. Never log passwords, tokens, or sensitive credentials; use restrained retention and volume.
-7. **Database health check (proposed improvement):** Flag suspicious company/email associations for review without altering data or blocking legitimate shared addresses. The HEB/Walmart mismatch was identified as a data issue, not proof of a Quick Search defect.
+1. Settings persistence across upgrades.
+2. No automatic agreement documents migration.
+3. Surface existing shipping and tracking history in CRM.
+4. Retry failed order processing emails without regenerating forms or duplicating orders.
+5. Make order processing email subject and body configurable.
+6. Separate diagnostic troubleshooting logs.
+7. Non-blocking company email mismatch health check.
 
-**Testing baseline:** Preserve Test 21 observations and successful live Order Processing email results. Carry forward only genuinely incomplete tests, distinguishing deferred checks from failures. Customer acknowledgment emails are excluded from the proposed Test 22 scope. Use targeted automated regression and manual acceptance only where it adds evidence; retain ID, purpose, preconditions, steps, expected result, actual result, pass/fail, and notes for manual cases.
-
-**Handoff-only stopping rule:** This section documents future work; it is not permission to implement it. Preserve the isolated `codex/application-authentication` branch as evidence. After committing and remotely verifying this approved documentation update, stop and await explicit authorization.
+Implementation and verification remain subject to the Active Authorized Task phases and Mandatory Execution Safeguards above. If a required detail cannot be confirmed from the verified source baseline or existing approved instructions, stop and request clarification; do not invent it.
 
 ## Incident Correction
 
@@ -236,9 +234,10 @@ No Graph authentication, live email, package, deployment, or production-database
 
 ## Next Actions
 
-- After explicit approval, apply only this handoff correction, commit and push it to the shared repository, verify that local and remote match, and stop.
-- Then obtain separate explicit authorization before beginning Test 21 documentation.
-- Keep the authentication branch isolated unless the user separately authorizes its review or disposition.
+- Execute Test 22 only under the Active Authorized Task, using the verified source baseline and only the seven approved requirements.
+- Before the first code change, complete the mandatory retrieval, baseline verification, and scope-restatement safeguards. If any required detail is missing, truncated, ambiguous, conflicting, or cannot be confirmed, stop and request clarification.
+- Keep the `codex/application-authentication` branch isolated as evidence. Do not continue, merge, push, package, deploy, run, or use it for Test 22.
+- Do not merge, package, deploy, send live email, alter production data, or begin unrelated work. After authorized implementation and verification are documented and the required remote commits are verified, stop.
 
 ### Historical follow-ups — inactive unless activated above
 
