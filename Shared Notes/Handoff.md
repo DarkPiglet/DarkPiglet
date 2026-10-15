@@ -4,9 +4,9 @@
 
 **Status: paused. No implementation task is currently authorized.**
 
-The only pending recovery action is correcting this shared handoff. Apply, commit, and push that correction only after the user explicitly approves this wording. Verify the shared repository, then stop.
+The October 14 incident handoff correction was completed and verified at commit `30b5ccd0ea987a178bf0e8d8423df078da82c544`. The October 15 documentation-only update recording Rob's Test 21 observations and proposed Test 22 scope was separately approved. After that handoff-only update, the authorized stopping point is reached: **stop; no CRM implementation or other task is authorized**.
 
-Test 21 documentation is queued, not active. It must use the last verified pre-authentication source state and requires separate authorization after this correction is complete.
+Test 21 observations were reported by Rob as already performed. The earlier queued Test 21 documentation instruction below is historical and is **not** activated by this update. Any additional Test 21 documentation or Test 22 implementation requires separate explicit authorization.
 
 Keep the local `codex/application-authentication` branch isolated as evidence. Do not continue, merge, push, package, deploy, run, or use it for Test 21 without separate explicit authorization.
 
@@ -19,6 +19,22 @@ Before any repository or external-state change:
 3. Before the first change, restate the authorized deliverable, allowed files and systems, prohibited actions, source branch and commit, and required stopping point.
 4. Confirmation of facts, assumptions, credentials, configuration, or prerequisites does not expand scope. Additional work requires explicit authorization of that action.
 5. If a planned action does not directly produce the active authorized deliverable, stop and request authorization.
+
+## Proposed Test 22 Requirements — Planning Only (October 15, 2026)
+
+**Not an active implementation task.** The following records Rob's Test 21 observations and proposed follow-up. Do not modify application code, databases, settings, documents, packaging, branches, or deployment based on this section. Before any implementation, obtain a separately approved active task defining scope, source state, allowed changes, tests, and stopping point.
+
+1. **Settings persistence:** Investigate why existing configuration needed reentry in Test 21; preserve valid settings across updates. Establish the cause before changing behavior.
+2. **Agreement Documents folder:** Changing the configured directory must not automatically move, replace, or delete files. Detect missing or outdated documents; require explicit user approval for any proposed migration.
+3. **Shipping and tracking history:** Surface previously stored shipment details in the relevant company/site view, newest first, including date, carrier, shipment type, tracking number, and applicable FedEx/UPS tracking links. Prefer existing records over duplicate storage.
+4. **Failed Order Processing email recovery:** Keep the generated order form available after sending failure, allowing retry without rebuilding it. Distinguish confirmed failure from uncertain delivery to avoid duplicate orders.
+5. **Order Processing email template settings:** Allow configuration of default subject and body; prefill outgoing messages and permit per-message edits.
+6. **Diagnostic troubleshooting logs:** Add separate technical diagnostics, not a replacement for the user-facing History Log. Record useful operation context, processing steps, and failures for startup, settings, database, documents, and Microsoft Graph email handling. Never log passwords, tokens, or sensitive credentials; use restrained retention and volume.
+7. **Database health check (proposed improvement):** Flag suspicious company/email associations for review without altering data or blocking legitimate shared addresses. The HEB/Walmart mismatch was identified as a data issue, not proof of a Quick Search defect.
+
+**Testing baseline:** Preserve Test 21 observations and successful live Order Processing email results. Carry forward only genuinely incomplete tests, distinguishing deferred checks from failures. Customer acknowledgment emails are excluded from the proposed Test 22 scope. Use targeted automated regression and manual acceptance only where it adds evidence; retain ID, purpose, preconditions, steps, expected result, actual result, pass/fail, and notes for manual cases.
+
+**Handoff-only stopping rule:** This section documents future work; it is not permission to implement it. Preserve the isolated `codex/application-authentication` branch as evidence. After committing and remotely verifying this approved documentation update, stop and await explicit authorization.
 
 ## Incident Correction
 
