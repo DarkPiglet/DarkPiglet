@@ -2,9 +2,9 @@
 
 ## Active Authorized Task
 
-**Status: Test 22 implementation and verification completed on October 15, 2026; the isolated development branch is remotely verified and awaiting review. No further implementation, merge, packaging, deployment, production-data, or live-email action is authorized.**
+**Status: Test 22 implementation, synthetic testing, and portable test-package preparation completed on October 15, 2026; the isolated development branch is remotely verified and awaiting review. No further implementation, merge, packaging, deployment, production-data, or live-email action is authorized.**
 
-**Completed deliverable:** The seven requirements in "Approved Test 22 Requirements" were implemented and verified under this Active Authorized Task. Historical Test 21 documentation instructions are not active. Review or further action requires separate authorization.
+**Completed deliverable:** The seven requirements in "Approved Test 22 Requirements" were implemented and verified. A separately authorized portable package now provides fictional schema-24 test data, unattended synthetic coverage for the five Test 22 acceptance cases, and detailed logs without live email. Historical Test 21 documentation instructions are not active. Review or further action requires separate authorization.
 
 **Phase 1 — mandatory verification before any code change:** Retrieve and read the complete Active Authorized Task and every referenced instruction; stop on missing, truncated, or ambiguous information. Use only the last verified approved CRM source baseline: branch `codex/october13-crm-work` at commit `3db33ca6ad96ecf72075dc2428069c2d8918ba0c`, verified to match its remote. Confirm the unauthorized `codex/application-authentication` changes are excluded. Inspect the existing implementation only to establish the source baseline and avoid redundant changes. Before the first code change, restate the authorized deliverable, allowed files and systems, prohibited actions, verified source branch and commit, verification plan, and stopping point. Stop and request clarification if the baseline, a requirement, a conflict, or a migration risk cannot be confirmed safely.
 
@@ -50,7 +50,8 @@ No Graph authentication, live email, package, deployment, or production-database
 
 ## Current Status
 
-- Test 22 is complete on project branch `codex/test22`, based on approved baseline `3db33ca6ad96ecf72075dc2428069c2d8918ba0c`. Implementation commit `d4093c21cd6cd5db1bcf3b241761b95ba6c42310` and final project handoff commit `40fcb5b22e4f9a6b09d03b03cb9815cf6d630cd8` are pushed; local and `origin/codex/test22` match. The authentication commit is not in the branch ancestry. The branch is not merged, packaged, or deployed.
+- Test 22 portable synthetic package work is complete on `codex/test22`. Tooling commit `8bcf56004d9cf3fdc3cfb91e0e909048503500aa` and final project documentation commit `3beb1249e20d766cd27d160c3f23f6ac9be3bf1e` are pushed; local and `origin/codex/test22` match. The local ignored artifact is `artifacts\test22-portable\CRM-Test22-Synthetic-win-x64.zip`, 108,964,992 bytes, 299 entries, SHA-256 `32DF77D5E86ECD27424FF473A3ABF824FCC24B3FC01AA17EBA6258960587D9AF`. It is not merged, deployed, or copied to `Z:`.
+- Test 22 is complete on project branch `codex/test22`, based on approved baseline `3db33ca6ad96ecf72075dc2428069c2d8918ba0c`. Implementation commit `d4093c21cd6cd5db1bcf3b241761b95ba6c42310` and final implementation-phase handoff commit `40fcb5b22e4f9a6b09d03b03cb9815cf6d630cd8` are pushed. The authentication commit is not in the branch ancestry. The branch is not merged or deployed; the separately authorized local synthetic package is described above.
 - October 14 authentication incident correction: authentication was implemented outside the active authorized scope. The local `codex/application-authentication` branch is isolated evidence only; it is not approved, merged, remotely published as application source, packaged, deployed, or accepted.
 
 - October 13 follow-up implementation is complete on project branch `codex/october13-crm-work`, pushed and remotely verified through documentation commit `1e5c365`, and awaiting review/merge. It includes company/site prefix synchronization, separate reviewed Box Order emails, and a separately verified inventory of the already-complete application-wide `CRM` identity. No live CRM email was sent; CRM Graph authorization remains a manual boundary.
@@ -115,6 +116,14 @@ No Graph authentication, live email, package, deployment, or production-database
 - Audit successful and failed login/elevation attempts. In addition to application identities and the protected function, capture the Windows user, computer name, and available local IP addresses. Never store or log the supplied password or recovery code.
 
 ## Work Completed
+
+### October 15, 2026 — Test 22 synthetic portable package
+
+- Scope/state: added only Test 22 test/package tooling on isolated `codex/test22`; no application source, schema migration, production data, authentication work, merge, deployment, or live email was changed or used. Tooling commit is `8bcf56004d9cf3fdc3cfb91e0e909048503500aa`; final project documentation commit is `3beb1249e20d766cd27d160c3f23f6ac9be3bf1e`; remote branch matches.
+- The package builder creates a new schema-only database, inserts only fictional `Northstar Test` records and reserved `.example.test` addresses, applies migrations 18-24, and substitutes it for runtime/seed data. The archive excludes migration SQL (including the historical operational-data migration), settings, PDBs, and SQLite sidecars. Its three packaged databases are byte-identical at SHA-256 `C6E1EA3F7DBDAC3A279C466A97ECC0EB2A33ACB44136C0931779B3A1C1B8B16F`, schema 24, integrity `ok`, with zero foreign-key failures.
+- A fresh extraction passed unattended T22-M1 through T22-M5, 5/5: settings import/persistence; real packaged CRM startup without agreement-document movement; shipping/tracking selection; fake-sender confirmed failure/retry with the same message/attachment and no duplicate BoxOrder; and a read-only cross-company email-health finding. Timestamped text/JSON results and separate CRM diagnostics are produced. The runner has no Graph/network sender.
+- Regression remained green: Release build 0 warnings/errors; CRM data 62/62; Monthly Drafts 154/154; CRM UI 90/90; 306/306 existing tests plus 5/5 package checks. Package: `artifacts\test22-portable\CRM-Test22-Synthetic-win-x64.zip`, 108,964,992 bytes, 299 entries, SHA-256 `32DF77D5E86ECD27424FF473A3ABF824FCC24B3FC01AA17EBA6258960587D9AF`; it is local/ignored and ready for USB copy.
+- Still manual/unverified: real-profile in-place upgrade behavior; human visual judgment of History and Email health; CRM Graph authorization, actual delivery/mailbox content, and controlled live retry. No live email was sent or claimed; any live-mail test requires separate explicit authorization.
 
 ### October 15, 2026 — Test 22 implementation
 
