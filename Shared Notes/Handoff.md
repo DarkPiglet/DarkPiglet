@@ -2,9 +2,9 @@
 
 ## Active Authorized Task
 
-**Status: Test 22 implementation authorized by Rob on October 15, 2026; execution not yet started.**
+**Status: Test 22 implementation and verification completed on October 15, 2026; the isolated development branch is remotely verified and awaiting review. No further implementation, merge, packaging, deployment, production-data, or live-email action is authorized.**
 
-**Authorized deliverable:** Implement the seven requirements in "Approved Test 22 Requirements", activated **only by this Active Authorized Task**, subject to the limits below. Historical Test 21 documentation instructions are not active.
+**Completed deliverable:** The seven requirements in "Approved Test 22 Requirements" were implemented and verified under this Active Authorized Task. Historical Test 21 documentation instructions are not active. Review or further action requires separate authorization.
 
 **Phase 1 — mandatory verification before any code change:** Retrieve and read the complete Active Authorized Task and every referenced instruction; stop on missing, truncated, or ambiguous information. Use only the last verified approved CRM source baseline: branch `codex/october13-crm-work` at commit `3db33ca6ad96ecf72075dc2428069c2d8918ba0c`, verified to match its remote. Confirm the unauthorized `codex/application-authentication` changes are excluded. Inspect the existing implementation only to establish the source baseline and avoid redundant changes. Before the first code change, restate the authorized deliverable, allowed files and systems, prohibited actions, verified source branch and commit, verification plan, and stopping point. Stop and request clarification if the baseline, a requirement, a conflict, or a migration risk cannot be confirmed safely.
 
@@ -50,6 +50,7 @@ No Graph authentication, live email, package, deployment, or production-database
 
 ## Current Status
 
+- Test 22 is complete on project branch `codex/test22`, based on approved baseline `3db33ca6ad96ecf72075dc2428069c2d8918ba0c`. Implementation commit `d4093c21cd6cd5db1bcf3b241761b95ba6c42310` and project handoff commit `b64b91d2790333dfbbf98a4416c0e1d27d3b105e` are pushed; local and `origin/codex/test22` match. The authentication commit is not in the branch ancestry. The branch is not merged, packaged, or deployed.
 - October 14 authentication incident correction: authentication was implemented outside the active authorized scope. The local `codex/application-authentication` branch is isolated evidence only; it is not approved, merged, remotely published as application source, packaged, deployed, or accepted.
 
 - October 13 follow-up implementation is complete on project branch `codex/october13-crm-work`, pushed and remotely verified through documentation commit `1e5c365`, and awaiting review/merge. It includes company/site prefix synchronization, separate reviewed Box Order emails, and a separately verified inventory of the already-complete application-wide `CRM` identity. No live CRM email was sent; CRM Graph authorization remains a manual boundary.
@@ -114,6 +115,16 @@ No Graph authentication, live email, package, deployment, or production-database
 - Audit successful and failed login/elevation attempts. In addition to application identities and the protected function, capture the Windows user, computer name, and available local IP addresses. Never store or log the supplied password or recovery code.
 
 ## Work Completed
+
+### October 15, 2026 — Test 22 implementation
+
+- Scope/state: implemented only the seven approved requirements on isolated `codex/test22` from verified baseline `3db33ca6ad96ecf72075dc2428069c2d8918ba0c`. The quarantined authentication work is excluded. Implementation is `d4093c21cd6cd5db1bcf3b241761b95ba6c42310`; project handoff is `b64b91d2790333dfbbf98a4416c0e1d27d3b105e`; the remote branch matches. No schema/migration, production-data, live-email, merge, package, or deployment action occurred.
+- Settings now default to `%LOCALAPPDATA%\DeltaTrak\CRM\settings.json`, retain `CRM_SETTINGS_PATH` priority, and import an application-folder legacy file once only when the stable file is absent. The legacy file is not deleted or overwritten. Subject/body settings were added for Order Processing email with exact `{Company}` and `{Site}` substitution; unknown placeholders remain literal.
+- Removed automatic agreement-document migration from settings load and CRM startup. The existing explicit, confirmed Settings move and explicit restore workflow remain.
+- History adds a non-destructive `Shipping / tracking only` filter for current, non-superseded Shipping Label, Pickup, and Return records using existing activity data. A confirmed same-session Order Processing failure can be retried with the same reviewed message and approved workbook without regenerating a form or creating another order/activity; cancellation/timeout and non-Order-Processing outcomes are not retryable.
+- The existing separate Local AppData diagnostic log remains the sole troubleshooting log; its privacy regression remains green. Maintenance adds a read-only, non-blocking Email health view that groups the same normalized email across active sites under different active companies and shows company/site/contact context without changing data.
+- Documentation: updated `docs\CRM Settings Storage.md` and added `docs\CRM Test 22 Manual Acceptance.md`. Pending manual cases cover a real in-place settings import, startup document non-migration, desktop shipping-history usability, advisory email-health presentation, and—only with separate authorization—a controlled live retry/template-delivery check. No manual/live case was executed.
+- Verification: Release solution build passed with zero warnings/errors; CRM data 62/62; Monthly Drafts 154/154; complete CRM UI 90/90; total 306/306, zero skipped. An initial complete UI run passed 89/90 because an established automation race returned a null button before any product assertion; that test passed alone and the final complete rerun passed 90/90. Focused settings/upgrade/email tests passed 30/30 and deployment safety passed 3/3; both are subsets of the complete UI total. `git diff --check` is clean apart from line-ending notices.
 
 ### October 14, 2026 — Application authentication and operator attribution
 
@@ -234,10 +245,10 @@ No Graph authentication, live email, package, deployment, or production-database
 
 ## Next Actions
 
-- Execute Test 22 only under the Active Authorized Task, using the verified source baseline and only the seven approved requirements.
-- Before the first code change, complete the mandatory retrieval, baseline verification, and scope-restatement safeguards. If any required detail is missing, truncated, ambiguous, conflicting, or cannot be confirmed, stop and request clarification.
+- Review project branch `codex/test22` and the documented manual boundaries. Any requested fix, merge, manual/live test, package, deployment, or follow-up requires separate explicit authorization.
+- Preserve the mandatory retrieval, baseline verification, and scope-restatement safeguards for every future task. If any required detail is missing, truncated, ambiguous, conflicting, or cannot be confirmed, stop and request clarification.
 - Keep the `codex/application-authentication` branch isolated as evidence. Do not continue, merge, push, package, deploy, run, or use it for Test 22.
-- Do not merge, package, deploy, send live email, alter production data, or begin unrelated work. After authorized implementation and verification are documented and the required remote commits are verified, stop.
+- Do not merge, package, deploy, send live email, alter production data, or begin unrelated work without separate explicit authorization.
 
 ### Historical follow-ups — inactive unless activated above
 
