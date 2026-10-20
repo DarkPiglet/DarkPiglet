@@ -802,3 +802,23 @@ The four `UNRESOLVED` rows are blocking preconditions for a dry run. This docume
 - The record-level provenance table identifies four blocking `UNRESOLVED` timestamps: RecycleProgramProfile S-3/S-230 and Contact C-220/C-221. Their Activities prove the edits but not the row `UpdatedUtc`; no fallback was selected.
 - A future dry run must not begin until Rob either authorizes a narrow read-only extraction of those four B fields or specifies the timestamps, and then separately authorizes writes to a newly created disposable clone.
 - No SQLite source/disposable file was accessed or changed, no copy or script was created, and no SQL, CRM, build, test, package, deployment, email, dry run, or recovery operation was performed.
+
+
+## ACTIVE ASSIGNMENT — October 19, 2026 — Four timestamp provenance fields (READ ONLY)
+
+**Rob explicitly authorized this limited investigation only. This supersedes the prior planning-amendment assignment. No recovery, dry run, or database writes are authorized.** Read the COMPLETE current handoff and applicable safeguards before acting; previous recovery manifests are plans, not execution authorization.
+
+**Objective:** Resolve only the four UNRESOLVED Backup `UpdatedUtc` values identified in the timestamp provenance table:
+1. `RecycleProgramProfile` for S-3.
+2. `RecycleProgramProfile` for S-230.
+3. `Contact` C-220.
+4. `Contact` C-221.
+
+**Procedure and safety:**
+- Reuse the previously verified disposable **Backup** evidence copy if it still exists and is intact. Confirm identity and integrity against recorded evidence/hashes, including WAL/SHM state, without opening either original database in SQLite. Never assume SQLite read-only connections cannot create companion files.
+- Avoid making additional copies unless technically necessary; if existing disposable evidence is unavailable, changed, or unsafe to open without mutation, STOP and report the blocker rather than accessing originals or silently making replacements.
+- Enforce no-write access at the operating-system level and use a SQLite inspection method that cannot change the evidence copy or create/modify companion files. Do not run updates, checkpoints, migrations, or any SQL that writes.
+- Extract only each exact row's direct `UpdatedUtc` value and identifying key, noting NULL/missing values and precision/time-zone representation. Cross-check against existing audit Activities solely as context; do not substitute Activity times for row timestamps. Distinguish direct evidence from inference.
+- Recheck relevant evidence hashes and WAL/SHM files after inspection; stop and report any unexpected change.
+- Update the provenance table and recovery planning notes with the four verified values, source row/field, confidence, and any remaining exceptions. Do not modify approved business decisions or authorize execution by implication.
+- Change only this shared handoff documentation; commit, push, verify remote content, and report commit ID and findings. Do not change application code, schemas, settings, records, source or disposable databases, create a writable clone, execute a dry run, or perform recovery. STOP after documentation and await Rob's explicit approval for any next stage.
