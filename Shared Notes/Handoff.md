@@ -659,3 +659,25 @@ Update **this central handoff** with the conflict comparison and safety findings
 
 - Exact duplicate identity is strongly supported by Rob's stated intent plus exact name/title/two-method matches and the event sequence, but the database has no immutable person-identity key or explicit “transfer” event. The Activity model records the new rows as ContactAdded and provides no link-added event for the original IDs.
 - This investigation did not inspect any area outside Blue Ash/S-233 and the four implicated contact IDs except for the sanitized whole-contact duplicate search needed to establish uniqueness. No recovery decision was applied. Stop here and await Rob's explicit authorization before any further investigation or recovery.
+
+
+## ACTIVE ASSIGNMENT — October 19, 2026 — CRM recovery plan and dry-run preparation
+
+**Status: Authorized to PLAN ONLY; no recovery execution authorized.** Supersedes the completed Blue Ash investigation as the active Codex assignment. Read the entire authoritative handoff and all safeguards before acting. Rob approved documenting a careful recovery instruction, not applying any database changes. Produce a reviewable field-level recovery manifest and a dry-run/test/rollback procedure; stop for separate approval before any SQLite writes, even to disposable copies.
+
+### Rob's confirmed decisions
+- S-237 Notes: current value `Windigo Logistics sending in for Kroger.`; retain both October 16 and October 19 audit trails and preserve October 16 Alias, order, and interaction.
+- C-206: remove the erroneous email-formatted MobilePhone method from active use; preserve history.
+- C-3 JobTitle: preserve Everyday's blank value; four sole Email primary flags: preserve Everyday values; S-3 address fingerprint: preserve Everyday.
+- S-233: remain soft-deleted, with its S-233 links archived, while the two people remain active under existing Blue Ash S-230. Rob clarified that he *recreated* them at Blue Ash rather than moving the original records; this was intentional data entry, not a failed transfer.
+- Identity resolution for future recovery: retain original C-210/C-211 as survivor identities and map the recreated C-508/C-509 Blue Ash additions to those originals. Keep existing S-230 C-205/C-206/C-207 links; avoid duplicate active contacts. Preserve original C-210 Salesforce flag = true, original contact method state, original creation history, and the legitimate 2026-10-02 LastInteractionDate from C-509/S-230 on mapped C-211/S-230.
+- All 16 October 19 history events must be preserved with collision-free new Activity IDs and mapped links; never overwrite Everyday October 16 history IDs 1347–1350. Preserve historical truth that the Blue Ash records were recreated, while mapping their survivor identity in recovered history.
+
+### Planning-only deliverable
+1. Re-read and reconcile the earlier read-only investigation, conflict comparison, Blue Ash findings, and all Rob decisions. Identify any contradictions or missing data rather than guessing.
+2. Draft an explicit ordered, transactional, field-level recovery manifest starting from Everyday, never wholesale replacement from Backup. Include precise identity, contact-method, site-link, archive/restore, interaction-date, activity-ID, and audit-history mappings, plus preconditions and rollback strategy. No SQL execution.
+3. Draft a controlled future dry-run procedure using verified existing disposable copies if still intact; if a separate writable clone is necessary, explain why and require approval before making it. Never point SQLite at evidence source databases or original installations. Verify source hashes and WAL/SHM consistency before any separately approved execution.
+4. Specify integrity/foreign-key, duplicate/identity, history, counts, exact field values, October 16 preservation, archive/restore, and application-level acceptance tests, plus pass/fail criteria and evidence to capture.
+5. Document unresolved risks and decision points. Update this central handoff, commit/push, verify remote content, and STOP. Do not modify application code, original or disposable databases, schema, settings, or files beyond this handoff; no builds, CRM execution, packaging, deployment, email, or recovery.
+
+**Next authorization gate:** Rob must separately approve any dry-run writes to a disposable clone, and later separately approve any working-database replacement. Neither is authorized here.
