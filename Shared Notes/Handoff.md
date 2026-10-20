@@ -681,3 +681,78 @@ Update **this central handoff** with the conflict comparison and safety findings
 5. Document unresolved risks and decision points. Update this central handoff, commit/push, verify remote content, and STOP. Do not modify application code, original or disposable databases, schema, settings, or files beyond this handoff; no builds, CRM execution, packaging, deployment, email, or recovery.
 
 **Next authorization gate:** Rob must separately approve any dry-run writes to a disposable clone, and later separately approve any working-database replacement. Neither is authorized here.
+
+## CRM recovery plan and dry-run preparation (October 19, 2026)
+
+**Status: planning completed after commit/push/remote-hash verification; no dry-run or recovery executed.** This section is the reviewable recovery instruction requested by Rob. It is not executable authorization.
+
+### Reconciliation, notation, and remaining data boundaries
+
+- Rob's decisions resolve every business conflict raised by the earlier investigation: S-237 Notes takes the confirmed October 19 final value; C-206's malformed MobilePhone row leaves active use; C-3, the four existing Email-primary flags, and S-3 fingerprint remain exactly as Everyday; S-233 is deleted while C-210/C-211 survive at Blue Ash; C-508/C-509 map to those survivor identities. There is no contradiction between intentional recreation in Backup and survivor mapping during recovery: the former is historical truth, while the latter prevents duplicate identities in the recovered state.
+- `E` means the verified Everyday baseline; `B` means the verified Backup evidence. `R` is one UTC recovery timestamp captured at the start of a future transaction. `N507` is a newly allocated contact ID for B:C-507; `M507-*` are newly allocated IDs for its two methods; `T233` is a newly generated archive-batch token. `A(old)` is the newly allocated Activity ID corresponding to one Backup Activity ID. These values must be allocated inside the future transaction, never hard-coded from Backup.
+- Private field values and Activity Details remain in local evidence and are referenced below by table/row/field rather than copied into GitHub. A future approved script must bind them as parameters from the verified B working copy and record their secure hashes in the run evidence. It must not interpolate personal data into SQL or logs.
+- Known source-history limitations are retained, not guessed away: B:1362 has null `SiteId`; contact methods have no timestamps; the four primary-flag differences, C-3 normalization, S-3 fingerprint clearing, and timestamp-only save churn are not reliable user edits. The manifest below explicitly excludes those changes.
+
+### Mandatory preconditions for any separately approved dry run
+
+1. Reconfirm the evidence inventory before access: E main SHA-256 `308F7718F5FD8D3B4D5AA64B2AB02B5D3F374D8D3DE3787A2576397B90C54140`; B main `5A39A8E77372758DE417392A45B162BB94AD4DAC28721837578913F10E9C3EE6`; each recorded SHM `FD4C9FDA9CD3F9AE7C962B0DDF37232294D55580E1AA165AA06129B8549389EB`; each recorded zero-byte WAL `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855`. Any mismatch stops the run and requires a fresh comparison.
+2. Never open a source-evidence or original-installation database with SQLite. Reverify the existing disposable copies against those hashes through filesystem reads. Under separate approval, create a new writable dry-run clone in a new directory from verified E using OS-level read-only source handles. Copy the evidence set together; because the recorded WAL is empty, require the cloned main hash to equal E before SQLite access. Preserve the verified E/B disposable copies unchanged as baselines.
+3. On the writable clone, require schema/user version 24, `integrity_check=ok`, zero `foreign_key_check` rows, and the recorded E state: Activities 1-1346 shared with B; E Activities 1347-1350 present and unchanged; C-507/C-508/C-509 and B method IDs absent; S-230 linked actively only to existing C-205/C-206/C-207; S-233/C-210/C-211 and their S-233 links active and unarchived. Validate all exact pre-change fields named below. Any failed assertion rolls back before mutation.
+4. Require a private, reviewed parameter manifest containing exact B values and hashes for B:C-507, its two methods/link, final C-220/C-221 Notes, and all 16 Activity rows. The public ID/type/time mapping below and the private value manifest together form the complete input; neither is sufficient alone.
+
+### Ordered transactional field-level manifest
+
+Use one `BEGIN IMMEDIATE` transaction with foreign keys enabled. Execute parameterized statements only, check the affected-row count after every step, and roll back on the first mismatch.
+
+1. **Allocate collision-free identities.** Set `N507` and both `M507-*` above the clone's current maxima; set `A(1347)` through `A(1362)` to 16 new contiguous IDs in original B ID/CreatedUtc order above the current Activity maximum; generate unique `T233`. Record every old→new mapping before inserts. Do not allocate contacts for B:C-508/C-509 or methods for their duplicate method rows.
+2. **Recover the one genuinely new contact.** Insert `N507` from the exact final B:C-507 contact fields, preserving B `CreatedUtc`/`UpdatedUtc`, active state, Salesforce state, title and Notes. Insert its exact two B methods as `M507-*`, preserving type/value/normalized value/validity/active/primary fields. Add the S-237→`N507` link with B flags and `LastInteractionDate=2026-10-19`, active and unarchived.
+3. **Represent the Blue Ash recreation without duplicate people.** Insert active, unarchived S-230→C-210 and S-230→C-211 links. Preserve the B recreated-link flags; use null LastInteractionDate for C-210 and `2026-10-02` for C-211. Leave existing S-230 links C-205/C-206/C-207 byte-for-byte unchanged. Do not insert B:C-508/C-509 or their four methods. Preserve C-210/C-211 original IDs, August creation history, active state, null archive token, original methods and method-primary state, and C-210 `IsInSalesforce=1`.
+4. **Apply approved current-field edits only.** Set S-237 RecycleProgramProfile Notes to `Windigo Logistics sending in for Kroger.` while retaining E Alias `King Soopers`; set S-3 and S-230 profile Notes to the audited B final empty value; set C-220 and C-221 Notes to their exact audited B final values. Advance S-237 links C-220 and C-221 to `LastInteractionDate=2026-10-19` without regressing any later value. Keep S-3's exact E address fingerprint, C-3's exact E blank JobTitle, and ContactMethod IDs 5, 436, 438, and 441 at E `IsPrimary=0`.
+5. **Remove the malformed C-206 method from active use without erasing evidence.** For E ContactMethod 440, retain its type/value/normalized value and row identity, set `IsActive=0` and `IsPrimary=0`, and retain the October 19 ContactUpdated Activity through step 8. Do not delete or rewrite the value. This preserves recoverable history while excluding it from active reads.
+6. **Apply only semantic update timestamps.** Do not copy B's company/site/contact timestamp-only churn. For existing Site/Profile/Contact rows whose business fields change in steps 4-5, set applicable `UpdatedUtc=R`; retain untouched rows' E timestamps. Retain B timestamps for the newly recovered `N507`. Historical Activities retain their original B timestamps in step 8.
+7. **Soft-delete S-233 without deleting the survivor contacts.** Set S-233 inactive with archive token `T233` and `UpdatedUtc=R`; set only its C-210/C-211 SiteContact links inactive with `T233`. Keep C-210/C-211 active, unarchived, and linked actively to S-230. Do not apply B's contact-level archive token to the survivors. This makes later S-233 restoration reactivate the site and its links to already-active contacts rather than create/revive duplicate people.
+8. **Recreate every October 19 Activity with new IDs.** Copy all non-key fields—including original `ActivityUtc`, `CreatedUtc`, type, associate, summary, details, import/source fields, normalized details, and supersession fields—exactly from B unless a relationship mapping below explicitly changes it. Preserve original event order and write the mapping to the private run evidence.
+
+| B Activity | New relationship mapping | Historical purpose |
+|---|---|---|
+| 1347 | `SiteId=S-3`; other links as B | S-3 Notes cleared |
+| 1348 | `SiteId=S-237`; other links as B | S-237 newline-normalization audit |
+| 1349 | `SiteId=S-237`, `ContactId=N507` | recreated new S-237 contact |
+| 1350 | `SiteId=S-237`; other links as B | S-237 final Notes reduction |
+| 1351 | `SiteId=S-237`, `ContactId=C-221` | October 19 BoxOrder |
+| 1352 | `ContactId=C-221`; site/company links as B | existing-contact Notes update |
+| 1353 | `ContactId=N507`; site/company links as B | new-contact phone/Notes update |
+| 1354 | `ContactId=C-220`; site/company links as B | existing-contact Notes update |
+| 1355 | `SiteId=S-237`, `ContactId=C-220` | October 19 BoxOrder |
+| 1356 | `SiteId=S-230`; other links as B | Blue Ash Notes normalization |
+| 1357 | `ContactId=C-206`; site/company links as B | malformed MobilePhone clear attempt |
+| 1358 | `SiteId=S-230`, `ContactId=C-210` | preserve truth that the person was recreated at Blue Ash; C-508 maps to survivor C-210 |
+| 1359 | `SiteId=S-230`, `ContactId=C-211` | preserve truth that the person was recreated at Blue Ash; C-509 maps to survivor C-211 |
+| 1360 | `SiteId=S-230`; other links as B | Blue Ash Notes cleared |
+| 1361 | `SiteId=S-230`; other links as B | PostersSent created October 19 with occurrence date April 24 |
+| 1362 | `CompanyId=C-76`, `SiteId=S-233`, `ContactId=NULL` | S-233 removal; repair the source event's missing direct site link while retaining original text/times |
+
+9. **Assert final state before commit.** Run every database-level check below inside the same transaction. Commit only if all checks pass. Capture `R`, mappings, statement row counts, pre/post table counts, sanitized field hashes, integrity results, and the committed clone hash in a private evidence bundle. Otherwise execute `ROLLBACK`, retain diagnostics, and report failure without retrying ad hoc.
+
+### Expected count deltas from the verified Everyday snapshot
+
+- Total rows: `Contact +1`, `ContactMethod +2`, `SiteContact +3`, `Activity +16`; `Company`, `Site`, `RecycleProgramProfile`, and `SiteLocation` totals unchanged. No C-508/C-509 or duplicate-method rows exist in the result.
+- Active-state deltas: active Contacts `+1` (`N507`); active ContactMethods net `+1` (two for `N507`, one C-206 method deactivated); active SiteContacts net `+1` (three new links, two S-233 links archived); active Sites `-1` (S-233). These are deltas, not hard-coded absolute counts, and must be reconciled against the verified pre-run clone.
+- Activity type deltas must equal B's 16-event set: five SiteUpdated, three ContactAdded, four ContactUpdated, two BoxOrder, one PostersSent, and one SiteRemoved. Original E Activities 1347-1350 and the unrelated S-145/C-141 October 16 shipping-label history remain byte-for-byte unchanged.
+
+### Future dry-run validation and acceptance procedure
+
+1. **Database invariants:** require schema 24 unchanged, `integrity_check=ok`, zero foreign-key failures, no duplicate primary keys, no orphaned link/history rows, expected count deltas above, and no modified table outside `Contact`, `ContactMethod`, `SiteContact`, `Site`, `RecycleProgramProfile`, and `Activity` except explicitly planned `UpdatedUtc` fields. A full primary-key-aware diff against E must match the manifest exactly.
+2. **Exact decisions:** verify S-237 Notes and Alias exactly; S-3/S-230 final Notes; E S-3 fingerprint; E C-3 JobTitle; the four E Email-primary flags; inactive-but-retained C-206 method 440; secure hashes of C-220/C-221 final Notes; and `N507`/methods/link against B. No timestamp-only B churn may appear.
+3. **Identity and relationship checks:** require active C-210/C-211, no C-508/C-509, exactly one active identity per mapped person, active S-230 links C-205/C-206/C-207/C-210/C-211, preserved C-210 Salesforce flag, original methods, and mapped C-211 interaction date `2026-10-02`. Require active S-237 `N507` link and the two October 19 C-220/C-221 interaction dates.
+4. **Archive/restore checks:** require inactive S-233 and inactive token-matched S-233→C-210/C-211 links; C-210/C-211 must not carry `T233`. On a separate throwaway copy of the successful result, exercise the approved restoration path only under the later test authorization: restoration must reactivate S-233 and its two links, leave both contacts and all five Blue Ash links active, create no duplicate contacts/methods, and allow a subsequent isolated re-delete without affecting Blue Ash. Discard this restore-test copy afterward.
+5. **History checks:** require exactly 16 new, collision-free Activities and a complete B-ID→new-ID map; exact original timestamps/type/associate/summary/details; mapped `N507`, C-210, C-211 and S-233 relationships; April 24 occurrence retained separately from October 19 creation; no change to E IDs 1-1350; and chronological display containing both October 16 and October 19 S-237 trails.
+6. **Application acceptance, only after separate authorization:** launch CRM with database, settings, document, order, backup, log, and Graph paths redirected into an isolated test root; disable Graph before startup. Confirm searches and forms show S-233 archived, Blue Ash with all five intended contacts, S-237/C-206/S-3 decisions, readable mapped history, no duplicate contacts, and no startup migration/error. Do not send email or use production paths. Capture screenshots with personal values redacted and diagnostic logs sanitized.
+7. **Pass/fail rule:** every assertion is mandatory. Any unexpected row, field, relationship, history mapping, count, integrity issue, source/hash drift, app write outside the isolated root, or ambiguity is a FAIL and stops the process. Do not patch the clone interactively; revise and re-review the manifest before a new separately authorized attempt.
+
+### Rollback and authorization gates
+
+- Before commit, rollback is the single SQL transaction. After commit, rollback is disposal of the entire writable dry-run clone; the verified E/B baselines remain untouched. Never “roll back” by copying B over E.
+- A later working-database operation requires its own authorization and a fresh comparison against the then-current closed database. It must create and verify an offline backup, apply the already-passed parameterized manifest to a staging clone, complete all validations, and use an explicitly approved atomic replacement/rollback procedure. Any changed target hash invalidates this plan's preconditions and requires reconciliation before proceeding.
+- Technical decisions fixed by this plan are: `R` for timestamps of recovered changes to existing rows; original B timestamps for recovered new records/history; C-210/C-211 as survivors; and S-233 as the repaired link for mapped Activity 1362. If Rob does not approve the repaired Activity link or the `R` timestamp policy, revise the plan before dry-run authorization.
+- No SQL was written or executed, no clone was created, and no database or application file was accessed or changed during this planning assignment. The next gate is Rob's separate written approval for writes to a newly created disposable dry-run clone. Production/working-database replacement remains a later, separate gate.
