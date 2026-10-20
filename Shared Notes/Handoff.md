@@ -1,5 +1,20 @@
 # Project Handoff
 
+## Active Authorized Task — October 20, 2026: CRM Associate/Salesperson Data Integrity Investigation (READ ONLY)
+
+**This section supersedes the earlier Test 22 active-task status for the purpose of the next Codex run only.** All historical Test 22 safeguards and restrictions remain in force. Rob authorized an investigation, not implementation or production-data correction.
+
+**Required first action:** Read the entire current shared handoff, including mandatory execution safeguards, and the latest user-provided database correction document (Rob will attach it in Codex). If the document is missing, stop and request it. Treat the document as a list of proposed corrections, **not** permission to apply them.
+
+**Investigate only:** The schema, foreign keys, indexes, migration/normalization logic, queries, UI data-entry paths and records relevant to `Associate`, `Associate_Salesperson`, `Site_SalesPerson`, and `Site_DTAssociate`. Confirm the actual purpose of each table and whether DeltaTrak internal associates and salespeople are inadvertently mixed. Trace potential root causes and paths that could recreate incorrect records. Do not assume the table names establish their semantics.
+
+**Known business intent to verify:** Internal associates include Robert Nevins, Chelsie Bonstein, and Kala Pendergrass; older first-name-only values (such as Chelsie) refer to the same individual when corroborated. Jeff Davies is a misspelling of Jeff Davis; preserve relationships in any future consolidation. The combined Robert/Chelsie entry is intended to be assigned to Robert Nevins, subject to record-level verification. Investigate two `jeff Cook` case-variant site references and any case-sensitive query discrepancy. Dan Hurd inherited Jeff Cook's territory and current customer assignments; Jeff Cook must retain historical associations, and territory number reuse is intentional. Check every additional name correction in Rob's attached revised document, including `Site_DTAssociate`; do not infer missing mappings.
+
+**Report only:** For each of the five numbered issue groups, identify actual records and stable IDs, relevant code and migrations, current-versus-intended relationships, uncertainties, historical risks, root cause, and the minimal proposed repair. Distinguish display-name normalization from merges, reassignment, and history-preserving transitions. Recommend backup/rollback checks, SQLite integrity/foreign-key checks, and focused regression tests. If the live database is unavailable, report the limitation and do not fabricate findings.
+
+**Hard stop:** No changes to CRM source, SQLite data or schema, production files, repository files, branches, commits, pull requests, deployments, or email. No live Graph actions. Read-only inspection only; return findings for Rob's review and explicit separate approval. Existing Test 22 work remains completed and is not reactivated.
+
+
 ## Active Authorized Task
 
 **Status: Test 22 implementation, synthetic testing, portable packaging, and the authorized VM launcher/manual-isolation follow-up completed on October 15, 2026; the isolated development branch is remotely verified and awaiting review. No further implementation, merge, packaging, deployment, production-data, or live-email action is authorized.**
