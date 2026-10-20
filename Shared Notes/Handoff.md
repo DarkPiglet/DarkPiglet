@@ -878,3 +878,12 @@ This clarification is part of the SAME authorized dry run, not permission for ad
 - **PASS — post-failure source/evidence verification.** Filesystem-only checks after rollback confirmed all 12 original/evidence hashes, lengths, creation times, last-write times, and file attributes remained unchanged. No original, working, or evidence database, WAL, SHM, schema, CRM source, settings, backup, external service, or production file was changed.
 
 The authorized one-clone attempt is exhausted. The dry run did not pass and must not be retried, debug-executed against another clone, or repaired in place without Rob's separate explicit authorization. No working-database recovery or replacement is authorized.
+
+
+## ACTIVE ASSIGNMENT — October 19, 2026 — Read-only dry-run failure investigation
+
+Rob authorizes investigation and documentation ONLY of the failed disposable-clone recovery attempt. The previous dry-run authorization is exhausted. Read the entire current handoff and its restrictions before starting.
+
+Review the existing recovery execution harness source, available sanitized traceback and logs, and reconciled manifest without running code or accessing any SQLite database. Identify the exact operation responsible for `IndexError: tuple index out of range`, the expected versus actual tuple shape, and whether the issue is in harness logic or the manifest. If source or traceback evidence is unavailable, report that limitation rather than speculate. Assess possible implications for record mapping, historical timestamps, transaction rollback, and required validations. Propose the smallest corrective change and a focused validation approach for a future separately authorized attempt, but do not implement or execute either.
+
+Update only this handoff with evidence-backed findings, uncertainties, proposed correction, and the next authorization gate. Commit, push, verify remote content, and report the commit. Stop after documentation. Do not access original, evidence, or failed-clone databases; create copies; execute SQL, scripts, tests, builds, or CRM; edit code or settings; retry recovery; or modify other repository files. Any necessary step outside this scope requires Rob's separate permission.
