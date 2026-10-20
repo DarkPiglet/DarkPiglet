@@ -546,3 +546,27 @@ Codex must document its investigation in this authoritative `Shared Notes/Handof
 - Recovery is **not complete** and was not attempted. Neither main SQLite file was updated; their hashes remain exactly as recorded above. No sidecar was removed after discovery, because deletion would be another unauthorized mutation.
 - No application code, repository-local CRM handoff, settings, schema, database row, production file, original installation, package, deployment, email, or branch was changed. No builds, tests, CRM executable, migrations, Graph operations, or live workflows were run.
 - The only authorized completion action is this handoff report and its shared-repository commit/push/remote verification. Further database access or recovery requires Rob's separate explicit authorization and a method that prevents WAL/SHM creation on the evidence inputs.
+
+
+## ACTIVE ASSIGNMENT — October 19, 2026 — CRM recovery conflict comparison (authorized by Rob)
+
+**Status: Authorized for Codex to execute; not yet performed. This is the current assignment, superseding older “next steps” as execution instructions.**
+
+Rob authorized a **strictly read-only, narrowly scoped comparison** of conflicting fields between the two recovery copies. **Do not perform database recovery, merge, modification, or application deployment.** The goal is a decision-ready comparison, starting with S-237 Notes.
+
+### Inputs and safety boundaries
+- Everyday authoritative evidence: `Z:\\CRM_Recovery\\Everyday\\Data\\CRM.sqlite`.
+- Backup October 19 evidence: `Z:\\CRM_Recovery\\Backup\\Data\\CRM.sqlite`.
+- Read the full current handoff, including the October 19 read-only investigation, before starting. Treat both source Data directories and all files within them as immutable. Never open original installation databases.
+- Prior investigation found that SQLite created WAL/SHM sidecars on evidence inputs despite `ReadOnly` mode. **Do not repeat that access method on source files.** Make isolated disposable copies using an approach that enforces read-only access to source evidence at the OS/filesystem level, including consideration of WAL/SHM companions and consistency. Perform SQLite access only on disposable working copies. If safe copying and source immutability cannot be established, **stop and report the blocker without inspecting SQLite sources**.
+- Verify and record hashes of the two source main DB files before and after; also inventory/hash any existing companion files without modifying them. Do not delete or clean up existing sidecars in source directories.
+- No application code, schema, settings, production files, database records, emails, merges, packaging, or deployments. Do not run CRM executable. Do not resolve conflicts automatically.
+
+### Comparison deliverable
+1. **S-237 Notes first:** show complete current Everyday and Backup Notes values, exact differences, relevant audit entries/timestamps, whether October 19 adds/replaces/removes content, and options for preserving both versions without losing information.
+2. Apply the same evidence-based, side-by-side analysis to **C-206 mobile phone**, **C-3 JobTitle**, **four ContactMethod primary-flag differences**, **S-3 address fingerprint discrepancy**, and **S-233 soft deletion and affected links/contacts**. Include the October 16 Everyday changes that must be retained wherever relevant.
+3. Distinguish verified facts from interpretations and unknowns. Provide human-readable resolution options and specific questions for Rob. Do not implement any resolution.
+4. Record methodology, copy safety, source/working-file hash checks, limitations and any unexpected filesystem effects. Stop on unexpected changes to evidence.
+
+### Completion and stop point
+Update **this central handoff** with the conflict comparison and safety findings; commit/push and verify the remote version. Mark this assignment completed only after remote verification. **Stop and await Rob's explicit authorization for any recovery work.** This authorization is for comparison only, not a database merge or recovery.
