@@ -968,3 +968,30 @@ The preceding **ACTIVE NEXT ASSIGNMENT** is authorized, but apply these clarific
 - **Safe execution boundary:** Synthetic test snippets may execute independently with hard-coded fabricated values; if a rollback check is useful, use only a freshly created **in-memory** toy SQLite connection with invented table/data and forced exception. Do not import, invoke, execute, or dynamically evaluate the recovery harness as a module or script, because top-level side effects or file access are not proven safe. Do not execute any helper that reads real files, or write synthetic test files/artifacts; inline temporary test code only. The toy rollback test demonstrates generic transaction behavior, **not** verification of the actual harness transaction wrapper. If any desired check requires harness execution or database access, mark NOT RUN and explain.
 - **Reporting gate:** Give each synthetic check a purpose, input/precondition, expected and observed result, PASS/FAIL/NOT RUN, and any limitation. A source diff plus passing isolated tests is **not** a passing disposable-clone dry run and does not validate the 16 Activities, timestamps, relationships, historical evidence, actual rollback wrapper, or precommit/postcommit database checks. Record original and edited source hashes and whether the expected diff is the only edit. Do not state that the harness is ready for production recovery.
 - **Documentation and stopping:** The only allowed persistent edits are the exact local harness expression and this handoff. If the harness is unavailable or the synthetic tests fail, report the blocker and stop; do not expand the patch, debug against real data, or attempt another clone. Commit/push the handoff only and verify remote contents and commit. Await Rob's separate decision before any additional changes, real-data access, or recovery test.
+
+
+## Minimal harness correction and synthetic-only validation result — October 19, 2026
+
+The authorized work is complete within the synthetic-only boundary. No CRM database, WAL/SHM, evidence, backup, failed clone, working CRM, application, manifest input, or real-data helper was opened, read, copied, hashed, written, imported, evaluated, or executed.
+
+### Exact source correction
+
+- Target confirmed: `C:\Users\Dev\.codex\visualizations\2026\10\20\01a15739-b7ba-70c1-be28-927112e34e5a\crm_recovery_dryrun.py` was 655 lines, 30,391 bytes, LF-only, SHA-256 `4EF3815C75347D6017A51EF12E562F1CB52812A6834D02E09B493AD6103E76F8`; line 546 contained the exact expected expression.
+- The sole final source change was the authorized two-reference edit, with indentation, surrounding logic, mappings, IDs, timestamps, validation rules, and line endings unchanged:
+  - Before: `(key[1] == plan["new_contact"] or key[1] in (210, 211))`
+  - After: `(k[1] == plan["new_contact"] or k[1] in (210, 211))`
+- Edited source: 655 lines, 30,387 bytes, LF-only, SHA-256 `EA38155A5E518E932178C03B9109A2308EE5BAA7BCF53D365591D7E633EA6179`.
+- Exact-diff verification: replacing only the corrected expression in memory with the original expression reconstructed SHA-256 `4EF3815C75347D6017A51EF12E562F1CB52812A6834D02E09B493AD6103E76F8`. The corrected expression occurs once and the old expression occurs zero times, proving the two `key[1]`→`k[1]` references are the only final byte changes.
+
+### Inline fabricated checks
+
+1. **Tuple arity — PASS.** Purpose: establish that each fabricated SiteContact candidate supports `k[1]`. Input/precondition: hard-coded candidates `(237,507)`, `(230,210)`, `(230,211)`, `(237,220)`, `(237,221)`, `(233,210)`, `(233,211)`, `(145,141)`, and `(230,205)`. Expected: every candidate has arity two. Observed: all candidates had length two.
+2. **Corrected exact filter with stale outer key — PASS.** Purpose: reproduce the condition that exposed the original defect while testing only the corrected expression. Input/precondition: `new_contact=507`, stale outer `key=(1059,)`, and the two-element candidates above. Expected: no `IndexError` and selection exactly `(230,210)`, `(230,211)`, `(237,507)` (sorted order). Observed: no `IndexError`; selected exactly those three keys.
+3. **Exclusions — PASS.** Purpose: prove unrelated and update-only/archive candidates do not enter the insert selection. Input/precondition: excluded candidates `(237,220)`, `(237,221)`, `(233,210)`, `(233,211)`, `(145,141)`, and `(230,205)`. Expected: none selected. Observed: none selected.
+4. **Toy SQLite rollback — PASS, limited.** Purpose: demonstrate generic SQLite transactional rollback after a forced error. Input/precondition: a freshly created `:memory:` database, invented `Toy` table, one invented row inserted inside `BEGIN IMMEDIATE`, then a forced `RuntimeError`. Expected: zero rows after `ROLLBACK`. Observed: zero rows. Limitation: this did not import or exercise the recovery harness transaction wrapper and says nothing about real CRM rollback behavior.
+
+All checks were inline and used only fabricated values or a fresh in-memory database; no synthetic test file or artifact was written. The recovery harness was not imported, evaluated, or run.
+
+### Remaining gate
+
+This source correction and synthetic PASS do **not** constitute a successful disposable-clone dry run and do not establish that the harness is ready for production recovery. Real-data validation remains `NOT RUN`, including all 16 historical Activity mappings and timestamps, approved conflict decisions, the actual harness rollback wrapper, source/evidence identity checks, protected hashes, expected counts, exact primary-key-aware diffs, all five Blue Ash links, archive state, integrity and foreign-key checks, and every precommit/postcommit assertion. Rob's separate explicit authorization is required before any disposable-clone attempt, real-database access, additional harness change, or recovery operation. Stop here after committing, pushing, and verifying this handoff update.
