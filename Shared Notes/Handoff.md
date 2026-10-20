@@ -912,3 +912,34 @@ The prior Codex execution handoff remains in force. Apply these tighter acceptan
 - **Failure boundary:** State what is and is not known about the last completed operation. A successful rollback and unchanged file hashes establish no durable recovery, not successful manifest application. Note which mandatory precommit and postcommit checks remain unverified.
 - **Proposed fix and future checks only:** Describe the smallest proposed edit at the affected location, without changing any source file. Explain how a separately authorized future test would check tuple shape, expected row/ID mapping, all 16 original activity timestamps, rollback behavior, exact manifest diff, integrity/foreign keys, and pre/postcommit checks. Do not run any of those checks now.
 - **Completion gate:** Update only this handoff with an evidence inventory, exact finding or explicit unresolved status, impact assessment, proposed fix, focused future validation, and statement that new authorization is required for any edit, execution, or recovery. Commit, push, fetch remote to verify, report commit, and stop. If evidence cannot establish the cause, finish with a documented blocker rather than attempting exploratory execution.
+
+
+## Read-only dry-run failure investigation result — October 19, 2026
+
+**Status: root cause confirmed from existing text source; no code or database access/execution.**
+
+### Evidence inventory and limitation
+
+- Existing harness source was available read-only at `C:\Users\Dev\.codex\visualizations\2026\10\20\01a15739-b7ba-70c1-be28-927112e34e5a\crm_recovery_dryrun.py` (30,391 bytes; SHA-256 `4EF3815C75347D6017A51EF12E562F1CB52812A6834D02E09B493AD6103E76F8`). The complete 655-line file was reviewed as text only and was not edited or executed.
+- The reconciled public manifest, conflict decisions, timestamp provenance, and prior sanitized failure report are present in this handoff. No standalone execution log or stack traceback file exists in the harness directory. The prior captured output supplies only `IndexError: tuple index out of range`, timestamps, mappings, preflight data, clone path, and `rollback=PASS`; it contains no traceback frame or source line. Harness lines 627–641 explain that limitation: the exception handler serializes only `type(exc).__name__` and `str(exc)`, not a traceback. No SQLite file was opened, copied, inventoried, or searched to fill the gap.
+
+### Confirmed root cause and exact operation
+
+- The defect is in harness control logic, not the recovery manifest. `expected_rows()` lines 296–368 constructs keys through `key_for()` lines 145–146. A ContactMethod key is a one-element tuple `(ContactMethodId,)`; a SiteContact key is a two-element tuple `(SiteId, ContactId)`.
+- Main lines 543–544 iterate the two new ContactMethod keys with loop variable `key`. With the deterministic map, the final value left in that variable is `(1059,)`, arity 1, with valid position `[0]` only.
+- Main lines 545–546 then begin selecting new SiteContact rows with generator variable `k`. The intended candidate is `k=(SiteId, ContactId)`, arity 2, so the filter correctly reads `k[0]` for SiteId but incorrectly reads stale outer variable `key[1]` for ContactId. Because `key` is still `(1059,)`, position `[1]` does not exist and Python raises exactly `IndexError: tuple index out of range`. The tuple producer is `key_for()`; the faulty consumer is line 546. The smallest correction would replace both `key[1]` references on line 546 with `k[1]`. This is a proposal only; the harness was not changed.
+- Source order establishes the last completed boundary more precisely than the earlier sanitized report: the C-507 Contact insert at line 542 and both ContactMethod inserts at lines 543–544 completed within the open transaction; evaluation failed in the SiteContact generator before any SiteContact insert at line 548. None of the profile/contact/link/archive updates, 16 Activity inserts, precommit checks, commit, or postcommit checks at lines 550–623 ran. All three completed inserts were inside the transaction that successfully rolled back, and the retained clone main hash matching E proves no durable recovery state. This does not make any partial manifest operation a pass.
+
+### Impact assessment
+
+- Deterministic mappings were not changed or contradicted: C-507→C-507, methods 1058/1059→1058/1059, C-508/C-509→C-210/C-211, and Activities 1347–1362→1351–1366 remain the reviewed plan. The exception resulted from using the wrong Python variable while filtering already constructed SiteContact keys; it did not arise from tuple contents supplied by the manifest.
+- No Activity row was inserted, so none of the 16 historical Activity timestamps or relationship mappings—including the sole Activity 1362 `SiteId=S-233` repair—was exercised. Their preflight source evidence remains as previously documented, but result correctness is unverified.
+- Rollback is evidenced by `rollback=PASS` plus the failed clone's byte-identical E main hash and absence of WAL/SHM after close. That establishes no durable recovery, not successful application. All mandatory post-write precommit checks and every postcommit check remain `NOT RUN`.
+
+### Proposed smallest correction and future validation — not authorized now
+
+- Proposed code edit: on existing harness line 546 only, change `(key[1] == plan["new_contact"] or key[1] in (210, 211))` to `(k[1] == plan["new_contact"] or k[1] in (210, 211))`. Do not alter approved IDs, conflict decisions, timestamps, or manifest content to accommodate the defect.
+- Before any future clone attempt, a separate authorization should permit non-CRM synthetic harness checks that assert SiteContact keys have arity 2 and that the filter selects exactly `(237,N507)`, `(230,210)`, and `(230,211)` while excluding update-only/archive keys. It should also permit a focused fault-injection check of the transaction wrapper on a toy in-memory database so rollback and step-level diagnostic capture are proven without touching CRM evidence.
+- A separately authorized real attempt should add a sanitized `last_completed_step` and traceback line capture, reverify all source/evidence identities, mappings, protected hashes, expected counts, and historical timestamps before writes, then require the existing single-transaction assertions. Before commit it must validate exact rows and primary-key-aware diffs, all five Blue Ash links, archive state, all 16 Activity mappings and original timestamps, integrity, and foreign keys. After commit it must independently reopen and repeat integrity, foreign-key, exact-diff, mapping, count, and timestamp checks. Any failure must roll back or quarantine as applicable and must not be retried ad hoc.
+
+The prior authorization remains exhausted. Editing the harness, running synthetic checks, executing another clone attempt, accessing any SQLite file, or performing recovery requires Rob's separate explicit authorization.
