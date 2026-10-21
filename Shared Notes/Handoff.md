@@ -1,5 +1,35 @@
 # Project Handoff
 
+## Active Authorized Task — October 21, 2026: CRM contact-save focused follow-up (Codex implementation authorized; NOT a merge)
+
+**This is the current instruction for the next CRM Codex execution.** It supersedes the older "Active Authorized Task" headings below for this bounded follow-up only. The previous October 20 associate/salesperson read-only investigation and Test 22 work are historical context, not a reason to reopen or extend those tasks. Rob approved this targeted follow-up during the October 21 code review and specifically requested that the instructions be added to the shared handoff for Codex. **Updating this handoff does not itself start a Codex run.** Before working, read this entire handoff and the CRM repository's current `AGENTS.md` and `HANDOFF.md`, and observe the Mandatory execution safeguards below.
+
+### Exact deliverable
+
+On an **isolated development branch**, make only the two targeted contact-save/data-integrity corrections identified in the October 21 read-only review, add focused regression coverage, execute the existing applicable test suites/build, and report results. This authorizes a limited development-code and test change; **it does not authorize a branch merge, packaging, deployment, database cutover, live mail, or production-data modification.**
+
+**Repository:** `DarkPiglet/Weekly-Logger-Search-Application`.
+**Verified starting point:** existing branch `codex/crm-contact-save-fix`, project commit `d502271dd66fa5b0a9491c7ec67e54b51cdbd0c6`. Verify local and remote identities before any change, and work on a separate follow-up branch from this exact commit. The existing fix is one commit ahead of approved source baseline `3db33ca6ad96ecf72075dc2428069c2d8918ba0c`; verify that unrelated `codex/application-authentication` / `86a1dff` work is excluded. The separate Test 22 branch has newer commits and **has diverged**; do not rebase, merge, overwrite, or accidentally drop Test 22 work in this task. Integration requires a later separate approval.
+
+1. **Existing contact method / primary selection:** Examine `Data/CRMRepository.vb` `ReplacePrimaryMethod` and the contact-save call path. An unchanged already-primary email or phone method should cause no unnecessary rewrite. If the user intentionally selects an *existing active, non-primary* email/phone value, make that existing row primary and demote the former primary of the same contact and method type; do not return early just because a normalized match exists. Keep the unique-primary invariant and existing method identities/history where applicable. Handle blank/cleared values and changed/new values consistently with current approved behavior; avoid reactivating unrelated archived entries. Cover email and office/mobile phone methods as relevant, including exact-normalization versus alternate stored presentation. Do not add an email-management UI or unrelated behavior.
+
+2. **Second address line preservation:** Examine `Form1.vb` `SaveChangesAsync`, `SiteAddressFieldsChanged` and `SiteFieldsChanged`, plus `CRMRepository.UpdateSite`. The current UI does not expose a separately editable `StreetAddress2`, yet the save call supplies an empty string and the changed-fields check compares saved `StreetAddress2` with empty. A contact-only, note-only, or other unrelated save must **not clear an existing nonblank `StreetAddress2`** or incorrectly invalidate its address fingerprint. Preserve the existing second-line value unless a supported explicit address edit actually authorizes a change; retain legitimate address-change behavior, including fingerprint invalidation where appropriate. Avoid widening this to an address redesign or unrelated schema migration.
+
+### Required verification and safeguards
+
+- Reproduce each issue first in a disposable test copy where feasible, and add targeted regression tests proving the fixed behavior plus unchanged existing rows/identities and audit fields for unrelated saves. Include scenarios with multiple saved method values and populated `StreetAddress2`; cover deliberate address changes, contact create/edit/reopen, and relevant existing empty/NULL cases.
+- Run the full CRM UI and data regression suites and a Release build; record exact pass/fail counts, commands, environment, failures, and limits. Never report testing that was not actually performed. Validate database integrity and foreign keys on disposable databases where they were used. No live Graph actions or external order submission.
+- Keep `Z:\CRM.sqlite`, `Z:\CRM_corrected.sqlite`, the correction manifest, backups, and local sealed corrected references **untouched**. A previously verified corrected reference has SHA-256 `B4B5D575FA9E494605F3BEBEBA9D9B5F85B82867453ED5D6816B03148BCE5B13`; original `Z:\CRM.sqlite` SHA-256 is `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`. Reconfirm identities before any permitted copying; never assume an unverified later database is identical. Do not alter source/master data or use a modified disposable test DB for production.
+- No schema/data migration, merge/rebase into Test 22 or master, packaging, deploy, production switchover, mail send, external customer/order action, unrelated edits, or cleanup of preserved test evidence. If addressing either issue requires such work, **STOP** and report why rather than expanding scope.
+- On completion, update the CRM-local and central shared handoffs with the source branch/commit, exact changes, reproduction/test results, residual risks, and status; commit and push only authorized development changes plus the handoff-only update, verify both remote commits/contents, and **STOP for Rob's review**. Any subsequent integration, package, manual executable run, or production action requires separate permission.
+
+### October 21 reviewer findings (not proof of final correction)
+
+Read-only comparison of baseline `3db33ca6` and follow-up candidate `d502271d` confirmed only `Data/CRMRepository.vb`, `Form1.vb`, the local `HANDOFF.md`, and a new `tests/CRM.Ui.Tests/ContactSaveRegressionTests.cs` changed on the candidate branch. The handoff reports 89/89 CRM UI and 61/61 data tests, two targeted corrected-copy tests, and a clean Release build; these are **Codex-reported** results, not independent Windows reruns by this reviewer. Source inspection found `ReplacePrimaryMethod` returns when **any** normalized method matches, even if it is not primary, and `SiteAddressFieldsChanged` compares nonblank saved `StreetAddress2` to an empty string while the save passes an empty second line. Both warrant focused fixes and tests before merge. Do not treat this review or those earlier tests as acceptance of the new fixes.
+
+---
+
+
 ## Active Authorized Task — October 20, 2026: CRM Associate/Salesperson Data Integrity Investigation (READ ONLY)
 
 **This section supersedes the earlier Test 22 active-task status for the purpose of the next Codex run only.** All historical Test 22 safeguards and restrictions remain in force. Rob authorized an investigation, not implementation or production-data correction.
