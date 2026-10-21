@@ -1986,3 +1986,26 @@ After the runtime-path checkpoint passes, Codex may perform practical functional
 - Final Z: hashes are unchanged: original `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`; corrected `B4B5D575FA9E494605F3BEBEBA9D9B5F85B82867453ED5D6816B03148BCE5B13`; manifest `8AA91C24DD1F70CF6DC737A94508BB811DDECDFAC8B2EEA942B9BFB6D3992E24`. No Z: sidecar was present, no independent backup was accessed, and no CRM or Excel process remained.
 
 **Stopping point:** The authorized disposable test is complete. Do not use the modified working DB as the corrected master, clean/reset the retained evidence, change code, or begin production switch-over. Rob must review the four collateral writes, the retained local sidecars, and the Office activation limitation and explicitly authorize any next step.
+
+
+## CRM contact-save collateral-write correction completed — October 20, 2026
+
+**Outcome:** The defect was reproduced first against a fresh disposable copy of the verified corrected database, then corrected and fully regression-tested on isolated branch `codex/crm-contact-save-fix`. Project commit `d502271dd66fa5b0a9491c7ec67e54b51cdbd0c6` is pushed and verified equal to `origin/codex/crm-contact-save-fix`. The branch starts directly from approved baseline `3db33ca6ad96ecf72075dc2428069c2d8918ba0c`; unauthorized authentication commit `86a1dff` is not in its ancestry. The fix is unmerged and undeployed.
+
+### Reproduction and root cause
+
+- The sealed corrected reference was read only for no-overwrite copying and matched SHA-256 `B4B5D575FA9E494605F3BEBEBA9D9B5F85B82867453ED5D6816B03148BCE5B13`. Creating a synthetic contact at Site 1 on the disposable baseline reproduced every reported collateral write: CompanyAccountId 1 `IsPrimary 0 -> 1`; ContactId 1 `JobTitle '' -> NULL` and `UpdatedUtc` changed; ContactMethodId 1 `IsPrimary 0 -> 1`; SiteLocation SiteId 1 `AddressFingerprint '11360 santa fe drive, ballico, california, usa' -> NULL` and `UpdatedUtc` changed.
+- `Form1.SaveChangesAsync` unconditionally called `UpdateCompany`, `UpdateSite`, `UpdateContact`, and the interaction-date writer for every displayed contact whenever any site/contact data was saved. The address decision compared a newly formatted UI address to a differently composed stored display address. Repository helpers then reselected unchanged primary account/contact-method rows, normalized empty strings to NULL, refreshed timestamps, and invalidated the site fingerprint.
+
+### Exact correction
+
+- `Form1.vb` now compares persisted company, site, address-component, contact, and interaction-date fields and calls only the writers whose data changed. Added/deleted contacts and deliberate site/activity changes retain their existing transactional workflow.
+- `Data/CRMRepository.vb` now calls primary-account selection only when the customer number actually changes; an unchanged normalized contact method is not reselected; and unchanged empty/NULL contact text preserves its exact stored representation during a different intentional contact edit.
+- `tests/CRM.Ui.Tests/ContactSaveRegressionTests.cs` covers disposable corrected-copy reproduction/regression, contact create/edit/save/reload/reopen persistence, full user-table comparison, and intentional company/customer-account, site-note, address/fingerprint, and contact-email-primary behavior.
+
+### Verification and limits
+
+- Corrected-copy tests passed 2/2. The create/edit/reopen test compared every user table before/after: every pre-existing row was identical, with only the intended one Contact, one ContactMethod, one SiteContact, and two Activity audit rows added. The intentional-change test confirmed a changed customer number becomes the primary account, a site-note save preserves SiteLocation fingerprint/timestamp, an address change invalidates the fingerprint and advances its timestamp, and a changed email becomes primary without changing ContactId 1's stored title. The same tests passed against the portable migrated seed.
+- Full CRM UI tests passed 89/89; full CRM data tests passed 61/61; Release solution build passed with zero warnings/errors; `git diff --check` passed. SiteContact `IsPrimary` has no contact-edit control in this baseline, so the intentional-primary check covers the affected `ContactMethod.IsPrimary` path.
+- Final read-only hashes are unchanged: local corrected reference and `Z:\CRM_corrected.sqlite` are 2,195,456 bytes at `B4B5D575FA9E494605F3BEBEBA9D9B5F85B82867453ED5D6816B03148BCE5B13`; `Z:\CRM.sqlite` is 2,195,456 bytes at `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`. No Z-drive SQLite sidecar was present. Disposable temp databases were removed.
+- No production/corrected-master database, schema, email, external order, package, deployment, branch merge, or production switch-over occurred. Stop here for Rob's review; any merge, packaging, manual executable test, corrected-master replacement, deployment, or production change requires separate authorization.
