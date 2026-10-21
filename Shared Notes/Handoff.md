@@ -1437,3 +1437,27 @@ This clarification refines the immediately preceding preparation task; it does n
 - **Settings and agreement documents:** Do not open CRM to generate settings. Stage settings offline with verified property names and paths from the selected build; explicitly disable backup and keep all document roots disposable. Avoid copying real agreement documents or introducing any path that might trigger startup moves outside the disposable root. Record both current and legacy environment variables and the effective precedence.
 - **Database copies:** The sealed reference must remain untouched after hash verification; the working copy may be staged but must not be opened for write before launch approval. Check that no reparse points/symlinks or inherited relative paths escape the disposable root. Any unexpected file modification is a stop condition.
 - **Reporting:** Record the precise local test root, build identity, hash comparisons, copy integrity/schema/manifest results, settings/profile/network isolation proof, and each unmet prerequisite. Distinguish what was actually performed from what is merely proposed. No execution or approval is implied by a **PREPARED** label. Stop and request explicit approval for a single isolated launch with startup writes restricted to disposable assets.
+
+
+## Isolated CRM display-test preparation attempt — October 20, 2026
+
+**Result: BLOCKED at the isolation acceptance gate; stopped before extraction, database copying, settings staging, or launch.** The complete current handoff and the preparation clarification were reviewed. No disposable test root was created because this host could not prove or provision the required separate Windows profile, VM, or sandbox without unapproved host-configuration changes.
+
+### Completed fail-closed preflight
+
+- Approved package: `C:\Users\Dev\source\repos\Weekly-Logger-Search-Application\artifacts\oct14-authoritative-build-20261014-000602\CRM-v10-test.20-october14-win-x64.zip`, 57,270,619 bytes, SHA-256 `73A705321CFA2858B52ABBD0409581361ADD0542EBF45393E2B6754DDE676CA0`; the value exactly matches the authoritative recorded hash. Commit `1e5c36560ecc651b26a50b40639ebe01b9afa34f` remains an ancestor of the approved baseline `3db33ca6ad96ecf72075dc2428069c2d8918ba0c`, with no application-file differences when `HANDOFF.md` is excluded.
+- `Z:\CRM.sqlite`: 2,195,456 bytes, SHA-256 `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`; exact match.
+- `Z:\CRM_corrected.sqlite`: 2,195,456 bytes, SHA-256 `B4B5D575FA9E494605F3BEBEBA9D9B5F85B82867453ED5D6816B03148BCE5B13`; exact match. Its first 16 bytes are the valid `SQLite format 3` header. No `.wal`, `.shm`, or `.journal` companion exists for either Z-drive database, so no unresolved sidecar transaction state was observed.
+- `Z:\CRM_correction_manifest.json`: 58,389 bytes, SHA-256 `8AA91C24DD1F70CF6DC737A94508BB811DDECDFAC8B2EEA942B9BFB6D3992E24`; exact match. JSON parsing passed, `status=PASS`, there are 216 change records, and its recorded source/working hashes match the preserved original/corrected database hashes.
+- Final recheck at `2026-10-21T02:50:44.9671632Z` returned the same package and all three Z-drive hashes. No CRM process was running.
+
+### Isolation blocker and stopping point
+
+- Hardware virtualization is present, but `WindowsSandbox.exe`, the Windows Sandbox service, and the Hyper-V management command needed to identify a usable existing VM are unavailable on this host. The Windows optional-feature state could not be queried without elevation. No existing separate VM/sandbox/profile was therefore demonstrably available.
+- Installing/enabling Windows Sandbox, creating or changing a VM or Windows profile, changing drive mappings, firewall/network settings, or filesystem permissions would modify host configuration and is outside this preparation authorization. Environment variables and a separate folder alone do not meet the handoff's isolation acceptance condition.
+- Per the explicit stop condition, no local root, package extraction, sealed reference, working database, settings file, log/document/output folder, backup configuration, environment override, or network control was created or changed. Consequently, copied-database integrity/schema/manifest checks and effective-path verification were not performed; these are unmet prerequisites, not passes.
+- CRM was not launched, no application startup logic ran, and no database was opened read-write. The original/corrected databases, manifest, application repository, schemas, settings, profiles, production documents, drive mappings, network configuration, and external systems were not changed.
+
+### Required decision
+
+Preparation remains **BLOCKED**. Before preparation can resume, Rob must provide or authorize a demonstrably isolated execution environment (for example, an already configured Windows Sandbox/VM, or explicit authority to provision one) whose configuration denies Z/mapped/network/USB drives and the live Windows profile while exposing only a named disposable local root. After that prerequisite is available, repeat all hashes, create and validate the two local database copies and isolated assets, then stop again before launch for a separate explicit go/no-go decision.
