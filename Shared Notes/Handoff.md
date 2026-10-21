@@ -1337,3 +1337,16 @@ Future enhancement backlog only (not authorized now): automatically set DT Assoc
 
 - Final hashes and timestamps remained unchanged for `Z:\CRM.sqlite`, `Z:\CRM_corrected.sqlite`, and `Z:\CRM_correction_manifest.json`; the disposable database also retained the corrected database hash. No application was launched, no save/reopen test was performed, and nothing was deployed or emailed.
 - The display-only CRM launch is **BLOCKED** because the available checkout is the unapproved `codex/application-authentication` branch rather than an identified approved production build. Its startup calls `CRMDatabase.EnsureReady` through a read-write connection, executes `PRAGMA journal_mode=WAL`, performs authentication, runs agreement-document migration, and invokes scheduled-backup logic. Even with database and settings path overrides, this does not provide a guaranteed no-write/no-save display session. Per the safeguard, no launch was attempted. A future visual check requires an explicitly approved build and an isolated disposable database/settings/profile with startup-write behavior authorized.
+
+
+## Pending Codex task — approved CRM build and safe display-test plan (October 20, 2026)
+
+**Authorization: read-only investigation and reporting only. Do not execute the display test.** Rob requested that Codex investigate which approved CRM build can safely be used to verify the corrected associate records in the UI.
+
+1. Read the **entire current** shared handoff and all referenced active safeguards/approvals; do not rely on truncated excerpts or old next-action notes as authorization.
+2. Identify the most recent explicitly approved CRM build/commit/package, distinguishing it from the unapproved `codex/application-authentication` checkout. Cite exact repository, branch, commit or package identifiers and evidence of approval. If none can be verified, report that instead of guessing.
+3. Inspect that build's startup code paths **without running the application**. Document database-opening modes and potential writes, including schema initialization/migrations, WAL/journal mode, backups, agreement-document moves, authentication, and settings/profile changes.
+4. Recommend a concrete isolated display-test procedure using a **disposable copy** of `Z:\CRM_corrected.sqlite`, with isolated settings/profile and verified paths. Identify required safeguards, whether startup writes are unavoidable, and any separate authorization needed before launching. Never open `Z:\CRM.sqlite` or `Z:\CRM_corrected.sqlite` for write access.
+5. Report findings, evidence, blockers, and proposed next steps. Do **not** change application code, any database, settings, Git branches, deployment artifacts, or production files; do not launch CRM, merge, package, deploy, or send emails. Do not start save/reopen tests. The only permitted write is the normal shared handoff update recording investigation findings, subject to the existing handoff safeguards.
+
+The corrected database and manifest have already passed read-only validation. Associate spelling in the corrected database remains `Rachelle Pombo`, `Chelsie Bonstein`, and `Anakaren Reyes`; do not change names based on conversational pronunciation alone. Production promotion remains unauthorized.
