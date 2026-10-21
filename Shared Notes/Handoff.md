@@ -1355,3 +1355,61 @@ Future enhancement backlog only (not authorized now): automatically set DT Assoc
 ### Non-negotiable restrictions
 
 No application launch; no database creation/copy/open-for-write; no modifications to application code, schemas, databases, settings, branches, deployment artifacts, or external systems; no build, merge, package, deployment, email, or save/reopen test. Read repository files and metadata only. Never access `Z:\CRM.sqlite` or `Z:\CRM_corrected.sqlite` for write. Do not change production files. Record investigation findings in the shared handoff only under existing safeguards, and verify the handoff commit reached remote. Stop and ask Rob for separate explicit approval before any proposed test execution or changes.
+
+
+## CRM approved-build and isolated display-test investigation — October 20, 2026
+
+**Approved-build status: VERIFIED for the identified test source/package provenance; it is not a production release. Isolation status: FEASIBLE as a controlled proposal, but execution is BLOCKED pending separate authorization for writes to disposable assets.** No application was launched. No database was created, copied, or opened; no Z-drive artifact was accessed; no application repository file, branch, setting, schema, deployment artifact, or external system was changed.
+
+### Approved source and package evidence
+
+- Repository: `DarkPiglet/Weekly-Logger-Search-Application`. The handoff's explicit last approved source baseline is branch `codex/october13-crm-work` at full commit `3db33ca6ad96ecf72075dc2428069c2d8918ba0c`. Local and recorded `origin/codex/october13-crm-work` refs match that SHA, and GitHub returned the same commit. This source is unmerged but explicitly approved as the baseline.
+- The newest demonstrably tested package on that baseline is `CRM-v10-test.20-october14-win-x64.zip`, built/tested at commit `1e5c36560ecc651b26a50b40639ebe01b9afa34f` on the same branch. `1e5c365` is an ancestor of `3db33ca`; their application trees are identical and differ only in `HANDOFF.md`.
+- Local package: `C:\Users\Dev\source\repos\Weekly-Logger-Search-Application\artifacts\oct14-authoritative-build-20261014-000602\CRM-v10-test.20-october14-win-x64.zip`, 57,270,619 bytes, 316 entries, SHA-256 `73A705321CFA2858B52ABBD0409581361ADD0542EBF45393E2B6754DDE676CA0`. This matches the recorded October 14 hash. Read-only ZIP inspection confirmed `CRM.exe`, `Data/CRM.sqlite`, `Database/CRM_seed.sqlite`, and `Database/CRM_v24.sql`; no settings file, PDB, WAL, SHM, or journal is included. The recorded distributed path is `Z:\CRM-v10-test.20-october14-win-x64.zip`, but it was not accessed in this investigation.
+- The package previously passed a schema-24 startup, integrity/foreign-key checks, a 302/302 regression, and responsive CRM/Monthly Drafts startup without data drift. That is evidence for a manual-test build, not production deployment approval.
+- The unauthorized authentication implementation (`86a1dff` / branch `codex/application-authentication`) is not in the package ancestry. Test 22 descendants are awaiting review and their package is synthetic; neither is selected for this proposal.
+
+### Static startup/shutdown findings
+
+- Database resolution uses `CRM_DATABASE_PATH`, then legacy `WEEKLY_LOGGER_DATABASE_PATH`, then `Data\CRM.sqlite` under `AppContext.BaseDirectory`; the seed override follows the same current/legacy precedence (`Data/CRMPaths.vb:8-29`, `Data/CRMCompatibility.vb:14-18`). No command-line database override exists, and the process working directory does not control these defaults.
+- `Form1_Load` calls `CRMDatabase.EnsureReady`, immediately runs the scheduled-backup check, constructs the repository, and calls `MigrateAgreementDocuments` before loading UI data (`Form1.vb:102-112`).
+- `EnsureReady` creates the target from a legacy/seed database if the target is absent, creates an adjacent migration backup when schema is below 24, then opens the target read-write, applies migrations, and validates it (`Data/CRMDatabase.vb:12-42,59-98,100-153`). Every normal connection is `ReadWrite`, enables foreign keys/busy timeout, and executes `PRAGMA journal_mode=WAL` (`Data/CRMDatabase.vb:44-56`). A schema-24 corrected copy avoids migrations/backups, but WAL/header/sidecar writes remain unavoidable.
+- Settings resolve through `CRM_SETTINGS_PATH`, then legacy `WEEKLY_LOGGER_SETTINGS_PATH`, then application-adjacent `settings.json` (`OrderFormSettings.vb:26-31`). Loading can normalize paths and save the settings file, and the legacy/default agreement-folder migration can move managed documents and save settings (`OrderFormSettings.vb:34-53,120-152`). A missing settings file defaults agreement documents to live Local AppData.
+- Startup `MigrateAgreementDocuments` opens a read-write transaction, prepares/renames company folders and ownership markers, moves files when present, and can update `AgreementDocument.StoredRelativePath` (`Data/CRMRepository.vb:88-198`; `AgreementDocumentStorage.vb:10-55`). It cannot be treated as display-only I/O. Its root must be an isolated local folder and any writes must be authorized only there and in the disposable DB.
+- Scheduled backup runs once at startup and then every 24 hours; an empty `BackupFolder` disables creation (`Form1.vb:90,106-110,993-1016`; `Data/CRMBackupService.vb:13-43`). Diagnostic logs default to live Local AppData but support `CRM_LOG_FOLDER`/legacy override and write only on handled/unhandled errors (`DiagnosticLog.vb:11-45`).
+- This package has no startup authentication. Graph, browsers, Excel, exports, geocoding, and Monthly Drafts are user-invoked paths, not main-window startup work. Network access should nevertheless be disabled and those commands must remain untouched.
+- Normal close stops/disposes the backup timer. If the UI becomes dirty, close offers Save/Discard/Cancel and Save invokes database writes (`Form1.vb:1013-1016,2061-2090`). `SaveMySettingsOnExit=True` is configured, but this commit has no `Settings.settings`; whether the VB runtime creates profile metadata is not proven. A disposable Windows profile/sandbox is therefore required.
+
+### Startup-write risk table
+
+| Path/asset | Trigger and possible write | Required mitigation |
+|---|---|---|
+| Disposable `CRM.sqlite` | `EnsureReady` and every repository connection open read-write and set WAL; migration if below v24 | Use only a fresh local working copy; immutable preflight must prove v24; retain a sealed reference copy; allow DB/WAL/SHM writes only in the disposable root |
+| Adjacent migration backup | Target below v24 | Fail closed unless both `user_version` and `SchemaVersion` are 24; reject any created backup as a preflight failure |
+| Application `Data\CRM.sqlite` / seed | Used if the override is missing or target disappears | Set current and legacy DB/source variables; remove/replace the extracted default DB with a fail-closed sentinel and deny writes to extracted `Data`; verify target exists immediately before launch |
+| `settings.json` | Load-time normalization/migration may save | Precreate an isolated absolute settings file; set current and legacy settings variables; hash it before/after |
+| Agreement documents | Startup may create/rename folders/markers, move files, and update DB paths | Point settings to an empty isolated root, preflight DB paths/markers, authorize any resulting writes only there; never point to live Local AppData/network/USB paths |
+| Backup folder | Immediate weekly check can create/prune backups | Set `BackupFolder` to blank; verify no inherited settings value |
+| Diagnostic logs | Startup exception/unhandled error | Set current and legacy log variables to an isolated log folder |
+| User profile/config | Possible VB exit metadata; Local AppData defaults if isolation fails | Use a fresh disposable Windows Sandbox/VM or local test profile with no mapped Z drive and no production profile access |
+| Network/Graph/browser | Not automatic in this build, but available through commands | Disable network; do not open Monthly Drafts, shipping, Settings, Maintenance, export, or email paths |
+
+### Proposed isolated procedure — not executed
+
+1. Obtain explicit authorization for one launch and for startup writes only to named disposable paths. Reverify the selected package hash and record pre-operation hashes for `Z:\CRM.sqlite`, `Z:\CRM_corrected.sqlite`, and `Z:\CRM_correction_manifest.json` without opening either database for write.
+2. Create a new non-reparse local test root. Extract the verified October 14 package there. Copy `Z:\CRM_corrected.sqlite` twice: one sealed read-only reference and one working database. Hash both against the recorded corrected hash.
+3. Using immutable read-only SQL, fail unless the working/reference files are standalone schema 24, integrity is `ok`, foreign-key check is empty, and the approved manifest still matches. Do not migrate.
+4. Create isolated settings, logs, documents, outputs, and profile folders under the test root. Settings must use absolute local paths, blank `BackupFolder`, and no Z/network/USB/current-profile path. Pre-stage only safe agreement-folder markers derived from read-only DB metadata; do not copy production documents.
+5. Set both current and legacy environment overrides to the isolated assets. Make the extracted default `Data` path fail closed. Validate every resolved path and ancestor, reject reparse points/network drives/Z paths, confirm Z is not mapped or accessible inside the test profile, and disable network.
+6. Launch only the verified package's `CRM.exe`. Do not open Settings, Maintenance, Monthly Drafts, export, shipping, order/email, or edit/save paths. Capture display evidence, then close with no dirty state; if an unexpected save prompt appears, do not select Save.
+7. Rehash all three Z-drive artifacts and require exact pre/post equality. Validate the disposable DB and sidecars, compare logical schema/content to the sealed reference and manifest, and separately report expected physical hash changes caused by WAL. Rollback is discard-and-recopy only; nothing is copied back. Retain the isolated evidence until Rob reviews it, then delete the disposable root under separate confirmation.
+
+### Proposed acceptance split
+
+- **UI-feasible:** visually confirm site `SalesPerson` values for corrected Jeff Davis, Jennifer Curkendall, Rachelle Pombo, Anakaren Reyes, Order Processing Sites 179/315/416, and Dan Hurd transferred sites/territories; confirm visible activity dates/associate names for Sites 63 and 161 where the activity-history pane exposes them. `SalesPerson` is a free-text textbox (`Form1.Designer.vb:417-434`), and the activity display includes date and associate name but not ActivityId (`Form1.vb:578-585`).
+- **SQL-required:** exact Associate IDs/active flags for Chelsie Bonstein, Kala Pendergrass, Rachelle Pombo, Jeff Davis, Jennifer Curkendall, Anakaren Reyes, and Robert Nevins; Activities 120/121/262/263 IDs, dates, and AssociateId 2; inactive alias rows 13/16/18/20 and zero remaining relationships; assignment IDs; the exact 110 Jeff-to-Dan sites, preserved territories, 18 closed Jeff assignment rows and paired Dan history. The UI has no canonical Associate-management view, hides the DT Associate grid column (`Form1.Designer.vb:778-782`), does not display ActivityId, and free text cannot prove inactive aliases are unavailable for entry.
+- Correct spellings remain `Chelsie Bonstein`, `Rachelle Pombo`, and `Anakaren Reyes`; no variant is authorization to edit.
+
+### Blocking authorization gate
+
+Execution remains blocked. The required separate approval must explicitly authorize: use of the verified October 14 test package; creation/extraction of a named local disposable root; two local copies of `Z:\CRM_corrected.sqlite`; isolated settings/profile/log/document/output assets; startup-driven writes only to the working copy and those isolated assets; one network-disabled CRM launch with no saves; read-only post-validation and Z-artifact hash checks; and later disposal or retention of the test root. It must continue to prohibit writes to all Z-drive artifacts, production profiles/documents/settings, source code, schemas, branches, deployed files, email, and external systems.
