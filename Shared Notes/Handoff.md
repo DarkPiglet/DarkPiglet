@@ -1643,3 +1643,201 @@ Rob has already secured three independent backup copies outside VM access and **
 ### Final clarification for pending preparation-procedure task — October 20, 2026
 
 All shell/PowerShell commands, JSON fragments, folder layouts and validation steps in Codex's deliverable are **proposed future instructions only**; do not execute any of them during this task. The procedure must include a prelaunch, non-CRM validation of the **complete** settings JSON (required keys, correct casing, parse success, explicit absolute disposable paths, blank BackupFolder) and explain that CRM silently substitutes defaults for missing/malformed settings. If reliable confirmation of effective runtime settings requires launch, label it unverified and retain the separate launch gate; do not claim a static JSON check proves runtime behavior. Explicitly identify decisions needing Rob's approval, with the smallest safe options and tradeoffs, rather than assuming permission or silently imposing a cloned-VM requirement. Keep the procedure focused and avoid repeating completed investigation. All existing restrictions remain in force.
+
+
+## Completed documentation — disposable CRM display-test preparation procedure (October 20, 2026)
+
+**Status and scope:** Documentation only was completed from the established October 14 source/path findings. None of the commands below was run. No CRM process was launched; no database, package, settings file, VM/network/permission setting, application source, or production file was opened for write, copied, or changed. Rob's three independent off-VM backup copies are accepted as present but intentionally remain unaccessed and hash-unverified. The existing VM is the planned environment; this procedure does not require or provision another VM.
+
+### Proposed future operator procedure — requires separate preparation authorization
+
+All paths and commands in this section are proposed future instructions. Run them only after Rob explicitly authorizes preparation. Run the whole preparation in one dedicated PowerShell session, stop on the first failed assertion, capture its transcript outside production paths, and do **not** start `CRM.exe`.
+
+#### 1. Read-only Z: preflight
+
+The three preserved files must exist at the exact paths, sizes, and hashes below. Hashing and metadata reads are permitted only in a future authorized preparation run; neither SQLite database is to be opened on Z:. The independent backup location is not part of this check and must not be accessed.
+
+| Preserved file | Expected bytes | Expected SHA-256 |
+|---|---:|---|
+| `Z:\CRM.sqlite` | 2,195,456 | `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D` |
+| `Z:\CRM_corrected.sqlite` | 2,195,456 | `B4B5D575FA9E494605F3BEBEBA9D9B5F85B82867453ED5D6816B03148BCE5B13` |
+| `Z:\CRM_correction_manifest.json` | 58,389 | `8AA91C24DD1F70CF6DC737A94508BB811DDECDFAC8B2EEA942B9BFB6D3992E24` |
+
+Proposed read-only preflight:
+
+```powershell
+$Expected = [ordered]@{
+  'Z:\CRM.sqlite' = @{ Length = 2195456; Sha256 = 'FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D' }
+  'Z:\CRM_corrected.sqlite' = @{ Length = 2195456; Sha256 = 'B4B5D575FA9E494605F3BEBEBA9D9B5F85B82867453ED5D6816B03148BCE5B13' }
+  'Z:\CRM_correction_manifest.json' = @{ Length = 58389; Sha256 = '8AA91C24DD1F70CF6DC737A94508BB811DDECDFAC8B2EEA942B9BFB6D3992E24' }
+}
+foreach ($Path in $Expected.Keys) {
+  if (-not (Test-Path -LiteralPath $Path -PathType Leaf)) { throw "Missing preserved file: $Path" }
+  $Item = Get-Item -LiteralPath $Path
+  $Hash = (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash
+  if ($Item.Length -ne $Expected[$Path].Length -or $Hash -ne $Expected[$Path].Sha256) {
+    throw "Preserved file identity mismatch: $Path"
+  }
+  [pscustomobject]@{ Path=$Path; Bytes=$Item.Length; LastWriteTimeUtc=$Item.LastWriteTimeUtc; SHA256=$Hash }
+}
+$Sidecars = foreach ($Db in 'Z:\CRM.sqlite','Z:\CRM_corrected.sqlite') {
+  "$Db-wal"; "$Db-shm"; "$Db-journal"
+}
+$PresentSidecars = @($Sidecars | Where-Object { Test-Path -LiteralPath $_ })
+if ($PresentSidecars.Count -ne 0) { throw "SQLite sidecar present on Z:: $($PresentSidecars -join ', ')" }
+```
+
+Any missing file, size/hash mismatch, or `-wal`, `-shm`, or `-journal` companion is an immediate **STOP / PREPARATION NO-GO**. Record the discrepancy; do not copy, open, checkpoint, or repair anything.
+
+#### 2. Create the disposable local layout and no-overwrite copies
+
+Rob must first approve the exact root and the local writes. The proposed root is `C:\CRM-Display-Test\run-001`; it must not already exist, must be on a fixed local volume, and neither it nor any existing ancestor may be a reparse point. Reject UNC, Z:, mapped, removable, network, USB, or `C:\Users\Dev` destinations.
+
+Proposed layout:
+
+```text
+C:\CRM-Display-Test\run-001\
+  app\                 extracted approved package
+  reference\           sealed original/corrected comparison copies and manifest
+  working\CRM.sqlite   only database CRM may write
+  config\settings.json
+  guard\                MUST-NOT-EXIST.sqlite must remain absent
+  logs\
+  agreements\
+  outputs\
+  evidence\
+```
+
+Verify the approved package before extracting it:
+
+- Source: `C:\Users\Dev\source\repos\Weekly-Logger-Search-Application\artifacts\oct14-authoritative-build-20261014-000602\CRM-v10-test.20-october14-win-x64.zip`
+- Expected size: 57,270,619 bytes; entries: 316; SHA-256: `73A705321CFA2858B52ABBD0409581361ADD0542EBF45393E2B6754DDE676CA0`.
+
+Only after the empty-root and package checks pass, create the directories and use no-overwrite copies. Full 350-field before/after manifest parity needs the comparison-only original copy; if Rob does not authorize that local copy, the full manifest check cannot pass and preparation remains NO-GO.
+
+```powershell
+$TestRoot = 'C:\CRM-Display-Test\run-001'
+if (Test-Path -LiteralPath $TestRoot) { throw "Disposable root already exists: $TestRoot" }
+$Dirs = 'app','reference','working','config','guard','logs','agreements','outputs','evidence'
+$null = New-Item -ItemType Directory -Path $TestRoot
+foreach ($Name in $Dirs) { $null = New-Item -ItemType Directory -Path (Join-Path $TestRoot $Name) }
+
+$OriginalReference = Join-Path $TestRoot 'reference\CRM_original.sqlite'
+$CorrectedReference = Join-Path $TestRoot 'reference\CRM_corrected.sqlite'
+$WorkingDatabase = Join-Path $TestRoot 'working\CRM.sqlite'
+$LocalManifest = Join-Path $TestRoot 'reference\CRM_correction_manifest.json'
+[IO.File]::Copy('Z:\CRM.sqlite', $OriginalReference, $false)
+[IO.File]::Copy('Z:\CRM_corrected.sqlite', $CorrectedReference, $false)
+[IO.File]::Copy('Z:\CRM_corrected.sqlite', $WorkingDatabase, $false)
+[IO.File]::Copy('Z:\CRM_correction_manifest.json', $LocalManifest, $false)
+```
+
+Immediately require the local original, corrected reference, working copy, and manifest hashes to equal their corresponding Z: preflight hashes. Mark the two reference databases and manifest read-only only after hashing; this is an operator guard, not a security boundary. Extract the verified package into the empty `app` directory without changing the ZIP. Never copy a disposable database or result back to Z: or the independent backup location.
+
+#### 3. Validate only the local database copies and manifest
+
+Use a reviewed SQLite runner that supports URI `mode=ro&immutable=1`; its executable/path was not preserved in the investigation evidence, so tool selection and its own hash must be recorded before use rather than invented here. Open the local original and sealed corrected reference with `immutable=1`, execute `PRAGMA query_only=ON`, and run these exact checks:
+
+```sql
+PRAGMA integrity_check;
+PRAGMA foreign_key_check;
+PRAGMA user_version;
+SELECT MAX(Version) FROM SchemaVersion;
+```
+
+Require `integrity_check = ok`, zero rows from `foreign_key_check`, and both version checks equal to `24`. The files must begin with the standalone SQLite header `SQLite format 3`; no local WAL/SHM/journal sidecar may exist before validation. Do not use the CRM readiness/migration path for validation.
+
+Parse the local manifest without modifying it. Require its recorded status `PASS`, source hash equal to the preserved original hash, working/result hash equal to the corrected hash, exactly 216 change records, and all 350 recorded before/after field assertions. A reviewed read-only parity checker must compare every manifest `before` assertion to the local original reference and every `after` assertion to both the sealed corrected reference and initial working copy. Also require the previously approved focused outcomes: all seven canonical identities (`Chelsea Bernstein`, `Kala Pendergrass`, `Rochelle Pombo`, `Jeff Davis`, `Jennifer Curkendall`, `Anna Karen Reyes`, and `Robert Nevins`); Activities 120/121/262/263 assigned to Robert Nevins with their original dates; inactive aliases 13/16/18/20 retained with zero remaining relationships; Angelina assignment IDs 48/116/143 and Site IDs 179/315/416 on Order Processing; the exact 110 Jeff Cook-to-Dan Hurd current site transfers; and the 18 closed/paired replacement assignments with territories and September 18, 2026 effective dates preserved. Any extra/missing relationship, changed historical date, active duplicate, or mismatch is **STOP / PREPARATION NO-GO**.
+
+Rehash the sealed corrected reference and working copy after read-only validation. Both must still equal `B4B5D575FA9E494605F3BEBEBA9D9B5F85B82867453ED5D6816B03148BCE5B13`.
+
+#### 4. Stage complete local settings and fail-safe defaults
+
+Create the following complete JSON at `C:\CRM-Display-Test\run-001\config\settings.json`. Preserve key casing exactly. The three writable paths are explicit, absolute, custom paths inside the disposable root; both export paths and `BackupFolder` are deliberately blank.
+
+```json
+{
+  "ExcelTemplatePath": "C:\\CRM-Display-Test\\run-001\\app\\Blank Order Form.xlsx",
+  "RcLogExportPath": "",
+  "RecycleAgreementExportPath": "",
+  "FedExAccountNumber": "",
+  "UpsAccountNumber": "",
+  "FedExLabelUrl": "https://www.fedex.com/en-us/shipping/ship-manager.html",
+  "FedExPickupUrl": "https://www.fedex.com/en-us/shipping/schedule-manage-pickups.html",
+  "UpsShippingUrl": "https://www.ups.com/ship",
+  "UpsPickupUrl": "https://wwwapps.ups.com/pickup/schedule",
+  "OutputFolder": "C:\\CRM-Display-Test\\run-001\\outputs",
+  "AgreementDocumentsFolder": "C:\\CRM-Display-Test\\run-001\\agreements",
+  "BackupFolder": "",
+  "OrderProcessingEmail": "",
+  "OrderProcessingCcEmails": ""
+}
+```
+
+Source inspection proves that a custom agreement path avoids the legacy/default agreement-folder migration branch and blank `BackupFolder` disables the weekly backup operation. It does **not** prove that the settings remain byte-stable at runtime or that database-backed agreement migration performs no local writes.
+
+CRM silently substitutes defaults when settings are missing, malformed, unreadable, or deserialize to null. Therefore missing/invalid settings do not fail closed and can redirect agreements into `%LocalAppData%`. As a second safe local fallback, place a byte-identical copy of the validated JSON at `app\settings.json`; require both copies to parse and hash identically before launch. This does not prove which file the future process uses.
+
+The extracted package also contains its own valid `app\Data\CRM.sqlite`. Under separately approved preparation, move that packaged database to an evidence-named file and put a small deliberately non-SQLite sentinel at the original `app\Data\CRM.sqlite` path. Source inspection shows an existing invalid target errors when opened and does not trigger initialization fallback; this prevents lost database-variable inheritance from silently using the packaged database. Record both hashes and make no change to the ZIP. If Rob does not approve this disposable fail-safe, preparation is NO-GO because a missing override could silently use the package default.
+
+#### 5. Validate settings and paths without launching CRM
+
+Proposed non-CRM JSON check:
+
+```powershell
+$SettingsPath = 'C:\CRM-Display-Test\run-001\config\settings.json'
+$RequiredKeys = @(
+  'ExcelTemplatePath','RcLogExportPath','RecycleAgreementExportPath',
+  'FedExAccountNumber','UpsAccountNumber','FedExLabelUrl','FedExPickupUrl',
+  'UpsShippingUrl','UpsPickupUrl','OutputFolder','AgreementDocumentsFolder',
+  'BackupFolder','OrderProcessingEmail','OrderProcessingCcEmails'
+)
+$Settings = Get-Content -LiteralPath $SettingsPath -Raw | ConvertFrom-Json -ErrorAction Stop
+$ActualKeys = @($Settings.PSObject.Properties.Name)
+if (@(Compare-Object $RequiredKeys $ActualKeys).Count -ne 0) { throw 'Settings keys/casing are incomplete or unexpected.' }
+if ($Settings.BackupFolder -ne '') { throw 'BackupFolder must be blank.' }
+foreach ($Name in 'ExcelTemplatePath','OutputFolder','AgreementDocumentsFolder') {
+  $Value = [IO.Path]::GetFullPath([string]$Settings.$Name)
+  if (-not [IO.Path]::IsPathFullyQualified($Value) -or
+      -not $Value.StartsWith('C:\CRM-Display-Test\run-001\',[StringComparison]::OrdinalIgnoreCase)) {
+    throw "Unsafe settings path: $Name = $Value"
+  }
+}
+if ($Settings.RcLogExportPath -ne '' -or $Settings.RecycleAgreementExportPath -ne '') {
+  throw 'Export paths must be blank for this test.'
+}
+```
+
+Also require: the template exists under `app`; agreement/output/log directories are empty; the working DB exists; `guard\MUST-NOT-EXIST.sqlite` does not exist; no `working\WeeklyLogger.sqlite` or app-adjacent `WeeklyLogger.sqlite` exists; all selected paths and existing ancestors are local and non-reparse; the safe app-adjacent settings copy matches the primary settings hash; and the invalid packaged-default sentinel is present. A static JSON check proves only syntax/content, not effective runtime selection.
+
+For the future one-launch session, set both current and legacy names to identical absolute process-scoped values; never use `setx`, user, or machine variables:
+
+```powershell
+$env:CRM_DATABASE_PATH = 'C:\CRM-Display-Test\run-001\working\CRM.sqlite'
+$env:WEEKLY_LOGGER_DATABASE_PATH = $env:CRM_DATABASE_PATH
+$env:CRM_SOURCE_DATABASE_PATH = 'C:\CRM-Display-Test\run-001\guard\MUST-NOT-EXIST.sqlite'
+$env:WEEKLY_LOGGER_SOURCE_DATABASE_PATH = $env:CRM_SOURCE_DATABASE_PATH
+$env:CRM_SETTINGS_PATH = 'C:\CRM-Display-Test\run-001\config\settings.json'
+$env:WEEKLY_LOGGER_SETTINGS_PATH = $env:CRM_SETTINGS_PATH
+$env:CRM_LOG_FOLDER = 'C:\CRM-Display-Test\run-001\logs'
+$env:WEEKLY_LOGGER_LOG_FOLDER = $env:CRM_LOG_FOLDER
+```
+
+Verify those eight process values in that same session and repeat all path/hash/settings assertions there. Environment inheritance and the effective `AppContext.BaseDirectory` remain runtime-unverified until a separately authorized launch; do not claim the static checks prove them.
+
+#### 6. Final preparation gate, residual risk, and rollback
+
+Immediately before declaring preparation complete, rehash the three preserved Z: files and require the same values as step 1; repeat the sidecar check. Rehash the approved ZIP, local original/reference/working databases, manifest, both settings files, packaged-default evidence file, and sentinel; save the results under `evidence`. Confirm no CRM process ran and no new files appeared outside the disposable root.
+
+The minimum option Rob requested is to retain the existing VM, Z: mount, routed network, and Dev profile while relying on explicit local routing, fail-safe defaults, no user navigation outside the test, and pre/post hashes. This is operationally simple but **not isolation**: CRM still has ambient ability to reach Z:, network resources, and readable profile files, while hashes detect changes only to the three checked Z: files. The safer optional choice is temporary, approved denial of the Z: VirtIO-FS share, network, USB/SPICE transfer, and Dev-profile access; it lowers exposure but changes VM/host configuration and is not required by this plan or currently authorized. Either choice must be explicit; do not change those controls implicitly.
+
+Rollback is discard-and-recopy: close every process, preserve evidence, and—only with explicit cleanup/reset approval—discard the working copy and recreate it from the unchanged sealed corrected reference. Never merge it into, restore it over, or copy output to Z:/production. Retain or delete the entire disposable root only on Rob's instruction. After any later authorized launch and clean close, perform a WAL-consistent logical validation of the working DB and rehash all three preserved Z: files before cleanup.
+
+### Decision and permissions
+
+- **Documentation task: COMPLETE.** Only this shared handoff was changed.
+- **Current execution gate: PREPARATION NO-GO.** Rob has not authorized the file copies, directory/package staging, settings/sentinel creation, local database reads, process environment, or evidence/cleanup writes described above.
+- **Technical preparation assessment: CONDITIONAL GO on the existing VM.** Source inspection supports routing all known automatic startup writes to the disposable root, with the validated app-adjacent settings fallback and invalid packaged-default DB sentinel. Preparation becomes GO only if Rob authorizes the exact local operations, all objective checks pass, and he explicitly accepts the remaining Z:/network/profile exposure or separately approves narrower access-denial controls.
+- **Immediate stop conditions:** any Z: identity/sidecar discrepancy; existing/reparse/non-local root; package mismatch; overwrite attempt; local-copy hash drift; SQLite/header/integrity/FK/schema/manifest/correction mismatch; incomplete/malformed/defaulted settings; nonblank backup/export path; path outside the root; present source guard/legacy DB; missing fail-safe; unexpected external write; or an unverified validation tool.
+- **Rob decisions still required:** approve the proposed root; package extraction and disposable-default sentinel; local original/corrected/working/manifest copies and read-only validation; complete settings and mirrored fallback; evidence retention/cleanup; choose minimum risk-accepted access or separately approve temporary access denial; and, only after a successful preparation report, issue a distinct one-launch authorization.
+- **Launch gate: CLOSED.** Successful preparation would authorize no CRM launch. Effective runtime settings selection, child-process inheritance, SQLite WAL/SHM behavior, agreement migration effects, settings rewrites, VB profile metadata, and display behavior remain runtime-unverified and must be evaluated only under a separate explicit launch approval.
