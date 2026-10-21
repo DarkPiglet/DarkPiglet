@@ -1624,3 +1624,8 @@ For this pending read-only task, distinguish each **source-proven behavior**, **
 5. Preparation and launch remain **two separate future approvals**. Preparation must stop before launch and report actual paths, hashes, validation evidence, blockers, and a clear go/no-go. A later authorized launch is followed by closed-DB logical validation and rehashing all preserved artifacts, documenting any changes; discard working copies for rollback. Never copy test artifacts to production.
 
 **Next Codex task if separately requested:** review this revised risk-accepted plan for concrete gaps, give the simplest feasible preparation steps and explicit residual risks, and stop. No implementation or preparation is authorized by this handoff update.
+
+
+### Backup verification decision — October 20, 2026
+
+Rob confirms that independent copies of `CRM.sqlite`, `CRM_corrected.sqlite`, and `CRM_correction_manifest.json` have been secured in a location inaccessible to the VM. At Rob's direction, **do not request, perform, or make a prerequisite of SHA-256 verification of those independent backup copies**; their byte-for-byte integrity remains unverified. This supersedes earlier instructions to verify the independent backup copies, but **does not waive** pre-test and post-test SHA-256 checks of the three preserved Z-drive originals, or integrity/manifest validation and hash verification of any future disposable test database copies. Do not access the independent backup location. No preparation, file modifications, or CRM launch is authorized by this clarification.
