@@ -1532,3 +1532,17 @@ Prefer a disposable snapshot/clone of this existing QEMU VM so Rob's Excel-testi
 ### Runtime-only evidence still required
 
 No launch was authorized. A later isolated test would be needed to prove the effective current directory for relative overrides; inherited environment values in the packaged process; concrete ACL/read-only-share/locked-file behavior; exact SQLite exceptions and sidecars; failure-dialog/close behavior; and whether the actual settings, backup age, or agreement records trigger their conditional writes. Existing source/tests establish copying and migration intent but do not cover the complete missing/inaccessible/corrupt startup matrix. CRM preparation and execution remain blocked pending separate explicit authorization.
+
+
+## Pending task — CRM disposable-database configuration plan (October 20, 2026)
+
+**Authorization: READ-ONLY INVESTIGATION AND DOCUMENTATION ONLY.** Read this complete latest handoff and all referenced active restrictions before work. Investigate the approved October 14 CRM baseline, using source and package evidence rather than older handoff assumptions. Do not launch CRM, extract or run the package, create/copy/open databases read-write, alter settings, paths, VM, permissions, network, documents, or code, merge, deploy, or resume previously blocked preparation.
+
+Produce a concise, actionable plan that:
+1. Lists exact supported environment variables, precedence, process scope, absolute path examples, and startup launch context for forcing a **pre-existing disposable corrected DB**, separate settings and logs; identify whether agreement-document roots and weekly-backup destinations are configurable and how. Verify the actual code paths and state any unverified behavior.
+2. Identifies startup reads/writes and indirect references to Z:, the host share, original/corrected preserved databases, Dev profile, agreement folders, backup folders, seed/legacy sources, WAL/journal sidecars, and network resources. Explicitly address settings-load document migration and post-DB agreement migration. Do not claim that DB path override alone isolates other files.
+3. Specifies how a future authorized operator would verify hashes of both originals and manifest, create and hash a sealed disposable reference and separate working copy, validate SQLite integrity and expected correction records, pre-create the target so missing-target initialization cannot run, set explicit absolute paths, and verify the effective configuration **before launch**. Include a stop condition if any path can reach preserved files. Do not perform these actions now.
+4. Gives a minimal step-by-step future preparation procedure, objective pass/fail checks, cleanup/rollback, and clear remaining uncertainties. Evaluate whether the existing VM can be used safely with narrowly scoped controls versus whether stronger isolation remains necessary; distinguish risk reduction from proven access denial. Never assume a thumb-drive backup makes unmonitored Z: writes acceptable.
+5. State an explicit GO/NO-GO recommendation for preparation only, and list every permission or unresolved fact required before proceeding. This task does not authorize preparation or launch.
+
+Append findings to this handoff without replacing prior history, commit and push, verify the remote update, and stop for Rob's separate approval.
