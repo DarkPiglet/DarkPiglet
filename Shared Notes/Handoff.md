@@ -1267,3 +1267,39 @@ The active assignment above remains the sole authority. Apply these refinements 
 - Preserve inactive alias/source identities or a durable correction-audit record when consolidating future duplicates so historical attribution remains explainable without editing Activity dates or source import rows.
 
 **Stop condition:** The validated artifact is a disposable local working copy only. It was not promoted, copied over the source, or used by the application. Production correction, application-code remediation, schema changes, packaging, deployment and email remain unauthorized pending Rob's separate review and approval.
+
+
+## Corrected CRM artifact preservation — October 20, 2026
+
+**Overall result: PASS.** The previously validated corrected database and its exact correction manifest were preserved to the two authorized Z-drive destinations. Neither destination existed before copying; no overwrite occurred. The original `Z:\CRM.sqlite` remained unchanged. No application, database write, schema change, setting change, deployment, or email action occurred.
+
+### Pre-copy gates
+
+- Complete current shared handoff and its October 20 correction result/safeguards were reviewed. Local and `origin/main` initially matched at `1fa49c26950055feb98db4e6da5cea8a46d61049`.
+- Corrected database source existed at `C:\Users\Dev\AppData\Local\Temp\crm-oct20-corrections-20261021T003525Z\working\CRM.sqlite`, 2,195,456 bytes, SHA-256 `B4B5D575FA9E494605F3BEBEBA9D9B5F85B82867453ED5D6816B03148BCE5B13`, exactly matching the recorded handoff identity.
+- Manifest source existed at `C:\Users\Dev\AppData\Local\Temp\crm-oct20-corrections-20261021T003525Z\CORRECTION-MANIFEST.json`, 58,389 bytes, SHA-256 `8AA91C24DD1F70CF6DC737A94508BB811DDECDFAC8B2EEA942B9BFB6D3992E24`, exactly matching the recorded handoff identity.
+- Original database existed at `Z:\CRM.sqlite`, 2,195,456 bytes, SHA-256 `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`, exactly matching the recorded value before copying.
+- The corrected database source had no journal, WAL, or SHM companion. `Z:\CRM_corrected.sqlite` and `Z:\CRM_correction_manifest.json` were both absent. The operation would have stopped without changes if either destination had existed or any hash differed.
+
+### Preserved destination artifacts
+
+- Corrected database destination: `Z:\CRM_corrected.sqlite`, 2,195,456 bytes, SHA-256 `B4B5D575FA9E494605F3BEBEBA9D9B5F85B82867453ED5D6816B03148BCE5B13`. Source/destination hashes and sizes match exactly.
+- Correction manifest destination: `Z:\CRM_correction_manifest.json`, 58,389 bytes, SHA-256 `8AA91C24DD1F70CF6DC737A94508BB811DDECDFAC8B2EEA942B9BFB6D3992E24`. Source/destination hashes and sizes match exactly. JSON parsing passed; `status=PASS`; its recorded working-database hash matches the preserved database; it contains 216 exact change records.
+- Source last-write timestamps were preserved: database `2026-10-21T00:35:25.1692706Z`; manifest `2026-10-21T00:35:25.2272645Z`. The Z drive assigned new destination creation timestamps (`2026-10-21T01:00:54.8353115Z` and `2026-10-21T01:00:54.8413116Z` respectively), so creation-time preservation was not supported there.
+- Copies used no-overwrite file creation. No temporary journal, WAL, SHM, or database sidecar was copied or created at the destination.
+
+### Destination database validation
+
+- Open method: SQLite URI `mode=ro&immutable=1` with `PRAGMA query_only=ON`; observed `query_only=1` and `journal_mode=delete`.
+- Header: valid `SQLite format 3` standalone file.
+- `PRAGMA integrity_check`: `ok`.
+- `PRAGMA foreign_key_check`: zero rows.
+- `PRAGMA user_version`: 24. `SchemaVersion` maximum: 24; row count: 24.
+- Page count: 536; freelist count: 8.
+- No `CRM_corrected.sqlite-journal`, `CRM_corrected.sqlite-wal`, or `CRM_corrected.sqlite-shm` exists on Z:.
+
+### Original-source preservation and stopping point
+
+- Final `Z:\CRM.sqlite` size remained 2,195,456 bytes and SHA-256 remained `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`, identical to the pre-operation value.
+- The original database, corrected database contents, manifest contents, application code, schemas, settings, repositories other than this shared handoff, and external systems were not modified. CRM was not launched; nothing was deployed or emailed.
+- The preserved corrected database is an artifact for Rob's review only. Production replacement or application use remains unauthorized pending a separate explicit instruction.
