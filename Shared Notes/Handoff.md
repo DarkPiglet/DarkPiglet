@@ -1168,3 +1168,102 @@ The active assignment above remains the sole authority. Apply these refinements 
 - Verify legacy imports map known aliases to canonical identities instead of inserting new variants, and that current assignment uniqueness and rollback behave correctly.
 
 **Stop condition:** findings and a proposed plan only. No implementation is authorized until Rob explicitly approves a subsequent step.
+
+
+## Disposable CRM correction result — October 20, 2026
+
+**Overall result: PASS on one disposable working copy. The Z-drive source was not modified. No production promotion, schema change, application-code change, deployment, or email occurred.** The five correction groups from `Z:\Data for Priya.docx` were applied in one transaction to a separate copy and independently validated after a clean immutable reopen.
+
+### Authority, source identity, and protected copies
+
+- Only this disposable-copy correction and the shared-handoff update were active. Historical Test 22 material did not authorize or affect the work.
+- Approved correction document: `Z:\Data for Priya.docx`, 25,504 bytes, SHA-256 `2AB0312C74A1D5EEBEDC4064B316FA94D370DD97ACFF9AFE6C84C1FD1A7BE4F0`. Its complete OOXML text and embedded screenshot were rechecked. The prompt phrase “Chelsea Bernstein” conflicted with its explicit spelling instruction `C-H-E-L-S-I-E B-O-N-S-T-E-I-N`; the spelled form matches the approved document, so the applied canonical value is `Chelsie Bonstein`.
+- Original database: `Z:\CRM.sqlite`, 2,195,456 bytes, created `2026-10-20 16:24:31 -07:00`, modified `2026-10-20 13:12:58 -07:00`, SHA-256 `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`. It had no adjacent WAL/SHM before or after work. Final hash remained identical.
+- Read-only rollback backup: `C:\Users\Dev\AppData\Local\Temp\crm-oct20-corrections-20261021T003525Z\backup\CRM.sqlite`, 2,195,456 bytes, SHA-256 `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`, marked read-only. Its full logical contents and schema compare exactly to the source.
+- Corrected disposable working copy: `C:\Users\Dev\AppData\Local\Temp\crm-oct20-corrections-20261021T003525Z\working\CRM.sqlite`, 2,195,456 bytes, SHA-256 `B4B5D575FA9E494605F3BEBEBA9D9B5F85B82867453ED5D6816B03148BCE5B13`.
+- Exact machine-readable manifest: `C:\Users\Dev\AppData\Local\Temp\crm-oct20-corrections-20261021T003525Z\CORRECTION-MANIFEST.json`, 58,389 bytes, SHA-256 `8AA91C24DD1F70CF6DC737A94508BB811DDECDFAC8B2EEA942B9BFB6D3992E24`. It contains every changed record ID, action, old value, and new value.
+
+### Preflight and transaction safeguards
+
+- Before copy creation or any write, source/document hashes, SQLite header, source sidecar absence, schema 24 and all 24 `SchemaVersion` rows, counts, exact current values, every targeted ID, all Associate foreign-key references, assignment collision absence, and the partial current-assignment uniqueness index were verified.
+- Source preflight: `integrity_check=ok`; zero foreign-key failures; Associate 20, CompanySalesAssignment 144 (maximum ID 145; ID 50 is the existing gap), Site 426, Activity 1,373. The schema can preserve assignment history because `CompanySalesAssignment` has `EffectiveFrom`/`EffectiveTo` and uniqueness applies only while `EffectiveTo IS NULL`.
+- One `BEGIN IMMEDIATE` transaction ran on the working copy with foreign keys enabled. Every statement required its exact expected row count. Precommit full-table comparison had to match the prepared manifest exactly before commit; any mismatch would have rolled back.
+- No records were deleted. Duplicate source identity rows were retained inactive for provenance after all listed relationships moved. No `UpdatedUtc`, Activity date, territory, or unrelated field was changed.
+
+### Exact correction manifest
+
+#### Associate — 9 changed/inserted records
+
+- Associate 4: `DisplayName Chelsie -> Chelsie Bonstein`; remains active; all 114 Activity relationships remain on ID 4.
+- Associate 7: `DisplayName Kala -> Kala Pendergrass`; remains active; Activities 39–40 remain on ID 7.
+- Associate 10: `DisplayName Rachelle -> Rachelle Pombo`; remains active; assignments 18, 33, 81, 103, 141 remain on ID 10.
+- Associate 19: `DisplayName AnaKaren Reyes -> Anakaren Reyes`; remains active; assignments 62, 76, 98, 105 resolve to ID 19 after consolidation.
+- Associate 13 `Jennifer`: `IsActive 1 -> 0` after assignments 22 and 74 moved to survivor Associate 8 `Jennifer Curkendall`.
+- Associate 16 `Robert/Chelsie`: `IsActive 1 -> 0` after Activities 120, 121, 262, 263 moved to survivor Associate 2 `Robert Nevins`. The inactive original row and exact manifest preserve provenance.
+- Associate 18 `Anakaren`: `IsActive 1 -> 0` after assignment 62 moved to Associate 19.
+- Associate 20 `Jeff Daveis`: `IsActive 1 -> 0` after assignment 121 moved to survivor Associate 5 `Jeff Davis`. The stored typo was `Daveis`, not `Davies`.
+- New Associate 21: `Dan Hurd`, active. Associate 1 `Jeff Cook` remains active and unchanged.
+- Associate 17 `Angelina` remains active and unchanged because this was an assignment change only, not an identity merge.
+
+#### Activity — 4 records
+
+- Activity 120: `AssociateId 16 -> 2`; `ActivityUtc=2026-07-17`; `CreatedUtc=2026-08-23T20:48:26.5698915+00:00` unchanged.
+- Activity 121: `AssociateId 16 -> 2`; `ActivityUtc=2025-09-25`; `CreatedUtc=2026-08-23T20:48:26.5700244+00:00` unchanged.
+- Activity 262: `AssociateId 16 -> 2`; `ActivityUtc=2026-04-22`; `CreatedUtc=2026-08-23T20:48:26.6953488+00:00` unchanged.
+- Activity 263: `AssociateId 16 -> 2`; `ActivityUtc=2025-06-20`; `CreatedUtc=2026-08-23T20:48:26.6954786+00:00` unchanged.
+- All other Activity columns and all other Activities compare exactly unchanged.
+
+#### CompanySalesAssignment — 43 records
+
+- Duplicate/assignment-owner changes: assignment 22 `13 -> 8`; 48 `17 -> 11`; 62 `18 -> 19`; 74 `13 -> 8`; 116 `17 -> 11`; 121 `20 -> 5`; 143 `17 -> 11`. Thus Angelina's assignments moved to Order Processing while Associate 17 remained intact.
+- Jeff history: assignment IDs 1, 12–14, 34, 67–68, 70, 80, 84, 91–92, 96, 107, 112, 123, 132, 136 changed only `EffectiveTo NULL -> 2026-09-18`. Existing `EffectiveFrom=NULL`, AssociateId 1, company, account, and territory values were preserved; no historical start date was invented.
+- Dan replacements use `AssociateId=21`, `EffectiveFrom=2026-09-18`, `EffectiveTo=NULL` and copy the exact company/account/territory from the paired Jeff record:
+  - New 146 <- Jeff 1: Company 1, account 1, territory 21.
+  - New 147 <- Jeff 12: Company 8, account 11, territory 14.
+  - New 148 <- Jeff 13: Company 9, account 12, territory 14.
+  - New 149 <- Jeff 14: Company 9, account 13, territory 14.
+  - New 150 <- Jeff 34: Company 29, account 32, territory 14.
+  - New 151 <- Jeff 67: Company 60, account 1, territory 21.
+  - New 152 <- Jeff 68: Company 61, account 61, territory 14.
+  - New 153 <- Jeff 70: Company 63, account 61, territory 14.
+  - New 154 <- Jeff 80: Company 73, account 71, territory 14.
+  - New 155 <- Jeff 84: Company 77, account 1, territory 21.
+  - New 156 <- Jeff 91: Company 84, account 78, territory 14.
+  - New 157 <- Jeff 92: Company 85, account 78, territory 14.
+  - New 158 <- Jeff 96: Company 89, account 1, territory 21.
+  - New 159 <- Jeff 107: Company 100, account 88, territory 14.
+  - New 160 <- Jeff 112: Company 105, account 61, territory 14.
+  - New 161 <- Jeff 123: Company 116, account 101, territory 14.
+  - New 162 <- Jeff 132: Company 124, account 109, territory 14.
+  - New 163 <- Jeff 136: Company 127, account 113, territory 21.
+- Post-result: 18 dated Jeff historical assignments and 18 exactly paired open Dan assignments; no duplicate current company/account assignment.
+
+#### Site — 160 records / 184 field changes
+
+- All 110 Jeff/`jeff` sites changed only `SalesPerson -> Dan Hurd`; every `TerritoryNumber` remained byte-for-byte unchanged. Exact Site IDs: 1, 24–30, 52–102, 104–123, 205–206, 209, 224, 256–257, 270–281, 285, 297–299, 311, 324–325, 339–341, 399–401. Sites 72 and 80 were the lowercase `jeff Cook` rows. Preexisting Dan Site 103 remained unchanged, producing 111 Dan sites after correction.
+- Other `SalesPerson` changes: Site 322 `Jeff Daveis -> Jeff Davis`; Sites 35, 51, 225, 292, 414 `Rachelle -> Rachelle Pombo`; Sites 39, 216 `Jennifer -> Jennifer Curkendall`; Site 200 `Anakaren -> Anakaren Reyes`; Site 218 `AnaKaren Reyes -> Anakaren Reyes`; Sites 179, 315, 416 `Angelina -> Order Processing`.
+- `DTAssociate Chelsie -> Chelsie Bonstein` on Site IDs 2–4, 6–14, 18, 22, 24–25, 33, 36, 38, 42, 47, 54, 59, 67, 71–72, 78, 85, 87, 89, 97, 100, 105, 122, 137, 160–162, 178, 194, 207, 209, 226, 233, 241, 265, 272, 275, 292–293, 299, 324, 349, 352, 361, 374, 401, 416, 421. Site 233 remains archived; its text correction was the only change.
+- Site 17: `DTAssociate Kala -> Kala Pendergrass`.
+- Site 63: `DTAssociate Robert/Chelsie -> Robert Nevins`.
+- There were zero current `DTAssociate=Robert` rows requiring correction.
+
+### Independent validation result
+
+- Exact precommit comparison: PASS. Exact postcommit immutable-reopen comparison: PASS. A separate validator independently derived the source-to-working logical diff and matched all 216 manifest records exactly.
+- Working database: `integrity_check=ok`; zero foreign-key failures; schema/user version 24; complete `sqlite_master` schema identical to source; no journal sidecar after close.
+- Counts: Associate `20 -> 21`; CompanySalesAssignment `144 -> 162`; Site remains 426; Activity remains 1,373. No deletes occurred.
+- Changed tables only: Activity 4 records, Associate 9, CompanySalesAssignment 43, Site 160. Thirty other user tables, including SchemaVersion, ImportRow, contacts, agreements, locations, profiles, accounts, monthly follow-ups, application/security tables and audit tables, compare exactly unchanged.
+- All 110 source Jeff Site IDs now contain `Dan Hurd`; no case-insensitive `Jeff Cook` Site value remains. The existing Site 103 plus 110 transfers produce 111 Dan sites. Every transferred territory matches the source exactly, including territories 14 and 21.
+- Jeff/Dan assignment pairing, September 18 effective/end dates, survivor assignment relationships, inactive duplicate provenance, Angelina identity preservation, and all four Robert/Chelsie Activity IDs and timestamps passed exact checks.
+- Final source and read-only backup hashes both remain `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`.
+
+### Application recurrence risks and recommendations — no code changes made
+
+- `Site.SalesPerson` and `Site.DTAssociate` are unconstrained text. Site save paths can reintroduce spelling/case variants. Later work should replace free text with canonical IDs or, at minimum, controlled role-filtered selectors and centralized alias normalization.
+- `Associate` still mixes internal DT associates, outside salespeople, and operational identities with no role discriminator. Add an explicit role model or separate identity/assignment concepts before enforcing “three DT associates.”
+- `RcLogImporter.GetOrCreateAssociate` creates both salespeople and activity associates from raw names. Future code should resolve approved aliases to canonical identities and reject or review unknown variants rather than insert them directly.
+- Qualifying Activity creation copies the generic Associate display name into `Site.DTAssociate`. Enforce a DT-associate role at that boundary. The isolated, unapproved authentication branch also links AppUser to the same unrestricted Associate table; if that work is ever reconsidered, require the same role constraint.
+- Current UI reads `Site.SalesPerson`, while normalized `CompanySalesAssignment` holds dated assignment history. Add one transactional handoff service that closes the old assignment, opens the replacement, and updates all in-scope Site rows together; prevent ordinary site edits from silently diverging from normalized current ownership.
+- Preserve inactive alias/source identities or a durable correction-audit record when consolidating future duplicates so historical attribution remains explainable without editing Activity dates or source import rows.
+
+**Stop condition:** The validated artifact is a disposable local working copy only. It was not promoted, copied over the source, or used by the application. Production correction, application-code remediation, schema changes, packaging, deployment and email remain unauthorized pending Rob's separate review and approval.
