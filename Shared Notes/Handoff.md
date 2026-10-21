@@ -1087,3 +1087,84 @@ The active assignment above remains the sole authority. Apply these refinements 
 - A sanitized local report is preserved beside the copy as `RECOVERY-VALIDATION.txt`, 5,035 bytes, SHA-256 `F91FF7335E16C5888CACFF59447451F8711FAFE21239A945E76F32E5BB8B464C`. The database and report remain local and are not tracked by Git.
 - Final filesystem-only lock/hash verification again matched all 12 original/evidence files; the harness's before/after comparison also verified hashes, lengths, timestamps, modes and attributes unchanged. No matching CRM process was present. Originals, evidence, the prior failed clone, application source, settings and production data were not modified.
 - **Production promotion remains NOT AUTHORIZED and NOT PERFORMED.** This PASS establishes a validated isolated candidate only. Before any promotion, Rob must provide separate explicit authorization and the then-current closed production baseline must be freshly rechecked for consistency/drift. Application acceptance and S-233 restore/re-delete behavior remain `NOT RUN` because they were outside this assignment; they are not needed for this database-level disposable-copy PASS but require separate authorization if desired.
+
+
+## CRM associate and salesperson integrity investigation — October 20, 2026
+
+**Status: read-only investigation complete; no corrections implemented.** This section covers all five correction groups in `Z:\Data for Priya.docx`. The October 20 investigation was the only active authority. No application code, database, schema, production data, workbook, branch, deployment, email, or repository file other than this shared handoff was changed.
+
+### Source identity and method
+
+- Attached request document: `Z:\Data for Priya.docx`, 25,504 bytes, modified `2026-10-20 16:52:03 -07:00`, SHA-256 `2AB0312C74A1D5EEBEDC4064B316FA94D370DD97ACFF9AFE6C84C1FD1A7BE4F0`. Complete OOXML text and its one embedded screenshot were inspected. The packaged DOCX renderer could not run because LibreOffice/`soffice.exe` was unavailable; therefore paginated visual rendering was not verified, but the full document XML, relationships, media, and absence of comments/tracked changes were checked.
+- Authoritative database supplied by Rob: `Z:\CRM.sqlite`, 2,195,456 bytes, created `2026-10-20 16:24:31 -07:00`, modified `2026-10-20 13:12:58 -07:00`, SHA-256 `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`. It had the SQLite 3 header and no adjacent `-wal` or `-shm`; Rob confirmed the CRM was closed when copied.
+- Analysis used only a byte-identical disposable copy at `C:\Users\Dev\AppData\Local\Temp\crm-priya-db-analysis-20261020\CRM.sqlite`, opened with SQLite URI `mode=ro&immutable=1` plus `PRAGMA query_only=ON`. Source and copy hashes matched. Final source re-hash was unchanged.
+- Database checks: `PRAGMA integrity_check=ok`; `PRAGMA foreign_key_check` returned zero rows; `user_version=24`; all 24 `SchemaVersion` rows present; 536 pages, 9 freelist pages. Relevant counts: Associate 20, CompanySalesAssignment 144, Site 426, Activity 1,373, Company 144, Contact 508, SiteContact 517.
+
+### Schema, migration, and application finding
+
+- The original normalized design combined two business roles in one `Associate` table. Import specification and `RcLogImporter` both resolve `Sales Person` and `Associate who made contact` through the same `GetOrCreateAssociate` routine. `Associate` has only `AssociateId`, case-insensitive unique `DisplayName`, and `IsActive`; it has no DT-associate/salesperson role discriminator.
+- `CompanySalesAssignment.AssociateId` and `Activity.AssociateId` both reference that mixed table. Other Associate foreign keys are `AppUser.AssociateId`, `AgreementItemRate.DeletedByAssociateId`, and `AgreementDocument.DeletedByAssociateId`.
+- Migration 7 added company salesperson/territory text. Migration 8 copied ownership to free-text `Site.SalesPerson`/`Site.TerritoryNumber`. Migration 18 added free-text `Site.DTAssociate` and backfilled it from the latest qualifying Activity's Associate. Migration 21 canonicalized Robert/Robet to Robert Nevins and linked AppUser to Associate. Migration 24 did not add role constraints.
+- Therefore internal DeltaTrak associates and external salespeople were combined during normalization by design, and later denormalized into two unconstrained Site text fields. The requested rule “DT Associates should only be Robert Nevins, [Chelsie/Chelsea] Bonstein, Kala Pendergrass” cannot safely be enforced by deleting every other Associate row; those other rows carry salesperson assignments.
+- Current site screens read/write free-text `Site.SalesPerson`; they do not use `CompanySalesAssignment` as their current-owner source. Site saves accept arbitrary salesperson spelling/case. Qualifying Activity insertions copy `Associate.DisplayName` into `Site.DTAssociate`. The current unapproved authentication branch also sets a site's DT associate from the signed-in AppUser Associate; because AppUser has no DT-role constraint, a future user linked to a salesperson row could recreate a mixed-role value. The legacy RC Log importer also accepts raw names and can recreate spelling variants if reused. These are recurrence risks, not authorization to change code.
+
+### Group 1 — the three DT-associate identities
+
+- Associate 2 `Robert Nevins`: already canonical. Related: 718 Activities, AppUser 1, one AgreementDocument deletion reference; no sales assignments.
+- Associate 4 `Chelsie`: intended full name is the same person referred to by the request as Chelsea/Chelsea Bonstein, but the attachment explicitly spells the target `Chelsie Bonstein`. Related: 114 Activities; no sales assignments. Canonical spelling requires confirmation before any write.
+- Associate 7 `Kala`: intended `Kala Pendergrass`. Related Activities 39 and 40, both at Site 17; no sales assignments.
+- The other 17 Associate rows are not evidence of 17 additional DT associates. They include salespeople and operational identities and must not be blanket-deleted.
+
+### Group 2 — requested Associate/Salesperson corrections
+
+- Simple same-identity expansions, retaining the existing AssociateId and all foreign keys:
+  - Associate 10 `Rachelle` -> `Rachelle Pombo`; CompanySalesAssignment IDs 18, 33, 81, 103, 141; corresponding Site IDs 35, 51, 225, 292, 414.
+  - Associate 4 `Chelsie` -> confirmed full spelling; 114 Activities. This is also part of groups 1 and 4.
+  - Associate 7 `Kala` -> `Kala Pendergrass`; Activities 39–40. This is also part of groups 1 and 4.
+- Duplicate consolidation, preserving the established survivor ID and repointing the listed related rows before retiring the duplicate:
+  - Associate 20 `Jeff Daveis` -> survivor Associate 5 `Jeff Davis`; assignment 121 and Site 322. The database/document contain `Daveis`, not the request's `Davies`; no exact `Jeff Davies` targeted record exists. Survivor 5 already owns assignments 3, 40, 51, 87, 99, 101, 120, 131.
+  - Associate 13 `Jennifer` -> survivor Associate 8 `Jennifer Curkendall`; assignments 22 and 74; Sites 39 and 216. Survivor 8 already owns assignments 11, 21, 35, 38, 42, 45, 55, 61, 65, 79, 88, 93, 104, 127.
+  - Associate 18 `Anakaren` -> survivor Associate 19 `AnaKaren Reyes`, with confirmed canonical display spelling `Anakaren Reyes`; assignment 62 and Site 200 move to the survivor. Survivor 19 owns assignments 76, 98, 105; Site 218 has `AnaKaren Reyes`; Sites 287 and 295 already have `Anakaren Reyes`.
+  - Associate 16 `Robert/Chelsie` -> survivor Associate 2 `Robert Nevins`, as explicitly requested. Affected Activities: 120 (FollowUp, Site 63), 121 (BoxOrder, Site 63), 262 (FollowUp, Site 161), 263 (BoxOrder, Site 161). Site 63 currently has DTAssociate `Robert/Chelsie`; Site 161 currently has `Chelsie`. Repointing those four Activities changes their displayed historical attribution, so the original values must be captured in the correction manifest/audit evidence.
+- Operational reassignment, not a spelling fix or proof of duplicate identity:
+  - Associate 17 `Angelina` -> Associate 11 `Order Processing` for assignments 48, 116, 143 and Sites 179, 315, 416. Associate 11 already owns assignments 19, 49, 56, 63, 69, 102, 106, 111, 117, 128. This is a semantic owner change; do not describe Angelina and Order Processing as the same person.
+- No current CompanySalesAssignment uniqueness collisions exist for any proposed survivor mapping above.
+
+### Group 3 — lowercase Jeff Cook Site.SalesPerson values
+
+- Exact affected records are active Site 72 and Site 80, both Company 29, territory 14, current value `jeff Cook`.
+- A casing-only correction would be `Jeff Cook`, but it may be superseded by the separate Dan Hurd current-assignment decision in group 5. Do not perform an intermediate casing write if those sites are confirmed to transfer directly to Dan.
+
+### Group 4 — Site.DTAssociate corrections
+
+- `Robert` -> `Robert Nevins`: zero current `Robert` rows; 269 sites already contain `Robert Nevins`.
+- `Chelsie` -> confirmed full spelling: 59 sites, IDs 2–4, 6–14, 18, 22, 24–25, 33, 36, 38, 42, 47, 54, 59, 67, 71–72, 78, 85, 87, 89, 97, 100, 105, 122, 137, 160–162, 178, 194, 207, 209, 226, 233, 241, 265, 272, 275, 292–293, 299, 324, 349, 352, 361, 374, 401, 416, 421. Site 233 is archived; the other 58 are active. No `Chelsea`, `Chelsie Bonstein`, or `Chelsea Bonstein` rows exist.
+- `Kala` -> `Kala Pendergrass`: Site 17, active.
+- `Robert/Chelsie` -> `Robert Nevins`: Site 63, active; this follows the attachment's Associate correction and should be explicit in the future allowlist.
+
+### Group 5 — Jeff Cook history and Dan Hurd current ownership
+
+- Associate 1 `Jeff Cook` must remain. It has no Activities and 18 CompanySalesAssignment rows: IDs 1, 12–14, 34, 67–68, 70, 80, 84, 91–92, 96, 107, 112, 123, 132, 136. All have `EffectiveFrom=NULL` and `EffectiveTo=NULL`, so they currently appear open-ended rather than historical.
+- Territory 14 has 100 active Sites spelled `Jeff Cook` plus lowercase Sites 72 and 80. Exact 102 Jeff-held Site IDs: 24–30, 52–102, 104–123, 206, 209, 224, 270–281, 297–299, 311, 324–325, 339–341. There are 13 open Jeff assignment rows for territory 14 (IDs 12–14, 34, 68, 70, 80, 91–92, 107, 112, 123, 132) across 12 companies.
+- Dan Hurd is present only as free text on active Site 103, Company 29, territory 14. No `Associate` row and no `CompanySalesAssignment` row exists for Dan Hurd.
+- Jeff also has eight active territory-21 Sites (1, 205, 256–257, 285, 399–401) and five open normalized territory-21 assignments (1, 67, 84, 96, 136). The evidence supports a territory-14 handoff but does not authorize assuming the territory-21 records transfer.
+- The shared territory number 14 is intentional and must not be changed. What remains missing is the effective handoff date and Rob's confirmation that all 102 territory-14 Jeff/jeff Sites—not only a subset—are Dan's current customers. Without those facts, changing normalized assignment history would be guesswork.
+
+### Simplest reliable correction plan for later approval
+
+1. Resolve two preconditions: canonical `Chelsie Bonstein` versus `Chelsea Bonstein`, and exact Jeff-to-Dan scope/effective date (including explicit exclusion or inclusion of territory 21).
+2. With the CRM closed, identify and hash the then-current source; preserve a verified full closed-file backup and make a separate staging copy. Never edit the October 20 Z-drive original.
+3. Build an exact precondition/diff manifest from the IDs above. Apply one `BEGIN IMMEDIATE` transaction with foreign keys enabled. Abort and roll back if any expected current value, schema version, record count, or relationship differs.
+4. Rename same-identity rows in place; repoint listed foreign keys for true duplicates before retiring duplicate rows; treat Angelina -> Order Processing as an operational reassignment; preserve evidence of the four `Robert/Chelsie` Activity attributions.
+5. Normalize the listed Site text rows. Handle Dan as a separate dated handoff: preserve Associate 1 and Jeff's historical rows, update only the confirmed current Site scope, and—only if normalized history is required—create/confirm Dan's Associate identity, close Jeff's affected territory-14 assignments with the approved effective date, then insert Dan's replacement assignments. Do not overwrite Jeff's historical identity or territory number.
+6. Before commit and after a clean read-only reopen, require `integrity_check=ok`, zero foreign-key failures, expected row counts, case-insensitive Associate uniqueness, no duplicate current company/account assignments, exact primary-key-aware allowlisted diffs, zero remaining targeted variants, and unchanged unrelated rows. Retain the pre-change backup for rollback; do not promote until Rob separately approves the reviewed manifest and staging results.
+
+### Focused regression tests proposed, not run
+
+- Verify the UI separates/validates the three allowed DT-associate identities from salespeople and that site saves, qualifying Activities, Monthly Draft follow-ups, and authenticated-user attribution cannot reintroduce mixed-role or abbreviated DT values.
+- Verify corrected salesperson names survive site load/save/restart, history display, export/order generation, and case-insensitive lookup.
+- Verify each survivor retains all intended relationships, the four Robert/Chelsie Activities remain traceable to their original imported attribution, and no unrelated Activity history changes.
+- Verify Jeff's historical identity and dated normalized assignments remain queryable while only approved current territory-14 Sites display Dan; verify territory 21 remains unchanged unless separately approved.
+- Verify legacy imports map known aliases to canonical identities instead of inserting new variants, and that current assignment uniqueness and rollback behave correctly.
+
+**Stop condition:** findings and a proposed plan only. No implementation is authorized until Rob explicitly approves a subsequent step.
