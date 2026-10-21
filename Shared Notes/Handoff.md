@@ -1546,3 +1546,8 @@ Produce a concise, actionable plan that:
 5. State an explicit GO/NO-GO recommendation for preparation only, and list every permission or unresolved fact required before proceeding. This task does not authorize preparation or launch.
 
 Append findings to this handoff without replacing prior history, commit and push, verify the remote update, and stop for Rob's separate approval.
+
+
+### Clarification — evidence and acceptance criteria (October 20, 2026)
+
+For this pending read-only task, distinguish each **source-proven behavior**, **configuration-dependent behavior**, and **runtime-unverified assumption**; do not label a path or isolation control verified without corresponding evidence. The future test database must be a hash-verified copy derived from the preserved **corrected** database with its 216-change manifest, not an empty SQLite file, packaged default, legacy database, or seed. Describe validation without performing it. Trace the exact settings keys and resolution logic for agreement-document storage/migration and weekly backups, including behavior when settings are missing, malformed, or defaulted; identify any startup side effects outside the selected database. Explicitly state whether a no-code configuration can keep all potentially written paths away from Z: and preserved files, and mark NO-GO if this cannot be established. These clarifications do not expand permission beyond documentation; no files, configuration, databases, or runtime state may be changed, and no CRM launch is permitted.
