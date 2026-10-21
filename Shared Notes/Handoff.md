@@ -1742,7 +1742,7 @@ Use a reviewed SQLite runner that supports URI `mode=ro&immutable=1`; its execut
 PRAGMA integrity_check;
 PRAGMA foreign_key_check;
 PRAGMA user_version;
-SELECT MAX(Version) FROM SchemaVersion;
+SELECT MAX(VersionNumber) FROM SchemaVersion;
 ```
 
 Require `integrity_check = ok`, zero rows from `foreign_key_check`, and both version checks equal to `24`. The files must begin with the standalone SQLite header `SQLite format 3`; no local WAL/SHM/journal sidecar may exist before validation. Do not use the CRM readiness/migration path for validation.
@@ -1919,3 +1919,34 @@ For the authorized continuation, Codex may **author and run a temporary, standal
 ### Rob authorization — October 20, 2026: schema-query correction and preparation continuation
 
 Rob explicitly authorized Codex to inspect the **local disposable/reference** SQLite `SchemaVersion` table structure read-only, identify the actual schema-version field or supported equivalent, correct **only the temporary standalone verification script and associated preparation documentation**, and rerun the outstanding verification. Use SQLite immutable read-only connections and `PRAGMA table_info(SchemaVersion)` / `sqlite_schema` inspection as appropriate; do not guess a column name or weaken the requirement that both schema indicators demonstrate version 24. Preserve the failed script and result as evidence, and record the revised script hash, exact query, reason, and new results. If checks pass, resume only the remaining previously authorized disposable preparation from the retained partial root, without repeating successful staging. On another failure or unperformable check, STOP and report. **No CRM launch, application-source edits, database/schema/manifest changes, preserved Z: writes, independent-backup access, VM/network/permission changes, production cutover, merge or deployment.** Append findings and status to this handoff, commit/push, verify the remote update, then STOP pending separate launch authorization.
+
+
+## CRM disposable preparation completed — October 20, 2026
+
+**Outcome:** The authorized schema-query correction, outstanding immutable database/manifest validation, settings/fail-safe staging, static path/environment checks, and final preserved-file verification all passed. The disposable root is prepared for a separately authorized launch review. CRM was not launched, and launch remains unauthorized.
+
+### Schema inspection and verifier correction
+
+- Before changing the verifier, the failed script and result were preserved byte-for-byte as `evidence\verify_manifest_parity.failed-v1.py` (SHA-256 `1676525C352B380A225D6D820599A99C62F501B984C24F70286DA7B80FF83D5B`) and `evidence\manifest-parity-result.failed-v1.json` (SHA-256 `EE974328C5B70940BEABD441815D9D5381B98EDDABB40E2B0449B6E3598DC9BD`).
+- Immutable read-only `PRAGMA table_info(SchemaVersion)` showed `VersionNumber INTEGER PRIMARY KEY`, `AppliedUtc TEXT NOT NULL`, and `Description TEXT NOT NULL`. `sqlite_schema` confirmed that exact table definition, and read-only row inspection showed versions 1 through 24. The supported second schema indicator is therefore `SELECT MAX(VersionNumber) FROM SchemaVersion`; the earlier `MAX(Version)` text was a documentation/tooling error.
+- Only that query line changed in the active temporary verifier. AST review passed and comparison to the preserved failed script showed exactly one replaced line. Revised `evidence\verify_manifest_parity.py` is 25,493 bytes, SHA-256 `A3FF4AF631F466F737FA153C9C9440D2212BC6444158AB23BB323615C485EA68`.
+
+### Database, manifest, and focused verification
+
+- The corrected verifier completed with `PASS`; `evidence\manifest-parity-result.json` has SHA-256 `9034F06C5A28B905DEA10069ABFBE9B644F5A9D2F6389851A5BFD6B3C07059E2`. Original reference, corrected reference, and working copy each returned `integrity_check=ok`, zero foreign-key failures, `PRAGMA user_version=24`, and `MAX(VersionNumber)=24` through immutable read-only/query-only connections.
+- Pre/post hashes were unchanged: original `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`; corrected reference and working `B4B5D575FA9E494605F3BEBEBA9D9B5F85B82867453ED5D6816B03148BCE5B13`; manifest `8AA91C24DD1F70CF6DC737A94508BB811DDECDFAC8B2EEA942B9BFB6D3992E24`. No local sidecar existed before or after validation.
+- All 216 manifest records passed: 197 updates and 19 inserts. The defined field projection reproduced exactly 221 update-field assertions plus 129 inserted-field assertions = 350. All 35 user tables and schema objects were compared; the complete observed change universe was exactly the 216 manifest identities/actions, with 31 wholly unchanged tables and no unmanifested insert, update, delete, or schema change.
+- Focused checks passed for canonical Associates 4 `Chelsie Bonstein`, 7 `Kala Pendergrass`, 10 `Rachelle Pombo`, 5 `Jeff Davis`, 8 `Jennifer Curkendall`, 19 `Anakaren Reyes`, and 2 `Robert Nevins`; Activities 120/121/262/263 point to Robert Nevins and every other historical field is unchanged; inactive aliases 13/16/18/20 have zero remaining Associate foreign-key relationships; Angelina assignments 48/116/143 and Sites 179/315/416 point/display Order Processing with territories preserved; the exact 110 Jeff-to-Dan Site IDs match; and 18 closed Jeff assignments pair exactly with inserted Dan assignments 146–163 by company, account, territory, and September 18, 2026 dates.
+
+### Remaining disposable staging and static validation
+
+- The extracted packaged default DB was hash-checked, moved without overwrite to read-only `evidence\CRM.packaged-default.sqlite`, and retained SHA-256 `2CE8E999344A56949C5D6F7CD82133B0877CCC97BB3DC9E3C6A2D79A8654C6E6`. Its former `app\Data\CRM.sqlite` path now contains only the deliberate non-SQLite fail-closed sentinel, SHA-256 `2A0A12891DBCD9BF16F46A6DAB02B00C98B4107455B89D94684FED979D91F274`.
+- Complete JSON was created at `config\settings.json` and byte-identically at `app\settings.json`; both hash to `968E396439AB2701138EF49D9559517B7BAF14E9CB8B3BEB702A278FEAFDFA71`. All 14 required keys and exact casing parsed; template/output/agreement paths are explicit absolute paths under the disposable root; `BackupFolder`, both export paths, and both email settings are blank; and the four carrier URLs are absolute HTTPS values.
+- Static path validation passed: C: is fixed-local drive type 3; no selected path or existing ancestor is a reparse point, UNC, Z:, mapped/removable/network location, or Dev-profile path; template and working DB exist; source guard and all checked `WeeklyLogger.sqlite` fallbacks are absent; and logs, outputs, agreements, and guard directories are empty. Evidence is `evidence\settings-path-validation.json`, SHA-256 `E619B311B4C41A8A1426E84B80D9B08F59CA2B5368D23C36467C1E84D5BBF828`.
+- All eight current/legacy DB, source, settings, and log variables were set to the documented matching absolute values and verified within one non-CRM PowerShell process. They expired with that process; no user/machine environment was changed. A future separately authorized launch must set and revalidate them in its own parent process. Static checks do not prove child-process inheritance or effective runtime selection.
+
+### Final gate and stopping point
+
+- Final read-only Z: verification passed at `2026-10-21T04:49:51.6922126Z`: original, corrected DB, and manifest retained their recorded sizes/hashes and original timestamps; no Z: or local SQLite sidecar was present. The approved ZIP, all local DB/manifest copies, both settings files, packaged-default evidence, sentinel, verifier, and evidence results were rehashed successfully. No CRM process was running; independent backups were not accessed.
+- Consolidated evidence is `C:\CRM-Display-Test\run-001\evidence\final-preparation-verification.json`, SHA-256 `BCB132896AD6FF27FD74F2FBD78E5BD7CC30941FB373D730AFAEA89C02BC1BF2`.
+- **Preparation gate: PASS / GO for separate launch review. Launch gate: CLOSED.** The existing VM still has Rob-accepted residual access to Z:, network, and the Dev profile; path routing is not access denial. Effective settings selection, environment inheritance, WAL/SHM runtime behavior, agreement migration effects, settings rewrites, VB profile metadata, and display behavior remain runtime-unverified. Do not launch CRM, alter the prepared root, clean up, or proceed to testing without Rob's separate explicit authorization.
