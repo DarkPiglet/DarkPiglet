@@ -1,5 +1,31 @@
 # Project Handoff
 
+## October 21, 2026 — Five-test automation completed; STOP for Rob review
+
+**Outcome:** The authorized test-only work is complete on isolated branch `codex/crm-test22-five-coverage-tests-20261021`. It starts at verified package-source commit `52d7f153d3a1b654dd858eec75ab5e8d392dd5f8` and is committed/pushed as `89c70f57eca668f4e4459ddb6c6d080f8cb9498b`; local and remote branch hashes match. The seven approved Test 22 features and both integrated contact-save corrections were confirmed present before edits. Test 22 commit `d4093c2` and contact-save commits `060320b`/`dd4a06c` are ancestors; unauthorized authentication commit `86a1dff` is not. Changes are limited to three CRM UI test files plus the project handoff. No production source, schema/migration, settings, database/reference file, package/ZIP, Graph/mail implementation, merge, deployment, or production data changed.
+
+### Five gap results
+
+1. **CS-M1 — automated PASS for the synthetic fixture.** New `ContactSaveRegressionTests.SyntheticFixtureSecondaryMethodsSixSevenAndEightBecomePrimaryInPlace` uses the real `Form1` save/reopen path on a fresh disposable database built from `tools/Test22SyntheticData.sql`. IDs 6/7/8 become the sole active primaries by type in place; IDs 1/2/5 stay active nonprimary; total and per-type counts do not change; active normalized values remain unique; a synthetic archived row stays inactive; persistence, `PRAGMA integrity_check=ok`, and zero foreign-key violations pass. This adds the exact fixture assertions missing from the existing generic promotion/archived-row test. Rob's earlier manual CS-M1 observation remains PARTIAL human evidence; real-profile validation remains deferred.
+2. **T22-M2 — automated startup/file preservation PASS; Agreement Documents UI action NOT VERIFIED.** New `Test22CoverageRegressionTests.GuardedStartupAndCleanShutdownDoNotMigrateAgreementDocumentTree` validates the isolation guard, launches and cleanly closes the actual built CRM, and proves the full configured fictional document tree is unchanged by relative path, count, byte length, and SHA-256. No duplicate appears elsewhere in the disposable root and the designated alternate folder remains empty. Reliable automation of opening the Agreement Documents view was not added, so the UI-inclusive case is not called a full PASS. Rob's prior manual observation remains separate.
+3. **T22-M4 — simulated retry PASS; live delivery deferred.** New `ConfirmedRetryReusesExactMessageWithoutDatabaseOrWorkbookRegeneration` proves a confirmed-failure retry reuses the exact kind, To/CC recipients, subject, body, and attachment path. Exactly one synthetic `BoxOrder` remains; the full logical database snapshot, workbook paths/sizes/hashes/timestamps, and output-workbook count remain unchanged. No Graph/SMTP/live email or Excel account interaction occurred.
+4. **CS-M3 — strict timestamp automation PASS.** Existing `IntentionalCompanySiteAddressAndPrimaryContactMethodChangesPersist` now seeds a deterministic old `SiteLocation.UpdatedUtc`, parses both timestamps, and requires `after > before`. Existing assertions continue to prove line 1 changed, line 2 remains exactly `Suite 210`, fingerprint becomes NULL, reopen persistence works, integrity is `ok`, and foreign-key violations are zero. Rob's earlier manual M3 result remains separate evidence.
+5. **T22-M5 — guarded UI/logical nonmutation PASS.** New `GuardedEmailHealthUiOpenAndRefreshPreserveEveryLogicalUserTableRow` opens the actual guarded Maintenance UI, confirms the fictional shared-email row retains both company/site/contact contexts, clicks the real refresh button, and compares canonical snapshots of every logical user table. Logical rows are identical. The focused run separately recorded a physical SQLite hash change from `35244B7F6878BB5C98CEEC096FC942ACB7E0458333AB90D166303E5E8CA56E30` to `C6B25C0ED715A8A58234EEB2A2928FC31B4DA05B4E71D94E5BEB54D166C8AFEA`, attributable to physical SQLite bookkeeping rather than a logical-row change. Rob's prior visual M5 PASS is preserved separately.
+
+Existing tests already covered generic in-place primary promotion/archived-row protection, retry message reuse, known-document nonmigration, repository-level mismatch detection, and intentional address persistence. New assertions bind those behaviors to exact Test 22 fixture IDs/content, guarded actual startup/shutdown, complete document/workbook/logical-table snapshots, real Maintenance UI refresh, and parsed strict timestamp order.
+
+### Executed verification and remaining human-only items
+
+- Focused five tests: **5 passed, 0 failed, 0 skipped** after test-harness refinement.
+- Complete CRM UI suite: **104 passed, 0 failed, 0 skipped** (`2m50s`).
+- Complete CRM Data suite: **62 passed, 0 failed, 0 skipped** (`31s`).
+- Complete GoGreenMonthlyDrafts suite: **156 passed, 0 failed, 0 skipped** (`12s`).
+- `dotnet build CRM.sln -c Release --no-restore --nologo`: **PASS**, 0 warnings, 0 errors. `git diff --check`: **PASS**.
+- Platform: Windows VM, .NET SDK `10.0.401`, .NET test runtime `10.0.12`. All database tests used fresh disposable fictional copies. A failed first harness attempt was corrected only in test code: clean shutdown now uses the existing FlaUI window mechanism; physical file hash is reported separately from canonical logical equality.
+- Remaining human-only review is limited to the visible Agreement Documents UI action/readability if Rob wants that evidence. T22-M1 real Windows-profile upgrade and T22-M4 live delivery remain deferred. No rerun of already accepted T22-M3/M5 visual checks is recommended by this automation task.
+
+**Stopping point:** Review commit `89c70f57eca668f4e4459ddb6c6d080f8cb9498b`. Do not merge, package, deploy, send email, run production data, or change the October 21 ZIP without separate authorization.
+
 ## October 21, 2026 — Clarifications to approved five-test automation task (Rob authorized)
 
 This amendment narrows and clarifies the immediately following approved task; it does not expand authorization.
