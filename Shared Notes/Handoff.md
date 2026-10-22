@@ -1,5 +1,12 @@
 # Project Handoff
 
+## October 22, 2026 — Test20 Z-drive backup hash recheck: PASS—Z BACKUP MATCHES RECORDED BASELINE; STOP
+
+- Verified only the authorized file `Z:\CRM Backup 20\CRM-v10-test.20-october14-win-x64\Data\CRM.sqlite` using filesystem metadata and reads. It remained an ordinary non-reparse file through an ordinary non-reparse path, 2,195,456 bytes, created `2026-10-22T09:35:28Z`, modified `2026-10-20T20:12:58Z`, with SHA-256 `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`. Two hashes under a read-only handle that denied write sharing and a final independent filesystem hash all matched the recorded baseline; length, modified time, and attributes were stable.
+- No matching CRM, Monthly Drafts, SQLite, DB Browser, or SQLiteStudio process was found before or after inspection. `CRM.sqlite-wal`, `CRM.sqlite-shm`, and `CRM.sqlite-journal` were absent before and after. No SQLite connection, database copy, checkpoint, transaction, repair, settings access, application launch, or source write occurred.
+- Result: **PASS—Z BACKUP MATCHES RECORDED BASELINE. USB CURRENTNESS NOT VERIFIED.** This proves only that the observed Z-drive backup still matches its October 22 recorded hash; the Windows VM has no direct USB access, so it does not prove a current USB match, business correctness, database selection, or Test22 release readiness.
+- `Site 246` address change, `RecycleProgramProfile 274` Notes removal, and `ContactMethod 759` `IsPrimary` change remain **PENDING ROB CONFIRMATION**. No sensitive values were displayed and no change was inferred to be intentional. No CRM launch, email/Graph action, merge, packaging, deployment, promotion, or cutover occurred. Stop for Rob review.
+
 ## October 22, 2026 — NEXT TASK: Test20 Z-drive backup hash recheck (instructions only; NOT RUN)
 
 **Scope/authority.** Rob requested a complete self-contained instruction for Codex's NEXT narrow verification, not execution during this handoff edit. This supersedes earlier dictated USB-access instructions for this task only. Prior "NEXT/ACTIVE" entries are historical, not additional authorization. Read the complete latest shared `DarkPiglet/DarkPiglet` `main` `Shared Notes/Handoff.md` (folder contains a space), CRM branch `codex/t22-m1-semantic-verification-fix-20261022` root `HANDOFF.md`, and `AGENTS.md`, through EOF. Confirm clean expected worktree and current commits; STOP on conflict, truncation or missing files.
