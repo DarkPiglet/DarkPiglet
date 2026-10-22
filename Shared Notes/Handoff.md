@@ -1,5 +1,13 @@
 # Project Handoff
 
+## October 21, 2026 — Next CRM Test 22 session handoff; DOCUMENTATION ONLY
+
+**Controlling status for the next session:** Rob reports **T22-M2 PASS**; **T22-M4 remains OUTSTANDING**; and **T22-M1 is PAUSED** immediately before backing up the Windows `%LOCALAPPDATA%\DeltaTrak` folder. T22-M2 PASS supersedes earlier pending/partial status wording for current session tracking; preserve the detailed historical evidence below.
+
+**T22-M1 preparation state:** The operator copied the CRM Test 20 installation containing real data from the thumb drive into `Z:\CRM-T22-M1-Test` and made a second copy there. `CRM.sqlite` was confirmed as the active database, and `settings.json` was found. These are user-supplied facts recorded without inspecting or changing those files during this documentation-only task. The thumb-drive installation must remain untouched. Treat both Z-drive copies as protected real-data copies. No upgrade has started, and the Local AppData `DeltaTrak` backup has not started.
+
+**Authorization boundary:** Documentation changes only are authorized. Do not launch either copy, begin or resume an upgrade, create the Local AppData backup, modify/copy/delete any database, settings, thumb-drive, or Z-drive file, resume T22-M1 or T22-M4, run tests, change code/fixtures/packages, merge, deploy, access Graph/email, or alter production data without new explicit authorization. The project handoff-only commit is `8970720c17942afa240816c5f78574d6cd8e2c9a` on `codex/t22-m2-agreement-doc-correction-20261021`; it is pushed and its local/remote hashes match. Update this shared handoff, push/verify it, then stop.
+
 ## October 21, 2026 — T22-M2 documentation closure approved and completed; STOP
 
 Rob approved documentation-only closure of the completed T22-M2 fixture-normalization amendment. The project closure changes only `HANDOFF.md` on `codex/t22-m2-agreement-doc-correction-20261021`; project commit `edbc5870faee4b7813c8bd20dea4b09d384c47c4` is pushed and its local/remote branch hashes match. The guarded automated scope remains passed and closed with implementation commit `6ecec45eebea8d9c15a24d133eee27691d508ee3` and the exact technical evidence already recorded below. No tests were rerun for this documentation-only closure.
