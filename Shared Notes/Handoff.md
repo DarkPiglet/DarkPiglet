@@ -1,5 +1,22 @@
 # Project Handoff
 
+## October 22, 2026 — APPROVED next Codex task: T22-M1 settings-upgrade verification automation; NOT STARTED
+
+**User decision:** Rob agreed to replace repetitive manual M1 backup/comparison work with narrow Codex automation, reusing **already-passed** Test 22 synthetic persistence and isolation coverage rather than repeating it. The detailed user-facing task was prepared as the conversation artifact `CRM_T22_M1_Codex_Task.md`; **it has not been sent to or executed by Codex, committed as executable code, or run on real files**. This handoff documents the scoped instructions and stopping point for the next Codex session; do not infer a completed implementation.
+
+**Approved source and delivery:** CRM repository `DarkPiglet/Weekly-Logger-Search-Application`; check the current isolated development branch `codex/t22-m2-agreement-doc-correction-20261021` against its documented pre-task head `8970720c17942afa240816c5f78574d6cd8e2c9a` and today's **documentation-only** project handoff commit `138d39dc070cf716b32ec541ea4665d8724ebf44`. Reconcile any intervening changes before acting. Create new branch `codex/t22-m1-upgrade-audit`; no changes to `master`, existing Test 22 ZIPs, or existing protected files. Read the **entire** current shared/project handoffs and `AGENTS.md` before any implementation. The quarantined authentication branch remains excluded.
+
+**Implementation scope:** Small PowerShell 7-compatible, operator-invoked helper under `tools/`, plus focused synthetic self-test and concise operator guide:
+1. **Prepare (read/copy only):** Explicit source and independent, unique backup destination; audit legacy `<CRM app>\settings.json` and stable `%LOCALAPPDATA%\DeltaTrak\CRM\settings.json`; detect stable-file precedence and conflicting data; record only file existence, paths, sizes, SHA-256 (never full config/Graph secrets); create verified nonoverwriting settings-only backup. Do not read/copy `CRM.sqlite` or sidecars.
+2. **Verify (read-only):** Compare protected originals and before/after settings after an **independently authorized user-run** application start/restart; report clear `PASS`, `FAIL`, `NEEDS HUMAN CHECK`, or `NOT RUN` as text/JSON. Never mislabel an already-existing stable file as proof of legacy import. Do not claim an unperformed restart or human review passed.
+3. **Focused synthetic self-tests:** Fresh settings backup/hashes, stable/legacy precedence, missing/conflicting files, and changed-file detection. Reuse (do not rebuild or broadly rerun) proven isolation/synthetic acceptance tests unless a material edit necessitates them.
+
+**Critical behavior:** `OrderFormSettings.vb` uses stable LocalAppData settings by default and imports the legacy application-folder file only when the stable file is missing. `CRM_SETTINGS_PATH` is a test override that **bypasses** legacy import; testing with this override does not prove the real-profile migration.
+
+**Hard safety boundary:** No Codex-run real-profile backup/upgrade, no autonomous CRM launch, no edits or tests against either real-data copy under `Z:\CRM-T22-M1-Test`, USB installation, `Z:\CRM.sqlite`, other actual SQLite data, live LocalAppData, Graph/mail, documents, product/schema/migrations, release build/package, merge or deployment. Stop if isolation, source provenance, or nonmutation cannot be established. The user's separate decision to execute Prepare and a controlled upgrade remains necessary.
+
+**Task finish / acceptance:** Codex may write/test only isolated tooling with fictional configurations; report exact tests and limitations, update both handoffs, commit/push/verify new development branch, **STOP** for Rob's review. The human-controlled M1 backup, actual application-folder upgrade, post-restart comparison, and brief Settings visual check remain **NOT RUN**. Current status: **T22-M2 PASS; T22-M1 PAUSED before LocalAppData backup; T22-M4 OUTSTANDING**. This handoff entry itself is documentation only and is not a release or execution claim.
+
 ## October 21, 2026 — Next CRM Test 22 session handoff; DOCUMENTATION ONLY
 
 **Controlling status for the next session:** Rob reports **T22-M2 PASS**; **T22-M4 remains OUTSTANDING**; and **T22-M1 is PAUSED** immediately before backing up the Windows `%LOCALAPPDATA%\DeltaTrak` folder. T22-M2 PASS supersedes earlier pending/partial status wording for current session tracking; preserve the detailed historical evidence below.
