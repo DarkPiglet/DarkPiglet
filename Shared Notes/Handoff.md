@@ -1,5 +1,11 @@
 # Project Handoff
 
+## October 21, 2026 — T22-M2 documentation closure approved and completed; STOP
+
+Rob approved documentation-only closure of the completed T22-M2 fixture-normalization amendment. The project closure changes only `HANDOFF.md` on `codex/t22-m2-agreement-doc-correction-20261021`; project commit `edbc5870faee4b7813c8bd20dea4b09d384c47c4` is pushed and its local/remote branch hashes match. The guarded automated scope remains passed and closed with implementation commit `6ecec45eebea8d9c15a24d133eee27691d508ee3` and the exact technical evidence already recorded below. No tests were rerun for this documentation-only closure.
+
+Evidence boundaries remain unchanged: the human visual/readability procedure is **NOT RUN / pending**, and the existing October 21 ZIP remains immutable and not newly verified. No source, test, fixture, manual-plan status, package, database, schema, migration, Graph/email path, merge, deployment, cutover, or production data changed. This shared-handoff entry completes the authorized closure; stop and await further explicit authorization.
+
 ## October 21, 2026 — T22-M2 fixture normalization amendment completed; STOP for Rob review
 
 **Outcome and provenance:** The narrowly authorized amendment is complete on new isolated branch `codex/t22-m2-agreement-doc-correction-20261021`, created from exact approved commit `89c70f57eca668f4e4459ddb6c6d080f8cb9498b`. Quarantined authentication commit `86a1dff` is absent. Implementation commit `6ecec45eebea8d9c15a24d133eee27691d508ee3` and project-handoff commit `35a0d4e76ff73e5255a2cc0cdcc968dbc83801aa` are pushed; local and remote project branch hashes match at `35a0d4e`. Changes are limited to `.gitattributes`, the Test 22 manual procedure, synthetic fixture/database metadata, one guarded UI regression, and handoffs. No production source, schema, migration, database, package/ZIP, Graph/mail path, merge, deployment, or cutover changed.
