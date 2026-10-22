@@ -1,5 +1,14 @@
 # Project Handoff
 
+## October 21, 2026 — T22-M2 correction task clarification (Rob approved)
+
+This is a narrow clarification of the immediately following authorized task, not permission for broader changes.
+
+- **Preserve all five earlier improvements:** Verify the new branch is created from exact test-only commit `89c70f57eca668f4e4459ddb6c6d080f8cb9498b` on `codex/crm-test22-five-coverage-tests-20261021` and retains all five focused automated improvements and the seven Test 22 features/two contact-save corrections. Check ancestry, test source and clean worktree before editing; stop on mismatch.
+- **UI regression acceptance is explicit:** Through the guarded synthetic UI, Northstar Test Logistics / Redwood must select its active Agreement 1 and show the registered `Northstar-Test-Agreement.txt` document row; Northstar Test Foods / Cedar must have no active agreement and an empty Documents grid. Opening, refreshing if applicable, and closing the views must leave all logical user tables and the complete disposable agreement-document tree unchanged. If a required UI assertion cannot be automated reliably, mark it NOT VERIFIED, do not claim T22-M2 full PASS, and stop for review.
+- **Verify bytes before fixture correction:** Compare the actual fictional source fixture bytes with the synthetic `AgreementDocument.FileSize` metadata and the recorded 58-byte packaged file. Only if verified, correct the fictional metadata to the true size; do not change file contents. If actual bytes or fixture provenance differ, stop and report rather than hard-code an expected value.
+- **Package immutability and honest results:** Do not modify, overwrite, rebuild, copy, or distribute the existing October 21 ZIP; any new package requires separate approval. Distinguish newly automated test results from Rob's prior manual observation: he saw the Foods empty grid, NOT a visible Logistics document row. Preserve the prior filesystem-preservation PASS and human T22-M2 PARTIAL until appropriate evidence is obtained. No production application changes, deployment, or live Graph/email.
+
 ## October 21, 2026 — AUTHORIZED focused T22-M2 synthetic Agreement Documents test correction (Rob approved)
 
 **Objective:** Correct the ambiguous T22-M2 manual instruction, add focused guarded UI regression coverage for the correctly associated agreement, and fix synthetic document file-size metadata. Read COMPLETE active shared and project handoffs and referenced restrictions before acting. Verify source ancestry/provenance from October 21 combined package source `52d7f153d3a1b654dd858eec75ab5e8d392dd5f8` through test-only branch `codex/crm-test22-five-coverage-tests-20261021` at `89c70f57eca668f4e4459ddb6c6d080f8cb9498b`. Create a NEW isolated branch from the verified latter test-only commit, preserving all prior authorized tests. If ref or worktree differs, STOP.
