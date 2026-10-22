@@ -1,5 +1,20 @@
 # Project Handoff
 
+## October 21, 2026 — APPROVED T22-M2 fictional fixture line-ending normalization amendment (Rob authorized)
+
+**Reason for amendment / stop resolved:** Codex correctly stopped on a source-versus-packaged byte mismatch for fictional `Northstar-Test-Agreement.txt`: packaged file reportedly 58 bytes, Windows checkout 59 bytes due to LF/CRLF handling. The prior instruction to leave fixture bytes unchanged prevented a safe metadata correction. Rob explicitly authorizes a narrowly scoped synthetic fixture normalization so bytes and `AgreementDocument.FileSize` are deterministic, followed by the already-authorized T22-M2 UI regression. This supersedes ONLY the earlier prohibition on changing this one fictional fixture's line endings/bytes; all other safeguards remain.
+
+**Preflight:** Read full active shared and project handoffs plus relevant fixture, `.gitattributes`, build/copy tooling, tests, and the latest Codex stop report. Verify starting point is clean and contains all five earlier automation improvements, seven Test 22 features, and two contact-save fixes: `codex/crm-test22-five-coverage-tests-20261021` at `89c70f57eca668f4e4459ddb6c6d080f8cb9498b`. Create a NEW isolated branch from that exact commit. If refs, provenance, working tree, or reported 58/59-byte evidence differ, STOP and report without modifying files.
+
+**Minimal permitted correction:** Choose and document ONE canonical byte representation of `Northstar-Test-Agreement.txt` (prefer a Git attribute rule scoped to this specific fictional fixture or an equally narrow deterministic fixture-generation method). Ensure checkout/build/copy operations on Windows and non-Windows preserve identical bytes. Do not normalize other files or broadly change repository line-ending policy. Verify exact file content and byte length after a fresh Windows checkout, after synthetic fixture creation, and in the disposable runtime agreement-documents folder. Update only synthetic `AgreementDocument.FileSize` metadata to the verified canonical byte count. Do not assume 58 or 59 in advance, rewrite text content beyond necessary line-ending normalization, or touch real agreement files. If the approach requires wider code or fixture changes, STOP for new authorization.
+
+**Complete previous approved T22-M2 scope:** Update manual instructions to select Northstar Test Logistics / Redwood and expect the registered fictional document; Foods / Cedar correctly has no agreement and an empty Documents tab. Add the single guarded synthetic UI regression verifying those two states and that opening/closing the views preserves canonical logical database rows and the full contained agreement-document tree. Preserve all earlier automated tests and human evidence separately. If reliable UI automation is not possible within existing safeguards, report NOT VERIFIED and STOP; never call the UI-inclusive test PASS without evidence.
+
+**Verification:** Run focused regression, full CRM UI, CRM Data and GoGreenMonthlyDrafts tests, Release build and `git diff --check` on Windows/.NET 10. Record exact commands, pass/fail/skipped counts, source/fixture byte counts at each checkpoint, metadata match, isolated path/Graph guards, any failures, and final branch/commit. Existing October 21 ZIP remains immutable and is NOT a newly verified package. No real-data access, production source/schema/migration changes, live mail/Graph, external orders, package build/replacement/distribution, merge, deployment, or cutover.
+
+**Closeout:** Only after successful authorized work, update BOTH project and shared handoffs with verified factual results, commit/push on the isolated project branch and shared handoff as appropriate, verify remote heads, and STOP for Rob's review. Do not interpret this amendment as permission for additional fixes or release.
+
+
 ## October 21, 2026 — T22-M2 correction task clarification (Rob approved)
 
 This is a narrow clarification of the immediately following authorized task, not permission for broader changes.
