@@ -1,5 +1,14 @@
 # Project Handoff
 
+## October 22, 2026 — Rob-approved NEXT assignment: disposable environment preparation (PENDING EXECUTION)
+
+**Authorization boundary:** Rob authorizes Codex to prepare and verify a disposable CRM Test 22 environment only. Recording this instruction is not execution authorization for this assistant and does not authorize launching CRM or either launcher, migration acceptance, M1, email, merging, packaging, or deployment.
+
+**Codex instructions:** Read the full controlling CRM project and shared handoffs and AGENTS.md; verify the active development branch and reviewed migration correction commit `d85a3c25267c713a1d3e05d183fcd08b6b5efa61`. Reuse passing tests, protected backups, scratch restores and prior isolation evidence; repeat only where a specific gap is documented. Use the existing Windows VM to prepare a private isolated test root with a copied reviewed CRM build, disposable application-adjacent legacy settings, an initially absent stable-settings destination (parent exists), exactly two contained disposable SQLite databases named `CRM Source.SQLite` and `CRM Target.SQLite`, and isolated logs, Graph settings, templates, documents, orders, exports and backups. Ensure private ACLs, contained paths, no unsafe reparse/fallback paths or SQLite sidecars, Graph and external operations disabled, and no original customer data or protected backup modifications. Populate and verify the dedicated migration manifest with reviewed build/environment hashes, but keep `approvedForStart=false`. Keep the separate real-profile M1 audit manifest `approvedForStart=false`.
+
+**STOP:** Do not launch CRM or either launcher, execute migration or M1 acceptance, send emails, use live Graph, merge, package, deploy, or modify protected originals. Report prepared assets, checks, remaining risks and exact prerequisites for first separately authorized acceptance. Update both handoffs with factual outcomes, commit, push and independently verify remote commits. Stop after preparation and verification; require Rob's separate explicit approval before any test launch.
+
+
 ## October 22, 2026 — narrow disposable settings-migration correction implemented and verified; NOT STARTED
 
 **Identity and authority.** Work used the active clean development branch `codex/t22-m1-semantic-verification-fix-20261022`. Requested CRM baseline `296cc473a4860359928c96a0a4fcd04c6fa1cb8b` is an ancestor; the newer controlling CRM handoff commit was `d208b9766e47d94937dff72a0e53ae15186326cc`. Shared `main` was fast-forwarded to and reconciled with requested commit `180c86ec3018165210fd524c4b5d9ca416b475fe`; its pending assignment matches Rob's instruction and no handoff conflict was found. The authorized source correction is commit `d85a3c25267c713a1d3e05d183fcd08b6b5efa61`.
