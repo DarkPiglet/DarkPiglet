@@ -1,5 +1,15 @@
 # Project Handoff
 
+## October 22, 2026 — NEXT PENDING CODEX ASSIGNMENT: launcher FileInfo correction (NOT AUTHORIZED TO LAUNCH)
+
+**Status:** Rob authorized a narrow launcher correction and focused synthetic verification only. This is a pending assignment, not an execution report. The prior single migration-launch authorization was consumed by a fail-closed attempt; no retry is authorized.
+
+Read the complete current CRM project handoff, this shared handoff, AGENTS.md and relevant Test22 procedures. Verify active CRM branch and controlling commits; stop on conflicting instructions. The previous launcher invocation failed before Process.Start because Assert-NoReparse tried to access FileInfo.Parent, which does not exist. Correct that function to walk from FileInfo.Directory when given a file while preserving parent traversal and reparse-point protections. Inspect immediately related path validation for the same type error; correct only directly related defects. Do not weaken isolation, ACLs, disposable database routing, no-fallback protection, Graph disablement, or original-file safeguards.
+
+Run focused PowerShell parser and synthetic fail-closed tests only: valid file/directory paths should work; unsafe, reparse or escaped paths must be rejected. Restage only the corrected launcher and directly affected supporting files; record changed hashes and provenance. Do not rebuild the CRM executable absent a demonstrated dependency. Reuse completed tests and protected backups; do not repeat them without a concrete gap. Keep both migration and real-profile M1 manifests approvedForStart=false. Do not execute any launcher, start CRM, retry migration acceptance, access real-profile or production data, run M1, send Graph/email, merge, package or deploy.
+
+Document exact correction, tests, results, staged artifacts, hashes, remaining risks and whether another controlled first-start acceptance test is ready for separate Rob approval. Update both GitHub handoffs with factual results, commit, push and independently verify remote commits. Stop after correction, synthetic verification and documentation. Do not interpret this saved instruction as authorization for runtime acceptance.
+
 ## October 22, 2026 — single authorized settings-migration launcher invocation FAILED CLOSED before CRM start; NO RETRY
 
 **Controlling identity and pre-run record.** Active CRM branch was `codex/t22-m1-semantic-verification-fix-20261022`; migration implementation `d85a3c25267c713a1d3e05d183fcd08b6b5efa61` remains an ancestor. The separately required pre-run safeguards were committed/pushed/verified first at CRM `f5fc9098d11ac2fdba8d3f4f03f5cdc6fcd17a8f` and shared `3a36e578bf7e433a702d89604adf1bcec1c5d0fa`. No prior test/backup/recovery work was repeated except the specifically required pre/post preservation hashes.
