@@ -2705,3 +2705,16 @@ Read this with the immediately preceding **Controlling correction**. Earlier Oct
 | Merge/package/deploy/cutover | **NOT AUTHORIZED** | No acceptance result authorizes release actions. |
 
 **Ordered dependencies / stop:** (1) authorize and verify a private complete rollback/restore set; (2) authorize preparation of the disposable profile/run root, app/settings copy, and exactly two runtime database copies; (3) review the migration-specific normal-mode launcher/manifest against the settings-override/isolation conflict; (4) only then consider separate launch authorization for isolated migration, followed later by a separate real-profile M1 decision. **Smallest next approval request:** authorize step 1 and preparation-only step 2, with no application launch, migration, test execution, or manifest approval. Stop here; `approvedForStart=false` remains unchanged.
+
+
+## October 22, 2026 — Controlling Test22 reconciliation
+
+Rob directed consolidation before further Codex work. Documentation-only decision; NOT execution authorization. This section supersedes older conflicting active-task/USB-source instructions without deleting their historical evidence.
+
+REUSE: October 21 integrated contact-save/Test22 fixes and successful isolated synthetic startup (not first-import acceptance); later 104/104 CRM UI, 62/62 data, 156/156 Monthly Drafts, 5/5 focused, 13/13 fictional M1-helper, 36/36 audit-focused PASS. M2 PASS and M3/M5 human observations are Rob-reported, not M1 PASS. Separate corrected-database verification of 216 changes and 350 assertions is not proof the proposed Test22 source/target runtime copies exist. Inventory existing disposable assets before any separately approved creation or reuse.
+
+SETTLED: Codex cannot access USB; do not reopen USB comparison. Verified Z: Test20 installation is the read-only testing reference, not production promotion. Legacy settings.json exists adjacent to Test20 CRM.exe; stable Dev-profile CRM settings absent. Finding settings does not prove import or persistence. Old Z: CRM-T22-M1-Test path is stale. Existing C: CRM-M1-Backup-2026-10-22 DeltaTrak backup is profile/settings-only, not a proven complete rollback set.
+
+OPEN: (1) private complete rollback inventory, effective ACL protection, and scratch restore proof; (2) inventory existing disposable assets and prepare isolated profile plus distinct runtime database/settings copies only after approval; (3) resolve the normal-mode first-import versus isolation-guard/override conflict with reviewed migration-specific launcher and manifest; (4) separately authorize isolated import/restart test, then real-profile M1/T22-L01–L06. Live Graph M4 and release remain separate. Existing audit launcher cannot demonstrate first-time import.
+
+NEXT: No broad reinvestigation, no repeated passing tests without a documented change or gap. Present a concise evidence-backed delta and smallest explicit approval request for backup/restore and disposable-environment preparation. No authorization to copy, change ACLs, back up, launch, migrate, run tests, modify code, merge, deploy, or clean up is granted here. Preserve originals and approvedForStart=false.
