@@ -1,5 +1,21 @@
 # Project Handoff
 
+## October 22, 2026 — Rob-approved simplified Test22 settings test (PENDING CODEX EXECUTION)
+
+Rob explicitly chose a simpler, focused disposable-settings test instead of the proposed elaborate ACL redesign. This is a **new test-only scope**, not a continuation of the earlier blocked launcher/ACL remediation. Prior entries remain historical; this entry controls the next Codex assignment. No Codex/CRM test has been launched by the ChatGPT handoff author.
+
+**Goal:** Prove that plain CRM settings (including saved file paths, addresses, and email/template fields) migrate once from a legacy application-adjacent `settings.json` into the stable settings location, and that values persist across restart, so Rob does not need to reenter settings after each upgrade. **This is settings migration, not a SQLite schema upgrade.**
+
+**Approved, narrow procedure:**
+1. Read current project/shared handoffs and AGENTS.md; reuse the existing reviewed settings-migration implementation and prior passing focused tests. Work on an isolated development branch; no merge.
+2. Create a **fresh writable disposable test folder under the executing account** with only fictional settings, synthetic current-schema SQLite database(s), and contained logs/outputs. Use existing test seams/overrides or a disposable profile to route both the legacy source and the stable destination inside that folder. Prove all effective paths are contained **before** any CRM start. Do not read/copy/open live Z, real CRM databases, real LocalAppData settings, protected backup files, or actual contacts.
+3. Disable Graph/external communication (`CRM_DISABLE_MICROSOFT_GRAPH=1`), use `.example.test` email addresses, and ensure no actual message can be sent. Use no old staged migration root if its ACL gate blocks the current identity. **Do not bypass a fail-closed production security check;** if runtime startup cannot be isolated with the existing tools, run only focused settings-component tests, report full startup as NOT VERIFIED, and STOP rather than creating another permission framework.
+4. Run only these focused checks, with recorded expected/actual results: **A** destination absent -> import creates it once and known fictional path/email/settings values match semantically; **B** close/reload (and at most one real app restart if safely isolated) -> stable values persist; **C** pre-existing stable settings -> not overwritten by legacy values; **D** source settings and synthetic database contents remain unchanged except explicitly expected disposable writes, and there is no detected out-of-folder write or external/email action. Where evidence cannot establish isolation, call it unverified, not passed.
+5. If a test fails, report the specific error, affected method/file and smallest proposed correction. Do not retry automatically or expand into ACL redesign, new SIDs/accounts/VMs, a broker, broad security manifest work, or production code changes without separate approval. No changes to Z permissions, live data/settings, protected recovery, real profile, schema, Graph, deployment, or release.
+6. Stop after the focused results. Summarize PASS/FAIL/NOT VERIFIED, unchanged originals, any genuine blocker, and whether this solves settings persistence. Update both handoffs, commit/push and verify remote commits. **No merge, packaging, M1, everyday-CRM replacement, or live operations.**
+
+This authorization allows only the disposable focused tests above, including a first start and one restart **if safe containment can be proven without relaxing a guard**. It does not authorize any production or real-profile run.
+
 ## October 22, 2026 — Test22 synthetic access-policy redesign complete; STATIC DESIGN ONLY
 
 **Scope and identity.** Reviewed the current project/shared handoffs, `AGENTS.md`, migration/audit procedures, settings routing, isolation guard, launcher, manifest and focused tests on active branch `codex/t22-m1-semantic-verification-fix-20261022`, starting at clean local/remote CRM commit `e0caf6393da11a2c5a3ff8ccb8d2bcdeda491323` and shared commit `1169843e474732b97189045d806a3841f6121880`. This task changed documentation only. No ACL, owner, group, launcher, manifest, application, staged asset, protected file or production path was changed; no CRM or migration process was started.
