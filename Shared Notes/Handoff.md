@@ -1,6 +1,15 @@
 # Current Shared Handoff — Active Control
 
 
+## October 24, 2026 — Existing disposable CRM normally stopped; records unchanged
+
+- **PASS — identity.** Running PID `2384` was the approved disposable CRM executable, SHA-256 `1732739F1220CEF37F21CE89987CE610CDEF238784EC07FDC07FCABC1CAC4A2E`. After the user dismissed the warning, its normal CRM interface became available. No new launch or test occurred.
+- **PASS — warning identified.** The isolated log records automatic weekly backup failure at `2026-10-24T22:58:26.9262204Z`: `SQLite Error 14: 'unable to open database file'` from the backup service. The disposable Backups folder remained empty. No backup-system code, setting, permission or folder was changed.
+- **PASS — records unchanged.** The live UI showed Northstar Test Logistics CompanyId 1 with original Notes `Fictional Test 22 company.`, SalesPerson `Test Operator`, TerritoryNumber `T-001`, with Save/Cancel disabled. Post-close immutable read-only checks confirmed the same row/UpdatedUtc, Activity `6/6`, schema 24, integrity `ok`, zero FK violations and unchanged logical SHA3 `b53d5e09eece6111b0ca563f4085029d417e7fad4fc1c529e3c53499`.
+- **PASS — normal stop.** Codex clicked the existing CRM window's Close button once; PID 2384 exited without force, retry or restart. The observed 0-byte WAL and 32,768-byte SHM disappeared; no journal remains.
+- **Physical-only observation.** Working database SHA-256 is `CA4F4340195E3D88C179C894B5C5A58C119D36FA0E740A61ABBE6024FE448F5D`, differing from untouched seed `592FA9AD1A23117915258BFCE907E6EBDBA3AF22ED073445813B099E573D36B3`; the logical digest and records remain unchanged. Settings and launch-record hashes remain unchanged.
+- **STOP.** Notes was never edited/saved; persistence remains **NOT RUN**. No restart, new test, backup fix, development, protected-data access, integration, merge, release or deployment occurred. Historical failures and deferred decisions remain preserved. Project detail: `DarkPiglet/Weekly-Logger-Search-Application`, branch `codex/t22-m1-semantic-verification-fix-20261022`, commit `423a324b0996da2589f2216fec88722a4a0a911e`.
+
 ## October 24, 2026 — Northstar persistence execution stopped at startup; edit NOT RUN
 
 - **PASS — authority/preflight.** Codex read the complete current shared and CRM handoffs plus applicable `AGENTS.md`, then reverified the exact disposable package/run root, source/executable identity, contained routes, integration guards, schema/integrity/FK/logical baseline and unchanged fictional CompanyId 1 values.
