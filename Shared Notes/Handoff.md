@@ -1,5 +1,14 @@
 # Current Shared Handoff — Active Control
 
+## October 24, 2026 — Rob's explicit network-isolation correction for disposable synthetic preparation
+
+Rob expressly approved replacing **full VM network isolation** with **verified application-level containment for this disposable synthetic CRM persistence test only**. This newer instruction supersedes the full-network-isolation prerequisite in the immediately preceding synthetic preparation entry and any older general network-isolation gate **only for this particular synthetic test**; do not apply it to historical staging or other tests.
+
+Codex may prepare the previously approved disposable synthetic fixture without disconnecting VM networking or requiring elevated adapter inspection. Before any CRM launch or database-changing test, positively verify: Microsoft Graph/mail sending and all external integrations are disabled; no production credentials, accounts, or settings are loaded; the executable is pinned to the approved test build; the database connection points only to the newly created disposable fictional fixture, never historical staging, recovery, USB/Z or production; all output paths are local and contained. An active VM network route alone is **not a blocker**. If these application safeguards cannot be verified, STOP with the exact failed check; do not assume safety, alter Windows network/security settings, or start a broad investigation.
+
+This corrects the isolation gate only. It does not authorize the proposed Northstar Notes edit, UI save, or full persistence execution; the explicit record/value approval and separate dispatch remain required. No release packaging, merge, deployment, cutover, code change or historical-data modification. Preserve all prior evidence and unresolved October 22 hash/WAL findings. Codex should report concise preparation evidence and STOP at the record-change approval gate.
+
+
 ## October 24, 2026 — Rob approved synthetic Phase 2 preparation only; execution STOP gate remains
 
 Rob expressly approved proceeding with a **separate disposable synthetic fixture** as an initial CRM UI persistence check, leaving historical staging `C:\CRM Test22 Staging\Data\CRM.sqlite`, its Stage 3 recovery, USB/Z sources and production data unchanged. This is a separate synthetic behavior test, **not** proof of historical-staging persistence and **not** closure of Stage 3 Phase 2 against that historical target. Stage 3 Phase 1 PASS remains valid; do not repeat completed stages.
