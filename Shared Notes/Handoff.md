@@ -3183,3 +3183,15 @@ If separately authorized after those gates, record pre-launch hashes/inventory a
 **Acceptance.** Test22 opens and operates against the selected copied dataset with zero unexplained loss or change and no broken relationships. Preserve prior PASS/FAIL/NOT VERIFIED evidence; don't relabel unresolved items or repeat unrelated tests. This is a scope decision, not proof of successful migration.
 
 **Authorization boundary.** This entry authorizes documentation only. No CRM launch, test, SQLite/database/sidecar interaction, copying, settings/permissions change, implementation, build, migration, merge, packaging or deployment. Every operational stage requires separate explicit authorization. Append-only history retained.
+
+
+## October 23, 2026 — Next authorized Codex task: read-only Test22 directory identification
+
+Read the complete current shared handoff, CRM project handoff, and applicable AGENTS.md instructions before acting. Identify the intended Test22 working application directory using existing documentation first and narrowly targeted read-only directory inspection only if necessary.
+
+Original: `Z:\CRM-T22_M1_test\CRM-v10-test.20-October14-win-x64`
+Working-copy candidate: `Z:\CRM-T22_M1_test\CRM-v10-test.20-October14-win-x64 - Copy`
+
+Rob recalls creating the second folder as a working copy, then working in it while preserving the original. Determine why the copy was created, which folder contains the intended newer Test22 application, and whether either holds synthetic databases that must remain untouched. Distinguish application-version evidence from database-version evidence; October 21 folder modification date alone is not proof. Report the exact recommended path, supporting evidence, and specific remaining uncertainty. Do not broaden the investigation.
+
+Authorization is read-only verification only. Do not launch CRM, copy or modify files or databases, alter settings, migrate data, inspect unrelated databases, or investigate newer USB data. Preserve the selected historical real Test20 source and all existing environments. The destination for a real-data working copy is not yet approved. Report and stop for separate authorization.
