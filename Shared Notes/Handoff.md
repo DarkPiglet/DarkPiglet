@@ -1,5 +1,10 @@
 # Current Shared Handoff — Active Control
 
+## October 24, 2026 — Stage 2 destination approval correction (documentation only)
+
+Rob previously approved `C:\CRM Test22 Staging\Data\CRM.sqlite` as the single VM-local Stage 2 working-copy destination. The historical report below correctly records that this destination was missing from the handoffs when Codex stopped. The destination is now documented; that historical STOP is not erased. The full bounded resume contract, including source and checksum, isolation/creation checks, no-overwrite rule, validation, writeback and stop conditions, is in `DarkPiglet/Weekly-Logger-Search-Application` / branch `codex/t22-m1-semantic-verification-fix-20261022` / `HANDOFF.md`. A new explicit dispatch from Rob is required to resume Stage 2. This documentation change does not authorize any database or application action or later stages.
+
+
 ## October 24, 2026 — Stage 2 execution stopped before copy: destination not approved
 
 **Authorization and pre-copy result.** Rob explicitly dispatched only the reviewed Stage 2 offline copy/staging task. Codex read both complete current handoffs and `AGENTS.md`, verified CRM branch head `02f603a10dc6db20189a2d034056bc027c8142af`, required Test22/contact-save ancestry and continued exclusion of quarantined authentication commit `86a1dff`. No relevant CRM/Monthly Drafts/SQLite/DB Browser/Excel writer was observed. The selected immutable source `Z:\\CRM Backup 20\\CRM-v10-test.20-october14-win-x64\\Data\\CRM.sqlite` remained 2,195,456 bytes, last modified `2026-10-20T20:12:58Z`, SHA-256 `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`; size, timestamp and hash matched on final recheck. WAL, SHM and journal were each absent. The source was not opened through SQLite or modified, and USB was not inspected.
