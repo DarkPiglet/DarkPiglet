@@ -1,5 +1,11 @@
 # Current Shared Handoff — Active Control
 
+## October 24, 2026 — Stage 2 execution stopped before copy: destination not approved
+
+**Authorization and pre-copy result.** Rob explicitly dispatched only the reviewed Stage 2 offline copy/staging task. Codex read both complete current handoffs and `AGENTS.md`, verified CRM branch head `02f603a10dc6db20189a2d034056bc027c8142af`, required Test22/contact-save ancestry and continued exclusion of quarantined authentication commit `86a1dff`. No relevant CRM/Monthly Drafts/SQLite/DB Browser/Excel writer was observed. The selected immutable source `Z:\\CRM Backup 20\\CRM-v10-test.20-october14-win-x64\\Data\\CRM.sqlite` remained 2,195,456 bytes, last modified `2026-10-20T20:12:58Z`, SHA-256 `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`; size, timestamp and hash matched on final recheck. WAL, SHM and journal were each absent. The source was not opened through SQLite or modified, and USB was not inspected.
+
+**BLOCKED / mandatory STOP.** The active handoff and dispatch supplied no explicitly approved absolute VM-local private destination. The Stage 2 contract requires STOP before any write in that condition. No destination/ACL, database copy, scratch recovery/readability check, SQLite connection, route change or later-stage action occurred. Copy/hash parity/rollback are **NOT RUN / NOT VERIFIED**; Stages 3–5 remain **NOT AUTHORIZED / NOT RUN**. Prior physical target hash **FAIL / unresolved**, WAL/SHM attribution **NOT VERIFIED**, and the three deferred business decisions remain unchanged. CRM project handoff result was committed and pushed as `b0cfd42`. Smallest next action: Rob must approve one exact new absolute VM-local private destination satisfying the reviewed exclusions.
+
 **Updated:** October 24, 2026. **State:** Stage 2 instructions reviewed; execution not authorized. No CRM execution or migration is authorized by this document update.
 
 ## Read order and authority
