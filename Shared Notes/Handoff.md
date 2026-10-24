@@ -1,5 +1,10 @@
 # Current Shared Handoff — Active Control
 
+## October 24, 2026 — Reviewed private staging ACL correction (documentation only)
+
+Rob approved a narrow exception to the Stage 2 prohibition on ACL changes: during a NEW explicitly dispatched Stage 2 execution, Codex may create and secure only the previously absent staging directories for the approved destination `C:\CRM Test22 Staging\Data\CRM.sqlite`. It must secure the empty root before adding customer data, restrict effective access to the existing executing account, SYSTEM and Administrators, and verify access before copying. No elevation, identity change, ACL changes outside newly created staging paths, alternate destination, overwrite or automatic cleanup. STOP on pre-existing unsafe directories or any failed verification. The full controlling contract and source hash are in the CRM project HANDOFF.md on branch `codex/t22-m1-semantic-verification-fix-20261022`. Preserve original Z backup, USB exclusion, prior checksum FAIL, WAL attribution uncertainty, and Stage 3–5 prohibition. This documentation edit is not permission to execute Stage 2.
+
+
 ## October 24, 2026 — Stage 2 resume stopped at destination privacy gate; no copy
 
 **Authorization and pre-copy checks.** Rob explicitly dispatched only the bounded Stage 2 resume contract. Codex read both complete current handoffs and `AGENTS.md`, verified CRM branch head `d331e3448a77f4e5a923b69622aed37660d643b5`, required Test22/contact-save ancestry and continued exclusion of quarantined authentication commit `86a1dff`. No relevant writer was observed. The sole approved source `Z:\\CRM Backup 20\\CRM-v10-test.20-october14-win-x64\\Data\\CRM.sqlite` remained 2,195,456 bytes, last modified `2026-10-20T20:12:58Z`, SHA-256 `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`; size, timestamp and hash matched at final recheck, and WAL/SHM/journal were absent. The source was not opened through SQLite or modified; USB was not inspected.
