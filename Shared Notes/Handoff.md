@@ -1,5 +1,10 @@
 # Current Shared Handoff — Active Control
 
+## October 24, 2026 — Stage 3 two-phase CRM validation plan (DOCUMENTATION ONLY)
+
+Rob approved preparation and publication, NOT execution. Stage 2 verified copy at `C:\CRM Test22 Staging\Data\CRM.sqlite` is the working baseline. The current controlling full Stage 3 contract is in `DarkPiglet/Weekly-Logger-Search-Application`, branch `codex/t22-m1-semantic-verification-fix-20261022`, `HANDOFF.md`. Phase 1: verified recovery copy and safe CRM database routing, open/view only, full post-close record/integrity equivalence. Phase 2: only after documented Phase 1 PASS, one approved safe test-record save/normal close/restart/persistence check with full unrelated-record comparison. STOP on uncertainty; no ACL changes, USB/Z modifications, external mail/Graph, deployment or cutover. Three deferred business decisions remain untouched; historical October 22 hash failure stays unresolved. NEW explicit Rob dispatch required. Project handoff plan commit `b3a8625039d58869b590705293fba6a791f6f6c9`.
+
+
 ## October 24, 2026 — Stage 2 historical Test20 offline copy and disposable parity COMPLETE; STOP
 
 **Authority and source gates — PASS.** Rob explicitly dispatched only the current simplified Stage 2 copy-plus-verification plan. Codex read both complete current remote handoffs and `AGENTS.md`, then verified CRM branch head `3a6adfb45315ec59aea1e25dc2b9683e799d8797`, required Test22/contact-save/fixture ancestry and quarantined-auth exclusion. No relevant writer was observed. The sole selected source `Z:\CRM Backup 20\CRM-v10-test.20-october14-win-x64\Data\CRM.sqlite` remained an ordinary non-reparse file, 2,195,456 bytes, last modified `2026-10-20T20:12:58Z`, SHA-256 `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`, with WAL/SHM/journal absent.
