@@ -1,6 +1,14 @@
 # Current Shared Handoff — Active Control
 
 
+## October 24, 2026 — Authorized Northstar test stopped at Application Startup Error; edit NOT RUN
+
+- **PASS — preflight.** Complete current handoffs and `AGENTS.md` were read. Exact disposable executable/source, contained paths and disabled integrations were reverified. Working and seed databases had identical complete logical SHA3 `b53d5e09eece6111b0ca563f4085029d417e7fad4fc1c529e3c53499`, all 35 user-table hashes equal, schema 24, integrity `ok`, zero FK violations, no sidecars, and original Northstar values.
+- **FAIL / STOP — startup.** The exact contained environment was launched once as PID `5204` at `2026-10-24T23:31:20.6903383Z`. Windows reports `Application Startup Error`; the dialog is not exposed to the approved UI-control interface, so its message and safe acknowledgement are **NOT VERIFIED**. No retry or bypass occurred. The isolated log was not updated and still contains only the earlier automatic-backup SQLite Error 14; do not attribute the new startup error to that earlier warning without evidence.
+- **PASS — no logical change.** Post-failure immutable checks show original Northstar Notes `Fictional Test 22 company.`, SalesPerson `Test Operator`, TerritoryNumber `T-001`, original UpdatedUtc, Activity `6/6`, unchanged logical SHA3 and no WAL/SHM/journal.
+- **NOT RUN — persistence.** No edit/save, normal close, restart, persisted read or acceptance comparison occurred. PID 5204 remains responsive at the startup-error dialog; Codex did not force-close or acknowledge an unverified dialog. User dismissal is required, and this failed run must not continue.
+- No backup change, extra test, development, protected-data access, integration, merge, release, deployment or migration occurred. Prior automatic-backup failure and all historical failures/deferred decisions remain preserved. Project evidence: `DarkPiglet/Weekly-Logger-Search-Application`, branch `codex/t22-m1-semantic-verification-fix-20261022`, commit `5feb27530b8772ceb729898d0af580940aec5e4c`.
+
 ## October 24, 2026 — Existing disposable CRM normally stopped; records unchanged
 
 - **PASS — identity.** Running PID `2384` was the approved disposable CRM executable, SHA-256 `1732739F1220CEF37F21CE89987CE610CDEF238784EC07FDC07FCABC1CAC4A2E`. After the user dismissed the warning, its normal CRM interface became available. No new launch or test occurred.
