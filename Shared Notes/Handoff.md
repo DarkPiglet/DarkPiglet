@@ -1,6 +1,15 @@
 # Current Shared Handoff — Active Control
 
 
+## October 24, 2026 — Northstar persistence execution stopped at startup; edit NOT RUN
+
+- **PASS — authority/preflight.** Codex read the complete current shared and CRM handoffs plus applicable `AGENTS.md`, then reverified the exact disposable package/run root, source/executable identity, contained routes, integration guards, schema/integrity/FK/logical baseline and unchanged fictional CompanyId 1 values.
+- **FAIL / STOP — first startup.** The exact prepared CRM executable was started once at `2026-10-24T22:58:26Z` with the verified contained environment as PID `2384`. It remained responsive but exposed no main-window handle/title and no CRM window to the approved UI-control interface. The isolated log recorded automatic weekly backup failure `SQLite Error 14: 'unable to open database file'`; no backup was created. The no-retry/unexpected-startup stop condition applied before any GUI action.
+- **PASS — logical data unchanged.** Read-only checks while the process held the database returned schema 24, integrity `ok`, zero foreign-key violations, unchanged logical SHA3 `b53d5e09eece6111b0ca563f4085029d417e7fad4fc1c529e3c53499`, unchanged Northstar Notes/SalesPerson/TerritoryNumber/UpdatedUtc, and Activity count/max ID `6/6`.
+- **NOT VERIFIED — active physical state and normal shutdown.** PID 2384 created a 0-byte WAL, 32,768-byte SHM and 895-byte isolated CRM log (SHA-256 `E9831080901F14D5D8111CDB7D304C10F984FF13A672F1A5C01055CD0909E132`). The working database timestamp changed, but its physical hash and active sidecar hashes could not be read because the process retained exclusive handles. PID 2384 remains active without a targetable window; Codex did not force-terminate or retry.
+- **NOT RUN — persistence acceptance.** Notes was not edited or saved; normal close/PID exit, restart, persisted read, second close, UpdatedUtc/audit acceptance and final physical reconciliation were not performed. No historical/customer/profile/USB/Z/production data or external integration was touched; no extra test, development, merge, release or deployment occurred. Historical physical-hash **FAIL**, WAL/SHM **NOT VERIFIED**, prior shutdown failure and three deferred business decisions remain unchanged. A separately authorized diagnosis and safe disposition of the still-running PID is required before any new attempt.
+- Full evidence is in `DarkPiglet/Weekly-Logger-Search-Application` branch `codex/t22-m1-semantic-verification-fix-20261022`, commit `ae962599d653af56ba92ae9763ffebdeb8e5163b`.
+
 ## October 24, 2026 — Stage 3 Phase 2 prerequisites PASS; North Star test NOT RUN
 
 - Scope: after reading and reconciling both complete current handoffs and applicable `AGENTS.md`, Codex performed only the latest authorized prerequisite verification for the already prepared disposable synthetic environment. CRM was not launched, no record/database was changed, and the persistence test was not run.
