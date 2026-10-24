@@ -1,5 +1,18 @@
 # Current Shared Handoff — Active Control
 
+## October 24, 2026 — Rob approved synthetic Phase 2 preparation only; execution STOP gate remains
+
+Rob expressly approved proceeding with a **separate disposable synthetic fixture** as an initial CRM UI persistence check, leaving historical staging `C:\CRM Test22 Staging\Data\CRM.sqlite`, its Stage 3 recovery, USB/Z sources and production data unchanged. This is a separate synthetic behavior test, **not** proof of historical-staging persistence and **not** closure of Stage 3 Phase 2 against that historical target. Stage 3 Phase 1 PASS remains valid; do not repeat completed stages.
+
+**Next Codex task, narrowly authorized:** read complete active and referenced handoffs and verify branch/build/fixture identities; create an internal disposable test environment/package solely from the repository's `tools/Test22SyntheticData.sql` fictional fixture in a new clearly isolated location, without overwriting any existing file. This internal test fixture creation is explicitly permitted and is **not** authorization to build/package a release. Keep Graph/mail and external integrations disabled and output paths contained. Confirm VM network isolation before any CRM launch or write. If adapter inspection is access denied, do not change permissions, ACLs, routes, firewall, adapters or elevation; report the exact blocked check and STOP. No speculative security relaxation or broad investigation.
+
+**Specific proposed later change, NOT YET AUTHORIZED:** disposable fixture only, `Company.CompanyId=1` (`Northstar Test Logistics`), `Notes`: `Fictional Test 22 company.` → `Fictional Test 22 company. Phase 2 persistence probe 2026-10-24.`. First prove the disposable database is distinct from staging/recovery and verify original value and baseline, no writers, isolation, and pinned executable. Report a concise PASS/FAIL/NOT VERIFIED preflight and exact proposed edit, then **STOP for Rob's separate explicit approval** before any UI save, application launch that may write, or record modification. This authorization is for preparation, not the actual persistence test.
+
+After a separate dispatch, the intended single test is one UI save, normal close, restart of the same isolated CRM build against the same disposable database, verify Notes persisted, unrelated values (including SalesPerson and TerritoryNumber), schema/integrity/FK/sidecars and report evidence. On failure STOP and preserve evidence; no automatic revert. Do not modify Site 246 address, RecycleProgramProfile 274 Notes or ContactMethod 759 IsPrimary. Do not merge, deploy, cut over, migrate, change code or settings outside the disposable environment. October 22 physical-hash FAIL and WAL/SHM attribution NOT VERIFIED remain unresolved. Avoid further exploratory loops; report one concrete blocker and smallest decision if unable to proceed. Update and verify both handoffs after the separately authorized run, retaining historical outcomes.
+
+**This entry records Rob's authorization for documentation and synthetic preparation only; it does not claim Codex has executed preparation or that the persistence test has run.**
+
+
 ## October 24, 2026 — Phase 2 record-selection review complete; no persistence test
 
 Codex performed only the approved read-only selection gate. Immutable queries of `C:\CRM Test22 Staging\Data\CRM.sqlite` found no company, site, contact or contact method marked test/demo/sample/fixture/synthetic/fictional/dummy/sandbox/training/Northstar or `.example.test`; two inactive companies, eight inactive contacts and two inactive sites remain real business data unless Rob proves otherwise. An existing safe record in the historical staging database is therefore **NOT VERIFIED** and no real record was selected.
