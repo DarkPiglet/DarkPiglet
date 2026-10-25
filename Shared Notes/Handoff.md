@@ -1,5 +1,22 @@
 # Current Shared Handoff — Active Control
 
+## October 25, 2026 — Stage 6 Stage 2 vs Stage 5 startup comparison — PUBLISHED, NOT EXECUTION AUTHORIZATION
+
+**Authority:** Rob authorized final tightening and publication of this diagnostic plan, NOT its execution. Await Rob's separate explicit Stage 6 dispatch. Stage 5 STOP and all prior unresolved findings remain controlling.
+
+**Objective:** Explain why Stage 2's short-path synthetic CRM run displayed a window and shut down normally, whereas Stage 5's verified CRM launch (PID 9808) showed no discoverable window. Compare existing evidence before requesting any new test; do not repeat Stage 1/2 diagnostics.
+
+**Read-only scope and sequence:**
+1. Read complete current and historical handoffs, CRM project handoff, AGENTS.md and existing Stage 1–5 evidence. Confirm remote revisions and exact artifact provenance. Do not infer paths or substitute similar artifacts; STOP if evidence cannot be located.
+2. Build a side-by-side evidence matrix for Stage 2 PASS versus Stage 5 FAIL/INCOMPLETE: executable source/build/hash, launch command and parent/launcher, interactive vs noninteractive user/session/desktop and integrity level, working directory/environment, synthetic database/schema/config, full backup final and `.creating` path lengths, startup timing, logs/warnings, main-window handle/title, dialog/window enumeration and shutdown. For each entry cite exact existing artifact, timestamp and line/record or mark NOT RECORDED; never substitute assumptions for missing values.
+3. In particular compare Stage 2's 109-character successful path and Stage 5's 251-character final/260-character temporary path. Stage 5's log proves point-of-use backup rejection, NOT GUI rendering or cause of missing window. Distinguish whether warning is modal, before form creation, on a different desktop, or inaccessible to automation; each remains a hypothesis until directly evidenced.
+4. Examine already collected PID 9808 metadata and log evidence read-only. Only non-invasive inspection of live process metadata is allowed if needed and if its session/desktop can be safely identified; no window interaction, focus change, dialog dismissal, memory dump, process suspension or termination. If access is denied, report limitation without retry/escalation.
+5. Deliver ranked *testable hypotheses* (not asserted causes), evidence supporting/contradicting each, smallest missing fact needed to distinguish them, and one proposed next diagnostic with explicit authorization boundary. If comparison evidence is sufficient, recommend the smallest fix/test; if insufficient, identify the exact gap. Do not run proposed tests.
+
+**Hard STOP:** No CRM launch/relaunch, process termination (especially PID 9808), shutdown, settings or database edits, backup execution, source code edits, new build, deployment, merge, migrations, Graph/email, or production/USB/Z:/protected data access. No automatic retries or workarounds. Keep handoff files writable. Any observed unexpected process state or path ambiguity requires STOP and evidence-only report.
+
+**Deliverable:** Concise matrix with confirmed facts vs inferences, source references, comparison findings, unknowns, cause confidence/limitations and specific recommended next step. Report expected/actual, PASS/FAIL/NOT VERIFIED for each comparison. Update current and historical handoffs with outcomes only after authorized execution; commit/push/refetch both and verify remote commits. STOP pending Rob's approval.
+
 ## October 25, 2026 — Stage 5 controlled GUI verification STOPPED; PID 9808 remains running
 
 - **Execution authority / provenance — PASS.** Rob's current dispatch explicitly authorized Stage 5. Complete current/historical/project handoff context and `AGENTS.md` were reconciled; refetched project branch `codex/stage4-backup-path-validation-20261025` exactly matched Stage 4 pushed head `56813fb8e7d75fa0c729964473f863fd14b55fed` and contained source/test commit `5c525b08370fbeedd9a4aad0970b6bb41ff3897f`. A fresh tracked-source export/build in `artifacts\Stage5-20261025-1716c928\Source` passed with 0 warnings/errors after the initial sandbox-only NuGet-config denial was rerun with permitted access. Fresh `CRM.exe` SHA-256 is `2A182C9F80566BAA9DE93DD3D005F8DA05A84BB32CD281CE45CF037F416C90FB`; DLL is `0A962C3F2DFFFF02F8016D03B1AE995C9304E4822B795128EAFEFEEB3FAC04EE`.
