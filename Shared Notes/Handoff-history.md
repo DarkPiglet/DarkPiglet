@@ -1,5 +1,9 @@
 # Historical Handoff Archive
 
+## October 25, 2026 — Stage 8 publication; execution pending
+
+Rob authorized publication only of Stage 8 controlled GUI verification. Full instructions are in `Shared Notes/Handoff.md`, commit `c370bb132200e0dcd47227fd3b206ad778dd1507`. Verify exact Stage 7 executable and disposable synthetic data; protect PID 9808 without interaction or termination; stop on process conflict. Check real GUI visibility before scheduled backup warning, controlled invalid-path warning, valid short-path backup and integrity, and normal GUI shutdown. Record expected/actual, PASS/FAIL/NOT VERIFIED and evidence for each check. No execution, CRM launch, code changes, production access, migration, merge or deployment authorized by publication. Separate Rob execution approval required.
+
 ## October 25, 2026 — Stage 7 correction implemented; focused verification PASS
 
 Rob explicitly authorized Stage 7. On isolated CRM branch `codex/stage7-post-visible-backup-20261025`, source/test commit `ac25089afc3016b48f6178bcd2c93afcc9b4fb70` removes the synchronous scheduled-backup call from `Form1_Load` and queues the unchanged backup once from `Shown` via `BeginInvoke`, guarded against duplicates and unsafe closing/disposed state. Five new focused UI tests, eight existing backup tests and the Debug build passed; build had zero warnings/errors. No CRM GUI launched and protected PID 9808 was untouched, so actual paint/warning timing and the Stage 6 root-cause hypothesis remain NOT VERIFIED. No production/protected data, integration, merge, release or deployment action occurred.
