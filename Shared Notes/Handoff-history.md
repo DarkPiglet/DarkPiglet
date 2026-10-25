@@ -1,5 +1,9 @@
 # Historical Handoff Archive
 
+## October 25, 2026 — Stage 6 comparison executed; missing-window cause NOT VERIFIED
+
+Rob explicitly authorized the published read-only Stage 6 assignment. The complete evidence comparison confirmed Stage 2's 100/109-character backup paths succeeded with an accessible main window and normal PID 2996 exit, while Stage 5's 251/260-character paths produced the logged point-of-use `PathTooLongException` and left responsive PID 9808 with handle 0/title blank and no window found by two existing inventories. Exact binary/launcher/session/desktop equivalence was not established. Source makes an owned `Backup Warning` blocking inside `Form1_Load` the best-supported hypothesis, but log evidence does not prove rendering, desktop/accessibility, or missing-window causation. Current read-only metadata identifies PID 9808 as the expected executable in session 1 under `DESKTOP-UH85JC0\CodexSandboxOffline`; parent/command-line access was denied once and not retried. No UI/process/runtime/code/data action occurred. One future non-interactive owned-window/desktop/window-station inventory is proposed only with separate authorization; PID 9808 remains untouched.
+
 ## October 25, 2026 — Stage 6 comparison plan publication only
 
 Rob requested final tightening and GitHub publication, not execution. Stage 6 compares Stage 2 successful visible startup with Stage 5 invisible PID 9808, requiring provenance-backed evidence matrix across executable, launcher, session/desktop, environment, backup paths, logs, windows and shutdown. It explicitly distinguishes the confirmed 260-character backup rejection from unproven missing-window cause, forbids PID 9808 interaction, process termination, relaunch, builds and all database/settings/source changes, and requires evidence gaps and minimal proposed follow-up. Complete controlling instructions in Current Handoff. No Stage 6 execution authorized; preserve Stage 5 STOP.
