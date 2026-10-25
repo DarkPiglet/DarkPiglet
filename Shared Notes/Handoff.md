@@ -1,5 +1,13 @@
 # Current Shared Handoff — Active Control
 
+## October 25, 2026 — Stage 7 ZIP equivalence verification PASS; package NOT DEPLOYED
+
+Rob's current instruction supplied the separate execution authorization for only the published verifier correction. Shared `main` was fast-forwarded to fetched remote `2f9c9685617bb6b3e1d400152475626a4d193a3f`; CRM branch `codex/stage7-post-visible-backup-20261025` local/remote matched `d347fec18864cfcb9c2b821f735709aa9db870b0`. Exact source `ac25089...`, package identity (290 files / 137,984,802 bytes), ZIP identity (56,484,582 bytes / `27EAAAD9...`), EXE/DLL hashes and prior manifest matched. The saved original-format inventory and fresh recomputation were byte-for-byte equal at SHA-256 `1C5AAEF84E13C3D6A7818670FC9401FBE1ACE1004648DBA037406F363395262F`.
+
+The verifier was an ephemeral PowerShell command; no code, artifact or evidence file was changed. Its only correction replaced the ineffective double-backslash directory-key replacement with `path.Replace('\','/')`, consistently matching ZIP forward-slash keys without weakening criteria. The exactly one corrected read-only run compared all 290 normalized names, sizes and per-entry SHA-256 values; checked exact/case-insensitive uniqueness, required files, forbidden content and textual markers; matched every entry CRC; and independently ran `7z t` with exit 0. Results were zero duplicates, case collisions, directory entries, missing/extra entries, size/hash/CRC mismatches, missing requirements or exclusion findings. Forward-slash canonical inventory SHA-256 is `E43B97FF18021ED1343460464B4B19B400C7A28303511A7FF6ED5CE4D573F4A8`; the difference from `1C5A...` is only separator representation. No transient failure or retry occurred.
+
+Stage 7 clean Release package/ZIP verification is **PASS**, but the package remains **NOT DEPLOYED / NOT DISTRIBUTED / NOT REAL-DATA-ACCEPTED**. No CRM launch, rebuild, archive regeneration/change, cleanup, database/settings/USB/`Z:` access, protected-record modification, Graph/email, migration, merge, deployment or unrelated test occurred. Preserve Stage 2/Stage 8 and all migration-readiness/settings/current-file-state blockers and historical unresolved findings. STOP awaiting Rob's next authorization.
+
 ## October 25, 2026 — Stage 7 ZIP verifier correction plan — PUBLISHED; EXECUTION NOT AUTHORIZED
 
 **Rob's authorization:** Publish this tightly bounded handoff only. Do not execute verification, edit application code, rebuild, access databases, launch CRM, migrate, deploy, or distribute until Rob separately authorizes Codex execution.
