@@ -4,6 +4,14 @@ This is a verbatim preservation of the previous shared handoff, captured before 
 
 ---
 
+## October 25, 2026 — Stage 2 short-backup-path synthetic launch PASS; one launch only
+
+The authorized single launch used a fresh contained/non-reparse clone at `C:\Users\Dev\source\repos\Weekly-Logger-Search-Application\s2`, exact diagnostic EXE `C422E93F...` / DLL `A6BF6A4E...`, Debug working directory, zero arguments and the same scrubbed/allowlisted isolation guards. After normalizing the required new root prefix, only `BackupFolder` changed from `<ROOT>\Backups` to `<ROOT>\B`; actual final/temporary path lengths were 100/109. Initial DB hash `CA4F4340...`, schema 24, integrity/FK, logical SHA3 `b53d5e09...`, protected Northstar values, Activity `6/6` and absent sidecars matched the documented baseline.
+
+Launcher PID `1592` directly started child PID `2996` once at `2026-10-25T16:36:51.7650711Z`. The main CRM window was visible/interactable, Save disabled, and UI inventory exposed no CRM modal/warning/exception. Startup produced one stable 421,888-byte backup `CRM-backup-20261025-163652986.sqlite`, SHA-256 `0F336266EAB64A2799400FC0B245CD54DC7424633D7326C6A788F2CA4994BB12`, schema 24, integrity `ok`, zero FK violations and logical SHA3 equal to baseline, with no `.creating` leftover or error log. One normal WinForms Close request removed the window; PID `2996` and all CRM processes were absent by `2026-10-25T16:38:11.7266198Z`, with no force fallback. Post-exit DB physical/logical/baseline values and settings were unchanged; WAL/SHM/journal were absent.
+
+Backup, startup and normal shutdown therefore PASS for the one authorized short-path run. This strongly supports but does not conclusively prove the former 272-character temporary path as Error 14's cause because fresh-clone absolute prefixes differed and no same-session long-path A/B was permitted. No data edit/save, integration, protected source, production/staging/USB/Z/profile access, migration, code/build, retry, merge or deployment occurred. The PID 5204 outer startup exception, October 22 physical-hash FAIL, historical WAL/SHM uncertainty, prior forced shutdown and deferred business decisions remain unresolved. Mandatory STOP; no relaunch or Northstar persistence authorization.
+
 ## October 25, 2026 — Authorized Stage 1 backup and automated startup/shutdown investigation completed
 
 Rob authorized one read-only source/evidence investigation after complete handoff/history review. The assignment permitted only source, historical logs, manifests, test scripts and recorded diagnostic evidence; it prohibited CRM launch or attachment, GUI/process action, database access capable of writes, code/configuration fixes, production/USB/Z access, and execution of proposed experiments. Project remote head was `e88c9db6ea1d155a92fd81ee5c39f075cc849f20`; shared starting remote head was `d74fa5ec73dd00e41ab1141dafdfdaa9b891f2b8`.
