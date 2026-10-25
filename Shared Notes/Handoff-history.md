@@ -1,5 +1,9 @@
 # Historical Handoff Archive
 
+## October 25, 2026 - Stage 7 publication
+
+Rob approved the reviewed Stage 7 startup backup correction plan. Full controlling instructions are published in Shared Notes/Handoff.md at commit 04834ed2d2b3425e39145b778018940d9dedfe0b. Publication is not execution authorization. No CRM launch, PID 9808 action, production access, merge, or deployment is permitted. Stage 6 root cause remains unverified.
+
 ## October 25, 2026 — Stage 6 comparison executed; missing-window cause NOT VERIFIED
 
 Rob explicitly authorized the published read-only Stage 6 assignment. The complete evidence comparison confirmed Stage 2's 100/109-character backup paths succeeded with an accessible main window and normal PID 2996 exit, while Stage 5's 251/260-character paths produced the logged point-of-use `PathTooLongException` and left responsive PID 9808 with handle 0/title blank and no window found by two existing inventories. Exact binary/launcher/session/desktop equivalence was not established. Source makes an owned `Backup Warning` blocking inside `Form1_Load` the best-supported hypothesis, but log evidence does not prove rendering, desktop/accessibility, or missing-window causation. Current read-only metadata identifies PID 9808 as the expected executable in session 1 under `DESKTOP-UH85JC0\CodexSandboxOffline`; parent/command-line access was denied once and not retried. No UI/process/runtime/code/data action occurred. One future non-interactive owned-window/desktop/window-station inventory is proposed only with separate authorization; PID 9808 remains untouched.
