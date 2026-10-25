@@ -1,5 +1,9 @@
 # Historical Handoff Archive
 
+## October 25, 2026 — Stage 7 correction implemented; focused verification PASS
+
+Rob explicitly authorized Stage 7. On isolated CRM branch `codex/stage7-post-visible-backup-20261025`, source/test commit `ac25089afc3016b48f6178bcd2c93afcc9b4fb70` removes the synchronous scheduled-backup call from `Form1_Load` and queues the unchanged backup once from `Shown` via `BeginInvoke`, guarded against duplicates and unsafe closing/disposed state. Five new focused UI tests, eight existing backup tests and the Debug build passed; build had zero warnings/errors. No CRM GUI launched and protected PID 9808 was untouched, so actual paint/warning timing and the Stage 6 root-cause hypothesis remain NOT VERIFIED. No production/protected data, integration, merge, release or deployment action occurred.
+
 ## October 25, 2026 - Stage 7 publication
 
 Rob approved the reviewed Stage 7 startup backup correction plan. Full controlling instructions are published in Shared Notes/Handoff.md at commit 04834ed2d2b3425e39145b778018940d9dedfe0b. Publication is not execution authorization. No CRM launch, PID 9808 action, production access, merge, or deployment is permitted. Stage 6 root cause remains unverified.
