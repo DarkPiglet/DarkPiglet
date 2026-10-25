@@ -1,5 +1,13 @@
 # Current Shared Handoff — Active Control
 
+## October 25, 2026 — Stage 8 human GUI observations; documentation only
+
+**Source and scope:** Rob personally observed the existing synthetic Stage 7 CRM instance (PID 7260) after Codex's mandatory GUI-visibility STOP. Rob supplied a screenshot showing the CRM main window, Northstar synthetic test data, and an actionable backup warning about the 260-character temporary path exceeding the 259-character maximum. Rob clicked OK; the warning disappeared and CRM remained open. Rob switched between companies/sites and back without observed sluggishness, freezing or unexpected behavior; no edits or saves were performed. Rob then closed CRM using the normal window X, reported a clean shutdown, and inspected Windows Task Manager Details, reporting no CRM process running. These are **human-reported/manual observations**, not Codex automated or instrumented evidence.
+
+**Updated acceptance evidence:** Warning rendering and dismissal — **manual PASS**; post-warning company/site navigation responsiveness — **manual PASS (navigation only)**; normal GUI close and Task Manager no-CRM observation — **manual PASS (not instrumented DB/WAL/SHM post-exit integrity)**. Codex's earlier mandatory STOP remains accurate for its own automated attempt; do not overwrite it or claim Codex performed these checks. Exact first-paint-before-warning ordering and one-warning-per-attempt timing — **NOT VERIFIED**; valid short-path GUI backup, no-duplicate and integrity — **NOT RUN / NOT VERIFIED**. Stage 7's 13 automated tests remain separate PASS. Do not label all Stage 8 PASS.
+
+**Authority:** Rob approved documenting these manual results in shared handoffs only. No Codex assignment, new launch, source/config/data change, migration, deployment, process termination, or further test is authorized. No further action without separate direction.
+
 ## October 25, 2026 — Stage 8 resumed; mandatory STOP on inaccessible GUI, PID 7260 active
 
 - **Resume authority / identity — PASS.** Rob's current instruction explicitly authorized resuming Stage 8 only. Codex read the complete 504-line current handoff through EOF and relevant new history, reconciled project instructions, and verified starting project/shared heads `e036c7ff1b43adc3463cadb12e9839bae7229ae6` / `2fa44680d4cfc6c9f9204ee7e81932e8393c30dc`. Stage 7 source/test commit and recorded EXE/DLL hashes matched exactly.
