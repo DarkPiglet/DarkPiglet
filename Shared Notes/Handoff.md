@@ -1,5 +1,28 @@
 # Current Shared Handoff — Active Control
 
+## October 25, 2026 — Stage 5 controlled GUI backup verification — PUBLISHED PLAN, NOT EXECUTION AUTHORIZATION
+
+**Authority:** Rob approved publication of this tightened Stage 5 plan only. Do NOT execute, launch, build, modify code/data, merge or deploy until Rob separately dispatches Stage 5. Stage 4 remains complete on isolated CRM branch `codex/stage4-backup-path-validation-20261025`, pushed head `56813fb8e7d75fa0c729964473f863fd14b55fed`; source/test commit `5c525b08370fbeedd9a4aad0970b6bb41ff3897f`.
+
+**Objective:** One controlled GUI verification of Stage 4 backup path validation, with distinct evidence for Settings-time rejection and actual backup-time rejection, a valid short-path backup, SQLite integrity, and clean shutdown. Do not investigate or fix the separate startup anomaly in this stage.
+
+**Preflight and stop gates:**
+1. Read complete current/historical shared handoffs, CRM project handoff and AGENTS.md. Fetch CRM and shared remotes; verify exact branch, source/test commit and pushed head. Build a fresh Debug executable from the verified Stage 4 branch in a disposable workspace and record executable full path, hash and build evidence. Do not reuse Test 22 or an unidentified binary. STOP on any mismatch.
+2. Confirm correct synthetic source database and disposable workspace, backup destination, permissions, directory existence/creation where authorized, and source/WAL/SHM baseline hashes/existence. Confirm no CRM process is running before launch, record process inventory. If an existing process appears, STOP; do not terminate it automatically.
+3. No production, customer, profile, USB, Z: or protected data; no live Graph/email; no migration, merge, release, deployment, or changes outside disposable fixtures. No automatic retry, unrelated fixes or alternate executable. Do not overwrite target records. Preserve handoff write permissions.
+4. If the app cannot start, a hidden dialog obstructs operation, unexpected backup warning occurs, or process identity cannot be established, STOP and capture exact observable evidence. Do not improvise a workaround.
+
+**Single controlled run / acceptance evidence:**
+A. Launch the verified executable with synthetic data; capture exact PID, process executable path, launch time, visible window state and any dialog. If startup blocked, STOP.
+B. Settings-time long-path rejection: choose a disposable destination whose full final or `.creating` backup name exceeds 259 characters. Capture the actual rendered warning, actual/max length, and verify no target directory/file or backup was created and source/WAL/SHM baseline remains unchanged. Keep this distinct from point-of-use.
+C. Backup-time long-path rejection: using an isolated synthetic configuration that can reach the backup call without bypassing the validator, trigger the actual backup attempt with an over-limit full path. Capture the rendered warning and prove no destination writes; do not modify production or bypass application safety. If this cannot be exercised through supported GUI controls, mark NOT VERIFIED with reason; do not claim PASS.
+D. Short-path success: choose a valid short disposable local destination; perform a real backup, verify final filename, no leftover `.creating`, readable SQLite file and PRAGMA integrity_check=ok. Verify expected source/WAL/SHM existence/hashes or explain any SQLite-driven changes; never assume they must remain byte-identical during successful backup.
+E. Close CRM normally; verify exact launched PID exits and no unexpected CRM process remains. Do not forcibly terminate. Capture shutdown/restart persistence only if within this controlled run; otherwise mark NOT VERIFIED.
+
+**Reporting:** For every check provide ID, purpose, preconditions, steps, expected result, actual result, PASS/FAIL/NOT VERIFIED, root-cause evidence for failures, and notes/artifact paths. Record timestamps, exact executable SHA-256 and branch/commit, PID, complete measured path lengths, warning text/screenshots, backup filename, integrity result, file/hashes and cleanup. Never equate no warning with successful backup, or a successful backup with correct GUI warning. If failure cause cannot be established, say UNKNOWN and preserve evidence. Distinguish Stage 4 automated PASS from Stage 5 GUI outcome.
+
+**Completion:** No changes to CRM source or production. Update current and historical handoffs with observed results and unresolved findings; commit/push and refetch to verify remote commit. Stop pending Rob's separate approval for any next stage.
+
 ## October 25, 2026 — Stage 4 backup-path validation COMPLETE; focused verification PASS
 
 - **Execution authority / scope — PASS.** Rob's October 25 dispatch explicitly authorized execution of the published Stage 4 assignment. Codex read the complete current and historical shared handoffs, CRM project handoff and `AGENTS.md`, fetched both remotes, and verified starting project/shared revisions `03815c673c09062fa8a1b064d31ef31f5fb7b166` / `f9746aa0fccf8d442339631e00ece5f898d210a5`. Work is isolated on project branch `codex/stage4-backup-path-validation-20261025`; source/test commit is `5c525b08370fbeedd9a4aad0970b6bb41ff3897f` and pushed branch head is `56813fb8e7d75fa0c729964473f863fd14b55fed` (local/remote exact match after refetch).
