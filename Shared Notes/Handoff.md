@@ -1,5 +1,18 @@
 # Current Shared Handoff — Active Control
 
+## October 25, 2026 — Stage 7 clean Release package plan — PUBLISHED, NOT EXECUTION-AUTHORIZED
+
+**Rob's authorization:** Prepare and publish a focused Codex handoff only. No Codex execution, build, CRM launch, database access, migration, deployment or production change is authorized by publication.
+
+**Purpose and immutable source:** Close only the destination-build evidence gap identified in migration readiness commit `98ea616c0ecb7c7d1fc73859673fc49f48591640`. On a separately approved run, use repository `DarkPiglet/Weekly-Logger-Search-Application`, exact Stage 7 source commit `ac25089afc3016b48f6178bcd2c93afcc9b4fb70` on verified branch `codex/stage7-post-visible-backup-20261025`. Reconcile the complete current shared/project handoffs and applicable `AGENTS.md`. Confirm clean source tree, commit ancestry, Stage 7 fixes, and no unapproved/quarantined changes. If the exact source cannot be established, STOP; do not silently use older Release `5a613df...` or substitute Debug binaries.
+
+**Single bounded future build:** Produce ONE fresh self-contained win-x64 Release package with the established CRM publish procedure, to a new non-overwriting disposable output path. No product source/config/schema edits, dependency upgrades, refactoring, or unrelated tests. Do not reuse or overwrite existing package, stage, backup or database. Remove/exclude operational seed data, SQLite files and sidecars, runtime settings/profiles, secrets, credentials, personal/customer data, PDBs, diagnostics, test artifacts and launch/approval manifests; retain required non-sensitive application resources. If exclusion cannot be guaranteed, STOP without distributing package.
+
+**Evidence and stop gates:** Record source repo/branch/full commit, build commands and exit codes, SDK/runtime, application/file/product version, executable and DLL SHA-256, package path, full inventory/tree hash and ZIP integrity if ZIP created, required assets, excluded-file scan and no-overwrite confirmation. Distinguish build PASS from real-data acceptance or deployment approval. Do not launch CRM, open or change source/staged/production/USB/Z databases, touch settings, run Graph/email, perform data migration, merge, release, deploy or distribute. Report each gate PASS/FAIL/NOT VERIFIED, evidence and precise cause if known; stop on unexpected output or inability to prove containment. No automatic repair or retry.
+
+**Completion:** Update CRM project handoff and both shared handoffs, commit/push and refetch remote commits. STOP awaiting Rob's separate approval for any later settings/recovery inspection, staged-data launch or cutover. Historical Stage 2 and bounded Stage 8 PASS and unresolved exceptions remain unchanged.
+
+
 ## October 25, 2026 — CRM migration readiness assessment — STOP / NOT READY
 
 **Authority / scope:** Rob's current instruction explicitly authorized only the published readiness assessment. Codex read the complete current shared handoff through EOF, relevant migration/Stage 2/Stage 8 history, the complete CRM project handoff and `AGENTS.md`, and refetched CRM/shared heads `b329216069adba1dcc24538cebe375e69a99672b` / `34553aec1a28387f808bdcf7e25304a5625fa8bd`. Only existing documentation, Git metadata and static source were read. No CRM/process action, database/settings/sidecar access, copy, code/config change, build/test repetition, migration, integration, merge, release or deployment occurred.
