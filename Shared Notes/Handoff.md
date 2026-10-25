@@ -1,5 +1,18 @@
 # Current Shared Handoff — Active Control
 
+## October 25, 2026 — CRM migration readiness preflight plan — PUBLISHED; EXECUTION NOT AUTHORIZED
+
+**Decision:** Rob approved drafting and publishing this focused handoff only. This is a documentation update, not authorization to execute Codex, launch CRM, access live databases, migrate, deploy, or modify application code or configuration.
+
+**Established baseline — do not repeat:** Stage 2 offline copy/parity PASS on October 24. Authoritative historical Test20 source: `Z:\CRM Backup 20\CRM-v10-test.20-october14-win-x64\Data\CRM.sqlite`, 2,195,456 bytes, schema 24, 7,404 rows/35 user tables, SHA-256 `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`. Approved staged working copy: `C:\CRM Test22 Staging\Data\CRM.sqlite`. Existing offline physical-hash parity, scratch integrity/FK and record parity are historical PASS; do not copy or overwrite again without separate authorization. Rob will manually reenter later USB records; USB is excluded.
+
+**Future separately authorized Codex task — preparation only:** Read complete latest Current and Historical shared handoffs, current CRM project `HANDOFF.md` on its verified branch, and applicable `AGENTS.md`. Reconcile the Stage 2 baseline and Stage 7 corrected build identity, source/test commit `ac25089afc3016b48f6178bcd2c93afcc9b4fb70`, known EXE/DLL hashes and schema requirements. Use existing documented evidence and read-only metadata/static code review first. Identify the exact intended destination build, database routing, settings/profile assumptions, migration necessity versus simply pointing the application to the staged schema-24 database, and any incompatibilities. Establish an explicit no-overwrite recovery/rollback route and a bounded subsequent human-approved launch/migration acceptance checklist. Do not re-run Stage 2, open a write-capable SQLite connection, launch CRM, copy/mutate real or staged data, touch USB/Z source, run Graph/email, or deploy. If fresh file/database inspection would be necessary to prove a gate, mark NOT VERIFIED and request separate approval rather than accessing it under this plan.
+
+**Required report:** For each gate provide expected versus observed, PASS/FAIL/NOT VERIFIED, exact evidence and cause of failures where known. Clearly distinguish historical PASS from newly verified evidence. Preserve October 22 physical-hash FAIL and WAL/SHM uncertainty as historical unresolved, without misapplying them to the proven Stage 2 copy. Preserve three deferred business decisions (Site 246 addresses, Recycle Program Profile 274 notes, Contact Method 759 primary status) untouched. Stage 8 valid-path acceptance PASS, but first-paint-before-invalid-warning timing remains NOT VERIFIED. Stop at readiness assessment; propose one minimal separately authorized execution step only if all prerequisites are established. No silent remediation or scope expansion.
+
+**Publication boundary:** Publishing this plan does not dispatch Codex. Rob must separately authorize the preflight execution and later any actual migration or CRM launch.
+
+
 ## October 25, 2026 — Rob's Stage 8 documentation decision
 
 Rob accepted the final valid-path scheduled-backup PASS for documentation and approved closing that bounded acceptance scope. The run evidence is in shared commit `92fba4a`; archived closure in Historical Handoff. Exact first-paint-before-invalid-path-warning timing remains NOT VERIFIED; do not reclassify it as PASS. Stage 8 final valid-path verification is complete, but no data migration, production-data access, code change or deployment is authorized. Next: prepare migration preflight and evidence gates; seek separate execution authorization after review.
