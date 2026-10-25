@@ -1,5 +1,9 @@
 # Historical Handoff Archive
 
+## October 25, 2026 — Stage 8 mandatory preflight STOP; PID 9808 remains protected
+
+Rob's current instruction explicitly authorized Stage 8 only. Complete current handoff and controlling repository instructions were read; project/shared starting heads were `cbba1215bbd967564c711b1b47c76d11487703ba` / `a1a89d6085e5db33d0e5c7ed94e80fa2d0cca0f9`. Stage 7 source/test commit and current Debug EXE/DLL hashes exactly matched the recorded baseline. The first non-invasive process inventory found protected CRM PID 9808 still responsive in session 1 at the exact Stage 5 artifact executable path, with handle 0 and blank title. This met Stage 8's explicit process-conflict stop condition. No Stage 7 process was launched; no window/dialog interaction, termination, GUI verification, backup test, shutdown, code/build/test/configuration/database/integration/merge/release/deployment action occurred. All four GUI checks remain NOT RUN / NOT VERIFIED and Stage 7 automated PASS remains separate. PID 9808 was untouched; its disposition and any later continuation require separate explicit approval.
+
 ## October 25, 2026 — Stage 8 publication; execution pending
 
 Rob authorized publication only of Stage 8 controlled GUI verification. Full instructions are in `Shared Notes/Handoff.md`, commit `c370bb132200e0dcd47227fd3b206ad778dd1507`. Verify exact Stage 7 executable and disposable synthetic data; protect PID 9808 without interaction or termination; stop on process conflict. Check real GUI visibility before scheduled backup warning, controlled invalid-path warning, valid short-path backup and integrity, and normal GUI shutdown. Record expected/actual, PASS/FAIL/NOT VERIFIED and evidence for each check. No execution, CRM launch, code changes, production access, migration, merge or deployment authorized by publication. Separate Rob execution approval required.
