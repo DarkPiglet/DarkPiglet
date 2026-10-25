@@ -1,5 +1,10 @@
 # Current Shared Handoff — Active Control
 
+## October 25, 2026 — Rob's Stage 8 documentation decision
+
+Rob accepted the final valid-path scheduled-backup PASS for documentation and approved closing that bounded acceptance scope. The run evidence is in shared commit `92fba4a`; archived closure in Historical Handoff. Exact first-paint-before-invalid-path-warning timing remains NOT VERIFIED; do not reclassify it as PASS. Stage 8 final valid-path verification is complete, but no data migration, production-data access, code change or deployment is authorized. Next: prepare migration preflight and evidence gates; seek separate execution authorization after review.
+
+
 ## October 25, 2026 — Stage 8 final valid-path scheduled-backup acceptance PASS
 
 **Authority / scope:** Rob's current instruction explicitly supplied the separate execution authorization required by the published Stage 8 final-exceptions plan. Codex read the complete current shared handoff through EOF, relevant history, CRM project handoff and `AGENTS.md`. CRM branch `codex/stage7-post-visible-backup-20261025` started at local/remote `7058fbc0eea9f32729cf7414b15b74c4b39eeb42`, contains Stage 7 source/test commit `ac25089afc3016b48f6178bcd2c93afcc9b4fb70`, and the launched Debug EXE/DLL exactly matched recorded SHA-256 `775043F5...` / `56AAD836...`. Fresh process inventory found no CRM process. Only disposable contained `artifacts\Stage8-20261025\Short` synthetic schema-24 data was used; it passed integrity/FK/hash/sidecar/isolation/writability checks, its backup folder was empty, and normal weekly eligibility was established from the unchanged no-recent-managed-backup rule. Actual final/`.creating` lengths were 129/138. A preliminary launcher command failed before `Process.Start`; immediate checks proved it created neither process nor backup, so exactly one actual launch occurred. No code, build, config, schedule or database preparation change occurred.
