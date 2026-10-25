@@ -3361,3 +3361,8 @@ Rob reviewed Codex's final Stage 8 result and authorized documentation. Codex's 
 ## October 25, 2026 — Migration readiness preflight plan published (documentation only)
 
 Rob approved publication of a narrowly scoped CRM migration readiness plan, not execution. Current Handoff contains controlling full plan: preserve Stage 2 verified Test20 historical Z-source to C staging parity; no repeat copy, USB access, database changes, CRM launch, code/config change, Graph/email, deployment or migration. A future separately authorized Codex task will reconcile Stage 7 build and staged schema-24 compatibility, database/settings routing, migration necessity, recovery and acceptance gates using existing evidence and static/read-only metadata only. Report PASS/FAIL/NOT VERIFIED with reasons; stop on unknowns. Historical October 22 hash failure and WAL/SHM uncertainty, Stage 8 invalid-warning timing, and three deferred business-record decisions remain open. Rob must separately authorize preflight execution and any later migration.
+
+
+## October 25, 2026 — Migration readiness handoff tightened before dispatch
+
+Rob requested another review of both handoffs before any Codex execution. The Current Handoff was tightened to: distinguish Stage 7 synthetic Debug build from any proposed Test22 Release real-data destination with exact provenance; determine whether schema conversion is actually needed versus data routing/settings; and stop with NOT VERIFIED on missing evidence rather than launching tests or repairs. Preserve the immutable historical Z source and staged copy, Stage 2 PASS, Stage 8 bounded PASS and unresolved historical exceptions. This is documentation only: no Codex execution, CRM launch, database change, migration or deployment.
