@@ -1,5 +1,9 @@
 # Historical Handoff Archive
 
+## October 25, 2026 — Stage 5 GUI verification plan published, execution NOT authorized
+
+Rob approved publication after tightening review. Current handoff contains full controlling Stage 5 instructions: exact Stage 4 commit/executable identity, synthetic-only GUI Settings and point-of-use long-path checks separately, short-path backup SQLite integrity, PID-specific shutdown, expected/actual/pass/fail evidence and hard stops. No Stage 5 test, launch, code/data change, merge or deployment authorized by publication. Stage 4 remains PASS for automated tests only; GUI and separate startup anomaly remain unverified. Await Rob's explicit execution dispatch.
+
 ## October 25, 2026 — Stage 4 backup-path validation implemented; focused verification PASS
 
 Rob's October 25 instruction was the explicit execution authorization required by the published Stage 4 plan. Codex read all controlling handoffs/instructions and verified starting CRM/shared heads `03815c673c09062fa8a1b064d31ef31f5fb7b166` / `f9746aa0fccf8d442339631e00ece5f898d210a5`. On isolated branch `codex/stage4-backup-path-validation-20261025`, source/test commit `5c525b08370fbeedd9a4aad0970b6bb41ff3897f` added one centralized 259-character complete-path guard for both final and `.creating` backup names before directory/SQLite target creation, reused by Settings and point-of-use backup code. The actionable `PathTooLongException` gives actual/max lengths and requests a shorter local folder; no redirect occurred and filename/atomic staging/integrity/SQLite modes/scheduling/restore/merge/ten-file retention stayed unchanged. Pushed project head `56813fb8e7d75fa0c729964473f863fd14b55fed` exactly matched the refetched remote branch.
