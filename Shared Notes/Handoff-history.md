@@ -1,5 +1,9 @@
 # Historical Handoff Archive
 
+## October 25, 2026 — Stage 6 comparison plan publication only
+
+Rob requested final tightening and GitHub publication, not execution. Stage 6 compares Stage 2 successful visible startup with Stage 5 invisible PID 9808, requiring provenance-backed evidence matrix across executable, launcher, session/desktop, environment, backup paths, logs, windows and shutdown. It explicitly distinguishes the confirmed 260-character backup rejection from unproven missing-window cause, forbids PID 9808 interaction, process termination, relaunch, builds and all database/settings/source changes, and requires evidence gaps and minimal proposed follow-up. Complete controlling instructions in Current Handoff. No Stage 6 execution authorized; preserve Stage 5 STOP.
+
 ## October 25, 2026 — Stage 5 GUI verification mandatory STOP; hidden warning / PID 9808 active
 
 Rob explicitly authorized Stage 5. Stage 4 source/remote identity passed, and a fresh disposable Debug build succeeded with zero warnings/errors (`CRM.exe` SHA-256 `2A182C9F...`). Two unlaunched fixture preparations were rejected/corrected; final contained `Run3` was a valid schema-24 fictional Test22 database with integrity `ok`, zero FK rows, matching source/working hash, no initial sidecars or process, disabled integrations, an absent 214-character long backup folder and measured final/`.creating` paths 251/260. Exactly one launch began `2026-10-25T18:20:30.0788100Z` as PID 9808 with the verified executable, working directory, zero arguments and contained environment.
