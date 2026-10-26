@@ -1,5 +1,17 @@
 # Current Shared Handoff — Active Control
 
+## October 25, 2026 — Test22 portable package preparation — PUBLISHED PLAN, NOT EXECUTION
+
+Rob approved publication only. A separate explicit instruction is required before Codex performs packaging. Read the complete current and historical handoffs, project handoff and AGENTS instructions first.
+
+Use only the verified Stage7 Test22 Release application and approved schema-24 staged database. Verify full executable, DLL, ZIP and database hashes against prior authoritative evidence. Staged database: C:\CRM Test22 Staging\Data\CRM.sqlite; SHA-256 FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D. Protect the Stage3 recovery copy and Test20 rollback. Do not rebuild or migrate.
+
+Before creating the package, verify database routing for the intended portable USB launch, including environment overrides, working directory and fallback behavior. If the unchanged Release cannot be proven to select the intended database without creating an empty or old database, stop rather than modify code. Create one new, uniquely labeled output directory and ZIP without overwriting existing files. Include a consistent copy of the approved database and verified Release files; exclude synthetic data, disposable settings, logs, secrets and obsolete packages. Verify output hashes, file inventory, ZIP contents, extraction layout and routing. No CRM launch, production deployment, external calls or merge.
+
+Prepare a manual production acceptance plan with ID, purpose, preconditions, steps, expected result, blank actual result, blank pass/fail and notes. Include checking USB currentness and accounting for later records; manually entering production settings; network export; controlled record save and reopen persistence; routine order generation and separately authorized email; next week's scheduled mass email, explicitly deferred. Preserve rollback procedure and distinct acceptance, merge and deployment approval gates. Do not repeat passed stages, startup/shutdown, backup, data completeness or cleanup tests.
+
+Update both authoritative handoffs with actual evidence, commit and push, independently verify remote revisions, then stop for Rob. No other work authorized.
+
 ## October 25, 2026 — Corrected five-item Z-drive cleanup COMPLETE; protected sets PASS
 
 Rob explicitly authorized only the corrected published cleanup. Complete controlling handoffs and project instructions were reconciled from project head `7e0c2a56f2c65b6affc0710bd8bfa6029b64998b` and shared correction `4a74059db52248698dc1080f567ea71acb0303a2`. Corrected preflight recognized exact `Test22-Package-Manifest.txt` (479 bytes / `44395D8A00E92F007C826D387E42D02390F0828D6C66E5C9CDFD935D9CBF2FDB`). Both M1 trees matched protected Test20 file-for-file/canonical tree `4AF1E965...0D2D2`; root DB matched `FF4EC6C9...7A5D`; ContactSave directory and 302-entry ZIP matched exactly with ZIP `DC809E7201E28A8D7BD5AA2B3F2F4453C37BD5177E309FD1A9AA472AF7241259`; earlier synthetic ZIP matched `61173B52C2ACACD7EAE954952E618390716335AD8184D471E05E28ED8A7DCF71`. Exact direct-root paths, no reparse/overlap, 943 exclusive-read file checks, and zero process/lock/settings/shortcut dependencies all passed.
