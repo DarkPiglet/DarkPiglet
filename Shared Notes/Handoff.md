@@ -1,5 +1,19 @@
 # Current Shared Handoff — Active Control
 
+## October 25, 2026 — Five-item Z-drive CRM cleanup — PUBLISHED; EXECUTION NOT YET AUTHORIZED
+
+**Rob's decision:** Approves deletion of ONLY these five previously inventoried Z-drive items, subject to strict identity/hash revalidation. Publication is approved; Codex must receive separate explicit execution instruction before deleting anything.
+
+1. `Z:\CRM-T22_M1_Test` — 638 files, 292458586 bytes; both 319-file child trees must match protected Test20 canonical tree SHA-256 `4AF1E9652A20EB26F46743C209495123CEDAFC518C2D8AAD831AA476E130D2D2`.
+2. `Z:\CRM.sqlite` — 2195456 bytes, SHA-256 `FF4EC6C909C38171F5C45258A7147CA4EB79787F8F211D4C0B02C26A97DD7A5D`.
+3. `Z:\CRM-Test22-ContactSave-Synthetic-win-x64` — 302 files, 270547504 bytes; verify inventory identities, synthetic DB hashes and contents before deletion.
+4. `Z:\CRM-Test22-ContactSave-Synthetic-win-x64.zip` — 108989846 bytes, SHA-256 `DC809E72` prefix and `1259` suffix from inventory; obtain full recorded hash before deletion.
+5. `Z:\CRM-Test22-Synthetic-win-x64.zip` — 108974470 bytes, SHA-256 `61173B52` prefix and `CF71` suffix from inventory; obtain full recorded hash before deletion.
+
+**Required preflight:** Read complete current/historical/project handoffs and AGENTS.md. Reconcile exact inventory evidence, full hashes and paths, actual file counts/sizes, ZIP identity and tree contents. Stop if any hash is unavailable, ambiguous or mismatched; do not rely on abbreviated hashes or filename similarity. Check no live process, lock, settings route or needed recovery dependency points into a candidate. Verify protected rollback `Z:\CRM Backup 20\CRM-v10-test.20-october14-win-x64`, its canonical ZIP `Z:\CRM-v10-test.20-october14-win-x64.zip`, `Z:\CRM_Recovery` including sidecars, `Z:\Data for CRM Update`, verified Test22 Stage7 Release outside Z, and staged/recovery DBs remain intact. Preserve all archive/uncertain candidates, including `Z:\Weekly Logger - Standalone Test Build`, historical ZIPs, extracted historical folders and correction evidence. USB currentness remains NOT VERIFIED.
+
+**Execution (only after separate Rob instruction):** Remove exactly the five named candidates only after each independent preflight passes. No wildcards, broad parent-directory cleanup, substitution, unrelated rename/move/archive, permissions changes, database opening/writes, CRM launch, rebuild, migration, packaging, deployment or external actions. On any failure, STOP without proceeding to further items; report exactly which were removed and which remain. Do not silently retry. Postflight verify all protected file/tree hashes and existence, verify absence of each removed candidate, record freed bytes and unresolved issues. Update both handoffs, commit/push, independently refetch remote revisions, STOP for Rob review. Packaging and production-only manual test plan remain separate next tasks.
+
 ## October 25, 2026 — Z-drive CRM cleanup inventory complete; NO CLEANUP PERFORMED
 
 Rob's current message supplied explicit execution authorization only for the published read-only Z-drive inventory. Complete Current/Historical/project handoffs and `AGENTS.md` were reconciled; project branch started local/remote at `bc9c14de7ea77017749be0b60386e86b52719699`, and shared `main` was fast-forwarded to publication commit `810c74846d2b6bd57390becfc7a8b2c71ba3fda2`. No deletion, move, rename, extraction, file creation, permission change, CRM/SQLite launch/open, build, migration, packaging or deployment occurred. One initial in-memory tree-hash command failed in the wrapper before execution due to an escape collision; the equivalent separator-safe read-only command completed.
