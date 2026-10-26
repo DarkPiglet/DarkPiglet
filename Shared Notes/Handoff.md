@@ -1,5 +1,13 @@
 # Current Shared Handoff — Active Control
 
+## October 25, 2026 — Authorized five-item Z-drive cleanup STOPPED in preflight; nothing deleted
+
+Rob's current message explicitly authorized only the published five-item cleanup. Project started local/remote at `497775935fd66be17138cd1b14e723c63cd13f33`; shared `main` was fast-forwarded to publication `b42b3ff36d8f0af7dba463e2122131e23c3f91e0`. Read-only preflight confirmed protected Test20 at 319 files / 146,229,293 bytes with main DB `FF4EC6C9...7A5D`; both `Z:\CRM-T22_M1_Test` child trees matched that protected tree file-for-file by relative path, length and SHA-256; root `Z:\CRM.sqlite` matched `FF4EC6C9...7A5D`; and the extracted ContactSave directory remained 302 files / 270,547,504 bytes with all three 421,888-byte synthetic DBs at `0183F94A...5A1` and the recorded executable identity.
+
+The preflight command then failed because its manifest selector incorrectly accepted only `manifest*.json`; the package's actual manifest is `Test22-Package-Manifest.txt`. The command stopped before fresh ZIP-content, lock/settings and remaining protected-set gates, so the full mandatory preflight did not pass. Narrow read-only diagnosis proved the 479-byte text manifest has SHA-256 `44395D8A00E92F007C826D387E42D02390F0828D6C66E5C9CDFD935D9CBF2FDB` and contains the exact source commit `52d7f153d3a1b654dd858eec75ab5e8d392dd5f8`, DB hash `0183F94A...5A1`, schema 24 and safety assertions. This was a checker assumption error, not an artifact mismatch, but the published STOP/no-retry rule was honored.
+
+All five candidates remain present; zero items were deleted and zero bytes intentionally freed. Protected Test20 folder/ZIP, CRM recovery including sidecars, original workbooks, verified local Stage7 release, staged Test22 DB and Stage3 recovery DB remain present and untouched. CRM/databases were not opened or launched; nothing was moved, archived, rebuilt, migrated, deployed or settings-changed. A new explicit Rob authorization is required before any corrected preflight/cleanup attempt. STOP for Rob review.
+
 ## October 25, 2026 — Five-item Z-drive CRM cleanup — PUBLISHED; EXECUTION NOT YET AUTHORIZED
 
 **Rob's decision:** Approves deletion of ONLY these five previously inventoried Z-drive items, subject to strict identity/hash revalidation. Publication is approved; Codex must receive separate explicit execution instruction before deleting anything.
