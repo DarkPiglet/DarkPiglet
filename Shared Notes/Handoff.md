@@ -1,5 +1,9 @@
 # Current Shared Handoff — Active Control
 
+## October 25, 2026 — Cleanup preflight correction awaiting separate execution approval
+
+Rob approved publication of a corrected preflight instruction, not another execution. The previous five-item cleanup stopped without deleting anything. Its manifest selector expected a JSON file, but the correct package manifest is Test22-Package-Manifest.txt (479 bytes; SHA-256 44395D8A00E92F007C826D387E42D02390F0828D6C66E5C9CDFD935D9CBF2FDB). On separately authorized execution, verify this exact text manifest and finish the previously incomplete preflight checks. Recheck exact identities, full hashes, dependencies, locks and protected backups before removing only the five previously approved candidates. Stop on any mismatch. Preserve Test20 rollback, Test22 verified release, staged and recovery databases, input workbooks and historical archives. No other deletion, launch, database write, build, migration or packaging is authorized. Report results in both handoffs and verify remote commits; stop for Rob.
+
 ## October 25, 2026 — Authorized five-item Z-drive cleanup STOPPED in preflight; nothing deleted
 
 Rob's current message explicitly authorized only the published five-item cleanup. Project started local/remote at `497775935fd66be17138cd1b14e723c63cd13f33`; shared `main` was fast-forwarded to publication `b42b3ff36d8f0af7dba463e2122131e23c3f91e0`. Read-only preflight confirmed protected Test20 at 319 files / 146,229,293 bytes with main DB `FF4EC6C9...7A5D`; both `Z:\CRM-T22_M1_Test` child trees matched that protected tree file-for-file by relative path, length and SHA-256; root `Z:\CRM.sqlite` matched `FF4EC6C9...7A5D`; and the extracted ContactSave directory remained 302 files / 270,547,504 bytes with all three 421,888-byte synthetic DBs at `0183F94A...5A1` and the recorded executable identity.
