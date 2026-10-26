@@ -1,5 +1,13 @@
 # Current Shared Handoff — Active Control
 
+## October 25, 2026 — Z-drive CRM cleanup inventory — PUBLICATION ONLY
+
+Rob approved publishing this planning handoff, not executing inventory, moving or deleting files. Inventory and approved cleanup precede Test 22 packaging.
+
+Next separately authorized Codex task: Read the complete current and historical handoffs, CRM project handoff, and AGENTS instructions. Verify exact repository and path capitalization. Conduct a read-only inventory of CRM-related Z-drive folders, ZIPs, extracted packages, synthetic versions, databases and backups. Record exact paths, sizes, relevant hashes, provenance and dependencies. Classify each item KEEP, ARCHIVE CANDIDATE, DELETE CANDIDATE or UNCERTAIN; keep uncertain items. Explicitly protect the known-good Test 20 rollback and its database, the verified Test 22 release and staged database, and independent recovery copies. The approved historical Test 20 source is Z:\CRM Backup 20\CRM-v10-test.20-october14-win-x64\Data\CRM.sqlite. Do not assume the USB daily-use database has no later changes. Check for launch shortcuts and settings referencing older paths. Recommend unambiguous future folder names but do not rename. Produce an exact proposed cleanup manifest for Rob's review, update both handoffs, commit/push and verify remote updates, then STOP.
+
+No deletion, archive, move, rename, database change, CRM launch, build, migration, packaging, deployment or permission change is authorized. Actual cleanup needs Rob's separate approval. Preserve all completed Test 22 acceptance and data-completeness results. After cleanup is separately approved and verified, prepare Test 22 packaging and the production-only manual test plan as a separate task.
+
 ## October 25, 2026 — Test 22 October 14 baseline data-completeness verification PASS; STOP for Rob
 
 Rob's current message supplied the explicit execution authorization for only the published read-only data-completeness verification. Complete Current/Historical/project handoffs and `AGENTS.md` were reconciled; project branch `codex/stage7-post-visible-backup-20261025` began local/remote at `1e43230d9df372024f0da100445d1cbb8fd48425`, and shared `main` was fast-forwarded to fetched remote `e415b020437185dbddf2f13cd2c803ea7b9cbb47`. Stages 2/3/7/8 and controlled Release acceptance were preserved without repetition. No CRM launch, database/settings/recovery write, migration, code/build/package/deployment or external action occurred.
