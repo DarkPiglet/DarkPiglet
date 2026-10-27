@@ -1,5 +1,15 @@
 # Current Shared Handoff — Active Control
 
+## October 27, 2026 — Final controlled database verification complete; P01 still NOT RUN
+
+Repository `DarkPiglet/Weekly-Logger-Search-Application`, branch `codex/test22-manual-findings-20261026`, retains completed code/test commit `dd223e6f228c236c85b89b1246b587b2a0d1f5c2`; documentation-only project head `6d81d0882707b13cd25f70303f1039b25b9a7414` was then pushed for this verification. Read-only operating-system checks at `2026-10-27T08:08:12Z` found no relevant writer process. `Z:\CRM.sqlite` was stable across two metadata/hash observations, passed an exclusive-read gate, and had no WAL/SHM/journal. It remains an ordinary non-reparse 2,195,456-byte file, modified `2026-10-26T12:00:18-07:00`, SHA-256 `CBA53416020E11B0027D1C7F18FF2AD33B4312E18D3BD860F7D586F7C3F1790A`.
+
+Independent recovery `C:\CRM Test22 Staging\Recovery\Rob-USB-20261026-120018-CBA53416\CRM.sqlite` passed the same stability, exclusive-read and sidecar checks and remains the same size, modified timestamp and SHA-256. The Z copy, previously verified October 26 snapshot and independent recovery are byte-identical; the recovery remains intact. Integrity/FK/schema/row-delta checks were not repeated because the cryptographic identity reuses the already completed October 26 evidence. Neither file was opened with SQLite, and no disposable copy or temporary diagnostic file was needed.
+
+**Outstanding need.** This evidence does not independently verify Rob's active USB database and does not establish whether daily work occurred after `2026-10-26T12:00:18-07:00`. P01 exact daily-use USB/current-data readiness therefore remains **NOT RUN / NOT VERIFIED**. P10 items 2-3 remain PASS only for the documented October 26 snapshot/recovery scope. A later P01 decision requires a separately evidenced closed-database copy or verified source identity from the actual current USB/daily-use database; do not infer currentness from this unchanged Z copy.
+
+No database, recovery, settings, prior evidence, package, code or service was modified or replaced. No production service, Graph, email, test, build, package, merge or deployment occurred. No run-owned temporary files were created, so cleanup was not required. STOP for Rob review.
+
 ## October 27, 2026 — Documentation-only GitHub verification; remaining Test22 work for next session
 
 **Correct repository and completed commit.** The CRM project GitHub repository is `https://github.com/DarkPiglet/Weekly-Logger-Search-Application.git` (`DarkPiglet/Weekly-Logger-Search-Application`), not `DarkPiglet/RecycleLog`. Read-only local and GitHub verification matched branch `codex/test22-manual-findings-20261026` at completed commit `dd223e6f228c236c85b89b1246b587b2a0d1f5c2` (`Fix Test22 upgrade test reflection calls`). The checkout has no tracked changes; pre-existing untracked `output/` and `s2/` remain untouched.

@@ -1,5 +1,21 @@
 # Historical Handoff Archive
 
+## October 27, 2026 — Final controlled Z-drive database and recovery verification
+
+Rob authorized one bounded database verification using operating-system file evidence, with SQLite access prohibited on protected originals unless additional inspection was justified through a safe disposable copy. Repository identity was reconfirmed as `https://github.com/DarkPiglet/Weekly-Logger-Search-Application.git`; before documentation, local branch, upstream tracking ref and GitHub branch `codex/test22-manual-findings-20261026` all matched completed code/test commit `dd223e6f228c236c85b89b1246b587b2a0d1f5c2`. Required project-handoff documentation was then committed and pushed as documentation-only head `6d81d0882707b13cd25f70303f1039b25b9a7414`. Existing untracked `output/` and `s2/` remained untouched.
+
+At `2026-10-27T08:08:12.1796204Z`, process-name inspection found zero CRM, GoGreenMonthlyDrafts or named SQLite writer processes. Before hashing, both protected files existed, had no `-wal`, `-shm` or `-journal`, and could be opened read-only with exclusive file sharing, establishing no observed open writer. Each file's metadata and SHA-256 were collected twice; the observations matched exactly and sidecars remained absent afterward.
+
+`Z:\CRM.sqlite` is an ordinary, non-reparse file with archive attribute, 2,195,456 bytes, creation time `2026-10-27T05:38:03.2142584Z` (`2026-10-26T22:38:03.2142584-07:00`), modified time `2026-10-26T19:00:18Z` (`2026-10-26T12:00:18-07:00`) and SHA-256 `CBA53416020E11B0027D1C7F18FF2AD33B4312E18D3BD860F7D586F7C3F1790A`. These values match the previously verified October 26 copy.
+
+Independent recovery `C:\CRM Test22 Staging\Recovery\Rob-USB-20261026-120018-CBA53416\CRM.sqlite` is also ordinary/non-reparse/archive, 2,195,456 bytes, created `2026-10-27T05:44:36.3568374Z` (`2026-10-26T22:44:36.3568374-07:00`), modified `2026-10-26T19:00:18Z`, and has the same full SHA-256. Source and recovery have identical length, modified timestamp and content hash. No discrepancy was found; the existing recovery remains intact.
+
+No SQLite integrity, foreign-key, schema or row-delta test was repeated. Exact byte identity establishes that the files are the same snapshot for which those checks already passed, so additional database inspection was not justified. Neither protected file was opened by SQLite, no disposable database was created, and no temporary diagnostic file required cleanup.
+
+The verified fact is limited to continued identity with the October 26 snapshot. There is no independent evidence tying this Z copy to Rob's present active USB database or proving whether work occurred after its `2026-10-26T12:00:18-07:00` modified time. P01 therefore remains **NOT RUN / NOT VERIFIED**. P10 items 2-3 remain PASS only within their existing October 26 snapshot/recovery scope. Future P01 closure requires a separately authorized, writer-closed, provenance-backed current copy or direct source identity evidence from the actual USB/daily-use database.
+
+No database, sidecar, recovery, settings, evidence, package, code or production service was modified, replaced or deleted. No test, build, Graph/email access, merge, package or deployment occurred. STOP for Rob review.
+
 ## October 27, 2026 — Documentation-only repository correction and next-session test inventory
 
 Read-only verification established the correct CRM project GitHub repository as `https://github.com/DarkPiglet/Weekly-Logger-Search-Application.git` (`DarkPiglet/Weekly-Logger-Search-Application`). Local HEAD, its upstream tracking ref and GitHub branch `codex/test22-manual-findings-20261026` all matched completed commit `dd223e6f228c236c85b89b1246b587b2a0d1f5c2`, `Fix Test22 upgrade test reflection calls`. The prior `DarkPiglet/RecycleLog` repository reference in the authorization record was incorrect and has been corrected. The project checkout had no tracked changes; pre-existing untracked `output/` and `s2/` were not touched.
