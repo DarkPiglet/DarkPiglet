@@ -1,5 +1,15 @@
 # Current Shared Handoff — Active Control
 
+## October 27, 2026 — Corrected Test22 portable package verified; NOT DEPLOYED
+
+Exact application/test source `dd223e6f228c236c85b89b1246b587b2a0d1f5c2` on `DarkPiglet/Weekly-Logger-Search-Application` branch `codex/test22-manual-findings-20261026` contains the completed export/order/alias corrections and tracked upgrade-test fix; later project head `6d81d0882707b13cd25f70303f1039b25b9a7414` was documentation-only. A clean exact-source archive built successfully as self-contained Release `win-x64` without changing application code or rerunning tests.
+
+New no-overwrite package root: `C:\Users\Dev\source\repos\Weekly-Logger-Search-Application\artifacts\Test22Portable-20261027-dd223e6`. Directory `CRM-Test22-Portable-win-x64-dd223e6-NOT-DEPLOYED` is 291 files / 137,996,975 bytes / canonical tree SHA-256 `005553923C38FA88637056E634B55E26A9F1F57D009AA186F35A0FDA77277E8D`. Its ZIP is 56,489,490 bytes / 291 entries / SHA-256 `4D2ADEA775DEB155A85A104A37013C78FF183C4173AF6216DACB50D39476E784`; fresh extraction matched every path, length and hash. `CRM.exe` is `E434A94D...E9B2`, `CRM.dll` `6DC26495...DB5`, both version `10.0.0-test.22+dd223e6...` / FileVersion `10.0.0.22`.
+
+**Content / evidence.** No customer data is included: no Data/Database/TestData, SQLite/SQL/sidecars, settings/portable config, PDB, logs, orders, backups or sensitive-named file. The sole XLSX is the tracked blank order template. Inventory is `verification-inventory.csv` (`A5E955E3...DE62`); full results are `verification-summary.txt` (`377BFC0A...CC79`). Existing retained evidence confirms corrected upgrade tests 1/1 each, safe regression 366/366, disposable exports 4/4 and focused cases 21/21; none was rerun. Prior Stage7 and production-data portable ZIPs retain hashes `27EAAAD9...EFEA` and `37C63631...CCE` and were not overwritten.
+
+The package was not launched and is **NOT DEPLOYED / NOT APPROVED FOR CUTOVER**. The isolated build root was removed; no test/build process remains. Project handoff documentation was pushed as branch head `e19afcd1498dceac3931b8bc059c51fd7890b532`. P01, P08, P09, P11 and the two interactive integration cases retain their prior statuses. No database, recovery, settings, production file, merge, deployment, cutover, Graph/service or email action occurred. STOP for Rob review.
+
 ## October 27, 2026 — Final controlled database verification complete; P01 still NOT RUN
 
 Repository `DarkPiglet/Weekly-Logger-Search-Application`, branch `codex/test22-manual-findings-20261026`, retains completed code/test commit `dd223e6f228c236c85b89b1246b587b2a0d1f5c2`; documentation-only project head `6d81d0882707b13cd25f70303f1039b25b9a7414` was then pushed for this verification. Read-only operating-system checks at `2026-10-27T08:08:12Z` found no relevant writer process. `Z:\CRM.sqlite` was stable across two metadata/hash observations, passed an exclusive-read gate, and had no WAL/SHM/journal. It remains an ordinary non-reparse 2,195,456-byte file, modified `2026-10-26T12:00:18-07:00`, SHA-256 `CBA53416020E11B0027D1C7F18FF2AD33B4312E18D3BD860F7D586F7C3F1790A`.
