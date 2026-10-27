@@ -1,5 +1,14 @@
 # Historical Handoff Archive
 
+## October 26, 2026 late evening — Rob approves preparation of bounded Codex verification with mandatory test cleanup
+
+Rob requested that Codex, subject to explicit task dispatch, perform controlled **end-to-end RCLog and Recycle Agreement Excel export testing** rather than leaving all export verification to manual review; also include safe P10.2/P10.3 evidence checks, alias/order-cancel checks as needed and investigation of five remaining automated suite failures. A test-only build from the corrected control branch is permitted within the prospective bounded assignment, but no distribution package, merge, deployment or release cutover. Actual GUI/Excel feasibility and isolation must be verified; unexecuted manual steps must not be silently marked PASS. All source/USB/Z/recovery databases remain protected. Production mass email/Graph and external sends remain prohibited.
+
+**Added explicit cleanup requirement:** after any test outcome, normal-close task-owned processes; first retain sanitized logs, comparison and test evidence outside the disposable root, then delete only files and directories demonstrably created for this run under the controlled non-overwriting test root (temporary XLSX, order forms, SQLite and sidecars, scratch rollback copies, synthetic settings/logs and test-only build products). Verify deletion and report residue. Never remove unknown/locked files, historical packages, active data, prior evidence, existing `output/`/`s2/`, or unrelated directories. If cleanup cannot be done safely, stop and report the exact exception.
+
+Full controlling prospective instruction is at the beginning of `Shared Notes/Handoff.md`. This entry is documentation of Rob's new requested scope; no Codex test execution or environment/file cleanup has been performed by handoff publication. P01 NOT RUN; P02–P07 PASS; P08 FAIL; P09 NOT RUN; P10.1 PASS; P10.2/.3 NOT RUN; P11 DEFERRED remain unchanged pending accepted new evidence.
+
+
 ## October 26, 2026 — Updated CRM data protected and Test22 focused corrections completed
 
 ### Authority and production-data protection
