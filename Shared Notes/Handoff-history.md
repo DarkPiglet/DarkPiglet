@@ -1,5 +1,11 @@
 # Historical Handoff Archive
 
+## October 27, 2026 — Rob approves narrow post-verification review and stale-test correction
+
+Rob's "Proceed" follows the October 27 verified report and recommendation to review the corrected branch and fix only two stale `CRMUpgradeTests` reflection calls. The associated controlling next-task wording is at the beginning of `Shared Notes/Handoff.md`. This historical entry records the permission and intended bounded Codex follow-up; publishing the entry is **not** evidence Codex has received or run that work. Release packaging, merge, deployment, cutover, live data edits and email remain separately prohibited.
+
+Review must be from the local `codex/test22-manual-findings-20261026` checkout, since the connected `DarkPiglet/RecycleLog` GitHub repository did not expose the branch or the tested source SHA for independent remote diff inspection at this time. Required steps: confirm branch/HEAD and local project instructions/worktree, read-only review existing application changes, correct only the two stale test reflection invocations by explicitly supplying their optional third argument, test and report, and retain ShippingBrowser and MonthlyDrafts as unresolved environment-host reruns unless a safe normal interactive host establishes outcomes. The October 27 results remain 370/374 full-suite, 4/4 disposable UI export cases, 21/21 focused, P10.1–.3 PASS; protected data unchanged. Preserve P08 manual FAIL, P09 NOT RUN, P01 NOT RUN, P11 DEFERRED. Explicit task-owned temporary cleanup and STOP for Rob review remain mandatory. No source edit or test execution by this documentation-only update.
+
 ## October 27, 2026 — Corrected Test22 isolated verification completed
 
 ### Authority, source state and isolation
