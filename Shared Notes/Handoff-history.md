@@ -1,5 +1,13 @@
 # Historical Handoff Archive
 
+## October 26, 2026 late evening — Coordinated Test 22 correction plan PUBLISHED, NOT EXECUTED
+
+Rob approved final tightening and publication in **only** the two authoritative `Shared Notes` handoffs, not the proposed Codex implementation. The full controlling prospective instructions now head `Handoff.md`, under “Test 22 coordinated corrections: APPROVED FOR HANDOFF PUBLICATION ONLY.” No project code, executable, tests, database, packages, production settings or acceptance document were changed or inspected by this publication; no CRM or Graph operations were authorized.
+
+The proposed scope is bounded: independently selectable RCLog/Recycle Agreement XLSX exports with new-file selection/creation, layout validation, overwrite and zero-result confirmations, non-destructive cancellation, preserving extra data, and dual-file restore including newly created-file cleanup; temporary order form discarded on cancel, permanent only on approval, with safe file-name handling; single optional site alias TextBox with one-cycle save and audit; a separately authorized read-only inspection of Rob's new October 26 `CRM.sqlite` copy; remaining P10 integrity/recovery evidence and non-secret P06/P07 documentation gaps. P11 stays deferred. The former `Z:\CRM.sqlite` was deleted during earlier cleanup; Rob was COPYING a **new** file there concurrently, not providing verified evidence yet. Its existence, integrity, sidecars, hash, and daily-use USB equality are **NOT VERIFIED**. Copy remains Rob's protected property; NO overwrite or read is authorized by publishing this plan.
+
+Statuses unchanged: P01 NOT RUN/not recorded, P02–P07 PASS, P08 FAIL, P09 NOT RUN, P10(1) PASS / P10(2–3) NOT RUN, P11 DEFERRED/NOT RUN. Test22 remains HOLD, NOT DEPLOYED, and NOT APPROVED FOR CUTOVER. Codex requires Rob's separate verbal/dictated execution direction. Publication-only STOP.
+
 ## October 26, 2026 — Complete CRM Test 22 production manual acceptance review
 
 ### Scope and evidence
