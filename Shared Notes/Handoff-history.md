@@ -1,5 +1,65 @@
 # Historical Handoff Archive
 
+## October 26, 2026 — Complete CRM Test 22 production manual acceptance review
+
+### Scope and evidence
+
+Rob authorized a read-only review of the latest production manual results against current and historical handoffs. The controlling manual evidence is `Z:\CRM_Test22_Production_Manual_Acceptance_Matched_Formatting.docx`, 221,709 bytes, modified October 26, 2026 at 2:14:06 PM Pacific, SHA-256 `B39BE34CBB778DF843A3B1FCEA747C8C17C96FBE28C390846D76F487EF8799E5`. The DOCX contains 180 paragraphs, 13 tables and four embedded screenshots, with no Word comments and no tracked insertions or deletions. Its completed result checkboxes and handwritten/typed actual-result notes are newer evidence than the October 25 package-plan statement that results were blank. Embedded screenshots substantiate the three RCLog validation messages and the separate alias workflow observation.
+
+This review did not launch CRM, access Microsoft Graph, open or modify SQLite, run or alter a test, change the DOCX, change code/settings/packages, or modify business records. Only the two shared handoff files were updated as explicitly requested.
+
+### Latest production manual status by case
+
+- **P01 Establish USB/current-data readiness — NOT RUN / not recorded.** Actual result, defects/evidence and all result boxes are blank. Current USB equality therefore remains unverified for this manual acceptance. Historical completeness PASS was relative to the specifically approved historical Test20 source and does not convert this blank daily-use USB case into a pass.
+- **P02 Verify package and default database routing — PASS.** PASS is checked; actual result says the application performed as expected and defects say none. Evidence-quality limitation: tester/date are blank, and the stated P01 PASS precondition is not supported by the blank P01 case.
+- **P03 Enter and persist production settings manually — PASS.** PASS is checked; actual result says the application performed as expected and defects say none. Tester/date and detailed settings evidence are blank.
+- **P04 Controlled database update and reopen persistence — PASS.** PASS is checked; actual result says the application performed as expected and defects say none. Tester/date and attributable before/after evidence are blank.
+- **P05 Routine order generation without sending — PASS with an unresolved product issue.** PASS is checked and the application reportedly performed as expected. The notes request a cancel/discard choice because the generated order form is currently saved before the user decides whether to send it, creating an accidental-file/overwrite risk. This is an outstanding usability/data-safety improvement, not a reclassification of P05 as failed.
+- **P06 One approved order-processing email — PASS.** PASS is checked; actual result says the application performed as expected and defects say none. The form does not record tester/date or the requested non-secret sent-item/message identity, recipients and attachment evidence. Preserve the latest reported PASS while keeping evidence completeness outstanding.
+- **P07 Approved customer email operation — PASS.** PASS is checked; actual result says the application performed as expected and defects say none. Tester/date and detailed recipient/content/delivery evidence are blank. This is newer manual send evidence, but by itself does not establish mailbox READ or every older Graph-authorization requirement.
+- **P08 RCLog network export — FAIL.** FAIL is checked. The screenshots show: an existing workbook without all required `RCLog` columns is rejected as `Invalid Export Workbook`; a nonexistent export file is rejected as not found; and setting only one of the two export paths produces `Export Files Required` instructing the user to choose both workbooks or leave both blank. The notes require a supported workflow that creates a correctly formatted file when absent, prevents overwrite on field mismatch, warns before overwriting a matching file, cancels cleanly, and on confirmation clears/repopulates the existing file. P08 remains the only confirmed failed case in this production plan.
+- **P09 Recycle Agreement network export — NOT RUN.** NOT RUN is checked. The note only suspects behavior similar to P08. Suspicion or shared implementation shape is not execution evidence and must not be recorded as FAIL.
+- **P10 Final close, integrity and rollback readiness — PARTIAL / incomplete.** Item 1, normal CRM close and exact PID exit, is explicitly recorded **PASS**. Item 2, database integrity/foreign keys/expected deltas/sidecar verification, is explicitly **NOT RUN**. Item 3, Test20 and recovery identity reverification, is explicitly **NOT RUN**. The overall P10 result row is blank. P10 is therefore neither a complete pass nor a failure; item-level statuses must remain separate.
+- **P11 Scheduled mass-email test — DEFERRED / NOT RUN.** Preconditions explicitly say deferred and require a separately approved schedule, recipients, content, safeguards and rollback. Actual result and result row are blank.
+- **Overall acceptance — incomplete.** Overall PASS/FAIL/CONDITIONAL PASS/NOT RUN, accepted-by/date and ACCEPT/HOLD/NOT APPROVED FOR CUTOVER boxes are all blank. The package remains NOT DEPLOYED and no cutover approval follows from the recorded partial results.
+
+### Recording contradictions and evidence gaps
+
+- The opening sentence still says all test results are unrecorded, contradicting the completed P02-P09 result boxes and P10 actual-result note.
+- P02 lists P01 PASS as a precondition even though P01 has no recorded result. This is a procedural/evidence gap; it does not silently fail P02 but prevents a clean end-to-end acceptance claim.
+- Tester names and dates are blank throughout. P02-P07 have terse `application performed as expected` narratives and mostly no retained step-level evidence.
+- P06/P07 remain latest reported passes, but their required non-secret message/recipient/attachment/delivery evidence is missing from the plan.
+- P10's blank overall row correctly must not be interpreted as PASS because items 2 and 3 were not run.
+- The overall decision fields are blank, so no acceptance, deployment or cutover decision is evidenced.
+
+### Additional unresolved observations
+
+- **P05 order-form lifecycle:** provide an explicit cancel/discard flow and protect existing output from accidental overwrite. Track as a change request and regression-test after any authorized implementation.
+- **Alias replacement:** the side note records an unsaved-changes warning when changing a site alias and a workaround requiring delete/save/add/save. This remains an unresolved workflow issue outside the numbered P01-P11 status matrix.
+- **P08/P09 exports:** correct or formally decide the missing-file, mismatched-schema, matched-file overwrite-warning and paired-path behavior; rerun P08 after correction/decision, then execute P09 independently.
+- **P10 remaining postflight:** run items 2 and 3 under the approved read-only procedure after a normal close. Historical integrity/recovery evidence does not substitute for these explicitly unexecuted steps in the current production session.
+- **Business decisions:** Site 246 address, RecycleProgramProfile 274 Notes removal and ContactMethod 759 `IsPrimary` remain pending and untouched.
+
+### Reconciliation with historical Test 22 evidence
+
+- Historical package identity/routing, October 14 baseline completeness against the approved historical Test20 source, controlled Release startup/normal-close/restart acceptance and valid short-path scheduled-backup acceptance remain PASS within their bounded scopes. They reduce duplicate technical work but do not turn unexecuted production-manual steps into passes.
+- Earlier T22-M3 and T22-M5 human visual observations remain PASS. T22-M5 also has automated guarded UI/logical-nonmutation PASS.
+- T22-M2 automated startup/file-tree preservation remains PASS, while its Agreement Documents UI-inclusive manual result remained partial/unresolved. The older form's contradictory FAIL checkbox versus `Actual result: Pass` was never sufficient for a clean full-case pass.
+- T22-M4 simulated retry remains PASS, but historical live delivery was deferred. The new P06/P07 manual passes are relevant newer evidence; because the production form omits detailed message identity/recipient/attachment proof and uses different case boundaries, do not automatically declare every historical T22-M4/live-Graph evidence requirement closed.
+- Historical October 22 physical-hash FAIL/difference, WAL/SHM attribution uncertainty, startup/forced-shutdown anomalies and exact first-paint-before-invalid-path-warning timing remain historical exceptions. Later controlled acceptance and valid-path backup PASS do not erase those observations, although they are not new P08/P09 failures.
+
+### Recommendation and stop state
+
+1. Keep the build decision at HOLD / NOT APPROVED FOR CUTOVER until the manual plan is reconciled and completed.
+2. Establish or formally document P01 daily-use USB/current-data readiness and reconcile the P01/P02 prerequisite conflict.
+3. Resolve the P08 export behavior, preserve P08 as FAIL until a separately authorized rerun passes, and do not label P09 failed; execute P09 independently.
+4. Preserve P10 item 1 as PASS. Execute only P10 items 2 and 3 under the approved read-only post-close procedure and retain their NOT RUN status until actually completed.
+5. Keep P11 DEFERRED / NOT RUN pending separate approval.
+6. Add tester/date and required non-secret evidence to completed cases; then make an explicit overall result and build/cutover decision.
+7. Track P05 order cancel/discard/overwrite protection and the alias replacement workflow as separate product issues; any implementation and regression testing require separate authorization.
+
+No additional action was authorized or performed. Stop for Rob's review.
+
 ## October 25, 2026 — Verified Test22 portable production-data package COMPLETE; NOT DEPLOYED
 
 Rob authorized only published plan `d68a4eb`. Stage7 source/release EXE/DLL/ZIP and approved staged/Stage3 DB hashes passed. Static source plus absent process/user/machine CRM/legacy overrides proved unchanged working-directory-independent routing to executable-base `Data\CRM.sqlite`; existing packaged DB prevents fallback, and no seed/migration/legacy DB ships. New no-overwrite package `artifacts\Test22Portable-20261025-ac25089-FF4EC6C9\CRM-Test22-Portable-ProductionData-win-x64-ac25089-FF4EC6C9-NOT-DEPLOYED` is 293 files / 140,190,156 bytes; ZIP is 56,925,531 bytes / `37C63631111AD32E1B40CB90E247E25A29CB13971FB970E97C9E13E4CE3CECCE` / 293 exact entries and passed fresh extraction. It contains exact 290-file Release plus only approved DB, identity manifest and production manual plan; forbidden synthetic/settings/seed/migration/PDB/log/sidecar/nested/obsolete content count is zero. Manual plan covers tomorrow's USB/currentness, settings, database-update, order, approved email and network-export checks; scheduled mass email is deferred until next week. USB currentness and all execution/merge/deployment gates remain pending. Test20/recovery stayed protected; CRM/database was not launched/opened. STOP for Rob.

@@ -1,5 +1,19 @@
 # Current Shared Handoff — Active Control
 
+## October 26, 2026 — CRM Test 22 production manual review — outstanding work and priorities
+
+The latest evidence is Rob's updated `Z:\CRM_Test22_Production_Manual_Acceptance_Matched_Formatting.docx`, 221,709 bytes, modified October 26, 2026 at 2:14:06 PM Pacific, SHA-256 `B39BE34CBB778DF843A3B1FCEA747C8C17C96FBE28C390846D76F487EF8799E5`. This documentation-only review did not launch CRM, access Microsoft Graph, open or modify a database, change a test document, or change application code. Full evidence and status detail are archived in `Handoff-history.md`.
+
+**Current decision: HOLD / manual acceptance incomplete.** The portable package remains NOT DEPLOYED and NOT APPROVED FOR CUTOVER. P02-P07 are recorded PASS. P08 is recorded **FAIL**. P01 is blank and must be treated as **NOT RUN / not recorded** for acceptance accounting. P09 is **NOT RUN**, not failed. P10 item 1 normal close/PID exit is **PASS**; P10 items 2 and 3 are **NOT RUN**. P11 remains **DEFERRED / NOT RUN**. The plan's overall result, acceptance signature and build decision remain blank.
+
+**Priority 1 — close mandatory acceptance gaps.** Establish or formally document P01 exact daily-use USB/current-data readiness before relying on downstream results; resolve the P08 RCLog export failure and rerun P08; run P09 independently rather than inferring failure from P08; complete only P10 items 2 and 3 using the approved read-only integrity/FK/count-delta/sidecar and Test20/recovery identity procedure. Do not reclassify or unnecessarily repeat P10 item 1, which remains passed.
+
+**Priority 2 — reconcile evidence quality.** Correct the stale statement that all results are unrecorded; reconcile the blank P01 result with P02's `P01 PASS` precondition; add tester/date and non-secret evidence for completed cases. Preserve P06/P07 as reported passes, but record approved recipients, attachment/content outcome and sent-item/message identity before treating older live-delivery evidence gaps as fully closed. Complete the overall result and build decision only after the outstanding cases are resolved.
+
+**Priority 3 — track product issues separately from test status.** P05 passed but identifies an unresolved cancel/discard and accidental-overwrite risk for generated order forms. The alias-replacement note records a separate workflow problem requiring delete/save/add/save. Neither changes P05's PASS. Preserve the pending Site 246 address, RecycleProgramProfile 274 Notes and ContactMethod 759 `IsPrimary` business decisions. Historical physical-hash/WAL-SHM/startup-shutdown exceptions remain historical evidence; later bounded acceptance passes do not erase them.
+
+**Next approvals.** Any P08 correction, rerun, P09 execution, P10 read-only postflight, P11 scheduled mass-email test, merge, deployment or cutover requires its appropriate separate authorization. Stop for Rob's decision; no other action is authorized by this review.
+
 ## October 25, 2026 — Verified Test22 portable production-data package COMPLETE; NOT DEPLOYED
 
 Rob explicitly authorized only the plan published at `d68a4ebdeae8c83507d9f8c68cc6bd757a570d9d`. Exact Stage7 source `ac25089afc3016b48f6178bcd2c93afcc9b4fb70`, 290-file Release, EXE `2773A469...13569D`, DLL `C7F26213...AD522`, original Release ZIP `27EAAAD9...EFEA`, approved staged DB and Stage3 recovery `FF4EC6C9...7A5D` all passed. Static routing is safe without change/override: database defaults to executable-base `Data\CRM.sqlite`, independent of working directory; process/user/machine CRM and legacy DB/source overrides were absent; packaged DB pre-exists; package contains no legacy DB, seed or migration fallback.
