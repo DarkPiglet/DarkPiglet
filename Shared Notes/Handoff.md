@@ -1,8 +1,8 @@
 # Current Shared Handoff — Active Control
 
-## October 27, 2026 — Rob's authorized Test22 post-verification follow-up; NO package or cutover
+## October 27, 2026 — Authorization record for the completed Test22 follow-up; NO package or cutover
 
-**Decision and boundary.** Rob said "Proceed" after the verified October 27 result review and recommendation to correct **only two stale CRMUpgradeTests** and review the corrected Test22 branch before considering packaging. This records Rob's permission for that narrowly bounded follow-up; it is NOT permission to package, merge, deploy, cut over, alter live SQLite/recoveries, send Graph/email, or reclassify manual acceptance. This Shared Notes publication is a handoff, not evidence that Codex has executed the next task.
+**Decision and boundary.** Rob said "Proceed" after the verified October 27 result review and recommendation to correct **only two stale CRMUpgradeTests** and review the corrected Test22 branch before considering packaging. This records Rob's permission for that narrowly bounded follow-up; it is NOT permission to package, merge, deploy, cut over, alter live SQLite/recoveries, send Graph/email, or reclassify manual acceptance. At publication this was authorization rather than execution evidence; the completed result is recorded immediately below.
 
 **Evidence to preserve:** isolated clean Release build; four additional disposable end-to-end export cases PASS (4/4); focused exporter/order/alias/settings/reflection verification PASS (21/21); full solution 370 PASS / 4 FAIL / 374 total before temporary verification corrections. One of the prior five UI failures, CompanyButtons, passed on clean rerun. The four remaining failures consist of (a) two stale CRMUpgradeTests calls of `LoadFromPaths`, which pass when the optional third argument is explicitly supplied as `Nothing`/null in verification-only copies; (b) ShippingBrowser no surviving browser/loopback request in isolated host; (c) MonthlyDrafts audit SQLite Error 14 under sandbox-restricted Local AppData. P10 items 1, 2 and 3 PASS on their evidenced scopes. Clean isolation and disposal succeeded; existing production/recovery files were unchanged. Refer to October 27 historical entry for complete evidence.
 
@@ -15,6 +15,13 @@
 6. Report branch, exact changes/diff, test matrix, remaining failures, cleanup and protected-file invariants, and STOP for Rob's review. No package/build for distribution, merge, release or production action.
 
 **Acceptance remains:** P01 NOT RUN / USB-currentness unverified; P02–P07 PASS; P08 manual FAIL pending rerun; P09 manual NOT RUN; P10 items 1–3 PASS; P11 mass email DEFERRED / NOT RUN. Four automated failures do not automatically overturn recorded manual PASS items. **Overall Test22 HOLD.**
+## October 27, 2026 — Test22 upgrade-test follow-up complete; HOLD for Rob review
+
+On control branch `codex/test22-manual-findings-20261026`, project commit `dd223e6f228c236c85b89b1246b587b2a0d1f5c2` contains the only source change: the authorized correction to two stale `CRMUpgradeTests` reflection calls, each now supplying `null` for the optional third `LoadFromPaths` argument. The production method and functioning application code were not changed. Both corrected tests passed individually; isolated Release build passed with 0 warnings/errors; broader safe regression passed **366/366** (CRM UI 139, CRM Data 71, Monthly Drafts unit 156).
+
+**Outstanding work and priorities.** The shipping-browser and Form1 Monthly Drafts integration tests were **not rerun** because the current sandbox is not a safe writable interactive environment: browser UI launch is unavailable and normal `%LOCALAPPDATA%\DeltaTrak` is outside writable roots. Preserve their prior environment-limited failures—shipping loopback/browser timeout and Monthly Drafts `SQLite Error 14`—without marking either PASS or confirmed application defect. A normal writable interactive-host rerun remains the only automated follow-up. Manual status remains P08 FAIL, P09 NOT RUN (not failed), P01 NOT RUN/not recorded and P11/mass email DEFERRED / NOT RUN; P02-P07 and P10 items 1-3 remain PASS.
+
+**Next step.** Rob should review the two-line test-only diff and retained evidence. No production database/recovery/package/settings was changed; protected hashes and sidecar state matched before/after; the isolated run root was removed; existing `output/` and `s2/` were preserved. Do not run mass email, merge, package, release, deploy or cut over without separate authorization. Full evidence and cleanup detail are in `Handoff-history.md` and project `HANDOFF.md`.
 
 ## October 27, 2026 — Test22 verification complete; HOLD for Rob review
 
