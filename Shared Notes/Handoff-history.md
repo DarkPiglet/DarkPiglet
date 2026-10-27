@@ -1,5 +1,16 @@
 # Historical Handoff Archive
 
+## October 26, 2026 late evening — Final pre-dictation instruction tightening, DOCUMENTATION ONLY
+
+Rob requested a last safety/clarity review and authorized these narrow handoff wording refinements. The controlling next-task instructions are at the beginning of `Shared Notes/Handoff.md`; its prior verification plan and historical test evidence are preserved.
+
+**Specific safeguards tightened:** Codex execution requires Rob's separate explicit dispatch; verify control-branch HEAD and existing worktree state; isolate every test-only build/restore output rather than overwriting existing `bin/`/`obj/` or untracked artifact directories; independently verify containment of CRM/Excel child writes and disabled live integrations before GUI runs. Never open protected original SQLite databases through SQLite, including nominal read-only connections: use OS-level read-only file evidence for originals and SQL operations only on safely verified disposable copies. Inject export failures only into disposable files. Keep unit tests separate from GUI/end-to-end evidence, diagnose all five broader-suite failures without authorizing unrelated production refactors, and retain P08/P09 manual acceptance labels until Rob reviews and authorizes updates.
+
+**Cleanup tightened:** Capture non-secret evidence at a new separate no-overwrite evidence destination, verify the intended disposable rollback/restoration outcome *before* discarding rollback material, then delete only manifest-owned files under the verified disposable run root, after test-owned processes exit. Stop and report unexpected/locked/reparse files or unresolved restoration; never sweep customer files, Z:, protected recovery, existing `output/`/`s2/`, source trees or historical evidence.
+
+Only current/historical handoff documentation was authorized for this tightening. No Codex dictation or test execution, app build/launch, production DB interaction, code change, test cleanup, packaging, email, merge, release or cutover was performed by this review. Continue to await Rob's signal before dictating execution instructions.
+
+
 ## October 26, 2026 late evening — Rob approves preparation of bounded Codex verification with mandatory test cleanup
 
 Rob requested that Codex, subject to explicit task dispatch, perform controlled **end-to-end RCLog and Recycle Agreement Excel export testing** rather than leaving all export verification to manual review; also include safe P10.2/P10.3 evidence checks, alias/order-cancel checks as needed and investigation of five remaining automated suite failures. A test-only build from the corrected control branch is permitted within the prospective bounded assignment, but no distribution package, merge, deployment or release cutover. Actual GUI/Excel feasibility and isolation must be verified; unexecuted manual steps must not be silently marked PASS. All source/USB/Z/recovery databases remain protected. Production mass email/Graph and external sends remain prohibited.
