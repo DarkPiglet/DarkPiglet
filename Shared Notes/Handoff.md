@@ -1,5 +1,15 @@
 # Current Shared Handoff — Active Control
 
+## October 26, 2026 — Test22 control-branch corrections complete; manual verification still required
+
+Rob's updated closed-CRM `Z:\CRM.sqlite` is protected by the independent no-overwrite recovery copy `C:\CRM Test22 Staging\Recovery\Rob-USB-20261026-120018-CBA53416\CRM.sqlite`; source and recovery match SHA-256 `CBA53416020E11B0027D1C7F18FF2AD33B4312E18D3BD860F7D586F7C3F1790A`. Read-only inspection passed schema 24, integrity, foreign keys and sidecar/process gates. The updated copy has 7,454 rows versus the approved 7,404-row Test22 baseline: 50 additions, 30 changes and no removals. Full evidence is in `Handoff-history.md`; production data was not altered.
+
+Control branch `codex/test22-manual-findings-20261026` now contains focused corrections for both Excel exports, order-form cancellation and the alias editor. Zero, one or two export paths are supported independently; missing targets create valid workbooks only after confirmation, while unsafe duplicate/interleaved layouts are rejected, zero-row clearing requires extra confirmation, and dual updates retain rollback. Order forms remain temporary until approval, preserve reviewed edits, report cleanup failures, and never overwrite an existing destination. Alias is an editable text box with the existing 100-character limit. Focused tests pass 34/34. An earlier full UI run was 138/143 with five unrelated existing/environment-sensitive failures retained in history. CRM was not launched and Graph/mass email was not accessed.
+
+**Current decision: HOLD for Rob review and manual retest.** Preserve P02-P07 PASS; P08 remains FAIL until rerun; P09 remains NOT RUN, not failed; P10 item 1 remains PASS and items 2-3 remain NOT RUN; P11/mass email remains DEFERRED / NOT RUN; P01 remains NOT RUN/not recorded. Code changes do not reclassify manual results.
+
+**Priorities / next steps.** Review the control-branch diff first. With separate approval, manually retest P08 and P09 independently plus the alias and order-cancel workflows; then complete only P10 items 2-3 against the protected updated-data/recovery identities. Resolve the five unrelated suite failures before treating the whole automated suite as green. Do not run mass email, merge, package, deploy or cut over without separate approval. Preserve the pending Site 246, RecycleProgramProfile 274 and ContactMethod 759 business decisions.
+
 ## October 26, 2026 late evening — Test 22 coordinated corrections: APPROVED FOR HANDOFF PUBLICATION ONLY
 
 **Authority and stopping rule.** Rob authorized a careful final review and publication of this proposed assignment to the TWO Shared Notes handoffs. THIS IS DOCUMENTATION ONLY. Publishing this plan does NOT authorize Codex to implement, inspect the pending new Z: database, launch CRM, run tests, change the acceptance DOCX, modify business data, commit project code, package, merge, deploy, or send emails. Rob will give the separate execution/dictation direction later. No work beyond these two handoff edits is authorized by this publication.
@@ -43,7 +53,6 @@ On subsequent authorization, record full source/destination identities, timestam
 ### Execution staging and stop conditions
 
 After Rob's SEPARATE explicit authorization, first establish Gate A data safety or STOP on uncertainty; work only on an isolated source branch with the verified Test22 baseline, limited to exporter/Settings/menu, box-order file lifecycle, alias UI and focused tests. No unrelated refactor, DB schema change, customer-data write, production GUI/Graph use, mail, migration, package, merge, or deployment. Run build/targeted tests against disposable inputs, record files and exact commands/results, and independently verify no unrelated changes. The final source code, data and acceptance statuses are separate review gates. Document actual evidence in BOTH shared handoffs (and project handoff only if later authorized), commit/push/refetch remote revisions and STOP for Rob before any packaging/cutover. **The present publication performs NONE of those execution stages.**
-
 ## October 26, 2026 — CRM Test 22 production manual review — outstanding work and priorities
 
 The latest evidence is Rob's updated `Z:\CRM_Test22_Production_Manual_Acceptance_Matched_Formatting.docx`, 221,709 bytes, modified October 26, 2026 at 2:14:06 PM Pacific, SHA-256 `B39BE34CBB778DF843A3B1FCEA747C8C17C96FBE28C390846D76F487EF8799E5`. This documentation-only review did not launch CRM, access Microsoft Graph, open or modify a database, change a test document, or change application code. Full evidence and status detail are archived in `Handoff-history.md`.
