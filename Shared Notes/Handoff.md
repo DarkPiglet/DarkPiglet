@@ -1,5 +1,9 @@
 # Current Shared Handoff — Active Control
 
+## October 27, 2026 — Authorization check: design draft remains unexecuted; STOP for Rob
+
+Codex fetched shared `main` through `f3187a9` and verified project local/upstream `c828ef3`. The latest instruction below explicitly authorizes publication only, with separate execution approval still required. The user's direction to execute only an explicitly authorized assignment therefore resulted in STOP, not execution of this draft or repetition of the completed Z-copy investigation. No design memo, source investigation, database access, implementation, build, test, launch or later phase was performed. Complete historical rereading was not completed before this authorization stop and is not claimed. The user expressly authorized these handoff status updates and their publication. Await Rob's explicit go-ahead for the design-only assignment; preserve all prior unresolved findings and restrictions.
+
 ## October 27, 2026 — NEXT CODEX ASSIGNMENT DRAFT: minimal truthful correction audit design (DOCUMENTATION ONLY)
 
 **Status:** Rob approved drafting, tightening, and publishing this assignment for later discussion. Publication is NOT permission to execute the assignment or change CRM/database contents. STOP pending Rob's explicit go-ahead.

@@ -1,5 +1,9 @@
 # Historical Handoff Archive
 
+## October 27, 2026 — Published design draft authorization stop confirmed
+
+At shared `main` `f3187a9` and project local/upstream `c828ef3`, the latest design assignment remained explicitly draft/publication-only. Codex honored the user's instruction to execute only an explicitly authorized assignment and stopped without executing the draft or repeating completed work. Full historical rereading was not completed before the stop and is not claimed. No database access, source investigation, design memo, code change, build, test, launch or later phase occurred. Only expressly requested handoff status documentation was updated for publication. STOP pending Rob's explicit design-execution authorization.
+
 ## October 27 — Documentation-only audit-design assignment published
 
 Rob requested a tightly scoped draft for the missing truthful correction audit mechanism, with no Codex execution authorized. The complete controlling assignment and gates are in Current Shared Handoff. No database, application, test or deployment change authorized. STOP pending Rob discussion.
