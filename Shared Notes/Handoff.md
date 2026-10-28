@@ -1,5 +1,15 @@
 # Current Shared Handoff — Active Control
 
+## October 27, 2026 — Rob authorizes existing minimal correction audit design; publication-only step
+
+**Rob's authorization, verbatim:**
+
+> Rob explicitly authorizes execution of the existing CRM Test 22 minimal correction audit design assignment, subject to all previously documented restrictions.
+
+This is a separate authorization event, following the earlier publication-only approval and authorization-check STOP preserved below and in the historical handoff. It supersedes only the earlier absence of execution authorization for the existing design assignment; its scope, restrictions, verification requirements and later implementation/database/production approval gates remain unchanged. It is not evidence that the design or any correction has been executed.
+
+**Controlling limit for this operation:** “Do not execute the design assignment in this step.” Both complete current and historical shared handoffs were read through EOF at shared `main` `c9dae96d06dab9704cc178d6ab337582e16193cb`. This operation changes only these two shared handoff documents to record the authorization and preserve the earlier approval/stop as history. No design investigation or memo, application-code/database/recovery-file/production-data modification, build, test, migration, deployment, CRM launch or external integration is performed. Commit and push both documentation updates, independently retrieve both published handoffs to verify them, then **STOP for Rob's review in feed**; do not proceed to the design in this operation.
+
 ## October 27, 2026 — Authorization check: design draft remains unexecuted; STOP for Rob
 
 Codex fetched shared `main` through `f3187a9` and verified project local/upstream `c828ef3`. The latest instruction below explicitly authorizes publication only, with separate execution approval still required. The user's direction to execute only an explicitly authorized assignment therefore resulted in STOP, not execution of this draft or repetition of the completed Z-copy investigation. No design memo, source investigation, database access, implementation, build, test, launch or later phase was performed. Complete historical rereading was not completed before this authorization stop and is not claimed. The user expressly authorized these handoff status updates and their publication. Await Rob's explicit go-ahead for the design-only assignment; preserve all prior unresolved findings and restrictions.

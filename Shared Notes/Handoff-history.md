@@ -1,5 +1,15 @@
 # Historical Handoff Archive
 
+## October 27, 2026 — Separate Rob design-execution authorization recorded; no design execution in this step
+
+**Rob's authorization, verbatim:**
+
+> Rob explicitly authorizes execution of the existing CRM Test 22 minimal correction audit design assignment, subject to all previously documented restrictions.
+
+This new event follows, and does not rewrite, the earlier publication-only authorization and authorization-check STOP preserved immediately below. Only the lack-of-execution-approval status for the existing design assignment is superseded; all documented restrictions and separate later-phase approval gates remain. The complete current and historical shared handoffs were read through EOF at shared `main` `c9dae96d06dab9704cc178d6ab337582e16193cb` before this additive documentation update.
+
+Rob separately directs: “Do not execute the design assignment in this step.” This operation is limited to updating, committing and pushing the two shared handoffs, independently retrieving both published documents for verification, then **STOP for Rob's review in feed**. No design investigation/memo, application-code/database/recovery-file/production-data modification, build, test, migration, deployment, CRM launch or external integration is performed. Earlier findings, unresolved issues, approvals and stops remain intact; neither publication nor this new authorization is reported as completed design work.
+
 ## October 27, 2026 — Published design draft authorization stop confirmed
 
 At shared `main` `f3187a9` and project local/upstream `c828ef3`, the latest design assignment remained explicitly draft/publication-only. Codex honored the user's instruction to execute only an explicitly authorized assignment and stopped without executing the draft or repeating completed work. Full historical rereading was not completed before the stop and is not claimed. No database access, source investigation, design memo, code change, build, test, launch or later phase occurred. Only expressly requested handoff status documentation was updated for publication. STOP pending Rob's explicit design-execution authorization.
