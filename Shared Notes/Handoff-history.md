@@ -1,5 +1,10 @@
 # Historical Handoff Archive
 
+## October 27 — Documentation-only audit-design assignment published
+
+Rob requested a tightly scoped draft for the missing truthful correction audit mechanism, with no Codex execution authorized. The complete controlling assignment and gates are in Current Shared Handoff. No database, application, test or deployment change authorized. STOP pending Rob discussion.
+
+
 ## October 27, 2026 — Z-copy correction stopped at truthful-audit gate
 
 Rob's controlling authorization through shared `main` `ce3c005` allowed direct reconciliation of the verified manifest against `Z:\CRM.sqlite`, excluded Site 352 (`Robert Nevins`), and required a no-write stop if existing CRM history could not preserve complete truthful correction lineage. Prewrite checks passed unchanged at SHA-256 `F6445EED...1378C`, schema/user version 24, 24 SchemaVersion rows, integrity `ok`, zero foreign-key failures, exclusive-read availability, and no observed writer or pre-existing sidecar. The read-only SQLite CLI nevertheless created a zero-byte WAL and 32,768-byte SHM; postflight detected and removed only those task-created companions after exclusive-access verification. Final sidecars were absent and the main hash remained unchanged.
