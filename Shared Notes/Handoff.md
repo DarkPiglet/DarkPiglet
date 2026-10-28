@@ -1,5 +1,17 @@
 # Current Shared Handoff — Active Control
 
+## October 27, 2026 — Isolated audit implementation hit mandatory STOP; compile FAIL / tests NOT RUN
+
+Executed only the newly authorized isolated implementation phase through shared `ec8fada98ed4b8c3cc521719d25b5d3ef11649b7`, reusing completed full handoff reads plus the entire new authorization delta and rereading AGENTS.md. Created feature branch `codex/crm-audit-ledger-20261027` from CRM control head `07e779f161671d509ef60622072605f461aa2af7`; control branch unchanged. Partial source implements the bounded schema-25 ledger, transaction snapshot/delta recording, provenance and revision checks, expected-row APIs, append-only guards, CRM/companion writer integration, legacy guards and restore validation. **It does not compile and must not be used with any data.** Exact files, command and limitations are in that feature branch's new root HANDOFF.md entry.
+
+The first and only focused synthetic verification invocation restored both projects but exited **1 before tests**. `Data/CRMChangeLedger.vb:246,274,320` each produced **BC30980** plus **BC42104**: local `command` shadows helper `Command` in VB's case-insensitive binding. **0/9 defined tests executed; no PASS, no TRX and no SQLite fixture file.** The authorization expressly makes failure a STOP/review condition: no fix, rerun or next phase followed. Review-only source/test changes and required handoffs are being committed/pushed, not merged or deployed.
+
+Unexpected first-use SDK output reported `Installed an ASP.NET Core HTTPS development certificate.` despite redirected CLI-home/first-use suppression. This was unintended; actual certificate/store identity is NOT VERIFIED, and no trust/removal operation occurred. SDK workload setup logs also exist. Preserve ignored `artifacts/CrmAuditSynthetic-20261027-01` for review; no automatic cleanup or host-unchanged claim. Any later retry must explicitly address SDK first-use side effects under separate approval.
+
+**Remaining gaps:** all runtime guarantees are NOT VERIFIED; merge/archive/restore and full-schema migration coverage need review, existing Form1 Site edits do not yet use the new stale-row tokens, and whole-four-table/history validation cost is unmeasured. No signed report/key custody or customer reconciliation runner exists. No customer/operational seed/protected database access, 196-update/19-insert replay, CRM launch, protected migration, external email/Graph, release or deployment occurred. Prior acceptance statuses, Site 352=Robert Nevins, deferred business decisions and unresolved findings remain unchanged. **STOP for Rob review; do not automatically fix/retest.** A new narrow continuation approval is needed; customer-copy trial, Z writes and production promotion retain their separate gates.
+
+Review-only implementation and project STOP report published at `d7df8c7a7faccede1fc86ec1627f4402a50267f4` on `codex/crm-audit-ledger-20261027` (20 files; no merge). Independent handoff-content and remote-head verification follows shared publication.
+
 ## October 27, 2026 — Rob authorizes isolated audit-ledger implementation and focused testing; NEXT CODEX ASSIGNMENT
 
 **Authorization:** Rob explicitly approved the next restricted phase after reviewing the completed October 27 audit-design memo. Codex may implement and test the proposed minimal truthful correction audit ledger **only in an isolated development/test environment**. This supersedes the prior design-only STOP solely for this phase. It does not authorize reconciliation or any protected database write.
