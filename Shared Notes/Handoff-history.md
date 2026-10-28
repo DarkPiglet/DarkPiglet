@@ -1,5 +1,17 @@
 # Historical Handoff Archive
 
+## October 27, 2026 — Separately dispatched minimal correction audit design completed; no implementation or data action
+
+Following Rob's verbatim authorization recorded in shared commit `44097d48dcb34fdefdd6e33078a889caee57be17`, the next user dispatch authorized execution of the existing design-only assignment. This is a separate event after the publication-only operation and earlier authorization-check STOP; neither earlier event is rewritten. Complete shared reads were reused at unchanged verified HEAD and the complete project handoff/applicable AGENTS.md reconciled. Project baseline was `60ba356c1a303092bd297f07554cfb6f920ac72e` on `codex/test22-manual-findings-20261026`; static source is unchanged from `dd223e6`. Full memo: that branch's root `HANDOFF.md`, October 27 **Authorized minimal correction audit design complete**.
+
+Static review confirms incomplete typed Site history, implicit activity-driven DTAssociate overwrite, missing Associate version APIs and incomplete assignment merge history. Activity/ActivityCorrected and SecurityAuditEvent cannot truthfully substitute for a general correction ledger. Recommend one bounded schema-25 ledger (ChangeBatch, EntityVersion, EntityFieldChange), exact typed row/field history and transaction-shared normal-save integration, plus independent signed manifest/report evidence; reject external-only evidence as insufficient for the existing requirement. Append-only ledger guards do not protect against a privileged SQLite file owner. Existing CRM rejects schema >24, and independent companion/dormant writers require explicit coverage or fail-closed guards before acceptance. No backward-compatibility or tested-protection claim is made.
+
+The proposed correction remains 196 updates/19 inserts, 215 entity versions/349 field entries/one batch if the reviewed plan remains exact; Site 352 stays Robert Nevins. Preserve 18 Jeff closures/18 Dan replacements dated `2026-09-18`, Chelsie Bonstein/Dan Hurd, four Activity attribution corrections with original images, all 51 later rows, Site 200/285 newer values/timestamps and Activity 1404. Require new source/manifest identity and snapshot gates, verified no-overwrite rollback, single FK-enabled immediate correction transaction, full allowlisted comparison/audit/integrity/assignment validation, dynamic counts, rollback before commit and quarantine/STOP on postcommit failure. Never replace latest with corrected reference. The memo records exact schema, source touchpoints, focused future tests, risks and separate implementation/disposable-trial/Z-write/production gates.
+
+Design/static review COMPLETE; runtime verification, implementation and correction NOT RUN. No database or protected data was accessed, no application/schema/script/settings/recovery file changed, and no build/test/launch/migration/integration/package/merge/deployment occurred. Existing P08-P10/P11 outcomes, three deferred decisions and unresolved provenance/physical-state findings remain preserved. Documentation only is being published and independently retrieved/verified. **STOP for Rob review; all later gates require separate explicit authorization.**
+
+Project decision memo published as documentation-only commit `07e779f161671d509ef60622072605f461aa2af7` on `codex/test22-manual-findings-20261026`; independent published-content verification follows this shared publication.
+
 ## October 27, 2026 — Separate Rob design-execution authorization recorded; no design execution in this step
 
 **Rob's authorization, verbatim:**
