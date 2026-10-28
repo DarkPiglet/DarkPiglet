@@ -1,5 +1,10 @@
 # Historical Handoff Archive
 
+## October 27, 2026 — Rob authorizes isolated implementation/testing after audit-design review
+
+After Codex completed the documentation-only schema-25 audit-ledger design, Rob expressly approved the next **isolated implementation and focused testing** phase. The Current Shared Handoff now contains the controlling assignment and restrictions. Scope: bounded ChangeBatch/EntityVersion/EntityFieldChange implementation; normal-save integration; compatible/fail-closed writers; focused synthetic tests; verified handoff publication and STOP for Rob review. This supersedes the design-only stop for this phase only. No production/USB/Z/recovery/customer database access or modification, no reconciliation of 196 updates/19 inserts, no disposable customer-data trial, merge, deployment or production promotion is authorized. Site 352 remains Robert Nevins. Separate approvals remain required for any later trial, Z write or production promotion. Earlier design-only completion, evidence and STOP remain historically accurate.
+
+
 ## October 27, 2026 — Separately dispatched minimal correction audit design completed; no implementation or data action
 
 Following Rob's verbatim authorization recorded in shared commit `44097d48dcb34fdefdd6e33078a889caee57be17`, the next user dispatch authorized execution of the existing design-only assignment. This is a separate event after the publication-only operation and earlier authorization-check STOP; neither earlier event is rewritten. Complete shared reads were reused at unchanged verified HEAD and the complete project handoff/applicable AGENTS.md reconciled. Project baseline was `60ba356c1a303092bd297f07554cfb6f920ac72e` on `codex/test22-manual-findings-20261026`; static source is unchanged from `dd223e6`. Full memo: that branch's root `HANDOFF.md`, October 27 **Authorized minimal correction audit design complete**.
