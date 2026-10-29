@@ -1,5 +1,11 @@
 # Historical Handoff Archive
 
+## October 28, 2026 — Option A audit-gap refinement completed read-only
+
+Static clean-source inventory found schema-24 Option A feasible for the explicitly narrowed “approved CRM applications” boundary. Existing SecurityAuditEvent can carry a versioned exact-typed JSON before/after envelope, actual event time, declared operator/source and correlation without migration, provided every daily-CRM writer inserts it in the same transaction or is disabled. The plan covers main CRUD, merges, activities/auto-DT, Associate/assignments, agreements, imports and companion maintenance/follow-up. Activity remains business history; History separately displays technical changes and truthfully labels pre-baseline rows using future verified high-water/name snapshots.
+
+This feasibility depends on accepting nonauthenticated declared-single-user attribution, operational retirement of old unaudited binaries, protected external correction/baseline evidence and no privileged-SQL tamper detection. Technical rejection of old binaries, authenticated actor identity or database-enforced typed/append-only evidence requires a migration/version gate. Correction/baseline, code, schema, build and tests were not executed. Existing 196/19 matrix, Site 352 exclusion, later records, Fawn/date gates and three deferred decisions remain unchanged. Detailed matrix is project head `8eb02f0`. STOP for Rob/Priya review.
+
 ## October 28, 2026 — Fresh audit baseline feasibility investigation completed read-only
 
 Static schema-24/source tracing found that Activity/History preserves business events but not a complete immutable technical audit: actor display is a current Associate join, generic change events have no actor, old/new prose loses NULL/type fidelity, important writers and Associate/CompanySalesAssignment changes are uncovered, SecurityAuditEvent is unused by production, and audit rows have no append-only enforcement. Therefore a marker alone cannot make future changes reliably self-contained.
