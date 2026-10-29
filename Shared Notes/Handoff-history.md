@@ -1,5 +1,11 @@
 # Historical Handoff Archive
 
+## October 29, 2026 — Final CRM P1 environment check: no approved read-capable context; tests NOT RUN
+
+Executed only Rob's final bounded authorization at 23a7e62. Repository/branch and the unchanged five-file P1 working tree were verified; prior package-cache and NuGet-denial evidence was reused without another restore/config experiment. The only command context exposed to this task is desktop-uh85jc0\codexsandboxoffline, the already-proven denied sandbox identity. No app terminal session is attached to the thread, and no other preexisting approved test context is exposed. An outside-sandbox command would require the expressly prohibited elevation/security-boundary change.
+
+Both original filtered acceptance commands are **NOT RUN**; restore/build/compilation/tests remain NOT RUN. No elevation request, bypass, permissions/configuration change, download, alternate command, retry, feature change, data/schema access or P2+ occurred. P1 remains uncommitted, unpublished, uncompiled, untested and unaccepted. Minimum next option: Rob must separately arrange/identify an already authorized ordinary Dev test terminal or separately authorize a specific security-boundary execution. STOP for Rob/Priya review.
+
 ## October 29, 2026 — CRM P1 NuGet diagnosis complete; authorized retry STOPPED before compilation
 
 Executed only Rob's bounded diagnosis/original-retry authorization at ada5ab1. The user NuGet.Config exists but direct content read is denied to the sandbox identity. Both existing project assets target net10.0-windows, identify the normal package cache, and have every dependency already cached (CRM.Data.Tests 37/37; companion 30/30); no network download was needed or attempted.

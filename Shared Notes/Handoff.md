@@ -1,3 +1,9 @@
+# October 29, 2026 — Final CRM P1 environment check: no approved read-capable context; tests NOT RUN
+
+Executed only Rob's final bounded authorization at 23a7e62. Repository/branch and the unchanged five-file P1 working tree were verified; prior package-cache and NuGet-denial evidence was reused without another restore/config experiment. The only command context exposed to this task is desktop-uh85jc0\codexsandboxoffline, the already-proven denied sandbox identity. No app terminal session is attached to the thread, and no other preexisting approved test context is exposed. An outside-sandbox command would require the expressly prohibited elevation/security-boundary change.
+
+Both original filtered acceptance commands are **NOT RUN**; restore/build/compilation/tests remain NOT RUN. No elevation request, bypass, permissions/configuration change, download, alternate command, retry, feature change, data/schema access or P2+ occurred. P1 remains uncommitted, unpublished, uncompiled, untested and unaccepted. Minimum next option: Rob must separately arrange/identify an already authorized ordinary Dev test terminal or separately authorize a specific security-boundary execution. STOP for Rob/Priya review.
+
 # October 29, 2026 — ROB AUTHORIZES ONE FINAL BOUNDED P1 ACCEPTANCE ENVIRONMENT CHECK; NEXT CODEX ASSIGNMENT (NOT EXECUTED)
 
 Rob approves ONLY one final attempt to run the ORIGINAL P1 acceptance commands in an EXISTING, legitimately authorized environment that can read the user NuGet configuration. This supersedes the prior NuGet diagnosis STOP solely for this assignment. P1 remains UNCOMMITTED, UNPUBLISHED, NOT COMPILED, NOT TESTED and NOT ACCEPTED. P2+ are NOT AUTHORIZED.
