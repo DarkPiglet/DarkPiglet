@@ -1,5 +1,13 @@
 # Historical Handoff Archive
 
+## October 28, 2026 — CRM Option A detailed implementation plan completed; no implementation
+
+The documentation-only assignment in shared `45d4c0c`/`5b9137d` produced a finite P0–P9 plan from clean schema 24: review/trust decisions; canonical typed SecurityAuditEvent helper; declared-operator settings; transaction plumbing; main CRUD/archive; Activity/DT and agreements/documents; merges and Associate/assignment administration; enabled imports/companion writers or disablement; History separation; then regression/restore/old-binary inventory. Every successful command uses the same business transaction for exact typed technical evidence; any evidence failure rolls back the business operation. DT Associate is never inferred from the operator. Agreement-document file moves use explicit compensation and identity checks rather than a false cross-filesystem atomicity claim.
+
+The plan enumerates affected callers and focused tests, identifies dormant/no-production-caller paths that must be disabled or integrated, and makes old-binary quarantine an operational release gate. Activity remains Business History; Technical Changes are separate. A later approved baseline supplies Activity high-water and Associate name snapshot for truthful pre-baseline display. Protected-report custody requires two-reviewer/custodian and signing/hash decisions; USB alone is insufficient evidence.
+
+No database, code, schema, SQL/script, build/test/launch, correction, baseline, UI implementation, migration, deployment or merge occurred. Option A remains statically feasible, not implemented or tested. Code/tests, 196/19 correction (Site 352 excluded; Fawn/date semantics first) and baseline remain separate approvals; three deferred record decisions remain untouched. STOP for Rob/Priya double review.
+
 ## October 28, 2026 — Option A audit-gap refinement completed read-only
 
 Static clean-source inventory found schema-24 Option A feasible for the explicitly narrowed “approved CRM applications” boundary. Existing SecurityAuditEvent can carry a versioned exact-typed JSON before/after envelope, actual event time, declared operator/source and correlation without migration, provided every daily-CRM writer inserts it in the same transaction or is disabled. The plan covers main CRUD, merges, activities/auto-DT, Associate/assignments, agreements, imports and companion maintenance/follow-up. Activity remains business history; History separately displays technical changes and truthfully labels pre-baseline rows using future verified high-water/name snapshots.
