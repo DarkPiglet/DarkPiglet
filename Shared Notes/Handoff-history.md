@@ -1,5 +1,11 @@
 # Historical Handoff Archive
 
+## October 28, 2026 — Latest-Z CRM Phase 1 investigation completed read-only
+
+Under shared `5ec75bc`, Codex inspected only the new `Z:\CRM.sqlite` candidate with OS reads and immutable/query-only SQLite. Candidate identity is 2,195,456 bytes / `16B6A7CAF542E83098E6DF08A27BE1FFE56E32C60A7597868181FDC0A6041F30`; no writer/sidecar/lock was observed, immutable inspection created no companion, and schema 24, integrity `ok`, zero FK and 7,484 rows passed. USB equality remains NOT VERIFIED. Relative to approved October 26 recovery, no row is removed and 30 are added, including Activities 1404–1420 and new Company/Site 146/428; newer data must be preserved.
+
+The preserved correction manifest remains unapplied: 196 updates old, 19 inserts absent, Site 352 still the excluded `Robert Nevins` conflict. Schema 24 has no complete protected entity/field history; History resolves Activity Associate names dynamically, assignments have no correction audit, and assignment interval inclusivity is undefined. Fawn remains database value `Fawn Petree`; `Fawn Petrie` is unverified. Source proves six activity types auto-populate Site.DTAssociate with default Robert Nevins, including new Site 428 via Activity 1409; hiding the visible Site DT column alone would not stop that write. The incomplete schema-25 feature remains noncompiling/untested and incompatible with this schema-24 candidate. Exact matrix and non-executable plan are in the project handoff. No data/code/schema/runtime change occurred. STOP for Rob/Priya double review.
+
 ## October 27, 2026 — Authorized isolated implementation stopped at first compile failure
 
 After the authorization in `e48c0eb`/`ec8fada`, Codex created `codex/crm-audit-ledger-20261027` from CRM `07e779f` and attempted the bounded schema-25 ledger, normal-save/companion integration, legacy guards and focused synthetic tests. Earlier design completion and approval events remain unchanged. Full prior handoff reads were reused with the complete new delta and applicable AGENTS.md; no customer database or operational seed was accessed. The source/test implementation is incomplete and UNVERIFIED, not a working correction facility.
