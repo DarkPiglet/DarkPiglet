@@ -1,5 +1,11 @@
 # Historical Handoff Archive
 
+## October 28, 2026 — Fresh audit baseline feasibility investigation completed read-only
+
+Static schema-24/source tracing found that Activity/History preserves business events but not a complete immutable technical audit: actor display is a current Associate join, generic change events have no actor, old/new prose loses NULL/type fidelity, important writers and Associate/CompanySalesAssignment changes are uncovered, SecurityAuditEvent is unused by production, and audit rows have no append-only enforcement. Therefore a marker alone cannot make future changes reliably self-contained.
+
+Two bounded options were documented. Schema-24 plus a protected signed external correction/baseline report is viable only if Rob accepts an operational/external trust boundary. Database-contained traceability requires a fresh small migration from clean schema 24—reuse SecurityAuditEvent as header, add one exact-field table and append-only guards, integrate every in-scope writer, separate administrative evidence from Activity business history, validate restore and reject old binaries. The broken schema-25 feature branch was not resumed. Fawn identity, September 18 interval semantics, actor model, audit scope and pre-baseline display require Rob/Priya decisions; three earlier deferred business decisions remain unchanged. No database/source/schema/build/test/launch or later phase occurred. STOP for double review.
+
 ## October 28, 2026 — Rob-approved fresh audit baseline feasibility investigation (pending execution)
 
 Rob confirms the latest Z: Test22 copy includes all work through approximately 2:30 p.m. Pacific October 28 and CRM remained closed afterward. USB original is disconnected and remains the existing untouched recovery reference; byte equality is not independently verified. Rob requests exploration of a fresh technical audit baseline after exact corrections, while preserving all customer/business history and historical evidence. Only read-only planning and documentation are authorized; no audit reset, data/code/schema edit, test, build or automatic next phase. The full controlling scope, safeguards and stop gates are in the current shared Handoff.md. Preserve previous October 28 investigation results and do not repeat them. STOP for review.
