@@ -1,3 +1,9 @@
+# October 29, 2026 — CRM Option A P1 STOPPED before compilation; retry requires new authorization
+
+Rob's P1-only authorization was invoked on clean schema-24 branch codex/crm-option-a-p1-20261029 at source 07e779f / application dd223e6. A bounded P1 working tree was prepared only for the shared typed audit model/codec/transaction writer, explicit test/companion links and wholly fictional focused tests. It remains **UNCOMMITTED, UNPUBLISHED, NOT COMPILED and NOT TESTED**.
+
+The first acceptance command, the filtered CRM.Data.Tests run using isolated CLI/artifact directories, exited 1 before restore/build/compilation because the sandbox identity was denied access to C:\Users\Dev\AppData\Roaming\NuGet\NuGet.Config. The companion command and all test bodies were **NOT RUN**. In accordance with the explicit unexpected-failure stop rule, no permission workaround, repair, retry or further stage was attempted. No database, schema/migration, repository writer, settings/UI, History, operational/USB/Z:/recovery data, correction, baseline, package, deployment, merge or external integration was changed or accessed. P1 is **FAIL at acceptance infrastructure / implementation NOT ACCEPTED**; P2+ remain unauthorized. A new explicit Rob authorization is required before any retry or repair. STOP for Rob/Priya review.
+
 # October 29, 2026 — ROB AUTHORIZES P1 ONLY; NEXT CODEX ASSIGNMENT (NOT YET EXECUTED)
 
 Rob explicitly approved the narrowly scoped Option A P1 after reviewing P0 PASS (shared commit `6153dcf`). **This latest authorization supersedes the older P0-era 'P1 NOT AUTHORIZED' status below; those entries remain historical. This is P1-only authorization, not P2–P9 authorization.** Codex shall verify the current CRM branch and clean schema-24 source pins `07e779f` / application `dd223e6`, read applicable AGENTS.md and current project/shared handoffs, and avoid redoing P0 or previously settled analysis.
