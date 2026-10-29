@@ -1,5 +1,11 @@
 # Historical Handoff Archive
 
+## October 29, 2026 — CRM P1 NuGet diagnosis complete; authorized retry STOPPED before compilation
+
+Executed only Rob's bounded diagnosis/original-retry authorization at ada5ab1. The user NuGet.Config exists but direct content read is denied to the sandbox identity. Both existing project assets target net10.0-windows, identify the normal package cache, and have every dependency already cached (CRM.Data.Tests 37/37; companion 30/30); no network download was needed or attempted.
+
+An ignored task-local NuGet.Config cleared all package sources, and the original filtered CRM.Data.Tests command was retried once with isolated CLI/artifact paths and RestoreConfigFile pointing to it. SDK 10.0.401 still enumerated the denied user-level NuGet.Config first and exited 1 during “Determining projects to restore,” before restore/build/compilation/test discovery. The companion command and all test bodies were **NOT RUN**. No second remedy, retry, explicit restore, permission/global-config change or elevated test run was attempted. P1 source/tests remain uncommitted, unpublished and unaccepted; P2+ remain unauthorized. A separately authorized choice is required before either a read-capable test execution or one different task-local restore/config-isolation experiment. STOP for Rob/Priya review.
+
 ## October 29, 2026 — CRM Option A P1 STOPPED before compilation; retry requires new authorization
 
 Rob's P1-only authorization was invoked on clean schema-24 branch codex/crm-option-a-p1-20261029 at source 07e779f / application dd223e6. A bounded P1 working tree was prepared only for the shared typed audit model/codec/transaction writer, explicit test/companion links and wholly fictional focused tests. It remains **UNCOMMITTED, UNPUBLISHED, NOT COMPILED and NOT TESTED**.
