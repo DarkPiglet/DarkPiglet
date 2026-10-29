@@ -1,5 +1,11 @@
 # Historical Handoff Archive
 
+## October 29, 2026 — CRM Option A P0 static double review completed
+
+The manually submitted morning instruction invoked the prepared P0 review only. Repository/branch/commit identity, P0–P9 dependency gates, static main/companion writer coverage, atomicity tests, declared operator/DT separation, History truthfulness and proportionate executable policy passed documentation review; runtime/deployment remain NOT RUN/NOT VERIFIED. Report custody, Fawn/date semantics and three deferred records remain unresolved.
+
+P0 corrected two plan gaps: company update/merge were added to agreement-folder move/rename compensation because both set `_agreementFoldersDirty`, and P1 source linkage now avoids duplicating SDK-default main compilation. Document import copy compensation is distinguished from remove/restore file retention. P1 has exact fictional codec/context/same-transaction rollback acceptance criteria and is ready only for separate Rob/Priya consideration—not authorized. No data, code, schema, settings, build/test/launch, file move, correction, baseline, package, deployment or merge occurred. STOP for review.
+
 ## October 28, 2026 — CRM Option A plan reconciled to four reviewed safeguards
 
 The documentation-only assignment at shared `f716f57` revised the existing schema-24 P0–P9 plan without implementation. It replaced broad old-binary quarantine with proportionate single-user control: one labeled approved daily CRM whose executable hash, database path and settings are verified at future deployment, with Test20/Test22 backups unchanged and an explicit warning that older binaries/direct SQLite remain technically possible.
