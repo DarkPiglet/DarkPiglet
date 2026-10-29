@@ -1,5 +1,10 @@
 # Historical Handoff Archive
 
+## October 28, 2026 — Rob-approved fresh audit baseline feasibility investigation (pending execution)
+
+Rob confirms the latest Z: Test22 copy includes all work through approximately 2:30 p.m. Pacific October 28 and CRM remained closed afterward. USB original is disconnected and remains the existing untouched recovery reference; byte equality is not independently verified. Rob requests exploration of a fresh technical audit baseline after exact corrections, while preserving all customer/business history and historical evidence. Only read-only planning and documentation are authorized; no audit reset, data/code/schema edit, test, build or automatic next phase. The full controlling scope, safeguards and stop gates are in the current shared Handoff.md. Preserve previous October 28 investigation results and do not repeat them. STOP for review.
+
+
 ## October 28, 2026 — Latest-Z CRM Phase 1 investigation completed read-only
 
 Under shared `5ec75bc`, Codex inspected only the new `Z:\CRM.sqlite` candidate with OS reads and immutable/query-only SQLite. Candidate identity is 2,195,456 bytes / `16B6A7CAF542E83098E6DF08A27BE1FFE56E32C60A7597868181FDC0A6041F30`; no writer/sidecar/lock was observed, immutable inspection created no companion, and schema 24, integrity `ok`, zero FK and 7,484 rows passed. USB equality remains NOT VERIFIED. Relative to approved October 26 recovery, no row is removed and 30 are added, including Activities 1404–1420 and new Company/Site 146/428; newer data must be preserved.
