@@ -1,5 +1,11 @@
 # Historical Handoff Archive
 
+## October 28, 2026 — CRM Option A plan reconciled to four reviewed safeguards
+
+The documentation-only assignment at shared `f716f57` revised the existing schema-24 P0–P9 plan without implementation. It replaced broad old-binary quarantine with proportionate single-user control: one labeled approved daily CRM whose executable hash, database path and settings are verified at future deployment, with Test20/Test22 backups unchanged and an explicit warning that older binaries/direct SQLite remain technically possible.
+
+The plan now makes same-transaction business+typed-SecurityAuditEvent atomicity and focused failure injection mandatory for every enabled writer class; adds exact file move/rename/copy compensation and truthful postcommit-cleanup recovery gates; and requires a separate Rob authorization after each prior stage checkpoint. Every stage remains NOT RUN. Report custody remains unresolved rather than chosen. Existing history, correction counts/exclusions, Fawn/date gates and deferred decisions are unchanged. No database, code, schema, settings, build/test/launch, correction, baseline, package, deployment or merge occurred. STOP for Rob/Priya review.
+
 ## October 28, 2026 — CRM Option A detailed implementation plan completed; no implementation
 
 The documentation-only assignment in shared `45d4c0c`/`5b9137d` produced a finite P0–P9 plan from clean schema 24: review/trust decisions; canonical typed SecurityAuditEvent helper; declared-operator settings; transaction plumbing; main CRUD/archive; Activity/DT and agreements/documents; merges and Associate/assignment administration; enabled imports/companion writers or disablement; History separation; then regression/restore/old-binary inventory. Every successful command uses the same business transaction for exact typed technical evidence; any evidence failure rolls back the business operation. DT Associate is never inferred from the operator. Agreement-document file moves use explicit compensation and identity checks rather than a false cross-filesystem atomicity claim.
