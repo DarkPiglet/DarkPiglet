@@ -1,5 +1,10 @@
 # Historical Handoff Archive
 
+# October 31, 2026 — Next authorized CRM assignment: interruption-period documentation reconciliation
+
+Rob authorized a documentation-only completeness reconciliation before P2 implementation or further CRM development. The authoritative assignment is in CRM project `HANDOFF.md` on `codex/crm-option-a-p1-20261029`, publication commit `f1fe64a15125aef62e074bcc53eb67f5574ebda9`. Codex shall read that assignment and applicable `AGENTS.md`, compare evidenced work from the start of the handoff-publication interruption through October 31 successful publication against all three handoffs, identify already-recorded/missing/conflicting/duplicated/unverifiable items, and add only supported missing history. Preserve original test and publication statuses. No test reruns, code/database work, P2/P3 implementation, Git security changes, or disturbance to the 327 original checkout changes. Use the approved isolated Dev-context documentation publication method; verify remote content and stop for Rob/Priya review. This entry records authorization only, not reconciliation completion.
+
+
 ## October 31, 2026 — Separately authorized CRM P2 documentation publication
 
 Rob separately authorized completion of the interrupted documentation-only publication using the existing clean temporary clones. Publication preflight ran under `desktop-uh85jc0\dev`: the CRM clone remained at remote branch head `a0cdf65d8f0ad2924dd854a9a772ea37f80399b7`, the shared clone remained at `main` head `45f006cf4be7919856bf08c07d63a88c471ac1f0`, and both remotes were unchanged from those cloned heads. Git scope verification found only the CRM project `HANDOFF.md` changed in the CRM clone and only `Shared Notes/Handoff.md` plus this `Shared Notes/Handoff-history.md` changed in the shared clone. Publication uses ordinary fast-forward commits and pushes from those clean clones, followed by independent remote retrieval. This is a new publication result only; it does not alter the original review's **NOT VERIFIED** publication status recorded below.
