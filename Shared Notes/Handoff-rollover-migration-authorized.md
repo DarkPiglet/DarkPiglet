@@ -1,0 +1,30 @@
+# CONTROLLING ASSIGNMENT — Historical handoff migration (authorized 2026-10-31)
+
+**Authority:** Rob explicitly authorized the historical handoff migration. This file is the controlling migration instruction, not evidence that migration has happened. **STOP after publication and independent verification for Rob/Priya acceptance. Do not begin P2 or P3.**
+
+**Repository:** `DarkPiglet/DarkPiglet`, target `main`. **Verified starting main commit:** `b80c4265c765c77b5eeba8ab91a354abccd6c568`. **Approved review branch:** `review/handoff-rollover-2026-10-31`, reviewed commit `d0d98130d5e0fdadbb9777948f52e01e6955390d`. This controlling assignment itself is a later authorized documentation commit; its publication advances `main` beyond the starting commit. Do not mistake that expected advancement for source-history drift. Before migrating, compare the *historical source blob*, review-artifact blobs, and all unrelated main paths against their approved values; any unexpected divergence is a STOP.
+
+**Source history:** `Shared Notes/Handoff-history.md`, approved Git blob `a8b9154613cecb308c27b55535c19ac11bdc9b5a`, SHA-256 `CB8D16FADE121A5E9A134AF13061B0463102ACBE555F70B6FF36E5854BEEA6ED`, 950,661 bytes, 30-byte preamble, 154 complete entries. Preserve the original source through Git history and an independently verified immutable snapshot before replacing its path. No truncation, normalization, reorder, duplication or entry splitting.
+
+**Read first:** `Shared Notes/Handoff-rollover-preparation.md` on `main`, plus all five review artifacts under `Shared Notes/Handoff-rollover-review-2026-10-31/` on the pinned review commit. Applicable `AGENTS.md` instructions remain in force. The preparation addendum's *dry-run-only* restriction is superseded solely for the narrowly authorized migration below; all preservation and security restrictions remain.
+
+## Authorized changes on shared main ONLY
+1. Create `Shared Notes/Handoff-history-001.md` (source ordinals 111–154, 44 entries, 432,543 bytes, closed; SHA-256 `2C48E5582AC53805D474B3B051C70B1EAA5546AB37D1480A3DB2AFA7A5A0431F`).
+2. Create `Shared Notes/Handoff-history-002.md` (ordinals 11–110, 100 entries, 499,839 bytes, closed; SHA-256 `0804D0F51FEEC2A42CBC0B779E4200E7EFFE4679065AF0B52806CC97107F9186`).
+3. Create `Shared Notes/Handoff-history-003.md` (ordinals 1–10, 10 entries, 19,489 bytes, open; SHA-256 `CDF9D5E7C61127C00B2C148C47185CBAEC6A3778077C47587F5522D99357FDF4`).
+4. Replace `Shared Notes/Handoff-history.md` with the *reviewed index proposal*, removing its dry-run disclaimer and updating only metadata necessary to accurately reflect the final published state. Keep the original archive preamble accounted for in reconstruction; preserve the 154 entries in numbered volumes. Index newest-first: 003, 002, 001. Every volume must be <= 500,000 UTF-8 bytes including headers. Closed volumes immutable; 003 remains appendable until a complete new entry would exceed the cap.
+5. Apply only the reviewed `AGENTS.discovery.proposed.diff` and `Handoff.discovery.proposed.diff`, adapting exact context/paths without disturbing other instructions. Ensure discovery references use real paths and do not treat historical entries as current authorization.
+
+**Important:** The review branch contains the five *review artifacts*, not the three generated volume files. Generate the three volume files from the verified source and manifest using the exact reviewed boundaries/header format; do not treat the review index's volume links as already published. The corrected `entry-manifest.json` has 50,304 raw bytes and SHA-256 `AA04874DC98BDDC490F44197871AA5345DFEDC9B2632ADA699D9631907018F54`; preserve CRLF where required. Do not change Git global configuration or security settings to handle line endings.
+
+## Execution and verification gates
+- Use an isolated clean workspace with the previously verified Dev identity. **Never use or modify the protected CRM checkout** (327 displayed changes, 326 staged paths). No code, settings, database, customer data, backup, recovery, P2/P3, or unrelated repository changes.
+- Verify remote refs, source blob/bytes/hash, reviewed manifest, and exact intended file scope **before staging**. Stop on mismatch, including any changed target path, unrelated remote divergence, inability to read applicable AGENTS.md, or unavailable review artifacts.
+- Preserve original raw bytes in generated volumes; account for preamble and generated headers explicitly. Verify each of 154 per-entry SHA-256 hashes, source-order reconstruction with exact source SHA-256 and 950,661-byte length, exact volume byte lengths and SHA-256, manifest coverage, index links, and all 22 plain-text history references and 709 Git-reference tokens. If a reviewed hash cannot be reproduced, STOP rather than change the verified design silently.
+- Stage **only** the six authorized shared paths (three new volumes, replaced index, shared active handoff, and applicable AGENTS.md). If AGENTS.md lives elsewhere or an authorized diff cannot apply safely, STOP and report; do not broaden scope.
+- Publish only after all preflight checks pass, as one ordinary fast-forward commit to `main`, with no force push, merge or rebase of protected work. If the remote advances unexpectedly, STOP.
+- Independently refetch published remote commit and raw bytes, compare all changed paths and hashes, rerun reconstruction, link and reference checks. A failed post-push check is **NOT VERIFIED**, not success: report it without further changes.
+- Do not edit the CRM project handoff automatically. A separate CRM documentation publication is permitted **only if its repository and approved process are positively identified and its independent preflight passes**; otherwise report that follow-up as pending, without guessing a repository path or changing permissions.
+- Report exact commit SHA, changed paths, volume sizes/hashes, 154-entry verification, source reconstruction, protected-checkout preservation, and any exceptions. **STOP for Rob/Priya review; do not start P2.**
+
+This is a one-time migration authorization, not standing permission to rewrite closed volumes.
