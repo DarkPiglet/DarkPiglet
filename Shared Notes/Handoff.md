@@ -1,5 +1,10 @@
 ## October 31, 2026 — NEXT AUTHORIZED ASSIGNMENT: P2 implementation-slice planning (READ ONLY)
 
+## October 31, 2026 — CONTROLLING NEXT ASSIGNMENT: historical handoff rollover design review (NO MIGRATION)
+
+Rob's new controlling priority is a read-only proposal for numbered historical handoff rollover at a 500 KB target. The detailed assignment is in CRM project HANDOFF.md on codex/crm-option-a-p1-20261029. This supersedes the pending P2 planning assignment; P2 planning/implementation remain paused. No migration, archive write, code, databases, tests, Git security changes, or alteration of the original 327 changes/326 staged paths. Historical handoff remains unchanged due to the existing write block. Codex shall report measured sizes, numbering/index design, complete-entry preservation, migration validation, risks and stop for approval.
+
+
 Rob accepted the completed October 31 documentation reconciliation within its evidence limits and authorized ONLY a read-only/documentation planning review of the already completed P2 findings. The controlling detailed assignment is in CRM project HANDOFF.md on codex/crm-option-a-p1-20261029. Codex shall propose the smallest safe P2 declared-operator AuditOperatorDisplayName implementation slice for CRM and GoGreen, with precise scope, evidence, acceptance tests, risks and decisions; it shall NOT implement P2, start P3, rerun completed tests or alter application code, settings, databases or protected data. Preserve original P2 review five PASS/original publication NOT VERIFIED and later separate publication PASS. Protect original 327 displayed changes and 326 staged paths. Publish documentation only using verified isolated Dev identity, fast-forward commits and independent remote refetch; no Git ownership/security workaround. STOP for Rob/Priya review and explicit implementation approval.
 
 # October 31, 2026 — CRM handoff interruption reconciliation complete; documentation only
