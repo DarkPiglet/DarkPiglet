@@ -1,0 +1,1243 @@
+{
+  "source_commit": "b80c4265c765c77b5eeba8ab91a354abccd6c568",
+  "source_path": "Shared Notes/Handoff-history.md",
+  "source_blob": "a8b9154613cecb308c27b55535c19ac11bdc9b5a",
+  "source_sha256": "CB8D16FADE121A5E9A134AF13061B0463102ACBE555F70B6FF36E5854BEEA6ED",
+  "source_bytes": 950661,
+  "preamble_bytes": 30,
+  "entry_count": 154,
+  "entries": [
+    {
+      "ordinal": 1,
+      "title": "## October 31, 2026 — CRM handoff interruption-period reconciliation completed",
+      "offset_start": 30,
+      "offset_end_exclusive": 3659,
+      "bytes": 3629,
+      "sha256": "4E1AD9BC45628CD7EDCF48B63C7961F601D841C2BE1B55017B76E4E725FC8136"
+    },
+    {
+      "ordinal": 2,
+      "title": "# October 31, 2026 — Next authorized CRM assignment: interruption-period documentation reconciliation",
+      "offset_start": 3659,
+      "offset_end_exclusive": 4746,
+      "bytes": 1087,
+      "sha256": "03C833C290420536C56CF7B17D9406805974CD5D1F2970D682EE967C158A41D8"
+    },
+    {
+      "ordinal": 3,
+      "title": "## October 31, 2026 — Separately authorized CRM P2 documentation publication",
+      "offset_start": 4746,
+      "offset_end_exclusive": 6952,
+      "bytes": 2206,
+      "sha256": "726A941B78CA3B4FEB5842CB725AF757C3175F2C98E77545520258AD2A81908D"
+    },
+    {
+      "ordinal": 4,
+      "title": "## October 31, 2026 — CRM P2 review complete; original publication NOT VERIFIED",
+      "offset_start": 6952,
+      "offset_end_exclusive": 9927,
+      "bytes": 2975,
+      "sha256": "4C96A65590630BB2668E10867610859232D27C678F569B6EF9B63B4EBE91B3AC"
+    },
+    {
+      "ordinal": 5,
+      "title": "## October 30, 2026 — CRM P1 tested one-line source correction published",
+      "offset_start": 9927,
+      "offset_end_exclusive": 11325,
+      "bytes": 1398,
+      "sha256": "6E0DC1E65AFE64264D8797829C50981211615F5BBBA1FC2FF2A8FEC5BAA09337"
+    },
+    {
+      "ordinal": 6,
+      "title": "## October 30, 2026 — CRM P1 namespace correction and formal acceptance checks PASS",
+      "offset_start": 11325,
+      "offset_end_exclusive": 12950,
+      "bytes": 1625,
+      "sha256": "AABEC74036D6988D7462F6840D48C6C12A7157F88226F704F8BE4D76BA29562E"
+    },
+    {
+      "ordinal": 7,
+      "title": "## October 30, 2026 — Authorized CRM P1 sequence STOPPED at companion compile failure",
+      "offset_start": 12950,
+      "offset_end_exclusive": 14324,
+      "bytes": 1374,
+      "sha256": "5FE655067253AA45E515618552EB5FF1D2D4ED1F6AA76D53B3686F63BA3602B6"
+    },
+    {
+      "ordinal": 8,
+      "title": "## October 30, 2026 — CRM P1 proposed completion sequence NOT AUTHORIZED; execution stopped at gate",
+      "offset_start": 14324,
+      "offset_end_exclusive": 15572,
+      "bytes": 1248,
+      "sha256": "122E9A8E7BE424E0BA23EC363CEDE8A9802ED11073B754BDD779F21453856BB6"
+    },
+    {
+      "ordinal": 9,
+      "title": "## October 30, 2026 — CRM P1 verified status documentation; implementation published, formal acceptance pending",
+      "offset_start": 15572,
+      "offset_end_exclusive": 17891,
+      "bytes": 2319,
+      "sha256": "9DFC46D3D5DDDCEB08119F48BAEFA3C4A942FEF9E2E46BE975BFDEFB1BB00759"
+    },
+    {
+      "ordinal": 10,
+      "title": "## October 29, 2026 — Final CRM P1 environment check: no approved read-capable context; tests NOT RUN",
+      "offset_start": 17891,
+      "offset_end_exclusive": 19109,
+      "bytes": 1218,
+      "sha256": "F5C2A42EB709401FA73EBA9F02FD29B0C4D99FA599717E360198830B420DD1E4"
+    },
+    {
+      "ordinal": 11,
+      "title": "## October 29, 2026 — CRM P1 NuGet diagnosis complete; authorized retry STOPPED before compilation",
+      "offset_start": 19109,
+      "offset_end_exclusive": 20414,
+      "bytes": 1305,
+      "sha256": "B1CAC2FAD7BE45CE3A2159C16DFA9DB30419244392513C05109DFED78B60C6E2"
+    },
+    {
+      "ordinal": 12,
+      "title": "## October 29, 2026 — CRM Option A P1 STOPPED before compilation; retry requires new authorization",
+      "offset_start": 20414,
+      "offset_end_exclusive": 21737,
+      "bytes": 1323,
+      "sha256": "81048224A83499D9A5D711539F7B7FC30B8D392E0D01E17F43A00EE07C5F0EF7"
+    },
+    {
+      "ordinal": 13,
+      "title": "## October 29, 2026 — CRM Option A P0 static double review completed",
+      "offset_start": 21737,
+      "offset_end_exclusive": 22864,
+      "bytes": 1127,
+      "sha256": "E87A898C33E7ECCF8BAE3C2CB3ED2DDC1BE53C84D286D86C14A6F431B40387F3"
+    },
+    {
+      "ordinal": 14,
+      "title": "## October 28, 2026 — CRM Option A plan reconciled to four reviewed safeguards",
+      "offset_start": 22864,
+      "offset_end_exclusive": 24042,
+      "bytes": 1178,
+      "sha256": "16E275962C9C0672EE7FFD53BECF8EC8CF1DE6F3D45F14604182086965095F6D"
+    },
+    {
+      "ordinal": 15,
+      "title": "## October 28, 2026 — CRM Option A detailed implementation plan completed; no implementation",
+      "offset_start": 24042,
+      "offset_end_exclusive": 25840,
+      "bytes": 1798,
+      "sha256": "37918E5804BE14743A067C0EB1019672D6FDDB82BE088A08C278C43F3F031B20"
+    },
+    {
+      "ordinal": 16,
+      "title": "## October 28, 2026 — Option A audit-gap refinement completed read-only",
+      "offset_start": 25840,
+      "offset_end_exclusive": 27246,
+      "bytes": 1406,
+      "sha256": "500E210CD3EBBF8625FF72C0CB51872660BA4D7A5083A592A4B0A032BEEC1630"
+    },
+    {
+      "ordinal": 17,
+      "title": "## October 28, 2026 — Fresh audit baseline feasibility investigation completed read-only",
+      "offset_start": 27246,
+      "offset_end_exclusive": 28663,
+      "bytes": 1417,
+      "sha256": "1D746CDA06C1C0D5BAD69BC7C0810381412C904A92E6DF79C1EF537940507049"
+    },
+    {
+      "ordinal": 18,
+      "title": "## October 28, 2026 — Rob-approved fresh audit baseline feasibility investigation (pending execution)",
+      "offset_start": 28663,
+      "offset_end_exclusive": 29518,
+      "bytes": 855,
+      "sha256": "F99F1BD0DAD4A859DFD69CA8A659C6DF1F3483DD0AE4710A9CD680ED116D05B0"
+    },
+    {
+      "ordinal": 19,
+      "title": "## October 28, 2026 — Latest-Z CRM Phase 1 investigation completed read-only",
+      "offset_start": 29518,
+      "offset_end_exclusive": 31054,
+      "bytes": 1536,
+      "sha256": "F4EEC21C7E3EA44D74711B3003D29708DFA7E875A04BC4FD5A2D6C0CFF09049D"
+    },
+    {
+      "ordinal": 20,
+      "title": "## October 27, 2026 — Authorized isolated implementation stopped at first compile failure",
+      "offset_start": 31054,
+      "offset_end_exclusive": 33442,
+      "bytes": 2388,
+      "sha256": "4B51F47C04AEB98BD67A51575AC9F194E75403067A3FBAC1C655BE15E2A1DA4F"
+    },
+    {
+      "ordinal": 21,
+      "title": "## October 27, 2026 — Rob authorizes isolated implementation/testing after audit-design review",
+      "offset_start": 33442,
+      "offset_end_exclusive": 34468,
+      "bytes": 1026,
+      "sha256": "9A016C6356C6A692A2BD85A61EE3C503CEEC03CB33CD4166EB236573CFB7845E"
+    },
+    {
+      "ordinal": 22,
+      "title": "## October 27, 2026 — Separately dispatched minimal correction audit design completed; no implementation or data action",
+      "offset_start": 34468,
+      "offset_end_exclusive": 37848,
+      "bytes": 3380,
+      "sha256": "4A576901D1D65FCE24F9804B08B6AE67C85100BA417D18E1A8ADB6055FF51423"
+    },
+    {
+      "ordinal": 23,
+      "title": "## October 27, 2026 — Separate Rob design-execution authorization recorded; no design execution in this step",
+      "offset_start": 37848,
+      "offset_end_exclusive": 39271,
+      "bytes": 1423,
+      "sha256": "1E6061BCE22D8EEF61501F498ADAF383DCF3959B0C4D2411545B71D62F882378"
+    },
+    {
+      "ordinal": 24,
+      "title": "## October 27, 2026 — Published design draft authorization stop confirmed",
+      "offset_start": 39271,
+      "offset_end_exclusive": 40351,
+      "bytes": 1080,
+      "sha256": "B801305FB1BD16D9D5379F339C13221B33F1B044987FAD8E1D0ABEF4D7F11AD4"
+    },
+    {
+      "ordinal": 25,
+      "title": "## October 27, 2026 — Z-copy correction stopped at truthful-audit gate",
+      "offset_start": 40351,
+      "offset_end_exclusive": 42004,
+      "bytes": 1653,
+      "sha256": "96317D473BBF55F92437B69B104E7E2BE333D08EE1CFD50A439A0CE3A06F7732"
+    },
+    {
+      "ordinal": 26,
+      "title": "## October 27, 2026 — Corrected Test22 portable Windows x64 release package completed",
+      "offset_start": 42004,
+      "offset_end_exclusive": 46610,
+      "bytes": 4606,
+      "sha256": "7954005143446F52B9B63B921897C926C76939BA57CEA9C9CE7B60FFC8DC27CC"
+    },
+    {
+      "ordinal": 27,
+      "title": "## October 27, 2026 — Final controlled Z-drive database and recovery verification",
+      "offset_start": 46610,
+      "offset_end_exclusive": 49835,
+      "bytes": 3225,
+      "sha256": "6A168A39689C8B31DFFF7A115D5D7D40399409888977038C9E668EA5496CC4FD"
+    },
+    {
+      "ordinal": 28,
+      "title": "## October 27, 2026 — Documentation-only repository correction and next-session test inventory",
+      "offset_start": 49835,
+      "offset_end_exclusive": 52558,
+      "bytes": 2723,
+      "sha256": "6399F9511B679B594641C1BE8910A69127B512B104292922B70E93AAFA8ACDF5"
+    },
+    {
+      "ordinal": 29,
+      "title": "## October 27, 2026 — Rob approves narrow post-verification review and stale-test correction",
+      "offset_start": 52558,
+      "offset_end_exclusive": 54720,
+      "bytes": 2162,
+      "sha256": "624DAC5DD769C208550D7ADD39525CF8EB99C2DD0A56B698A150D65DF5200364"
+    },
+    {
+      "ordinal": 30,
+      "title": "## October 27, 2026 — Test22 upgrade-test correction and safe regression completed",
+      "offset_start": 54720,
+      "offset_end_exclusive": 61049,
+      "bytes": 6329,
+      "sha256": "BDAF16BED5B46B8F430D8C8D991840C64DC98ECDE93195AFA481DEB0D2715449"
+    },
+    {
+      "ordinal": 31,
+      "title": "## October 27, 2026 — Corrected Test22 isolated verification completed",
+      "offset_start": 61049,
+      "offset_end_exclusive": 72845,
+      "bytes": 11796,
+      "sha256": "6DC784CFF71C73C4F10EDD37DF205D515A77BF7503EBF870BDEBC77B6066BE8A"
+    },
+    {
+      "ordinal": 32,
+      "title": "## October 26, 2026 — Updated CRM data protected and Test22 focused corrections completed",
+      "offset_start": 72845,
+      "offset_end_exclusive": 80638,
+      "bytes": 7793,
+      "sha256": "1FA4A16274A39AFA00903C734426FF219C8A8744795DF2968C66B9389623AE74"
+    },
+    {
+      "ordinal": 33,
+      "title": "## October 26, 2026 — Complete CRM Test 22 production manual acceptance review",
+      "offset_start": 80638,
+      "offset_end_exclusive": 90547,
+      "bytes": 9909,
+      "sha256": "0ECBE297C276CF7245CBE3783080AA3D9B6A884413900E82B5C5AD17F11F4ACE"
+    },
+    {
+      "ordinal": 34,
+      "title": "## October 25, 2026 — Verified Test22 portable production-data package COMPLETE; NOT DEPLOYED",
+      "offset_start": 90547,
+      "offset_end_exclusive": 91872,
+      "bytes": 1325,
+      "sha256": "6449F6F125742AB7FE8B79DE0078D97D05C4B0D54015A21607E7FAF1202B2725"
+    },
+    {
+      "ordinal": 35,
+      "title": "## October 25, 2026 — Corrected five-item Z-drive cleanup COMPLETE; protected sets PASS",
+      "offset_start": 91872,
+      "offset_end_exclusive": 93297,
+      "bytes": 1425,
+      "sha256": "3F5435A55F8AE49EC49F3027E509416CBB155EB2840ED10511D618AE12B08906"
+    },
+    {
+      "ordinal": 36,
+      "title": "## October 25, 2026 — Authorized five-item Z-drive cleanup STOPPED in preflight; nothing deleted",
+      "offset_start": 93297,
+      "offset_end_exclusive": 94555,
+      "bytes": 1258,
+      "sha256": "E3392A9B12B859DDCF301B150C7A7EE087ABDFEF5919B182C14976671D26C699"
+    },
+    {
+      "ordinal": 37,
+      "title": "## October 25, 2026 — Z-drive CRM cleanup inventory complete; proposal only",
+      "offset_start": 94555,
+      "offset_end_exclusive": 96135,
+      "bytes": 1580,
+      "sha256": "4D144C7F0F2D2FF7F76A74F8E6F9EFA7BE3BFA9615BC0D1E0CE29BFF9575B759"
+    },
+    {
+      "ordinal": 38,
+      "title": "## October 25, 2026 — Test 22 October 14 baseline data-completeness verification PASS",
+      "offset_start": 96135,
+      "offset_end_exclusive": 99450,
+      "bytes": 3315,
+      "sha256": "B2109E8B754867103340BD0C0A8A0BD9BC1B1EB04FD4CDDE44579711A88A6836"
+    },
+    {
+      "ordinal": 39,
+      "title": "## October 25, 2026 — Controlled CRM Test 22 Release acceptance PASS",
+      "offset_start": 99450,
+      "offset_end_exclusive": 101872,
+      "bytes": 2422,
+      "sha256": "16618C1F7B9699D2D0A8DBB69CF4B7132899C72200EE2995EE9523F0514721EF"
+    },
+    {
+      "ordinal": 40,
+      "title": "## October 25, 2026 — Stage 8 final valid-path scheduled-backup acceptance PASS",
+      "offset_start": 101872,
+      "offset_end_exclusive": 103102,
+      "bytes": 1230,
+      "sha256": "07B02361FD17302C0B8DDB378734AD78043E1F0F3430609AC629011777FFE245"
+    },
+    {
+      "ordinal": 41,
+      "title": "## October 25, 2026 — Stage 8 final valid-path scheduled-backup acceptance plan published; not executed",
+      "offset_start": 103102,
+      "offset_end_exclusive": 104166,
+      "bytes": 1064,
+      "sha256": "C75977F92F21CF6071A20FDFD7E808B5DE6CB994032813B07D7730477651A0E3"
+    },
+    {
+      "ordinal": 42,
+      "title": "## October 25, 2026 — Stage 8 manual GUI evidence documented; no Codex task",
+      "offset_start": 104166,
+      "offset_end_exclusive": 105298,
+      "bytes": 1132,
+      "sha256": "4FEAE104403087CCAF776C11CD2F917C2CDCACF0562E85AFFA9B40E04E011CEA"
+    },
+    {
+      "ordinal": 43,
+      "title": "## October 25, 2026 — Stage 8 resume stopped on inaccessible GUI; PID 7260 active",
+      "offset_start": 105298,
+      "offset_end_exclusive": 106696,
+      "bytes": 1398,
+      "sha256": "7BD15268BADADE00B0C8F2614141B438009FBF435915C8D6ECF2D558A03E2F8E"
+    },
+    {
+      "ordinal": 44,
+      "title": "## October 25, 2026 — Stage 8 resume publication after PID 9808 user closure",
+      "offset_start": 106696,
+      "offset_end_exclusive": 107588,
+      "bytes": 892,
+      "sha256": "6356AD61512D0B080BC7225D6EC714CC0EEC7961549B8F656CD8CA82D92EADDE"
+    },
+    {
+      "ordinal": 45,
+      "title": "## October 25, 2026 — Stage 8 mandatory preflight STOP; PID 9808 remains protected",
+      "offset_start": 107588,
+      "offset_end_exclusive": 108683,
+      "bytes": 1095,
+      "sha256": "63271CE30071A75D47D4DDED34B08F285009F03BE435773C3586582EB40C3704"
+    },
+    {
+      "ordinal": 46,
+      "title": "## October 25, 2026 — Stage 8 publication; execution pending",
+      "offset_start": 108683,
+      "offset_end_exclusive": 109456,
+      "bytes": 773,
+      "sha256": "3472608C2D0F8CEEF677667DE72B1790A3B8910B5F8BD838351AF150E6B1DEB9"
+    },
+    {
+      "ordinal": 47,
+      "title": "## October 25, 2026 — Stage 7 correction implemented; focused verification PASS",
+      "offset_start": 109456,
+      "offset_end_exclusive": 110252,
+      "bytes": 796,
+      "sha256": "A29BB4BC9B1748445415121AAF4B737406F7472C06F27F1B89176BD8B2214332"
+    },
+    {
+      "ordinal": 48,
+      "title": "## October 25, 2026 - Stage 7 publication",
+      "offset_start": 110252,
+      "offset_end_exclusive": 110654,
+      "bytes": 402,
+      "sha256": "7CFDBFEA7DD052DE18C1D4D5F99E8D61CB1B63A01E25FB5E73595E826BC9FE15"
+    },
+    {
+      "ordinal": 49,
+      "title": "## October 25, 2026 — Stage 6 comparison executed; missing-window cause NOT VERIFIED",
+      "offset_start": 110654,
+      "offset_end_exclusive": 111817,
+      "bytes": 1163,
+      "sha256": "408F2D7ED2A6568C88A9E464FC7227071D36ECF5E69B135361846EADC40FB96C"
+    },
+    {
+      "ordinal": 50,
+      "title": "## October 25, 2026 — Stage 6 comparison plan publication only",
+      "offset_start": 111817,
+      "offset_end_exclusive": 112572,
+      "bytes": 755,
+      "sha256": "4E9962EF666F10148159F357D7B2372E925D1B086DFBDE719723D819BD1C09C8"
+    },
+    {
+      "ordinal": 51,
+      "title": "## October 25, 2026 — Stage 5 GUI verification mandatory STOP; hidden warning / PID 9808 active",
+      "offset_start": 112572,
+      "offset_end_exclusive": 114369,
+      "bytes": 1797,
+      "sha256": "3EDFD291A112A3460E64876D7B6FF42E434CF829888C372D5BEE8E4CE198EDF4"
+    },
+    {
+      "ordinal": 52,
+      "title": "## October 25, 2026 — Stage 5 GUI verification plan published, execution NOT authorized",
+      "offset_start": 114369,
+      "offset_end_exclusive": 115031,
+      "bytes": 662,
+      "sha256": "1A97978C96E32155BFD4879747E4F628F2AE7E39D0E312E6735CE35D798A0022"
+    },
+    {
+      "ordinal": 53,
+      "title": "## October 25, 2026 — Stage 4 backup-path validation implemented; focused verification PASS",
+      "offset_start": 115031,
+      "offset_end_exclusive": 117009,
+      "bytes": 1978,
+      "sha256": "32C9D0AD74E5FD5711299174FDF28F0F4C92EDD0414E7FD28BE872C01CE7C669"
+    },
+    {
+      "ordinal": 54,
+      "title": "## October 25, 2026 — Stage 4 backup-path validation implementation — PUBLISHED PLAN, NOT EXECUTION AUTHORIZATION",
+      "offset_start": 117009,
+      "offset_end_exclusive": 120318,
+      "bytes": 3309,
+      "sha256": "15B07818E741A7122C516CDB1DBA0C87CF9934F02CCE920CD046C8AA7D4EA26A"
+    },
+    {
+      "ordinal": 55,
+      "title": "## October 25, 2026 — Stage 3 backup-path root-cause review completed; proposal only",
+      "offset_start": 120318,
+      "offset_end_exclusive": 126188,
+      "bytes": 5870,
+      "sha256": "33B60C615484891EF0302FFF932FD49813A8DD7C3FFCFA3EA5A60D0F0D15313E"
+    },
+    {
+      "ordinal": 56,
+      "title": "## October 25, 2026 — Stage 2 short-backup-path synthetic launch PASS; one launch only",
+      "offset_start": 126188,
+      "offset_end_exclusive": 128367,
+      "bytes": 2179,
+      "sha256": "4203FB1FFD90601AC6EBA6BED2219BF82B374B6FBBBDC72D5F8B30DD696E9C51"
+    },
+    {
+      "ordinal": 57,
+      "title": "## October 25, 2026 — Authorized Stage 1 backup and automated startup/shutdown investigation completed",
+      "offset_start": 128367,
+      "offset_end_exclusive": 135333,
+      "bytes": 6966,
+      "sha256": "B01A0C99B5B228E68374145096590C565F539F2C533D307FDC20EFCDB646FCF3"
+    },
+    {
+      "ordinal": 58,
+      "title": "## October 23, 2026 — REVIEWED PROPOSAL: Test22 data transition first, settings retest later (DOCUMENTATION ONLY)",
+      "offset_start": 135333,
+      "offset_end_exclusive": 147962,
+      "bytes": 12629,
+      "sha256": "3571687B45B08F90BE8526610FE52DAEA3F9A88B9A542226004633A2FDE0480E"
+    },
+    {
+      "ordinal": 59,
+      "title": "## October 23, 2026 — T22-MSP-01 stopped at GUI feasibility preflight; CRM NOT LAUNCHED",
+      "offset_start": 147962,
+      "offset_end_exclusive": 150830,
+      "bytes": 2868,
+      "sha256": "2CAB68E74F153040A1E332BB72880450E92691D172500309AA71973660FE1067"
+    },
+    {
+      "ordinal": 60,
+      "title": "## October 23, 2026 — FINAL CLARIFICATIONS FOR T22-MSP-01 (reviewed before Codex execution)",
+      "offset_start": 150830,
+      "offset_end_exclusive": 156903,
+      "bytes": 6073,
+      "sha256": "23E168D70D271BA52C0AB064C60FBC0756B1B0F6C4BCBA186F45B96F74A09C17"
+    },
+    {
+      "ordinal": 61,
+      "title": "## October 23, 2026 — CURRENT NEXT CODEX TASK: Test22 manual settings persistence (PENDING EXECUTION)",
+      "offset_start": 156903,
+      "offset_end_exclusive": 164677,
+      "bytes": 7774,
+      "sha256": "B6EA8FA0408D9F16D424B5173249FA766FF265B4C83B17C59ABE18D7B8AEEA2A"
+    },
+    {
+      "ordinal": 62,
+      "title": "## October 22, 2026 — Test22 disposable settings migration stopped after first start; restart NOT RUN",
+      "offset_start": 164677,
+      "offset_end_exclusive": 168404,
+      "bytes": 3727,
+      "sha256": "344938BA27587935973712F14FBAE6A4725DD5D601E70A0FB9FCEABD94183359"
+    },
+    {
+      "ordinal": 63,
+      "title": "## October 22, 2026 — Rob approved narrow disposable ACL setup and settings runtime verification (PENDING CODEX)",
+      "offset_start": 168404,
+      "offset_end_exclusive": 180571,
+      "bytes": 12167,
+      "sha256": "7D669EFA39227FC178287D4B113AF88C5D9FD58EA40532F12742EF95C358C0F1"
+    },
+    {
+      "ordinal": 64,
+      "title": "## October 22, 2026 — simplified Test22 settings tests complete; COMPONENT PASS, REAL START BLOCKED",
+      "offset_start": 180571,
+      "offset_end_exclusive": 185028,
+      "bytes": 4457,
+      "sha256": "9DF2DE5BC2C5000022DF31A72C5A29933516093D053AEA01283FAE9E521ABA1A"
+    },
+    {
+      "ordinal": 65,
+      "title": "## October 22, 2026 — Rob-approved simplified Test22 settings test (PENDING CODEX EXECUTION)",
+      "offset_start": 185028,
+      "offset_end_exclusive": 191166,
+      "bytes": 6138,
+      "sha256": "B7BA4406B446C7594B80140D686596801D96ED230E642E21455AE49E39EE7A18"
+    },
+    {
+      "ordinal": 66,
+      "title": "## October 22, 2026 — Test22 synthetic access-policy redesign complete; STATIC DESIGN ONLY",
+      "offset_start": 191166,
+      "offset_end_exclusive": 198595,
+      "bytes": 7429,
+      "sha256": "DFAA63695C0297F9F34F9EDC9703D07C8D15357F2F79A3072F31E3B2E939A68B"
+    },
+    {
+      "ordinal": 67,
+      "title": "## October 22, 2026 — PENDING: Test22 synthetic-environment access-policy redesign (DESIGN AND STATIC VERIFICATION ONLY)",
+      "offset_start": 198595,
+      "offset_end_exclusive": 201287,
+      "bytes": 2692,
+      "sha256": "C1B90E1FC5976F0491BC20D951879438A2DF49113EA640DB7C1088D18AF11E9C"
+    },
+    {
+      "ordinal": 68,
+      "title": "## October 22, 2026 — disposable Test22 ACL correction BLOCKED by controlling identity gate; NO CHANGE",
+      "offset_start": 201287,
+      "offset_end_exclusive": 204232,
+      "bytes": 2945,
+      "sha256": "A9C10FFD7F8D8FC64DCCD97510A53EA52684CD1AEA563C45D55798C77E9ED312"
+    },
+    {
+      "ordinal": 69,
+      "title": "## October 22, 2026 — read-only CodexSandboxUsers security investigation complete; NO REMEDIATION",
+      "offset_start": 204232,
+      "offset_end_exclusive": 207943,
+      "bytes": 3711,
+      "sha256": "147CD15CFCB309FC88DBC439BEA506600AA0E7706CD7CD9F6837580425013EE7"
+    },
+    {
+      "ordinal": 70,
+      "title": "## October 22, 2026 — controlled migration RETRY blocked at mandatory ACL preflight; NOT LAUNCHED",
+      "offset_start": 207943,
+      "offset_end_exclusive": 211342,
+      "bytes": 3399,
+      "sha256": "E1EE387106FA2C8B1D82C4920A009898577315CCD33C454D1C95EB9C42E10C3F"
+    },
+    {
+      "ordinal": 71,
+      "title": "## October 22, 2026 — Test22 launcher FileInfo correction verified and restaged; NOT LAUNCHED",
+      "offset_start": 211342,
+      "offset_end_exclusive": 214065,
+      "bytes": 2723,
+      "sha256": "1ADABA7834B9BFD28905AB180AAD908B84D1B56C6D253E26EF7F9AA50AA63715"
+    },
+    {
+      "ordinal": 72,
+      "title": "## October 22, 2026 — single authorized settings-migration launcher invocation FAILED CLOSED before CRM start; NO RETRY",
+      "offset_start": 214065,
+      "offset_end_exclusive": 217773,
+      "bytes": 3708,
+      "sha256": "9A91A8AD22AEE7F56CB2EC52DFA9DBFFB29AEF0984673178B9635BA5D6EBEAC0"
+    },
+    {
+      "ordinal": 73,
+      "title": "## October 22, 2026 — one controlled disposable settings-migration first start AUTHORIZED; PRE-RUN GATE",
+      "offset_start": 217773,
+      "offset_end_exclusive": 219622,
+      "bytes": 1849,
+      "sha256": "7B405CA1866DD888DC58503ABB139D7B1598BC66FDD457F354B72726FF9DD5A0"
+    },
+    {
+      "ordinal": 74,
+      "title": "## October 22, 2026 — disposable Test22 migration environment PREPARED and statically verified; NOT STARTED",
+      "offset_start": 219622,
+      "offset_end_exclusive": 224363,
+      "bytes": 4741,
+      "sha256": "318479F2B95D85BB50DA1F8CA5DC8B7347ED48E93FDA09ABADC7DCCCA7EC16B0"
+    },
+    {
+      "ordinal": 75,
+      "title": "## October 22, 2026 — Rob-approved NEXT assignment: disposable environment preparation (PENDING EXECUTION)",
+      "offset_start": 224363,
+      "offset_end_exclusive": 228403,
+      "bytes": 4040,
+      "sha256": "E43580503F67CD603883F51FB0505828E624A5658C9103CEF4F76171EC52B14B"
+    },
+    {
+      "ordinal": 76,
+      "title": "## October 22, 2026 — narrow disposable settings-migration correction implemented and verified; NOT STARTED",
+      "offset_start": 228403,
+      "offset_end_exclusive": 233675,
+      "bytes": 5272,
+      "sha256": "797F54B0D0D9307CD309868FD11DF27D0A217AC3F4B2A3B665B37E967BF38023"
+    },
+    {
+      "ordinal": 77,
+      "title": "## October 22, 2026 — Rob-approved next Codex assignment (PENDING EXECUTION)",
+      "offset_start": 233675,
+      "offset_end_exclusive": 235725,
+      "bytes": 2050,
+      "sha256": "9F56261180DB01C9AD21A078AAF80E4841CD5DB3FEA8F3ECCF2E4E40C37321BB"
+    },
+    {
+      "ordinal": 78,
+      "title": "## October 22, 2026 — existing-VM suitability and separate Test22 acceptance plans (documentation only)",
+      "offset_start": 235725,
+      "offset_end_exclusive": 245855,
+      "bytes": 10130,
+      "sha256": "5030614276D8E26CF56F933F515525FDD02139B1C6FE36BE3AD2FE7EDA1EA896"
+    },
+    {
+      "ordinal": 79,
+      "title": "## October 22, 2026 — read-only settings-path investigation: stable absent, Test20 legacy file present",
+      "offset_start": 245855,
+      "offset_end_exclusive": 249914,
+      "bytes": 4059,
+      "sha256": "D75338C470C504F3F1250E9E63FD5086EBD403119CE74C6CFC0B2ED0B3A1FA7B"
+    },
+    {
+      "ordinal": 80,
+      "title": "## October 22, 2026 — Test22 preparation review STOPPED before snapshots: prerequisites BLOCKED",
+      "offset_start": 249914,
+      "offset_end_exclusive": 255088,
+      "bytes": 5174,
+      "sha256": "DDD5E19B66C2B0A06849F9FF898FCD554AD4903AC49AF762C456B84E79656430"
+    },
+    {
+      "ordinal": 81,
+      "title": "## October 22, 2026 — REVIEWED Codex work order: Test22 PREPARATION ONLY; NO LAUNCH",
+      "offset_start": 255088,
+      "offset_end_exclusive": 262968,
+      "bytes": 7880,
+      "sha256": "6AE4D440FEBE447CCFB733839EFAF1155FDDF8C578400A44F30E63D84CA68FCF"
+    },
+    {
+      "ordinal": 82,
+      "title": "## October 22, 2026 — Test22 real-profile audit mode IMPLEMENTED/TESTED/STAGED; NOT STARTED OR DEPLOYED",
+      "offset_start": 262968,
+      "offset_end_exclusive": 268146,
+      "bytes": 5178,
+      "sha256": "FCF380EC9E21800561A64B1925F0AB50D38E54532316EA9BA03A98ABA9FBE986"
+    },
+    {
+      "ordinal": 83,
+      "title": "## October 22, 2026 — NEXT FOR ROB TO AUTHORIZE: implement bounded Test22 real-profile M1 audit mode; build/test in isolation; NO LAUNCH/CUTOVER",
+      "offset_start": 268146,
+      "offset_end_exclusive": 278244,
+      "bytes": 10098,
+      "sha256": "269F852A57551AEB6D95871CB703BC0449A36F0A102EA6660BEBDC06446A104A"
+    },
+    {
+      "ordinal": 84,
+      "title": "## October 22, 2026 — Test22 startup-isolation static review COMPLETE; real-profile M1 remains BLOCKED / NOT RUN",
+      "offset_start": 278244,
+      "offset_end_exclusive": 290429,
+      "bytes": 12185,
+      "sha256": "9E640A85AC2276FF9BCA307BFCAA5AD66E31750BB3478593FDA5703083E0DBD4"
+    },
+    {
+      "ordinal": 85,
+      "title": "## October 22, 2026 — NEXT CODEX: resolve Test22 startup-isolation blocker; prepare focused acceptance tests (DOCUMENTATION/REVIEW ONLY)",
+      "offset_start": 290429,
+      "offset_end_exclusive": 302490,
+      "bytes": 12061,
+      "sha256": "9B223F79BB4B7F8EF37CE9F815A955552CCF8C98191F2703A8EEDE7EC3E456C5"
+    },
+    {
+      "ordinal": 86,
+      "title": "## October 22, 2026 — side-by-side Test22 release candidate STAGED; NOT APPROVED FOR START; launch-isolation blocker",
+      "offset_start": 302490,
+      "offset_end_exclusive": 306303,
+      "bytes": 3813,
+      "sha256": "030FC4911569F4F98547FC98905B266A746F9F5C7BC0A19D91E1E36A6DD41A4D"
+    },
+    {
+      "ordinal": 87,
+      "title": "## October 22, 2026 — NEXT: prepare side-by-side Test22 release candidate; no daily cutover",
+      "offset_start": 306303,
+      "offset_end_exclusive": 312293,
+      "bytes": 5990,
+      "sha256": "7EB674FC662CE239802B19D03FEBA297ED68DBC1A93FCF4F81C3CB3EB6CEEE2D"
+    },
+    {
+      "ordinal": 88,
+      "title": "## October 22, 2026 — Test20 Z-drive backup hash recheck: PASS—Z BACKUP MATCHES RECORDED BASELINE; STOP",
+      "offset_start": 312293,
+      "offset_end_exclusive": 314002,
+      "bytes": 1709,
+      "sha256": "8DBDD1B9F992F8958DF1F210FCC3B72FD14CE2ABEF38AD2A046E07E82BD9F29B"
+    },
+    {
+      "ordinal": 89,
+      "title": "## October 22, 2026 — NEXT TASK: Test20 Z-drive backup hash recheck (instructions only; NOT RUN)",
+      "offset_start": 314002,
+      "offset_end_exclusive": 318145,
+      "bytes": 4143,
+      "sha256": "B2D62ED333C7CFCA27B390403D757CD8E2FBBE1916E66187FD3F23772D5B0F97"
+    },
+    {
+      "ordinal": 90,
+      "title": "## October 22, 2026 — recovered-vs-Test20 read-only comparison: DIFFERENCES—REVIEW REQUIRED; STOP",
+      "offset_start": 318145,
+      "offset_end_exclusive": 322126,
+      "bytes": 3981,
+      "sha256": "865E065B42CFF8A555BF56A520F4D37C2031489209C31EFD369C343FBA158B79"
+    },
+    {
+      "ordinal": 91,
+      "title": "## October 22, 2026 — CONTROLLING NEXT CODEX TASK: read-only recovered-vs-Test20 comparison; PREPARED NOT RUN",
+      "offset_start": 322126,
+      "offset_end_exclusive": 324848,
+      "bytes": 2722,
+      "sha256": "53CA21FBECB0489E978CDE54A4F8E2F3887188EB413278D69976871ACBAC17F0"
+    },
+    {
+      "ordinal": 92,
+      "title": "## October 22, 2026 — T22-M1 approved next stage: verified backup and real-profile launch preflight; NOT RUN",
+      "offset_start": 324848,
+      "offset_end_exclusive": 327189,
+      "bytes": 2341,
+      "sha256": "328583042687915AF5B2CB1FC40B4FECAB7D097BEE7E3B787ED2449557FF88F1"
+    },
+    {
+      "ordinal": 93,
+      "title": "## October 22, 2026 — T22-M1 focused Windows PowerShell validation PASS; STOP for Rob review",
+      "offset_start": 327189,
+      "offset_end_exclusive": 329664,
+      "bytes": 2475,
+      "sha256": "C6B1F1FEB766EC7F106DF7FBECA3ABD5CA54F2573D5BF48863B6AE3E773EFC2D"
+    },
+    {
+      "ordinal": 94,
+      "title": "## October 22, 2026 — CURRENT CONTROLLING HANDOFF FOR NEXT CODEX TASK: T22-M1 PowerShell validation; NOT STARTED",
+      "offset_start": 329664,
+      "offset_end_exclusive": 333195,
+      "bytes": 3531,
+      "sha256": "E4D651D56E51CBD9794DF8972186456AC576501AE4E9A2E4DE206070E319E4B3"
+    },
+    {
+      "ordinal": 95,
+      "title": "## October 22, 2026 — T22-M1 settings semantic-compare fix committed; Windows tests pending; STOP",
+      "offset_start": 333195,
+      "offset_end_exclusive": 336188,
+      "bytes": 2993,
+      "sha256": "EA1DABD4C29ADB4791265FC520DCE7D21E64BD06AE4EDEDCF0DE37B1E8100167"
+    },
+    {
+      "ordinal": 96,
+      "title": "## October 22, 2026 — T22-M1 settings audit helper completed; STOP for Rob review",
+      "offset_start": 336188,
+      "offset_end_exclusive": 339244,
+      "bytes": 3056,
+      "sha256": "2DD915E176A7700AB7D5FF06F98CB5248404F14CD9E81BEA80DB7F26CF729665"
+    },
+    {
+      "ordinal": 97,
+      "title": "## October 22, 2026 — CONTROLLING AUTHORIZED NEXT CODEX TASK: T22-M1 settings audit helper; NOT STARTED",
+      "offset_start": 339244,
+      "offset_end_exclusive": 347081,
+      "bytes": 7837,
+      "sha256": "6DEB821C0E54CD36E40377F07B6671A15D5C33FE0F93A69236E3D6EAAA60BE48"
+    },
+    {
+      "ordinal": 98,
+      "title": "## October 21, 2026 — Next CRM Test 22 session handoff; DOCUMENTATION ONLY",
+      "offset_start": 347081,
+      "offset_end_exclusive": 348709,
+      "bytes": 1628,
+      "sha256": "0DD638BE853371BE9533C752422F7EE89468C73CA967BD0D4DDA04462AF831DE"
+    },
+    {
+      "ordinal": 99,
+      "title": "## October 21, 2026 — T22-M2 documentation closure approved and completed; STOP",
+      "offset_start": 348709,
+      "offset_end_exclusive": 349780,
+      "bytes": 1071,
+      "sha256": "9BFD742C34374ADF54DB4A66DD5F06EADB8AB67744F053FC33A27528A7AF7DDF"
+    },
+    {
+      "ordinal": 100,
+      "title": "## October 21, 2026 — T22-M2 fixture normalization amendment completed; STOP for Rob review",
+      "offset_start": 349780,
+      "offset_end_exclusive": 352976,
+      "bytes": 3196,
+      "sha256": "B87F092FBF53E09D574BB94E943E69E626BA287DEA92DD1E88AF2203E5A22AA3"
+    },
+    {
+      "ordinal": 101,
+      "title": "## October 21, 2026 — APPROVED T22-M2 fictional fixture line-ending normalization amendment (Rob authorized)",
+      "offset_start": 352976,
+      "offset_end_exclusive": 356790,
+      "bytes": 3814,
+      "sha256": "D9C20673795851D70E0EDC85287FAC7F0E8F0038DF9C49D1B423741DD575C382"
+    },
+    {
+      "ordinal": 102,
+      "title": "## October 21, 2026 — T22-M2 correction task clarification (Rob approved)",
+      "offset_start": 356790,
+      "offset_end_exclusive": 358861,
+      "bytes": 2071,
+      "sha256": "976CC4F36F4C4152985600E4818925DF9EA00C2CDE6783F7DA7C648788B66E51"
+    },
+    {
+      "ordinal": 103,
+      "title": "## October 21, 2026 — AUTHORIZED focused T22-M2 synthetic Agreement Documents test correction (Rob approved)",
+      "offset_start": 358861,
+      "offset_end_exclusive": 362829,
+      "bytes": 3968,
+      "sha256": "D78F7CA26126D7EC418FF966579EA7E5C1A4CD92AB7E8F9FD5E2558678FCCD0E"
+    },
+    {
+      "ordinal": 104,
+      "title": "## October 21, 2026 — AUTHORIZED read-only T22-M2 Agreement Documents empty-tab investigation (Rob approved)",
+      "offset_start": 362829,
+      "offset_end_exclusive": 366359,
+      "bytes": 3530,
+      "sha256": "324A451699D8EAF5C81B97171798CC3E02838CE070435FE3C07C2FA1E5BF28E1"
+    },
+    {
+      "ordinal": 105,
+      "title": "## October 21, 2026 — Five-test automation completed; STOP for Rob review",
+      "offset_start": 366359,
+      "offset_end_exclusive": 372196,
+      "bytes": 5837,
+      "sha256": "8B5568D2E216A46A17B38C98C267B05B9B3398666F3AB35AE200D91CB59D9D33"
+    },
+    {
+      "ordinal": 106,
+      "title": "## October 21, 2026 — Clarifications to approved five-test automation task (Rob authorized)",
+      "offset_start": 372196,
+      "offset_end_exclusive": 374310,
+      "bytes": 2114,
+      "sha256": "3B35FE66E81F5873CFDECCA8CF5B2A4E17ED928219080D63C315A184B0882DFD"
+    },
+    {
+      "ordinal": 107,
+      "title": "## October 21, 2026 — APPROVED next Codex task: five narrow automated coverage improvements (Rob authorized)",
+      "offset_start": 374310,
+      "offset_end_exclusive": 379343,
+      "bytes": 5033,
+      "sha256": "F76CE407F130B5711A0215454A4A7F3F427F678ADD72ABD10B870EAFC799DBAD"
+    },
+    {
+      "ordinal": 108,
+      "title": "## October 21, 2026 — Clarified execution contract for Codex Test 22 coverage audit (Rob approved)",
+      "offset_start": 379343,
+      "offset_end_exclusive": 383479,
+      "bytes": 4136,
+      "sha256": "BBCF1BBC34FE4C3DBA31AE8E52844AE10FF3BC1FF51B654F878C36C326B36C51"
+    },
+    {
+      "ordinal": 109,
+      "title": "## October 21, 2026 — Rob hands-on synthetic acceptance results and authorized next Codex task",
+      "offset_start": 383479,
+      "offset_end_exclusive": 412720,
+      "bytes": 29241,
+      "sha256": "12003CA1B8904ED7D113A092A3DF14353812E4F54D414C59EB713825B2E9403D"
+    },
+    {
+      "ordinal": 110,
+      "title": "## October 21, 2026 — CRM Contact Save Focused Follow-Up completed; awaiting Rob review",
+      "offset_start": 412720,
+      "offset_end_exclusive": 518533,
+      "bytes": 105813,
+      "sha256": "316F4CA587832D944B656640570D1AC1A825A9C408F2D0477448B4E45F31B50D"
+    },
+    {
+      "ordinal": 111,
+      "title": "## October 13, 2026 — Merge Checkpoint Before Next CRM Work",
+      "offset_start": 518533,
+      "offset_end_exclusive": 520884,
+      "bytes": 2351,
+      "sha256": "6BCB74536FC2C08C47508D3AE2E9632A968B2F0B90D722CE7DB97B486777F197"
+    },
+    {
+      "ordinal": 112,
+      "title": "## October 13, 2026 — Test 20 Results and Next CRM Work",
+      "offset_start": 520884,
+      "offset_end_exclusive": 528061,
+      "bytes": 7177,
+      "sha256": "061F2FF2F24118E0772AE82F669584F8B87668E84BB36AEA0AD6C98B60B16820"
+    },
+    {
+      "ordinal": 113,
+      "title": "## October 13, 2026 — CRM Follow-up Implementation Result",
+      "offset_start": 528061,
+      "offset_end_exclusive": 531605,
+      "bytes": 3544,
+      "sha256": "7717BE61B30BFE8C1CA97F542BEB8BB9E4F3F28761844D3B06A454508030081B"
+    },
+    {
+      "ordinal": 114,
+      "title": "## October 14, 2026 — Authoritative Database Build and Full Regression",
+      "offset_start": 531605,
+      "offset_end_exclusive": 535417,
+      "bytes": 3812,
+      "sha256": "090A75DC65168772EA7CA27BA9D363BB0766715891A04D9F796F868633C23981"
+    },
+    {
+      "ordinal": 115,
+      "title": "## October 14, 2026 — Current Production Schema 24 Content Verification",
+      "offset_start": 535417,
+      "offset_end_exclusive": 538390,
+      "bytes": 2973,
+      "sha256": "75C761EAFB250D097F46C2BFB41D8B1C7EC4F7885C090E63C8ABC8D8531EE567"
+    },
+    {
+      "ordinal": 116,
+      "title": "## October 14, 2026 — Next Task: Create Test 21 Manual Acceptance Test Plan",
+      "offset_start": 538390,
+      "offset_end_exclusive": 541779,
+      "bytes": 3389,
+      "sha256": "4747D7D953B066BAA4B3DAFAF726C5C704C5FB8BDF802826A8D23A1170BA60ED"
+    },
+    {
+      "ordinal": 117,
+      "title": "## October 16, 2026 — Authorized Next Task: CRM Test 22 Manual Results Review (Codex)",
+      "offset_start": 541779,
+      "offset_end_exclusive": 545673,
+      "bytes": 3894,
+      "sha256": "938B048BA9CB48174AF38FBA4BA5C9D98AD310FDE5ABA1D99CB4304A149EACD4"
+    },
+    {
+      "ordinal": 118,
+      "title": "## October 16, 2026 — CRM Test 22 Manual Results Review",
+      "offset_start": 545673,
+      "offset_end_exclusive": 841423,
+      "bytes": 295750,
+      "sha256": "F51DFF313C978A1111CE24808EB28E42F10EDB2676000D94624E12C5B1CF0865"
+    },
+    {
+      "ordinal": 119,
+      "title": "## October 22, 2026 — Rob decision: resume CRM Test 22 M1 preparation only",
+      "offset_start": 841423,
+      "offset_end_exclusive": 843605,
+      "bytes": 2182,
+      "sha256": "9FAA5BB20A160D325C9B64BA1F13F8871AD2703F46417861B2DAB14F1752E281"
+    },
+    {
+      "ordinal": 120,
+      "title": "## October 22, 2026 — Test 22 M1 preparation-only reconciliation result",
+      "offset_start": 843605,
+      "offset_end_exclusive": 849448,
+      "bytes": 5843,
+      "sha256": "7627938493A14D0B6316B1035015DF9C493159D2560BD306E6867813FCBAA7ED"
+    },
+    {
+      "ordinal": 121,
+      "title": "## October 22, 2026 — Controlling correction: Test 22 reference baseline and USB limitation",
+      "offset_start": 849448,
+      "offset_end_exclusive": 854202,
+      "bytes": 4754,
+      "sha256": "33F7A14FBF61F75EDFFD1E60355EB58B7D9E499EC8C8C26BAE32D2DDBA229AA5"
+    },
+    {
+      "ordinal": 122,
+      "title": "## October 22, 2026 — Final Test22 preparation plan; execution not authorized",
+      "offset_start": 854202,
+      "offset_end_exclusive": 864399,
+      "bytes": 10197,
+      "sha256": "C97B928F0A87658A38E3BFFEE272541B0B9825D9C0D6D955D4A10C9FDF31CD10"
+    },
+    {
+      "ordinal": 123,
+      "title": "## October 22, 2026 — Controlling Test22 reconciliation",
+      "offset_start": 864399,
+      "offset_end_exclusive": 866696,
+      "bytes": 2297,
+      "sha256": "509948F299268EB67E98EBCA387D45D06AC10315A4AB485E011142E32478A511"
+    },
+    {
+      "ordinal": 124,
+      "title": "## October 22, 2026 — Controlling bounded preparation assignment (Rob approved scope)",
+      "offset_start": 866696,
+      "offset_end_exclusive": 871046,
+      "bytes": 4350,
+      "sha256": "B27A45136C939E405E18BB4373F0F44C324064A648CE8FD3126B58F2F0B58725"
+    },
+    {
+      "ordinal": 125,
+      "title": "## October 22, 2026 — Bounded backup completed; disposable profile prerequisite blocked",
+      "offset_start": 871046,
+      "offset_end_exclusive": 877522,
+      "bytes": 6476,
+      "sha256": "2058AC774C19D57BD27FDC5D4EB17815EBA434C7289760A56318F330A0CDF8C2"
+    },
+    {
+      "ordinal": 126,
+      "title": "## October 22, 2026 — CONTROLLING CORRECTION: reuse existing VM; documentation-only approval",
+      "offset_start": 877522,
+      "offset_end_exclusive": 881857,
+      "bytes": 4335,
+      "sha256": "479B6A956BB812EE99C03682850BF9C13408CB5CE7ED14D382944618FCC165FF"
+    },
+    {
+      "ordinal": 127,
+      "title": "## October 23, 2026 — CRM Test 22 post-termination status and next bounded verification (documentation-only)",
+      "offset_start": 881857,
+      "offset_end_exclusive": 885307,
+      "bytes": 3450,
+      "sha256": "BE49C4EB6AA1C3B79E3D53A1E2739B4A4B2E6640045527B1CAECB17DE0283EF5"
+    },
+    {
+      "ordinal": 128,
+      "title": "## October 23, 2026 — Test22 post-termination read-only verification documented; no runtime changes",
+      "offset_start": 885307,
+      "offset_end_exclusive": 888670,
+      "bytes": 3363,
+      "sha256": "F0EB82C35F9F18D9EE020BAC3ED4E39AD5CAC35E916A330EF81AA3882355CAAA"
+    },
+    {
+      "ordinal": 129,
+      "title": "## October 23, 2026 — AUTHORIZED NEXT CODEX ASSIGNMENT: evidence-only review; no execution",
+      "offset_start": 888670,
+      "offset_end_exclusive": 892174,
+      "bytes": 3504,
+      "sha256": "99D8445A932E4FC34D9B3C94BE522012D38681CBCA470EBECCB7E9A03A08E004"
+    },
+    {
+      "ordinal": 130,
+      "title": "## October 23, 2026 — Evidence-only review completed; post-migration shutdown/restart procedure proposed, not authorized",
+      "offset_start": 892174,
+      "offset_end_exclusive": 898572,
+      "bytes": 6398,
+      "sha256": "A4CEFEF6D99F8D538C66A993B599EEDDF3BB0A8C125FBB2B356C376D6B78A8D9"
+    },
+    {
+      "ordinal": 131,
+      "title": "## October 23, 2026 — AUTHORIZED NEXT CODEX ASSIGNMENT: revise Test22 procedure for network-enabled VM",
+      "offset_start": 898572,
+      "offset_end_exclusive": 901651,
+      "bytes": 3079,
+      "sha256": "C38BA3C7887B7EECDB4DC5E2A06936848208D839F26261BD78B2A29BF4A0F9B1"
+    },
+    {
+      "ordinal": 132,
+      "title": "## October 23, 2026 — Controlling clarification: proposed post-migration procedure for network-enabled VM",
+      "offset_start": 901651,
+      "offset_end_exclusive": 907272,
+      "bytes": 5621,
+      "sha256": "063DC7F0CC1D1C5D50E80BE3E9D1487CCA26958259F8E091B1EEE5926452769C"
+    },
+    {
+      "ordinal": 133,
+      "title": "## October 23, 2026 — ROB'S CONTROLLING TEST22 DATA-TRANSFER SCOPE (DOCUMENTATION ONLY)",
+      "offset_start": 907272,
+      "offset_end_exclusive": 910389,
+      "bytes": 3117,
+      "sha256": "0ED9339BC45492C870D08C803FF9AC8AF29037AE429963215C0C8C42FBCBA881"
+    },
+    {
+      "ordinal": 134,
+      "title": "## October 23, 2026 — Next authorized Codex task: read-only Test22 directory identification",
+      "offset_start": 910389,
+      "offset_end_exclusive": 911838,
+      "bytes": 1449,
+      "sha256": "FBE8F3D110E07C349EB6F0446C53FCD9F8248B7F18E4CE80F338782564D786EB"
+    },
+    {
+      "ordinal": 135,
+      "title": "## October 23, 2026 — Authorized read-only Test22 build and deployment identification",
+      "offset_start": 911838,
+      "offset_end_exclusive": 913674,
+      "bytes": 1836,
+      "sha256": "A75754B974C81E0A9A6AB5D8225B98B18E15671826921ED7ED334D2FD7C5E136"
+    },
+    {
+      "ordinal": 136,
+      "title": "## October 23, 2026 — Authorized clean Test22 build and package only",
+      "offset_start": 913674,
+      "offset_end_exclusive": 916527,
+      "bytes": 2853,
+      "sha256": "43A3A7351FCF9CE10A783A469C8F508AEC86707CD4D3AF8D75FE1EC1F487F03B"
+    },
+    {
+      "ordinal": 137,
+      "title": "## October 23, 2026 — Clean Test22 Release package built and verified; NOT DEPLOYED",
+      "offset_start": 916527,
+      "offset_end_exclusive": 919827,
+      "bytes": 3300,
+      "sha256": "2B97ADFEA05397EB734981C9578252B5B31A26EC3D46C7610E18AA2893F9648E"
+    },
+    {
+      "ordinal": 138,
+      "title": "## October 25, 2026 — Stage 8 final valid-path acceptance closure (documentation only)",
+      "offset_start": 919827,
+      "offset_end_exclusive": 921198,
+      "bytes": 1371,
+      "sha256": "5E0C5B6477665DBADFF7371E12BD7DE4165CDDE6C27B0D9BCD5E9D0C6FD6A1D7"
+    },
+    {
+      "ordinal": 139,
+      "title": "## October 25, 2026 — Migration readiness preflight plan published (documentation only)",
+      "offset_start": 921198,
+      "offset_end_exclusive": 922152,
+      "bytes": 954,
+      "sha256": "E469292D0A1249190D06A4E0AA146ABC68C2980AAB7AC1615D0F474A349C3745"
+    },
+    {
+      "ordinal": 140,
+      "title": "## October 25, 2026 — Migration readiness handoff tightened before dispatch",
+      "offset_start": 922152,
+      "offset_end_exclusive": 922871,
+      "bytes": 719,
+      "sha256": "FEE294CAE31C2033A1B8A21E47CE60796B86972D5B31C191DC88E837F3D4189B"
+    },
+    {
+      "ordinal": 141,
+      "title": "## October 25, 2026 — CRM migration readiness assessment stopped; not ready",
+      "offset_start": 922871,
+      "offset_end_exclusive": 924003,
+      "bytes": 1132,
+      "sha256": "26E0AE84613EEA1BBB6CAD852473F9DCBA3D7C25E01AB1841EF7EC056D7BEA4E"
+    },
+    {
+      "ordinal": 142,
+      "title": "## October 25, 2026 — Stage 7 Release packaging plan published; no execution",
+      "offset_start": 924003,
+      "offset_end_exclusive": 924710,
+      "bytes": 707,
+      "sha256": "B37229CB13D17DF5FD3A65F471F4D1389E454D3C42D1A54878A9AFB5680A4478"
+    },
+    {
+      "ordinal": 143,
+      "title": "## October 25, 2026 — Stage 7 clean Release package verification STOPPED",
+      "offset_start": 924710,
+      "offset_end_exclusive": 926224,
+      "bytes": 1514,
+      "sha256": "731B555B875275550BE83F36127F33225142E6F4352D0F12AF1C53AA794A761E"
+    },
+    {
+      "ordinal": 144,
+      "title": "## October 25, 2026 — Stage 7 ZIP verifier correction and equivalence PASS",
+      "offset_start": 926224,
+      "offset_end_exclusive": 927607,
+      "bytes": 1383,
+      "sha256": "8DDD5DBECCD9030A6FEDD185871D6E987DF19CF1F8C7260C5BDA83E0748E937D"
+    },
+    {
+      "ordinal": 145,
+      "title": "## October 25, 2026 — Limited migration-readiness verification complete; NOT READY",
+      "offset_start": 927607,
+      "offset_end_exclusive": 929421,
+      "bytes": 1814,
+      "sha256": "CB43F19706B603736C2C1F8A68BCEB2531E1B3B26A5AED87227F80C585FA56C1"
+    },
+    {
+      "ordinal": 146,
+      "title": "## October 25, 2026 — CRM Test 22 operational readiness preparation handoff published (documentation only)",
+      "offset_start": 929421,
+      "offset_end_exclusive": 930552,
+      "bytes": 1131,
+      "sha256": "16110DA020F6C7BB1B374B7E0B2B28C7CE723304512E38D40A8DDFE0802963CB"
+    },
+    {
+      "ordinal": 147,
+      "title": "## October 25, 2026 — CRM Test 22 operational readiness preparation completed",
+      "offset_start": 930552,
+      "offset_end_exclusive": 932210,
+      "bytes": 1658,
+      "sha256": "BDEC8B425C6FA461B935983D261D3C4D82C927A41C9CC7960FDB214CAC5FC962"
+    },
+    {
+      "ordinal": 148,
+      "title": "## October 25, 2026 — Controlled CRM Test 22 Release acceptance plan published, not executed",
+      "offset_start": 932210,
+      "offset_end_exclusive": 933164,
+      "bytes": 954,
+      "sha256": "112C0058BF512F37C47ADBD0D052846F73F11EBABBC7318CD3297F4437604E53"
+    },
+    {
+      "ordinal": 149,
+      "title": "## October 25, 2026 — Controlled CRM Test 22 Release acceptance stopped before launch",
+      "offset_start": 933164,
+      "offset_end_exclusive": 934459,
+      "bytes": 1295,
+      "sha256": "251F5935B5E1D0F04D4E88618A6F9B3EB87248797114DE4291FB28C778F1D954"
+    },
+    {
+      "ordinal": 150,
+      "title": "## October 25, 2026 — Permission-safe disposable settings correction published; not executed",
+      "offset_start": 934459,
+      "offset_end_exclusive": 936312,
+      "bytes": 1853,
+      "sha256": "E03512E036EB99FCEB3A76259A611A0C3C89486B5D921C942B917F8F831B270C"
+    },
+    {
+      "ordinal": 151,
+      "title": "## October 27, 2026 — Authorized latest CRM database reconciliation completed",
+      "offset_start": 936312,
+      "offset_end_exclusive": 942321,
+      "bytes": 6009,
+      "sha256": "A98C5CEEB48713E10848EFDD8B1AB267A6F12E1B68A9C1C94A709E3E433F0CBA"
+    },
+    {
+      "ordinal": 152,
+      "title": "## October 27, 2026 — Authorized correction-lineage investigation completed",
+      "offset_start": 942321,
+      "offset_end_exclusive": 946362,
+      "bytes": 4041,
+      "sha256": "AD934EA0B93EB9BA1FDC2C67B1DAD9DCFACD5BC0155BB92C94768B643435D8FA"
+    },
+    {
+      "ordinal": 153,
+      "title": "## October 27, 2026 — LATEST AUTHORIZED TASK: isolated audit-ledger compiler correction and focused verification",
+      "offset_start": 946362,
+      "offset_end_exclusive": 948673,
+      "bytes": 2311,
+      "sha256": "A44637CDB45C6F1108CB4ACC4D8649633702F502840F2DE532AF0D31133AD94A"
+    },
+    {
+      "ordinal": 154,
+      "title": "## October 27, 2026 — Bounded compiler continuation STOPPED at mandatory commit-identity gate",
+      "offset_start": 948673,
+      "offset_end_exclusive": 950661,
+      "bytes": 1988,
+      "sha256": "1251FD3CC4FBCA24336104D3F6C8C8BDD73390D95315D319DBA343AB7810BE2F"
+    }
+  ]
+}

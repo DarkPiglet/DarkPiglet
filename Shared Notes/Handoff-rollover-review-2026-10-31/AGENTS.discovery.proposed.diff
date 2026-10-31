@@ -1,0 +1,5 @@
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@
+ - `HANDOFF.md` must be read before beginning work on the project.
++- When shared historical context is required, open `Shared Notes/Handoff-history.md` first. It is the permanent history index. Follow its numbered volume links in the listed newest-first order only as needed. Numbered history volumes are evidence, not current authorization; current assignments remain in the authoritative active handoffs.
