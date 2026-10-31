@@ -1,3 +1,9 @@
+# October 30, 2026 — CRM P1 technical acceptance CLOSED (Rob approved)
+
+Rob approved final closure of the defined CRM P1 technical scope after review. P1 technical acceptance is PASS / CLOSED: the GoGreen companion acceptance test passed 1/1 and the CRM technical audit acceptance tests passed 7/7, with formal TRX paths and SHA-256 evidence recorded in the CRM project handoff. The tested one-line GoGreen namespace correction was published on `codex/crm-option-a-p1-20261029` in source commit `711820c5ec9de7f53469eb233b2428056c6e1da9`. The project handoff records the closure in commit `a0cdf65d8f0ad2924dd854a9a772ea37f80399b7`.
+
+Codex reported all 326 existing staged files preserved (318 `output/`, 8 `s2/`; index fingerprint `D78C288FD67699C3BC7D3164A216671D09EFF756BF7F1E734A2E665C124CCA2C`). The local checkout still points to older HEAD `2958459` and has NOT been synchronized; this is deferred and requires separate safe authorization. P1 closure does not authorize new code changes, repeat tests, merge, release, deployment or P2. The phone-to-Codex pilot remains the next separate priority.
+
 
 
 # October 30, 2026 — CRM P1 tested one-line source correction published
