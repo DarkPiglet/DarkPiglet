@@ -1,3 +1,5 @@
+Historical evidence discovery: start at [Handoff-history.md](Handoff-history.md), the permanent index. Follow numbered volumes newest-first only when historical evidence is required; historical entries do not authorize work.
+
 ## October 31, 2026 — NEXT AUTHORIZED ASSIGNMENT: P2 implementation-slice planning (READ ONLY)
 
 ## October 31, 2026 — CONTROLLING NEXT ASSIGNMENT: historical handoff rollover design review (NO MIGRATION)
