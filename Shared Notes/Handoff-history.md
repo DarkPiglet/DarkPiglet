@@ -14,6 +14,6 @@ This stable file is the permanent compatibility index for numbered historical vo
 
 | Volume | Source ordinals | Entries | Header bytes | Total bytes | State | SHA-256 |
 |---|---:|---:|---:|---:|---|---|
-| [Handoff-history-003.md](Handoff-history-003.md) | 1-10 | 10 | 410 | 19489 | Open | `CDF9D5E7C61127C00B2C148C47185CBAEC6A3778077C47587F5522D99357FDF4` |
-| [Handoff-history-002.md](Handoff-history-002.md) | 11-110 | 100 | 415 | 499839 | Closed | `0804D0F51FEEC2A42CBC0B779E4200E7EFFE4679065AF0B52806CC97107F9186` |
-| [Handoff-history-001.md](Handoff-history-001.md) | 111-154 | 44 | 415 | 432543 | Closed | `2C48E5582AC53805D474B3B051C70B1EAA5546AB37D1480A3DB2AFA7A5A0431F` |
+| [Handoff-history-003.md](Handoff-history-003.md) | 1-10 | 10 | 347 | 19426 | Open | `E3C43CA929E8E2472DBF9CEB345E3734317D835FE39079325B8605C2003A2909` |
+| [Handoff-history-002.md](Handoff-history-002.md) | 11-110 | 100 | 352 | 499776 | Closed | `294E67D8D29E4B7A5700D262FA40D60DB0BE37478F4704C998A4AB00AF9F7C47` |
+| [Handoff-history-001.md](Handoff-history-001.md) | 111-154 | 44 | 352 | 432480 | Closed | `59D7659CE9FA2A02198E00A60542C938D220ECB2931606EF39D305D2C0436EB3` |

@@ -1,7 +1,5 @@
 # Historical Handoff Volume 001
 
-> Dry-run proposal only. Not authoritative and not published.
-
 - File: `Handoff-history-001.md`
 - Source: `Shared Notes/Handoff-history.md` at `b80c4265c765c77b5eeba8ab91a354abccd6c568`
 - Original entry ordinals: 111-154
