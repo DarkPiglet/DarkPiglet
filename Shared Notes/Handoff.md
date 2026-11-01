@@ -1,3 +1,9 @@
+## October 31, 2026 — STANDING EXECUTION-IDENTITY PREFLIGHT (documentation clarification; P2 scope unchanged)
+
+The last P2 planning attempt stopped **before execution**: required `DESKTOP-UH85JC0\\Dev`, actual `DESKTOP-UH85JC0\\CodexSandboxOffline`; no Git commands, changes, tests, staging or publication occurred. The root `AGENTS.md` now contains the permanent identity rule. Read-only P2 planning may use accessible remote sources under the sandbox account without touching Dev-owned checkouts. Only when authorized operations actually require Dev-owned local Git resources shall Codex establish the previously approved Dev context and verify the account in that same process context. If that context is unavailable, STOP; no impersonation, elevation, ownership/permission change, `safe.directory` workaround, or gate bypass. This is **not** new permission to implement P2 or change the protected CRM checkout. The current P2 read-only planning assignment immediately below remains controlling. Do not repeat completed review work merely to resolve identity.
+
+---
+
 ## October 31, 2026 — ROLLOVER ACCEPTED; NEXT: CRM P2 READ-ONLY PLANNING (CURRENT AUTHORITY)
 
 Rob accepted the completed historical rollover after publication commit `635cfbb0503f6763424201e3446e99ccf922ba15`. Independent remote inspection confirmed exactly four changed paths (history volumes 001–003 and index), approved byte sizes (432480, 499776, 19426, 1218 respectively), and matching SHA-256 values for all four published files. Codex's prior verification preserved 154 entries in order and reconstructed the original 950661-byte archive with SHA-256 `CB8D16FADE121A5E9A134AF13061B0463102ACBE555F70B6FF36E5854BEEA6ED`. This is an accepted completed result, not a new execution assignment. The older rollover/disclaimer correction instructions below are CLOSED and must not be re-executed.
