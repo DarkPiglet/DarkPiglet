@@ -1,3 +1,20 @@
+## November 2, 2026 — CRM + GOGREEN FICTIONAL INTEGRATION SMOKE CONTINUATION PASS; 3/3
+
+**Authorized continuation and preflight.** Executed only Rob's narrow authorization to regenerate missing NuGet dependency assets offline and run the same three fictional integration tests. Identity was `DESKTOP-UH85JC0\Dev` in isolated `C:\Users\Dev\CRM-P2-20261101`, branch/local/live remote `codex/crm-option-a-p1-20261029` at `fa652e67b2182d69065979d6e695d36d90c267de`; published P3 source `6a91ae09a93becacda7d71054644c4623f1bb635` and documentation successor `17c7d5a639d57dcc6f75a0a8eb42dd687790efee` remain in ancestry. The existing one-file, 236-line test-only diff matched SHA-256 `C09E7F0CD88821900C2F1C7D675B2F60A26E8848A04F3158E6EF028D861011D6`; index and untracked counts were zero. Protected original: `295845912f5a4fefe56464b490dffd5ab502e7a3`, 327 displayed / 326 staged.
+
+**Offline restore: PASS.** Exact direct and applicable transitive packages were present locally. One controlled restore used cleared package/audit sources, blackholed proxies, existing global packages as read cache, and workspace-local CLI/HTTP/plugin/temp/evidence paths. The only reported feed was local `C:\Program Files\dotnet\library-packs`; logs contain no HTTP/nuget.org reference. Restore completed 0 warnings / 0 errors. The `net10.0-windows` test manifest resolves 31 libraries and all seven exact direct package versions; SHA-256 `3BA13225859C4EA8EC3B67EC9522BB8E9EECFBDA560B61D58B608E5E6DABBDFA`.
+
+**Focused Release result: PASS 3 / FAIL 0 / BLOCKED 0 / NOT RUN 0.** A single `dotnet test --no-restore --configuration Release --filter FullyQualifiedName~FictionalIntegrationSmoke_` invocation used isolated output/results and the same network/first-run/certificate safeguards.
+- `FictionalIntegrationSmoke_CreatesOneDraftMarkerAndCrmFollowUpWithoutDuplicates`: **PASS**.
+- `FictionalIntegrationSmoke_CrmAuditFailureRollsBackAllCrmWrites`: **PASS**.
+- `FictionalIntegrationSmoke_SeparateMarkerFailureRecoversWithoutDuplicateDraftOrFollowUp`: **PASS**.
+
+**Evidence and preservation.** Evidence remains under ignored `GoGreenMonthlyDrafts/tests/GoGreenMonthlyDrafts.Tests/obj/integration-smoke-continuation-20261102-authorized`. TRX SHA-256: `DE61ECF34C8AEA0FD4677AD6D730410F7A197906CF5A0D127A991055A2AD4A9D`; restore log/binlog: `D516B678BE1DE208914B130038DA240C84FF217A76C6A56CF2FD81BC33D1335B` / `3F5CD1311EE3F58F42CA6982F4E216C38D1DCC591C85E686DCECCC8B5B05E42C`; test log/binlog: `5BB89AB0C7CCC7AE466F2D0F7D7FCC74C8BD5035BBFD7055AED401E6FF5AF2F0` / `8DDB44F5E626ED461A338325222D5BA6BE300FB37CC1A07A12760B308C03A89D`. Disposable SQLite was removed; no online reference, live Graph/email, credential, customer/seed/Test 22.1/USB/Z:/production/recovery data, production launch or remaining CRM/GoGreen process was found. Git still contains only the unchanged unstaged test file; no source was committed/pushed. CRM documentation-only result was published at `d4a6007d0183a6dfeda7f84d654c3f20b2b2c383`.
+
+**Readiness and stop.** The focused fictional integration gate now supports readiness for a separately authorized executable-package step. No package, test-source publication, P3 Stage 3, deployment, merge or additional testing is authorized. STOP for Rob/Priya review.
+
+---
+
 ## November 1, 2026 — CRM + GOGREEN FICTIONAL INTEGRATION SMOKE BLOCKED BEFORE COMPILATION; TESTS NOT RUN
 
 **Authorized execution and preflight.** Executed only `Shared Notes/CRM-GoGreen-Integration-Smoke-Authorization-20261101.md` as `DESKTOP-UH85JC0\Dev` in isolated `C:\Users\Dev\CRM-P2-20261101`, branch/local/live remote initially `17c7d5a639d57dcc6f75a0a8eb42dd687790efee`, with published source `6a91ae09a93becacda7d71054644c4623f1bb635` in ancestry and an initially clean workspace. The protected original remained `295845912f5a4fefe56464b490dffd5ab502e7a3`, 327 displayed / 326 staged.
