@@ -1,0 +1,18 @@
+# Rob-approved one-time active-handoff rotation assignment — November 1, 2026
+
+Status: Authorized for Codex execution ONLY when Rob explicitly instructs Codex to read this named file and execute this assignment. This file is a separate authorization because updating the oversized active handoff was unsuccessful. It does not silently supersede unrelated current instructions. If any instruction conflicts, STOP for Rob's review.
+
+## Objective and boundaries
+Reduce the active `Shared Notes/Handoff.md` (last observed ~507,235 UTF-8 bytes) by moving only verified, completed/superseded historical entries into numbered historical handoff volumes. The index `Shared Notes/Handoff-history.md` establishes a 500,000 UTF-8-byte maximum per historical volume, including its header; the open `Handoff-history-003.md` may receive eligible entries if its verified remaining capacity allows. Create the next numbered volume only if required. Do not assume automatic active-file rotation currently exists.
+
+## Required preflight
+Read complete active handoff, archive index, all relevant numbered volumes, CRM project `HANDOFF.md`, and applicable `AGENTS.md`. Verify repository, branch, commit heads, actual Windows Dev identity, and authorized documentation workspace. Preserve the protected original CRM checkout at `295845912f5a4fefe56464b490dffd5ab502e7a3`, 327 displayed / 326 staged. Confirm current P3 Stage 1+2 publication and combined-package readiness records. No edits until complete source inventory and an explicit classification of entries to retain versus archive. Ambiguous or still-applicable entries remain in the active handoff.
+
+## Controlled archival
+Move only whole, clearly superseded/completed entries; preserve their original UTF-8 bytes, order and headings, without rewriting their content. Maintain an unambiguous archival mapping (source entry ID/order, destination volume, hash) and a current index. Do not lose current authorizations, standing policies, unresolved decisions, pending stops or the latest P3 readiness result. Ensure each numbered volume remains at or below 500,000 UTF-8 bytes including headers. Do not introduce an automatic rotation script or modify application code.
+
+## Verification and publication gates
+Before committing, verify a complete before/after inventory: every original active entry is either still present or archived exactly once, with original content hash unchanged; no omissions, duplications, reordering within transferred sequences or altered current instructions. Verify archive-volume byte counts, hashes, index links, and preservation of current authorizations. Record the active handoff's resulting UTF-8 byte count and propose a separate threshold/check for future updates. Stage only the exact authorized documentation files; inspect the complete outgoing commit range for documentation-only changes. Publish by ordinary fast-forward without force, reset, rebase, Git-security bypass or disturbance to protected workspaces. Independently refetch all modified files and verify hashes, entry inventory and remote commits. If any gate fails, STOP without publication or workaround.
+
+## Prohibited work and stop
+No CRM/GoGreen source changes, builds, tests, database/USB/Z:/production/recovery access, Graph/email/network integration, credential access, packaging, release or deployment. Do not publish the separate dependency-aware test policy as part of this archival assignment; it remains pending separate review. No discretionary scope expansion. Record PASS/FAIL/NOT VERIFIED and STOP for Rob/Priya review after publication or on any blocker. Codex's `Approve for me` setting does not override these boundaries.
