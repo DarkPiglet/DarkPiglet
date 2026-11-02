@@ -1,3 +1,15 @@
+## November 1, 2026 — CONTROLLED LOCAL SOURCE COMMITS; REMOTE PUSH REQUIRES SEPARATE APPROVAL
+
+**Rob's decision.** For a separately authorized implementation assignment with passing required gates, Codex may create a narrowly scoped **local source commit** without requesting a new conversational decision for each commit. This amends the current P3 Stage 2 instruction that prohibited all source commits, but only after Stage 2's focused PASS and a complete combined Stage 1+2 source review. It does not authorize any source push, merge, release, deployment or new implementation scope. Manual application permission prompts remain in force.
+
+**Mandatory pre-commit gate.** Verify actual Dev identity, approved isolated workspace, exact branch and local/remote heads, protected original checkout, and the complete changed/staged file lists. Preserve the three previously verified P3 Stage 1 files plus only the separately authorized Stage 2 files; no broad staging or unrelated files. Confirm focused tests and side-effect checks passed; review the complete diff and git diff --check. Stage only exact approved paths, inspect the entire staged diff, then create one local commit with a descriptive P3 message. If any gate fails, STOP without commit or workaround. No force, reset, rebase, pull or security bypass.
+
+**Evidence and remote boundary.** Record local commit SHA, parent, branch, exact files, staged diff summary, focused test/TRX evidence, correction/retry decisions, protected checkout state, and whether local and remote differ. Local-only source commits are not visible to Priya via GitHub. Publish a factual documentation-only handoff record only if its full outgoing range contains no unapproved source commits; never push a handoff commit that would also push the local P3 source commit. If the handoff cannot be published safely, retain the local report and give Rob the results to relay; STOP rather than bypass. Source push requires a fresh explicit Rob/Priya review of the local evidence and full outgoing range and separate authorization. A local commit alone is not proof of remote publication.
+
+**Scope and stop.** The current P3 Stage 2 four-production-file/up-to-three-test-file boundaries, fictional tests, controlled-autonomy limits and Stage 1 preservation remain unchanged. After Stage 2 PASS and authorized local commit, STOP for review before any source push, combined package, live Graph, real data or Stage 3 implementation. This is not general standing permission to commit in unrelated projects without a separately approved implementation scope.
+
+---
+
 ## November 1, 2026 — P3 STAGE 2 GOGREEN IMPLEMENTATION AUTHORIZED
 
 Rob approves Stage 2 implementation only within the four existing GoGreen production files and up to three focused test files identified in the latest P3 Stage 1 PASS handoffs. Verify Dev identity, existing isolated workspace, branch/local/remote heads, preserved unstaged three-file Stage 1 diff and protected original checkout before editing. STOP on mismatch, unexpected dependency or scope expansion; no Git bypass, reset, pull, rebase or extra clone.
