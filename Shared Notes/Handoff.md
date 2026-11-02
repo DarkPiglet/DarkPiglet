@@ -1,3 +1,13 @@
+## November 1, 2026 — P2 TWELVE-FILE SOURCE PUBLICATION PASS
+
+**Authority and verified scope.** Rob's current instruction supplied separate express approval for the reviewed P2 source publication. Under verified `DESKTOP-UH85JC0\Dev` in `C:\Users\Dev\CRM-P2-20261101`, local/live remote began at `44fcb511af3bf158336c1fce88f37f0649e39e6b` on `codex/crm-option-a-p1-20261029`. The index was empty, there were no untracked files, and exactly the approved 12 source/test paths were modified. Source provenance remained `8dc389f5714d4ed70b96d53057a514930f9afeaf` plus documentation-only commits. The protected original checkout remained unchanged at `295845912f5a4fefe56464b490dffd5ab502e7a3`, 327 displayed / 326 staged.
+
+**Source publication.** Codex staged only the 12 approved paths and inspected the complete staged diff: 226 insertions, 15 deletions, no whitespace errors and no extra path. No passing test was repeated; preserved evidence is CRM UI 3/3, CRM.Data 1/1, GoGreen 4/4, plus the narrow GoGreen guard regression/compile 2/2. Commit `4d8fa3f81d2ac9db54e6b3ba61b4800cc057f8b8` (`feat: require declared operator for P2 mutations`) was the sole outgoing commit and contained exactly those 12 files. Normal fast-forward push succeeded.
+
+**Independent verification / documentation.** GitHub independently returned source commit `4d8fa3f81d2ac9db54e6b3ba61b4800cc057f8b8`, its exact 12-file list and branch-head equality. The isolated workspace was clean. The CRM publication record was then committed separately as documentation-only `5025b495e30a1ea46f300c1f3bec61c8db64ada4`, whose outgoing range contained only `HANDOFF.md`. P2 source publication is **PASS**. Existing limitations remain: real handler-to-token/Graph suppression and live valid send/create-delete behavior are NOT VERIFIED. No live Graph/email/draft, production/customer database, P3, merge, deploy or release occurred. **STOP for Rob/Priya review before live acceptance, merge, P3 or deployment.**
+
+---
+
 ## November 1, 2026 — MINIMAL P2 GOGREEN SETTINGS GUARDS PASS; REAL GRAPH BOUNDARY NOT VERIFIED
 
 **Authorized correction completed.** In verified `DESKTOP-UH85JC0\Dev` context and only in `C:\Users\Dev\CRM-P2-20261101`, Codex modified the existing `GoGreenMonthlyDrafts/src/GoGreenMonthlyDrafts/SettingsForm.vb` only. The same 12 P2 source/test paths remain unstaged and unpublished; source provenance is still `8dc389f5714d4ed70b96d53057a514930f9afeaf`. The original checkout remains untouched at `295845912f5a4fefe56464b490dffd5ab502e7a3`, 327 displayed / 326 staged.
