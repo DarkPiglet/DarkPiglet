@@ -1,3 +1,11 @@
+## November 1, 2026 — GOGREEN LIVE SMOKE DEFERRED; NEXT P3 READ-ONLY REVIEW AUTHORIZED
+
+**Status.** P2 twelve-file source publication is PASS, as recorded below. Rob confirmed that DeltaTrak Microsoft 365 authentication is available on his regular work computer, not in the isolated Windows development VM. Defer live GoGreen Graph acceptance until the work computer is available. Before any live test, verify the updated GoGreen version, intended mailbox, existing authentication and safe draft cleanup. The first proposed live test is draft create/read/delete without sending; it requires separate explicit authorization at that time. Controlled email send requires its own later approval. Do not configure tenant credentials or attempt Graph in the VM.
+
+**Next Codex assignment — read-only P3 readiness review only.** Rob approved publishing this as the next controlled offline step. Read the current shared and CRM handoffs and applicable AGENTS.md; verify authorized repository/branch and read-only scope. Inspect the existing audit context, repository/write boundaries and related tests to identify the minimum maintainable approach for persistent audit records in P3. Report affected files, dependencies, risks, recommended sequence and focused test coverage. No implementation, file edits, database access or migration, new tests, source commit/push, Graph calls, merge, release or deployment. Stop and report findings for Rob/Priya review before any P3 implementation. Routine documentation-only reporting may follow the standing narrow handoff publication controls, with manual runtime approvals retained.
+
+---
+
 ## November 1, 2026 — P2 TWELVE-FILE SOURCE PUBLICATION PASS
 
 **Authority and verified scope.** Rob's current instruction supplied separate express approval for the reviewed P2 source publication. Under verified `DESKTOP-UH85JC0\Dev` in `C:\Users\Dev\CRM-P2-20261101`, local/live remote began at `44fcb511af3bf158336c1fce88f37f0649e39e6b` on `codex/crm-option-a-p1-20261029`. The index was empty, there were no untracked files, and exactly the approved 12 source/test paths were modified. Source provenance remained `8dc389f5714d4ed70b96d53057a514930f9afeaf` plus documentation-only commits. The protected original checkout remained unchanged at `295845912f5a4fefe56464b490dffd5ab502e7a3`, 327 displayed / 326 staged.
