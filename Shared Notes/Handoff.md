@@ -1,3 +1,15 @@
+## November 2, 2026 — CRM.DATA.TESTS OFFLINE RESTORE PASS; DT GUARD TEST RUN BLOCKED BEFORE COMPILATION
+
+**Authorized execution.** Preflight matched `DESKTOP-UH85JC0\Dev`, isolated `C:\Users\Dev\CRM-P2-20261101`, branch `codex/crm-option-a-p1-20261029`, and the three exact preserved diffs. Four prior CRM.Data.Tests manifests established the exact 37-library graph, and all 37 packages/nuspecs/metadata were present locally.
+
+**Restore PASS.** The single strictly offline restore targeted only `tests\CRM.Data.Tests\CRM.Data.Tests.vbproj`, using cleared package/audit sources, the existing local cache, blackholed proxies and contained paths. It completed with 0 warnings/errors; only local .NET library-packs were reported and no HTTP/NuGet.org reference exists. Default `project.assets.json` was regenerated with the expected 37 libraries, SHA-256 `D7F05BE19D018EEE4A6432114D090030B82D7BEA6FD75D208230FADC3ADAB992`.
+
+**Focused test result: BLOCKED before compilation/discovery; PASS 0 / FAIL 0 / BLOCKED 4 / NOT RUN 4.** The sole approved invocation included `--artifacts-path` for containment. That option redirected MSBuild's intermediate path after restore, so it searched for a different assets file under the evidence directory and failed `NETSDK1004`. The successfully restored default assets remain present; no TRX exists and none of the four `DtAssociateGuard_` methods compiled, discovered or ran. Per the stop rule, there was no retry. This is a command-path failure, not a DT guard assertion failure. Full commands, hashes and method names are in CRM handoff commit `a314903fb4134ad95b56381e0c5c78d7260220bd`.
+
+**Preservation / next approval.** Source/test diffs and the pre-existing integration artifact remain exact, `git diff --check` passes, and index/untracked sets remain empty. No source/test publication, real database, service, package, merge or deployment occurred. Compilation/runtime remain NOT VERIFIED. Smallest next separately approvable step: one no-restore invocation of the same four-test filter using the restored default `obj` path, omitting `--artifacts-path` while retaining isolated results/logs. STOP for Rob/Priya review.
+
+---
+
 ## November 2, 2026 — ROB AUTHORIZES OFFLINE CRM.DATA.TESTS ASSETS RESTORE + ONE FOCUSED DT GUARD TEST RUN
 
 **Latest controlling assignment — explicitly authorized; execution NOT YET PERFORMED.** Following the November 2 DT Associate guard implementation STOP, Rob explicitly approved ONE strictly offline dependency-assets restore for the **CRM.Data.Tests** test project and ONE run of exactly the four already-prepared `DtAssociateGuard_` tests. This supersedes the preceding "await separate approval" stop ONLY for these two steps. No new implementation, refactor, new test cases, customer-data correction or extra test suite is authorized. The previously prepared source and test diffs are to be used without modification. Existing handoff statements of prior BLOCKED/NOT RUN results remain historically accurate until actual new results are recorded.
