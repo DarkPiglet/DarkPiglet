@@ -1,3 +1,15 @@
+## November 2, 2026 — ROB AUTHORIZES ONE NO-RESTORE DT ASSOCIATE GUARD TEST RETRY (EXECUTION PENDING)
+
+Rob approved one tightly bounded retry of exactly the four previously prepared `DtAssociateGuard_` tests. This corrects ONLY the previous test command's `--artifacts-path` mismatch. Prior `CRM.Data.Tests` offline restore PASSED with 37 libraries and regenerated `tests\\CRM.Data.Tests\\obj\\project.assets.json` SHA-256 `D7F05BE19D018EEE4A6432114D090030B82D7BEA6FD75D208230FADC3ADAB992`; the previous test attempt was BLOCKED before compilation/discovery (PASS 0, FAIL 0, BLOCKED 4). Do not interpret this authorization as a test result.
+
+**Preflight and scope:** Read both authoritative current handoffs, applicable AGENTS.md, and the last STOP evidence. Work ONLY as `DESKTOP-UH85JC0\\Dev` in the existing isolated `C:\\Users\\Dev\\CRM-P2-20261101` on branch `codex/crm-option-a-p1-20261029`. Verify exact project/branch, preserved three unstaged diffs, empty index/untracked set, and the restored default assets path and SHA-256 before running. If any gate fails, STOP with evidence; do not repair, re-restore, change packages, or retry. Preserve existing uncommitted source/test work and protected original checkout untouched.
+
+**One authorized invocation only:** Run `dotnet test tests/CRM.Data.Tests/CRM.Data.Tests.vbproj --no-restore --configuration Release --filter FullyQualifiedName~DtAssociateGuard_` exactly once, with contained test results/logs and previously proven offline/no-network protections. **Omit `--artifacts-path` entirely**, and do not override MSBuild `BaseIntermediateOutputPath`, `MSBuildProjectExtensionsPath`, `IntermediateOutputPath` or related assets path: use the existing default `tests\\CRM.Data.Tests\\obj\\project.assets.json`. Do not run another restore, another test filter, or automatic retry. Do not touch customer/USB/Z:/recovery/production databases, CRM GUI, services, integrations, email, packages, source code, settings, merge, or deployment. Stop on a safety/identity/prerequisite failure. If tests compile and execute, report per-test PASS/FAIL with diagnostics and distinguish runtime failures from infrastructure blockers.
+
+**Finish:** Record exact invocation, assets hash, logs/results paths, four individual test outcomes, any warnings and remaining limitations in BOTH current handoffs and the shared historical archive/index without overwriting prior history. Publish documentation only where already permitted, independently refetch and verify all updated files; if publication fails, explicitly report unverified state and STOP. No source/test commit or push, no additional testing, no promotion. STOP for Rob/Priya review.
+
+---
+
 ## November 2, 2026 — CRM.DATA.TESTS OFFLINE RESTORE PASS; DT GUARD TEST RUN BLOCKED BEFORE COMPILATION
 
 **Authorized execution.** Preflight matched `DESKTOP-UH85JC0\Dev`, isolated `C:\Users\Dev\CRM-P2-20261101`, branch `codex/crm-option-a-p1-20261029`, and the three exact preserved diffs. Four prior CRM.Data.Tests manifests established the exact 37-library graph, and all 37 packages/nuspecs/metadata were present locally.
