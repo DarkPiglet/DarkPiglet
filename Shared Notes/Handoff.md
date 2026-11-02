@@ -1,3 +1,19 @@
+## November 1, 2026 — STANDING TEST POLICY: DEPENDENCY-AWARE FAILURE ISOLATION (ROB APPROVED)
+
+**Purpose and scope.** For each separately authorized test assignment, Codex shall use dependency-aware failure isolation rather than stopping every test at the first ordinary failure. This is a standing execution policy, NOT authorization to run tests, implement changes, build, package, push source, access databases or start any P3 stage. A more restrictive assignment or safety gate takes precedence. The Codex “Approve for me” setting does not expand authorization.
+
+**Before testing.** Identify the approved tests, their prerequisites, shared components, fixtures, state, environment and dependencies; record the relevant code revision and configuration. Establish which tests can run independently using affirmative evidence. Unknown independence means BLOCKED. Execute only the tests explicitly authorized for the assignment; no added tests or workaround changes.
+
+**On failure.** Record FAIL, the test ID, expected/actual outcome, exact diagnostics and evidence, and affected dependencies. Conduct bounded read-only diagnosis and propose minimal corrections with uncertainty noted; do not implement fixes, change fixtures, rerun failed tests or silently retry. Continue with remaining preauthorized tests only if their independence is demonstrated, their prerequisites still pass and their results remain trustworthy. Mark dependent tests BLOCKED and explain the cause. Distinguish a blocked test from a separate defect.
+
+**Mandatory global STOP.** Stop all execution for compromised isolation, corrupted/unreliable fixtures, unexpected writes or data access, production/USB/Z/recovery database access, external Graph/email/network action, credential exposure, repository/workspace identity mismatch, unauthorized changes, or inability to establish safe independence. Stop on time/resource limits or a failure that invalidates other test results. Preserve evidence; do not reset, bypass or repair automatically.
+
+**Reporting and later corrections.** Record PASS, FAIL, BLOCKED and NOT RUN for every planned test, with reasons and evidence; summarize totals and distinct suspected causes. A prior PASS is reusable only while its relevant code, dependencies, configuration and fixture conditions remain valid. After separately approved corrections, rerun the failed tests plus prerequisites and any previously passing tests plausibly affected by the changes, not automatically the entire suite. STOP for Rob/Priya review before any fix or subsequent assignment. Existing controlled-autonomy time and retry limits remain in force for permitted investigation; they do not permit unauthorized fixes.
+
+**Current CRM + GoGreen context.** Apply this policy when a future separately authorized fictional-data, fake-Graph test-assembly integration smoke is run. The readiness review remains PARTIAL / NO-GO for package creation; P3 Stage 3 is deferred. Test 22.1, protected original checkout and real data remain untouched. This policy publication itself authorizes no implementation, test run, release or package.
+
+---
+
 # November 1, 2026 — AUTHORIZED ACTIVE-HANDOFF ROTATION PASS; STOP FOR ROB/PRIYA REVIEW
 
 **Result: PASS.** The one-time assignment in `Shared Notes/Handoff-Rotation-Authorization-20261101.md` was executed against authoritative shared `main` parent `8a2cb3c95678a6d7e2abd6565f9d600ea61cb575`. Windows identity was `DESKTOP-UH85JC0\Dev`. The isolated CRM workspace remained clean at remote-matching `17c7d5a639d57dcc6f75a0a8eb42dd687790efee`; the protected original CRM checkout remained `295845912f5a4fefe56464b490dffd5ab502e7a3` with 327 displayed changes / 326 staged entries.
