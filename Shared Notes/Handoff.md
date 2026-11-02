@@ -1,3 +1,15 @@
+## November 2, 2026 — DT ASSOCIATE OVERWRITE GUARD PREPARED; FOCUSED TESTS BLOCKED BEFORE COMPILATION
+
+**Execution and preservation.** Rob's narrow fictional-data DT guard implementation was performed in verified `DESKTOP-UH85JC0\Dev` / `C:\Users\Dev\CRM-P2-20261101` / `codex/crm-option-a-p1-20261029`. The pre-existing 236-line integration-test artifact remains unchanged at SHA-256 `C09E7F0CD88821900C2F1C7D675B2F60A26E8848A04F3158E6EF028D861011D6`; index and untracked sets remain empty.
+
+**Prepared source/test slice.** Ordinary activity recording now preserves `Site.DTAssociate` while retaining the existing default Activity Associate. An optional explicit stable business Associate requires an audit context, must resolve to exactly one active row, writes the canonical display name, and records typed before/after evidence atomically; invalid/inactive/unaudited requests fail closed. Four focused fictional tests cover the six affected types, ordinary activities, blank/NULL/named ownership, date-grid behavior, canonical update, audit evidence, invalid IDs and rollback. Static `git diff --check` passed. Detailed files/hashes are in CRM handoff commit `22d5f3c89a3adcebb5629d3a8b3e3a5b47c2bc3e`.
+
+**Focused execution result: BLOCKED / NOT RUN 4.** The one approved no-restore filtered invocation stopped before compilation with `NETSDK1004` because `tests\CRM.Data.Tests\obj\project.assets.json` is absent. No restore, retry, workaround, unrelated test or prior-gate repetition followed. Compilation/runtime remain NOT VERIFIED. Source/test changes remain unstaged and unpublished; no real database, live service, package, merge or deployment was touched.
+
+**Smallest next approval.** Authorize one bounded offline-only CRM.Data.Tests dependency-assets restore using existing local packages, then one rerun of the same four-test filter; stop before any network access if offline prerequisites are unavailable. STOP for Rob/Priya review.
+
+---
+
 ## November 2, 2026 — ROB AUTHORIZES NARROW DT ASSOCIATE OVERWRITE GUARD IMPLEMENTATION
 
 **Controlling authorization — approved for one bounded source/test slice.** On November 2, Rob explicitly approved implementation of the immediately preceding "PROPOSED DT ASSOCIATE OVERWRITE GUARD (NOT AUTHORIZED)" after its publication, tightening and independent GitHub readbacks. This entry supersedes that proposal's **implementation-not-authorized / await-Rob-approval stop condition ONLY**. All other scope, isolation, safety, test, audit, reporting, publication and stop conditions from the proposal remain binding. The former "proposal only" entry remains in place as historical evidence of the preapproval state and SHALL NOT be misread as a current prohibition. Codex has not executed this new authorization merely because these handoffs were published.
