@@ -1,3 +1,17 @@
+## November 1, 2026 — CRM + GOGREEN FICTIONAL INTEGRATION SMOKE BLOCKED BEFORE COMPILATION; TESTS NOT RUN
+
+**Authorized execution and preflight.** Executed only `Shared Notes/CRM-GoGreen-Integration-Smoke-Authorization-20261101.md` as `DESKTOP-UH85JC0\Dev` in isolated `C:\Users\Dev\CRM-P2-20261101`, branch/local/live remote initially `17c7d5a639d57dcc6f75a0a8eb42dd687790efee`, with published source `6a91ae09a93becacda7d71054644c4623f1bb635` in ancestry and an initially clean workspace. The protected original remained `295845912f5a4fefe56464b490dffd5ab502e7a3`, 327 displayed / 326 staged.
+
+**Test-only preparation.** Only existing `GoGreenMonthlyDrafts/tests/GoGreenMonthlyDrafts.Tests/CrmIntegrationTests.vb` changed: 236 inserted lines, SHA-256 `C09E7F0CD88821900C2F1C7D675B2F60A26E8848A04F3158E6EF028D861011D6`. Three independently reportable methods cover fictional `.example.test` CRM recipient → deterministic fake Graph draft → GoGreen marker → CRM follow-up/technical audit and rerun idempotence; injected CRM audit rollback; and injected separate-marker recovery without duplicate draft/follow-up. The complete diff and `git diff --check` passed. No production, schema, settings, dependency or other test-project file changed.
+
+**Dependency-aware outcome.** Preflight and exact-scope/isolation review: **PASS**. Release prerequisite: **FAIL/BLOCKED** before compilation with `NETSDK1004`: the test project's `obj/project.assets.json` is absent. The authorized command used `--no-restore`, Release, an exact `FictionalIntegrationSmoke_` filter, isolated output/results and first-run/certificate controls. No restore, fix or retry followed. All three focused methods are **BLOCKED / NOT RUN** on the shared build-assets dependency; no TRX was generated and the test host did not start. Evidence root `C:\Users\Dev\AppData\Local\Temp\CRM-GoGreen-Integration-Smoke-20261101-214022` contains only isolated .NET 10.0.401 first-use/toolpath sentinels.
+
+**Preservation and publication.** No real Graph/email/network action, token, customer/seed/Test 22.1/USB/Z:/production/recovery database, executable package, production launch, Stage 3, source commit/push, merge or deployment occurred. The test source remains unstaged, uncommitted and unpublished; index and untracked counts are zero. CRM result documentation was published alone at `fa652e67b2182d69065979d6e695d36d90c267de`.
+
+**Next approval required.** Executable-package readiness is **NOT ESTABLISHED**. Rob/Priya must decide whether to authorize a bounded dependency-assets restore strategy (offline-only first, or separately approved network restore if required) and one rerun of the same three methods. STOP for Rob/Priya review.
+
+---
+
 ## November 1, 2026 — STANDING TEST POLICY: DEPENDENCY-AWARE FAILURE ISOLATION (ROB APPROVED)
 
 **Purpose and scope.** For each separately authorized test assignment, Codex shall use dependency-aware failure isolation rather than stopping every test at the first ordinary failure. This is a standing execution policy, NOT authorization to run tests, implement changes, build, package, push source, access databases or start any P3 stage. A more restrictive assignment or safety gate takes precedence. The Codex “Approve for me” setting does not expand authorization.
