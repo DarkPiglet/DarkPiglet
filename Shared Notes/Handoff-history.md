@@ -1,5 +1,26 @@
 # Historical Handoff Archive
 
+## Single-entry historical record — established November 2, 2026
+
+**Start here for historical retrieval.** This index is the one authoritative *historical directory*. The underlying preserved records are split into linked immutable snapshot files and older numbered volumes because the full history is too large for one manageable Markdown file. The index itself is **NOT a live assignment**, and an archived instruction never supersedes a more recent current handoff.
+
+**Complete baseline snapshots of both current handoffs, captured November 2, 2026.** Each file was written as a new, append-preserving archive artifact and independently fetched; the exact source text after its marked header was compared to the original pinned GitHub source, and the two CRM parts were reassembled to equal the entire project handoff. Source files were not removed or rewritten to create these snapshots. Contents overlap with the existing numbered history and with each other; do **not** add these snapshot entry counts to the original legacy volume inventory or treat duplicates as separate work.
+
+| Baseline source (pinned) | Complete-source Git blob / UTF-8 bytes | Archived records (read-only evidence) |
+|---|---|---|
+| [Shared current Handoff.md at commit `131dff216fc20f56ac4e097db7ac2d6452496971`](https://github.com/DarkPiglet/DarkPiglet/blob/131dff216fc20f56ac4e097db7ac2d6452496971/Shared%20Notes/Handoff.md) | `31a357974bc2f435e91d0f88ad3f860a32b4db5a` / 420697 | [Shared complete snapshot](Handoff-history-snapshot-20261102-shared.md), archived Git blob `6e790afbc69ef08b8a9ad3ba5fcc47bb48c2f630` |
+| [CRM project HANDOFF.md at commit `74b2f83358084e923181cf150791d5cb55104439`](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/74b2f83358084e923181cf150791d5cb55104439/HANDOFF.md) | `a9d634d0dd1406346bf3df33d953922525f4b2fd` / 757042 | [CRM snapshot 01](Handoff-history-snapshot-20261102-crm-01.md) (project title + entries 1–105, archived blob `2720473928d1663d6cc2ffeeb26ab6666dd9e15c`) and [CRM snapshot 02](Handoff-history-snapshot-20261102-crm-02.md) (entries 106–164, archived blob `4a92d5dc64a08f085da7e9cdc18f8f41b4379ff3`) |
+
+**Verification at capture:** pinned source matched its live authorized branch; all three archive writes and independent readbacks **PASS**, and CRM part-01 + part-02 in order reproduced the entire project source exactly. Existing numbered historical volumes 001–003 and their original index/mapping were left unchanged. This is complete coverage of **the two handoff files as they existed at these pinned commits**, plus the older shared-history volumes; it is not a claim that every previously deleted item in all earlier repository revisions was independently audited.
+
+**Required historical-preservation maintenance:**
+1. Keep *current authority* in `DarkPiglet/DarkPiglet:main/Shared Notes/Handoff.md` and `DarkPiglet/Weekly-Logger-Search-Application:codex/crm-option-a-p1-20261029/HANDOFF.md` (or a subsequently explicitly verified authorized branch). Always name repository, branch, and path; do not silently use substitute or temporary handoff files. Refer to this index for older facts and frozen evidence, not for executable authorization.
+2. Record material decisions, authorizations, actual actions, PASS/FAIL/BLOCKED/NOT VERIFIED, unresolved issues, evidence pointers and publication status in the current handoffs appropriate to the work. Preserve source-specific CRM details, not merely a shared summary. Each handoff update must check whether the historical index still identifies an intact checkpoint plus all previously retired entries. A current update is **not automatically** an archive update.
+3. **Before removing, truncating, rotating, replacing or otherwise retiring any entry from either current handoff**, separately authorize preservation, copy its exact original content to an indexed historical volume/snapshot (including project-only material), confirm every removed entry is represented exactly once in the retirement mapping, and independently read back the published archive and updated index. Do not delete the active source until complete lossless archival and index verification PASS. If any gate fails, retain source untouched and report STOP / NOT VERIFIED. Normal accumulating current entries need not be copied repeatedly; record a new immutable baseline at an explicitly authorized checkpoint.
+4. Treat archive files/index as documentation only; the standing policy permitting routine publication of *the two current handoffs* does **not** silently authorize modifying historical files. This November 2 consolidation is expressly Rob-authorized; future rotation, snapshot, index writes, or changes to the archive scheme require specific scoped authorization and manual tool approvals. Preserve original entries and closed volumes; do not rewrite history or confuse prior reports with newly executed tests.
+
+---
+
 This stable file is the permanent compatibility index for numbered historical volumes.
 
 - Baseline source commit: `b80c4265c765c77b5eeba8ab91a354abccd6c568`
