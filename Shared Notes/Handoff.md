@@ -1,3 +1,15 @@
+## November 1, 2026 — P3 STAGE 2 GOGREEN IMPLEMENTATION AUTHORIZED
+
+Rob approves Stage 2 implementation only within the four existing GoGreen production files and up to three focused test files identified in the latest P3 Stage 1 PASS handoffs. Verify Dev identity, existing isolated workspace, branch/local/remote heads, preserved unstaged three-file Stage 1 diff and protected original checkout before editing. STOP on mismatch, unexpected dependency or scope expansion; no Git bypass, reset, pull, rebase or extra clone.
+
+Production scope: MainForm.vb forwards existing P2 context; DraftBatchProcessor.vb forwards per-site context with stable Graph message ID correlation on new and reconciliation paths; ICrmFollowUpRecorder.vb accepts context; Data/CrmFollowUpRecorder.vb writes canonical Activity, changed recipient interaction date and MonthlyDraftFollowUp audit changes before the existing CRM transaction commit. Preserve existing Graph, draft, recipient, pending-marker, retry and idempotence behavior. No DraftAuditRepository or IDraftAuditRepository edit, schema change or claim of atomicity across Graph and two SQLite databases.
+
+Tests: only existing DraftBatchProcessorTests.vb, CrmIntegrationTests.vb and CRMTechnicalAuditLinkTests.vb if necessary. Fictional SQLite and fake Graph only. Verify new/reconciled correlation, one CRM-atomic technical event, declared versus Windows identity, audit failure rollback, no-op/no duplicate and recoverable separate GoGreen marker failure. Run focused compile/tests, inspect TRX and side effects. Preserve Stage 1 historical PASS without unnecessary reruns. Apply standing documented two-attempt/thirty-minute controlled autonomy; STOP on unresolved failure or material risk.
+
+After PASS, perform read-only combined Stage 1+2 diff and coverage review and report readiness for separately authorized source publication and combined test package. No source staging/commit/push, package, real database, live Graph/email, merge, release or deployment. Publish factual handoff-only results under standing controls, then STOP for Rob/Priya review.
+
+---
+
 ## November 1, 2026 — P3 STAGE 1 PASS; STAGE 2 PLAN READY / NOT IMPLEMENTATION-AUTHORIZED
 
 **Preflight and preserved scope.** Stage 1 ran only in `C:\Users\Dev\CRM-P2-20261101` as `DESKTOP-UH85JC0\Dev`, on `codex/crm-option-a-p1-20261029` at initial local/live remote `878061679aa92dba4f4761064a469d5047022849`. The original checkout remained `295845912f5a4fefe56464b490dffd5ab502e7a3`, 327 displayed / 326 staged. The exact unstaged/unpublished implementation is only `Form1.vb`, `Data/CRMRepository.vb`, and `tests/CRM.Data.Tests/CRMDatabaseTests.vb`; no schema, real database, Graph/email, package, merge, release or deployment was touched.
