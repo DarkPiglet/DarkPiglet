@@ -1,3 +1,11 @@
+## November 1, 2026 — STANDING ROUTINE READ-ONLY INSPECTION AUTHORIZATION (ROB APPROVED)
+
+Rob authorizes Codex to perform routine read-only inspection within the separately verified, currently authorized development workspace as part of an already authorized assignment, without requesting fresh conversational scope approval for each inspection. Permitted examples: reading relevant source and handoff files, Git status/diff/log, branch and remote-ref inspection, and reading existing test reports. This does not authorize browsing unrelated private files, secrets, credentials, production/customer databases or backups; running builds/tests, network/Graph operations, changing settings or Git configuration, local or remote writes, staging, commits, pushes, merges, resets, pulls or rebases, or bypassing identity/permissions controls. If an ostensibly read-only command could write temporary files or metadata, require a separately authorized safe method or STOP. Preserve all existing task-specific stop conditions and protected checkout invariants.
+
+**Runtime approvals are unchanged.** This is workflow authorization only. Codex remains in manual Ask-for-approval mode; actual app/tool permission prompts still require Rob to approve individually. This policy may not reduce the number of dialogs. Group compatible inspections when safe and supported, without expanding scope. Current P3 assignment remains strictly read-only and must stop after reporting; no implementation or packaging is authorized.
+
+---
+
 ## November 1, 2026 — P3 READ-ONLY READINESS REVIEW: TIGHTENED EXECUTION SCOPE (ROB APPROVED)
 
 **Priority and purpose.** This clarifies the previously authorized read-only P3 readiness review, not permission to implement P3. Rob wants an evidence-based estimate of the minimum P3 audit persistence work and whether a separate combined CRM + GoGreen test package can realistically be prepared tonight for work-computer acceptance tomorrow. Do not promise a deadline or start packaging. Preserve Test 22.1 unchanged for normal email operations; any future test package must be separate and must not touch the authoritative USB database, production data, credentials or the existing daily package. Live Graph draft-only smoke and controlled send remain separately gated at the work computer.
