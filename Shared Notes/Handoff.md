@@ -1,3 +1,17 @@
+## November 1, 2026 — STANDING CONTROLLED CODEX AUTONOMY POLICY (ROB APPROVED)
+
+**Purpose and authority.** Rob approves limited, documented routine engineering discretion for Codex *within a separately and explicitly authorized implementation assignment*. This policy does not itself authorize P3 implementation, additional files, tests, source commits, deployment, live Graph/email or any other task. The current P3 readiness review remains completed/STOP pending the audit coverage decision and new implementation authorization. Apply this policy to future projects only when their specific assignment permits implementation.
+
+**Routine discretion.** Within an approved scope and named file boundaries, Codex may select ordinary implementation details, make small necessary code corrections and rerun relevant focused tests without requesting new conversational approval for each routine choice. Avoid unrelated refactors, new abstractions and repeating previously passing suites without a concrete reason. Preserve the most recent successful evidence and keep changes minimal.
+
+**Mandatory traceability.** For each meaningful correction, record the failure/symptom, diagnosis and evidence, exact changed files/lines, rationale, verification command/result, side effects and remaining risks. Keep a concise chronological decision and retry log in the assignment report; publish factual outcomes to the authoritative handoffs only under the existing documentation-only controls. Never misrepresent an unrun test or incomplete verification as PASS.
+
+**Anti-loop limits.** At most TWO correction attempts per same underlying failure; if unresolved after the second, STOP and report. Spend no more than THIRTY MINUTES investigating an unexpected issue before STOP/review. Do not restart the retry budget by renaming the symptom, changing tools, or recategorizing the same root cause. Stop earlier if the proposed fix would expand the authorized scope, touch unapproved files, require a schema/data change, introduce new architecture, affect security or audit integrity, or conflict with protected checkout/production safeguards. Report options, not unauthorized fixes.
+
+**Permissions and publication.** Manual Ask-for-approval stays enabled. Written workflow authority does not bypass required app/tool dialogs, Git checks, protected checkout controls, or explicit approval for commits/pushes beyond the named assignment. No production/customer database, credentials, backup, live Graph, merges, releases or deployment without separate authorization. Any source publication must be expressly within the assignment and undergo exact-path/staged/outgoing-range verification. Codex must STOP at the assignment's specified completion/review gate.
+
+---
+
 ## November 1, 2026 — P3 READ-ONLY READINESS REVIEW COMPLETE; COMBINED PACKAGE NO-GO
 
 **Verified scope and preservation.** The review ran only in the isolated CRM workspace as `DESKTOP-UH85JC0\Dev`, on `codex/crm-option-a-p1-20261029` at local/live remote `5025b495e30a1ea46f300c1f3bec61c8db64ada4`; the workspace was clean before the documentation result. Source remained `4d8fa3f81d2ac9db54e6b3ba61b4800cc057f8b8` beneath handoff-only commits. The original checkout remained untouched at `295845912f5a4fefe56464b490dffd5ab502e7a3`, 327 displayed / 326 staged. No implementation, build, test, application, database, Graph, package, merge or deployment occurred.
