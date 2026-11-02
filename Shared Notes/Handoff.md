@@ -1,3 +1,13 @@
+## November 1, 2026 — P3 NINE-FILE SOURCE PUBLICATION PASS
+
+**Clarified preflight.** Executed only Rob's controlling P3 publication assignment and dirty-handoff clarification in `C:\Users\Dev\CRM-P2-20261101` as `DESKTOP-UH85JC0\Dev`, branch `codex/crm-option-a-p1-20261029`. Complete inspection proved the only initial worktree difference was the expected tracked, unstaged CRM `HANDOFF.md` P3 report; the index was empty and no other path was dirty. Source commit `6a91ae09a93becacda7d71054644c4623f1bb635` had parent and live remote `6b14725d77e03ecc8fa6f08d0e7a5141c3bbacad`, exactly one outgoing commit, exactly nine approved Stage 1/2 paths and 706 insertions / 87 deletions. Preserved evidence remained Stage 1 5/5 + serialization 1/1 + UI 1/1 and Stage 2 6/6; no test was repeated. The protected original remained `295845912f5a4fefe56464b490dffd5ab502e7a3`, 327 displayed / 326 staged.
+
+**Source and documentation publication.** A normal fast-forward push published only `6a91ae09a93becacda7d71054644c4623f1bb635` (`feat: persist P3 CRM and GoGreen audit events`). Independent GitHub retrieval returned the exact SHA and nine-file list, and live remote matched local. The CRM handoff was then updated, completely reviewed, staged alone, committed as documentation-only `17c7d5a639d57dcc6f75a0a8eb42dd687790efee` (`docs: record P3 source publication`), and pushed by a separate normal fast-forward. The isolated workspace is clean after publication. No implementation was repeated; no database, Graph/email, package, merge, release or deployment occurred.
+
+**Result and stop.** P3 Stage 1+2 source publication and both required handoff records are **PASS**. **STOP for Rob/Priya review before Stage 3, packaging, live Graph, production data, merge or deployment.**
+
+---
+
 ## November 1, 2026 — CONTROLLING P3 PUBLICATION PREFLIGHT CLARIFICATION (ROB APPROVED)
 
 **Reason for stop.** The prior source-push attempt stopped without a push because the isolated P3 workspace had a modified local CRM `HANDOFF.md`; all reported other preflight checks passed. This entry supersedes ONLY the strict clean-worktree requirement in the immediately following publication assignment. It does not declare the modification safe before inspection or authorize a general dirty-worktree exception.
