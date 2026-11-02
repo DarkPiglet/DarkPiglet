@@ -1,3 +1,13 @@
+## November 1, 2026 — P2 FOCUSED VERIFICATION PASS; SOURCE AWAITS ROB/PRIYA REVIEW
+
+**Authorized execution completed.** In the verified `DESKTOP-UH85JC0\Dev` process and only in `C:\Users\Dev\CRM-P2-20261101`, Codex performed the single approved CRM UI retry with child-process-only `DOTNET_GENERATE_ASPNET_CERTIFICATE=false`. Preflight confirmed branch `codex/crm-option-a-p1-20261029`, expected preserved 12-path source/test patch, remote documentation head `d00341a3e78ef638f3ff49f706e42857b001ff2b`, and the protected original checkout unchanged at `295845912f5a4fefe56464b490dffd5ab502e7a3` with 327 displayed changes / 326 staged entries.
+
+**Focused gates.** The controlled CRM UI retry completed **PASS 3/3**, with a TRX, exit code 0, no certificate/HTTPS/sentinel text in the recorded result, and no remaining test process. Per the authorization, Codex then advanced stage-by-stage: the focused CRM.Data audit-context gate completed **PASS 1/1**, followed by the focused GoGreen settings/context gate at **PASS 4/4**. All commands exited 0; no completed P1 acceptance was repeated. `git diff --check` passes. The same 12 source/test paths remain modified but uncommitted and unpublished.
+
+**Documentation publication and stop.** The CRM completion record was the only path committed and pushed in `7d1549e3a13062429a9768a806b17588781dcd7c`; the source parent remains `8dc389f5714d4ed70b96d53057a514930f9afeaf`. No source commit/push, fix, merge, release, deployment, application launch, real Graph operation, production/customer database access, schema change, P3 work, Git security/permission change, or original-checkout change occurred. This shared completion entry is documentation only. **STOP for Rob/Priya review and explicit authorization before source publication or another phase.**
+
+---
+
 ## November 1, 2026 — P2 SINGLE CONTROLLED CRM UI TEST RETRY APPROVED (ROB AUTHORIZED; MANUAL GATE)
 
 **Decision / scope.** Following review of the documented November 1 P2 first-test stop, Rob approved **one controlled retry** of only the first CRM settings/UI focused test gate, with ASP.NET Core HTTPS development-certificate auto-generation disabled in the test process, and approved this **shared-handoff-only** authorization publication. This supersedes the prior P2 STOP only to permit this single specified test retry and, on PASS, the previously approved remaining focused P2 test gates; it does not authorize a code fix or broader retry. The certificate message was an observed SDK first-run side effect, **not a verified root cause** of the missing test results. Prior P2 status stays **UNACCEPTED / tests NOT VERIFIED** until results exist.
