@@ -1,3 +1,9 @@
+## November 3, 2026 — CURRENT: fictional test fixture authorization
+
+Rob authorized the revised CRM 22.1 maintenance assignment in `Shared Notes/CRM-22.1-Maintenance-Resume-Authorized-20261103.md`. The tracked seed database contains operational-scale records and may contain confidential rebate pricing. Leave it unchanged and do not use, copy, package or further inspect its business data. Its unchanged presence alone is not a global stop. Reverify the clean isolated workspace and use a separate wholly fictional fixture for offline testing. Establish safe build and test routing before executing any operation that might package or copy the original seed. Continue independent source-only maintenance when safe; report specific blockers without broadening scope. Keep USB, Z:, production, P2/P3, live email, carrier actions, deployment and source pushes prohibited. Prior seed STOP remains historical. Stop for review after reporting.
+
+---
+
 ## November 3, 2026 — CRM 22.1 maintenance GLOBAL STOP: tracked seed is not a sanitized fixture
 
 Executed only Rob's corrected preflight authorization. Reverified `DESKTOP-UH85JC0\Dev`, exact workspace `C:\Users\Dev\CRM-22.1-Maintenance-20261103`, authorized remote/branch, HEAD `dd223e6f228c236c85b89b1246b587b2a0d1f5c2`, tree `0bfca6c87411c5f8129e35bfde28dc987c954af8`, and clean index/worktree/untracked status. No unexpected database/settings/credential artifact was found beyond the permitted tracked seed and source/test files whose names reference token-cache code.
