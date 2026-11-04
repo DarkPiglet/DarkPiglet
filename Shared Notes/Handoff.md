@@ -1,3 +1,9 @@
+## November 3, 2026 — CURRENT AUTHORIZATION: CRM 22.1 monthly send code investigation (READ ONLY)
+
+Rob authorized publication of the [controlling investigation assignment](CRM-22.1-Monthly-Send-ReadOnly-Investigation-20261103.md). Codex may investigate existing CRM 22.1 and historical Graph/Test22 source in read-only mode only, report whether bulk send functionality exists and assess the required send-success-only timestamp updates. No live email, source/data modifications, tests, merges, or resumed migration. The November 2 CRM migration was canceled; all older implementation/test authorizations below are historical and **not current permission**. Stop after findings for Rob/Priya review.
+
+---
+
 ## November 2, 2026 — ROB AUTHORIZES ONE NO-RESTORE DT ASSOCIATE GUARD TEST RETRY (EXECUTION PENDING)
 
 Rob approved one tightly bounded retry of exactly the four previously prepared `DtAssociateGuard_` tests. This corrects ONLY the previous test command's `--artifacts-path` mismatch. Prior `CRM.Data.Tests` offline restore PASSED with 37 libraries and regenerated `tests\\CRM.Data.Tests\\obj\\project.assets.json` SHA-256 `D7F05BE19D018EEE4A6432114D090030B82D7BEA6FD75D208230FADC3ADAB992`; the previous test attempt was BLOCKED before compilation/discovery (PASS 0, FAIL 0, BLOCKED 4). Do not interpret this authorization as a test result.
