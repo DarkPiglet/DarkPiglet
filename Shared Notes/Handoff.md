@@ -1,3 +1,15 @@
+## November 3, 2026 — CRM 22.1 consolidated maintenance STOPPED at baseline/workspace preflight
+
+Rob's November 3 seven-area assignment was the latest explicit execution authority. The complete current shared and CRM handoffs plus applicable `AGENTS.md` were reconciled; the permanent history index and only the relevant Test22 records were consulted for baseline evidence. Execution identity was `DESKTOP-UH85JC0\Dev`.
+
+The mandatory baseline gate did not pass. Historical records verify `dd223e6f228c236c85b89b1246b587b2a0d1f5c2` as the exact application/test source used for the corrected Test22 portable package (`10.0.0-test.22+dd223e6...`), but they explicitly leave P01 exact daily-use USB/current-data readiness **NOT RUN / NOT VERIFIED**. No authoritative evidence identifies that revision as the actual current daily-use CRM 22.1 source by both executable/source identity and controls; the `22.1` label alone is insufficient under the controlling assignment.
+
+The only existing isolated CRM workspace available for inspection, `C:\Users\Dev\CRM-P2-20261101`, is branch `codex/crm-option-a-p1-20261029` at later documentation head `d4a6007d0183a6dfeda7f84d654c3f20b2b2c383`. Although `dd223e6...` is an ancestor, this is the November 2 P2/P3 continuation and it retains three unstaged files: `Data/CRMRepository.vb` (42-line net diff), `tests/CRM.Data.Tests/CRMDatabaseTests.vb` (183 additions), and `GoGreenMonthlyDrafts/tests/GoGreenMonthlyDrafts.Tests/CrmIntegrationTests.vb` (236 additions). It is not a clean isolated 22.1 baseline and all three differences were preserved untouched.
+
+Per the assignment's global STOP rule, all seven implementation areas A-G are **NOT STARTED / BLOCKED AT PREFLIGHT**. No application/source/test/settings/database change, build, test, GUI launch, Graph/email/carrier call, package, protected-data access, merge or deployment occurred. Resume requires authoritative identity evidence for the actual daily-use 22.1 executable and matching source revision (including path/version/checksum and control mapping), plus an explicitly approved clean isolated workspace at that exact baseline. STOP for Rob/Priya review.
+
+---
+
 ## November 3, 2026 — CURRENT AUTHORIZATION: CRM 22.1 consolidated maintenance test build
 
 Rob authorized the [seven-area consolidated maintenance assignment](CRM-22.1-Consolidated-Maintenance-Authorized-20261103.md). This supersedes the earlier November 3 read-only email investigation as the current assignment. Verify the daily-use CRM 22.1 source and isolated workspace before edits. Scope: order-form safe replacement; UPS/FedEx parity; GoGreen checkbox; Graph ID hiding; Site Information; Contact cards; Quick Lookup including green match highlighting. Delimiters/AND/OR/phrase grouping, bulk sending, and date write-logic corrections are deferred. No canceled migration restart, live mail, production data changes, merge or deployment. Documentation-only reporting is permitted within approved permissions. Stop for Rob/Priya review.
