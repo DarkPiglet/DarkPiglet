@@ -1,3 +1,9 @@
+## November 4, 2026 — NEXT CRM 22.1 ASSIGNMENT APPROVED; WAIT FOR ROB TO START CODEX
+
+Rob approved a narrowly bounded follow-up for the three exporter failures and two blocked duplicate-integrity tests. **Controlling next-task instructions:** [CRM-22.1-Exporter-Regression-Next-Assignment-20261104.md](CRM-22.1-Exporter-Regression-Next-Assignment-20261104.md). The desired empty-Agreement Excel table has headers but zero data rows inside its table; the third test requires fictional Agreement data in an isolated disposable fixture. Existing fixes and source edits must be preserved. This is authorization for the named assignment **only after Rob starts Codex**, not evidence of execution. Export formatting, Alias appearance, Windows 125%/150% scaling, and office email remain separate. No automatic next phase, source commit, merge, packaging, or deployment.
+
+---
+
 ## November 4, 2026 — CRM 22.1 THREE-STAGE REVIEW COMPLETE; NOT PACKAGE READY; STOP
 
 Executed only the authorized three-stage assignment. Consolidated evidence is in [CRM-22.1-Three-Stage-Maintenance-Review-Completed-20261104.md](CRM-22.1-Three-Stage-Maintenance-Review-Completed-20261104.md). Stage 1 completed the outstanding-maintenance reconciliation. Stage 2 ran only seven selected non-GUI exporter tests through a new ignored isolated root and the approved wholly fictional schema-24 fixture: **4 PASS / 3 FAIL**. Two failures expose the same unresolved zero-Agreement-row workbook/test-contract mismatch (reported row count 0 but an Excel table retains one blank data row); the third is a fixture-precondition failure because the fictional fixture has no Agreement export row. Two selected duplicate-integrity tests are **BLOCKED / NOT RUN** because no prebuilt Data-test assembly existed and building/restoring one would have broadened the verified route. All original/retained fixture and operational-seed hashes stayed unchanged; containment and process checks passed.
