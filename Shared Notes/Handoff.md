@@ -1,4 +1,18 @@
-## November 3, 2026 — CURRENT NEXT CODEX ASSIGNMENT: Stage 3 targeted fixes + bounded re-test
+## November 4, 2026 — CURRENT CRM STATUS: Stage 3 targeted corrections complete; STOP for review
+
+The explicitly started [CRM-22.1 Stage 3 targeted corrections assignment](CRM-22.1-Stage3-Targeted-Corrections-Authorized-20261103.md) is complete. Full evidence is in [CRM-22.1-Stage3-Targeted-Corrections-Completed-20261104.md](CRM-22.1-Stage3-Targeted-Corrections-Completed-20261104.md).
+
+- Contact-card blank-name validation and on-screen Actions placement: **PASS**.
+- Actual Excel staged open/review, new publish, safe same-name replacement, and locked-destination preservation with no false activity: **PASS**.
+- Quick Lookup matched-contact context, exact-control highlight/source tooltip, selection and scroll: **PASS**.
+- GoGreen actual Windows 100% restored/narrow/maximized plus Settings: **PASS**. Actual 125% and 150%: **NOT VERIFIED** because changing host-wide display scale was not safely permitted without action-time confirmation; the completion report contains exact manual steps.
+- Focused affected/prior baseline **33/33 PASS**; `Form1SmokeTests` **6/6 PASS**; final offline Release build **0 warnings/errors**; SQLite integrity `ok` / zero FK rows; protected fictional fixture/seed unchanged; no operational seed in output and no live/protected access.
+
+All existing application/test edits remain unstaged, uncommitted and unpushed exactly as required. Only documentation publication is authorized. The accumulated source remains **NOT PACKAGE READY** while 125%/150% DPI coverage is open and no package/merge authorization exists. **STOP for Rob/Priya review. Do not begin the separately published maintenance-reconciliation assignment or any subsequent phase.**
+
+---
+
+## November 3, 2026 — HISTORICAL AUTHORIZATION: Stage 3 targeted fixes + bounded re-test (completed November 4)
 
 Rob approved the **one** follow-up assignment after reviewing the Stage 3 report: [CRM-22.1-Stage3-Targeted-Corrections-Authorized-20261103.md](CRM-22.1-Stage3-Targeted-Corrections-Authorized-20261103.md). This is the next task **only when Rob explicitly starts it in Codex**; publication does not launch work. Scope: fix contact-card blank-name validation and offscreen Actions menu; fix Excel order staging/open and safe replacement; restore Quick Lookup matched-contact context/highlight/tooltips/scrolling; complete *real* GoGreen 100/125/150% layout checks where safely permitted. Use existing isolated fictional schema-24 fixture, preserve all unstaged source/test changes, verify build and focused regressions, and STOP for Rob/Priya review. **No source commits/pushes, packaging, merge, deployment, live integrations, or automatic later assignment.** The prior read-only post-Stage-3 maintenance-reconciliation document is **not** part of this run and is deferred, not canceled. Stage 3's 3 PASS / 3 FAIL / 1 NOT VERIFIED report below is historical evidence, not authorization to continue on its own.
 
