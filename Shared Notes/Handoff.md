@@ -1,3 +1,11 @@
+## November 4, 2026 — CURRENT AUTHORIZATION: CRM 22.1 three-stage review/testing; AWAIT ROB'S CODEX START
+
+Rob approved a **single, bounded next Codex assignment** documented in [CRM-22.1-Three-Stage-Maintenance-Review-Authorized-20261104.md](CRM-22.1-Three-Stage-Maintenance-Review-Authorized-20261104.md): (1) read-only outstanding-maintenance reconciliation, (2) selected safe offline automated regression tests using only a new disposable isolated copy of the validated wholly fictional schema-24 fixture, (3) read-only integrity review of the **actual uncommitted local source/test changes**. Stages 2 and 3 are explicitly approved to follow Stage 1 without new authorization **only within the controlling document's preflight and stop gates**; this supersedes the older reconciliation-only STOP for this one assignment. **Publishing is not execution**: Rob will give Codex his normal explicit start instruction.
+
+Read both AGENTS.md files and both handoffs; preserve all existing dirty source/test work. Expected read-only repository inspection, scoped isolated automated tests and documentation-only publication are authorized, but mandatory app/OS permission prompts still apply; unexpected requests must not be bypassed. **No source/test edits, source commits/pushes, live Graph/email/carriers, Excel/GUI tests, Windows DPI changes, protected databases, USB/Z:/production/recovery, packaging, merge or deployment.** Office-only monthly-email testing and actual 125%/150% GoGreen scaling remain separate. Final consolidated handoff report and **STOP for Rob/Priya review** after three stages; no automatic next assignment. The previous Stage 3 completion report below remains historical evidence, not current execution scope.
+
+---
+
 ## November 4, 2026 — CURRENT CRM STATUS: Stage 3 targeted corrections complete; STOP for review
 
 The explicitly started [CRM-22.1 Stage 3 targeted corrections assignment](CRM-22.1-Stage3-Targeted-Corrections-Authorized-20261103.md) is complete. Full evidence is in [CRM-22.1-Stage3-Targeted-Corrections-Completed-20261104.md](CRM-22.1-Stage3-Targeted-Corrections-Completed-20261104.md).
