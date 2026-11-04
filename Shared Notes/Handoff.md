@@ -1,3 +1,9 @@
+## November 3, 2026 — CURRENT AUTHORIZATION: narrow Z: root executable identity check (READ ONLY)
+
+Rob authorized [the Z: root-only identity check](CRM-22.1-ZRoot-Executable-Identity-ReadOnly-20261103.md) after the broader baseline identification STOP. This is the **latest executable assignment**; it supersedes the earlier read-only baseline investigation only for this narrow check. Examine only the immediate Z:\\ root for CRM.exe or an obvious CRM package/ZIP, collect read-only identity metadata and hashes, and compare against existing historical evidence. No recursive search, USB access, app launch, source edits, workspace creation, branch changes, build, tests, or implementation. Seven-area maintenance remains PAUSED. Publish documentation only where already permitted and independently verify. STOP for Rob/Priya review before any resumption.
+
+---
+
 ## November 3, 2026 — CRM 22.1 read-only baseline identification BLOCKED; implementation remains PAUSED
 
 Executed only the current baseline-identification investigation as `DESKTOP-UH85JC0\Dev`. Current shared/project handoffs, both root `AGENTS.md` files, the seven-area document, permanent history index, and relevant Test22 records in numbered volume 002/003 and the November 2 snapshots were reconciled. No application/source/test/settings/database change, build, test, launch, protected-data access, source Git write, migration, package, or implementation area A-G occurred.
