@@ -1,3 +1,9 @@
+## November 3, 2026 — CURRENT AUTHORIZATION: CRM 22.1 read-only baseline identification (implementation PAUSED)
+
+Rob authorized [the narrow baseline-identification investigation](CRM-22.1-Baseline-Identification-ReadOnly-20261103.md) after Codex correctly STOPPED the seven-area maintenance assignment at its baseline/workspace gate. This is the **latest executable assignment** and temporarily supersedes seven-area implementation; the seven-area handoff remains preserved but is **not to be executed now**. Inspect only permitted evidence to map the actual daily-use CRM 22.1 executable to its matching source revision; do not assume Test22 commit `dd223e6` or reuse/clean the dirty P2/P3 workspace. No code edits, new workspace, build, tests, protected-data access, source Git writes, or migration revival. Publish accurate documentation only where authorized and independently verify. STOP for Rob/Priya review before any implementation resumes.
+
+---
+
 ## November 3, 2026 — CRM 22.1 consolidated maintenance STOPPED at baseline/workspace preflight
 
 Rob's November 3 seven-area assignment was the latest explicit execution authority. The complete current shared and CRM handoffs plus applicable `AGENTS.md` were reconciled; the permanent history index and only the relevant Test22 records were consulted for baseline evidence. Execution identity was `DESKTOP-UH85JC0\Dev`.
