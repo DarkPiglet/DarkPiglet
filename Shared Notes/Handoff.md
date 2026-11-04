@@ -1,3 +1,15 @@
+## November 3, 2026 — CRM 22.1 maintenance STOPPED at isolated-workspace database gate
+
+Executed only the mandatory preflight of the verified-source maintenance resumption as `DESKTOP-UH85JC0\Dev`. The approved path was absent, so a fresh isolated clone was created at `C:\Users\Dev\CRM-22.1-Maintenance-20261103` from `https://github.com/DarkPiglet/Weekly-Logger-Search-Application.git`, branch `codex/crm-22-1-maintenance-20261103`, exact HEAD `dd223e6f228c236c85b89b1246b587b2a0d1f5c2` / tree `0bfca6c87411c5f8129e35bfde28dc987c954af8`. Index/worktree/untracked status is clean. The protected original and `C:\Users\Dev\CRM-P2-20261101` were not accessed or changed.
+
+**Global preflight blocker.** The pinned source tree necessarily materializes tracked `Database\CRM_seed.sqlite` (Git blob `d6b6c6867a82863041f6c0fb5ab8c9e2bc6019f5`). `CRM.vbproj` packages it, CRM UI/Data test fixtures copy/use it, and checked-in deployment documentation describes it as the immutable initialization source. Its contents were not opened or queried. The current resumption authorization simultaneously requires the new workspace to contain no customer or synthetic database. Excluding the file would remove an explicit required source/test asset and would make the authorized build/test route incomplete; treating it as exempt, replacing it, inspecting it, changing project/test inputs, or weakening the protected-data gate was not authorized. This is a workspace/protected-data ambiguity and therefore triggers the assignment's global STOP rule.
+
+Areas A-G are all **BLOCKED AT PREFLIGHT / NOT STARTED**. No application/test source was edited; no restore, build, test, UI launch, package, database access, settings/credential access, source commit/push, email, migration, merge or deployment occurred. The new workspace remains clean at the verified commit for Rob/Priya inspection.
+
+**Smallest decision needed.** Rob/Priya must explicitly decide whether the tracked immutable repository seed is permitted in this isolated maintenance workspace solely as the existing source/test fixture. If not, a separately authorized sanitized seed or seed-free project/test plan is required before implementation. Do not resume automatically. STOP for Rob/Priya review.
+
+---
+
 ## November 3, 2026 — CURRENT AUTHORIZATION: isolated CRM 22.1 maintenance resumption
 
 Rob authorized [the verified-source seven-area maintenance resumption](CRM-22.1-Maintenance-Resume-Authorized-20261103.md). This is the CURRENT executable assignment, superseding the completed Z-root read-only check. Source commit dd223e6f228c236c85b89b1246b587b2a0d1f5c2. First establish a fresh clean isolated workspace under the approved Dev identity with all required safety gates; then implement only the seven previously approved areas with offline synthetic tests. Preserve USB/Z:/production and the unfinished P2/P3 workspace. No live email, deployment, migration, merge or source push. Stop for Rob/Priya review after reporting. USB provenance remains user-reported.
