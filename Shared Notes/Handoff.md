@@ -1,3 +1,9 @@
+## November 3, 2026 — CURRENT AUTHORIZATION: isolated CRM 22.1 maintenance resumption
+
+Rob authorized [the verified-source seven-area maintenance resumption](CRM-22.1-Maintenance-Resume-Authorized-20261103.md). This is the CURRENT executable assignment, superseding the completed Z-root read-only check. Source commit dd223e6f228c236c85b89b1246b587b2a0d1f5c2. First establish a fresh clean isolated workspace under the approved Dev identity with all required safety gates; then implement only the seven previously approved areas with offline synthetic tests. Preserve USB/Z:/production and the unfinished P2/P3 workspace. No live email, deployment, migration, merge or source push. Stop for Rob/Priya review after reporting. USB provenance remains user-reported.
+
+---
+
 ## November 3, 2026 — Z: root CRM 22.1 executable identity VERIFIED; implementation still PAUSED
 
 Executed only the authorized immediate-root `Z:\` read-only identity check as `DESKTOP-UH85JC0\Dev`; no recursive search occurred. `Z:\CRM.exe` is 162,304 bytes, UTC LastWriteTime `2026-10-27T12:16:46.3500000Z`, FileVersion `10.0.0.22`, full ProductVersion `10.0.0-test.22+dd223e6f228c236c85b89b1246b587b2a0d1f5c2`, SHA-256 `E434A94DBE5F7960127B9BDCDC52195B124DF1094EE82BF05F1A5622BC18E9B2`. Adjacent `Z:\CRM.dll` is 484,352 bytes, UTC LastWriteTime `2026-10-27T12:16:46.3400000Z`, SHA-256 `6DC264950857939A82292B044D2770749481E5173A76D19B80DE8CC838E0BDB5`.
