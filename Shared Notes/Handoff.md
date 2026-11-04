@@ -1,3 +1,9 @@
+## November 3, 2026 — CURRENT: narrow preflight correction authorized by Rob
+
+Rob authorized a limited exception for the existing tracked `Database\CRM_seed.sqlite` solely as the required source/test fixture, subject to a bounded read-only check confirming no real customer information before build/test use. The updated controlling assignment is [CRM-22.1-Maintenance-Resume-Authorized-20261103.md](CRM-22.1-Maintenance-Resume-Authorized-20261103.md). Codex may reuse ONLY the already-created clean isolated `C:\Users\Dev\CRM-22.1-Maintenance-20261103` after verifying identity, path, remote, exact HEAD/tree, branch, clean status and no unexpected data; STOP if any differ. The prior preflight stop below is historical, not the current instruction. Do not touch USB/Z:/production/P2-P3; do not inspect any other database; no live email, deployment, migration, source commit/push. Complete only authorized areas A-G, test offline, report, and STOP for review. No automatic production promotion.
+
+---
+
 ## November 3, 2026 — CRM 22.1 maintenance STOPPED at isolated-workspace database gate
 
 Executed only the mandatory preflight of the verified-source maintenance resumption as `DESKTOP-UH85JC0\Dev`. The approved path was absent, so a fresh isolated clone was created at `C:\Users\Dev\CRM-22.1-Maintenance-20261103` from `https://github.com/DarkPiglet/Weekly-Logger-Search-Application.git`, branch `codex/crm-22-1-maintenance-20261103`, exact HEAD `dd223e6f228c236c85b89b1246b587b2a0d1f5c2` / tree `0bfca6c87411c5f8129e35bfde28dc987c954af8`. Index/worktree/untracked status is clean. The protected original and `C:\Users\Dev\CRM-P2-20261101` were not accessed or changed.
