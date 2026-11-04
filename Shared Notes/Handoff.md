@@ -1,3 +1,15 @@
+## November 3, 2026 — Z: root CRM 22.1 executable identity VERIFIED; implementation still PAUSED
+
+Executed only the authorized immediate-root `Z:\` read-only identity check as `DESKTOP-UH85JC0\Dev`; no recursive search occurred. `Z:\CRM.exe` is 162,304 bytes, UTC LastWriteTime `2026-10-27T12:16:46.3500000Z`, FileVersion `10.0.0.22`, full ProductVersion `10.0.0-test.22+dd223e6f228c236c85b89b1246b587b2a0d1f5c2`, SHA-256 `E434A94DBE5F7960127B9BDCDC52195B124DF1094EE82BF05F1A5622BC18E9B2`. Adjacent `Z:\CRM.dll` is 484,352 bytes, UTC LastWriteTime `2026-10-27T12:16:46.3400000Z`, SHA-256 `6DC264950857939A82292B044D2770749481E5173A76D19B80DE8CC838E0BDB5`.
+
+**Comparison/status.** Both hashes, executable length/version and full embedded SourceRevisionId exactly match the previously verified corrected Test22 portable package. Binary equality is **VERIFIED** and the root executable's matching application source is **VERIFIED** as commit `dd223e6f228c236c85b89b1246b587b2a0d1f5c2` / tree `0bfca6c87411c5f8129e35bfde28dc987c954af8`. This excludes the recorded Test17/Test20 binaries and later P2/P3 source. The operational name “22.1” is not embedded in the binary; Rob's statement that these root files are the unchanged daily-use package copied from USB yesterday is accepted as user-reported provenance but remains **NOT INDEPENDENTLY VERIFIED** because USB was not accessed. No contradictory binary evidence was found.
+
+The same non-recursive root listing also observed `Test22Portable-20261027-dd223e6` (directory) and `CRM-Test22-Portable-ProductionData-win-x64-ac25089-FF4EC6C9-NOT-DEPLOYED.zip`; neither was opened, traversed or hashed. `CRM.sqlite` and all other databases/settings/protected files were not read. No app launch, extraction, copy, source/workspace change, build, test, email, migration, deployment or seven-area implementation occurred; `C:\Users\Dev\CRM-P2-20261101` remained untouched.
+
+**Smallest next step / STOP.** Rob/Priya may now review the verified `dd223e6...` binary-to-source mapping and separately decide whether to authorize the previously proposed fresh clean workspace at `C:\Users\Dev\CRM-22.1-Maintenance-20261103` and resume the seven-area assignment. This report does not create that workspace or authorize implementation. STOP for Rob/Priya review.
+
+---
+
 ## November 3, 2026 — CURRENT AUTHORIZATION: narrow Z: root executable identity check (READ ONLY)
 
 Rob authorized [the Z: root-only identity check](CRM-22.1-ZRoot-Executable-Identity-ReadOnly-20261103.md) after the broader baseline identification STOP. This is the **latest executable assignment**; it supersedes the earlier read-only baseline investigation only for this narrow check. Examine only the immediate Z:\\ root for CRM.exe or an obvious CRM package/ZIP, collect read-only identity metadata and hashes, and compare against existing historical evidence. No recursive search, USB access, app launch, source edits, workspace creation, branch changes, build, tests, or implementation. Seven-area maintenance remains PAUSED. Publish documentation only where already permitted and independently verify. STOP for Rob/Priya review before any resumption.
