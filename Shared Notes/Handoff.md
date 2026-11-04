@@ -1,3 +1,17 @@
+## November 3, 2026 — CRM 22.1 maintenance GLOBAL STOP: tracked seed is not a sanitized fixture
+
+Executed only Rob's corrected preflight authorization. Reverified `DESKTOP-UH85JC0\Dev`, exact workspace `C:\Users\Dev\CRM-22.1-Maintenance-20261103`, authorized remote/branch, HEAD `dd223e6f228c236c85b89b1246b587b2a0d1f5c2`, tree `0bfca6c87411c5f8129e35bfde28dc987c954af8`, and clean index/worktree/untracked status. No unexpected database/settings/credential artifact was found beyond the permitted tracked seed and source/test files whose names reference token-cache code.
+
+**Bounded seed result / gate failure.** Only `Database\CRM_seed.sqlite` was opened through SQLite URI `mode=ro&immutable=1` with `PRAGMA query_only=ON`; no rows or customer values were printed or exported. It is schema/user-version 17 with the full operational CRM schema. Aggregate-only counts returned 142 Company, 424 Site, 484 Contact, 1,010 ContactMethod, 491 SiteContact and 857 Activity rows. This production-scale business dataset is not established as free of real customer information and is inconsistent with the required sanitized/synthetic-fixture condition. Under the corrected assignment, uncertainty or actual customer data requires a global STOP.
+
+Two bounded CLI queries exited 1 only after producing safe evidence: the first requested nonexistent later-schema `AppUser` after successfully listing schema/columns; the second emitted the aggregate counts before a syntax error in the optional placeholder-marker extension. Neither failure caused a write. Seed SHA-256 remained `3363942E28E35C3F19E3B502CDB528FF8D2D1051B70025C656EE66420D51E4A9`; no WAL/SHM/journal appeared; Git status remains clean. No further query was justified once the stop condition was established.
+
+Areas A-G remain **BLOCKED AT PREFLIGHT / NOT STARTED**. No source/test edit, restore, build, test, UI launch, package, copy/sanitization, source commit/push, email, migration, merge or deployment occurred. USB/Z:/production/recovery and P2/P3 were untouched. The clean maintenance workspace remains preserved.
+
+**Smallest next decision.** A separately authorized sanitized fictional seed/fixture and corresponding safe project/test route are required before implementation; the current instruction expressly forbids editing, replacing, sanitizing or copying this seed. Do not resume automatically. STOP for Rob/Priya review.
+
+---
+
 ## November 3, 2026 — CURRENT: narrow preflight correction authorized by Rob
 
 Rob authorized a limited exception for the existing tracked `Database\CRM_seed.sqlite` solely as the required source/test fixture, subject to a bounded read-only check confirming no real customer information before build/test use. The updated controlling assignment is [CRM-22.1-Maintenance-Resume-Authorized-20261103.md](CRM-22.1-Maintenance-Resume-Authorized-20261103.md). Codex may reuse ONLY the already-created clean isolated `C:\Users\Dev\CRM-22.1-Maintenance-20261103` after verifying identity, path, remote, exact HEAD/tree, branch, clean status and no unexpected data; STOP if any differ. The prior preflight stop below is historical, not the current instruction. Do not touch USB/Z:/production/P2-P3; do not inspect any other database; no live email, deployment, migration, source commit/push. Complete only authorized areas A-G, test offline, report, and STOP for review. No automatic production promotion.
