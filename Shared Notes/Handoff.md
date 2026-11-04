@@ -1,3 +1,9 @@
+## November 3, 2026 — CURRENT AUTHORIZATION: CRM 22.1 consolidated maintenance test build
+
+Rob authorized the [seven-area consolidated maintenance assignment](CRM-22.1-Consolidated-Maintenance-Authorized-20261103.md). This supersedes the earlier November 3 read-only email investigation as the current assignment. Verify the daily-use CRM 22.1 source and isolated workspace before edits. Scope: order-form safe replacement; UPS/FedEx parity; GoGreen checkbox; Graph ID hiding; Site Information; Contact cards; Quick Lookup including green match highlighting. Delimiters/AND/OR/phrase grouping, bulk sending, and date write-logic corrections are deferred. No canceled migration restart, live mail, production data changes, merge or deployment. Documentation-only reporting is permitted within approved permissions. Stop for Rob/Priya review.
+
+---
+
 ## November 3, 2026 — CURRENT AUTHORIZATION: CRM 22.1 monthly send code investigation (READ ONLY)
 
 Rob authorized publication of the [controlling investigation assignment](CRM-22.1-Monthly-Send-ReadOnly-Investigation-20261103.md). Codex may investigate existing CRM 22.1 and historical Graph/Test22 source in read-only mode only, report whether bulk send functionality exists and assess the required send-success-only timestamp updates. No live email, source/data modifications, tests, merges, or resumed migration. The November 2 CRM migration was canceled; all older implementation/test authorizations below are historical and **not current permission**. Stop after findings for Rob/Priya review.
