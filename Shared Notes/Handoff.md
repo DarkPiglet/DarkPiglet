@@ -1,3 +1,13 @@
+## November 4, 2026 — CRM 22.1 WORD PLAN DRAFT VALID; VISUAL QA BLOCKED; Z TRANSFER NOT RUN; STOP
+
+Executed only the explicitly started [Word acceptance plan and verified Z transfer assignment](CRM-22.1-Word-Test-Plan-Z-Transfer-Authorized-20261104.md). Package/worktree preflight passed: the existing ZIP remains 56,534,127 bytes / `DC24A048...5E5A54`, the protected dirty-diff identity remains `44C77B0A...A8FE`, and no source/package/database changed. Exact template provenance was established from `Z:\CRM Test 22 Manual Acceptance Test Plan.docx` at 74,720 bytes / `58D09BB0...13F3B`, matching the permanent historical evidence.
+
+A clean editable thirteen-case Word draft was generated and structurally validated: all required IDs/fields, package identity, contact cards, Site/Alias, Order Boxes, workbook/order flow, Quick Lookup, carrier recording, GoGreen/scaling, zero-record/export formatting, Graph-ID display, and clearly deferred monthly draft/send/date-update cases are present. It contains no prior results/screenshots/media/comments/tracked changes; high-severity accessibility findings are zero. Full evidence is in [CRM-22.1-Word-Test-Plan-Z-Transfer-Blocked-20261104.md](CRM-22.1-Word-Test-Plan-Z-Transfer-Blocked-20261104.md).
+
+The configured bundled document runtime contains no LibreOffice renderer and Word COM is unavailable. Required page PNGs could not be produced, and the documented workflow forbids substituting installed desktop LibreOffice. Visual layout is therefore **NOT VERIFIED**. `Z:` identity/free space passed (`VM-Share`), but writability was not probed and no destination was created because the DOCX failed its visual-QA gate. DOCX/ZIP copy and destination verification are **NOT RUN**; USB was untouched. **STOP for Rob/Priya review. Do not transfer the unrendered draft, start maintenance investigation, rebuild/package, merge, deploy or release without separate authorization.**
+
+---
+
 ## November 4, 2026 — CRM 22.1 TEST CANDIDATE CREATED AND VERIFIED; NOT DELIVERED; STOP
 
 Executed only the explicitly started [conditional test-candidate packaging assignment](CRM-22.1-Test-Candidate-Packaging-Authorized-20261104.md). Gate 1 passed against the preserved actual dirty source, recorded 14/14 focused exporter result, 0-warning/0-error seed-disabled Release build, and 2/2 actual interactive checks at 96 DPI / 100% only. Gate 2 then freshly published the actual uncommitted working source as self-contained `win-x64` with `CRMIncludeOperationalSeed=false`, filtered it through the established clean package layout, and created one clearly labeled local nonproduction archive. Full evidence is in [CRM-22.1-Test-Candidate-Packaging-Completed-20261104.md](CRM-22.1-Test-Candidate-Packaging-Completed-20261104.md).
