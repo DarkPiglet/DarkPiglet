@@ -1,3 +1,11 @@
+## November 4, 2026 — WORD QA FOLLOW-UP BLOCKED; NO PERMITTED RENDERER; Z TRANSFER NOT RUN; STOP
+
+Executed only the explicitly started bounded Word-QA/Z-transfer follow-up authorized below. The candidate ZIP remains exact at 56,534,127 bytes / `DC24A048...5E5A54`; the existing thirteen-case DOCX remains exact at 41,415 bytes / `12A3AE71...EDFA1`; the protected dirty-diff identity remains `44C77B0A...A8FE`. Full evidence is in [CRM-22.1-Word-QA-Z-Transfer-Follow-Up-Blocked-20261104.md](CRM-22.1-Word-QA-Z-Transfer-Follow-Up-Blocked-20261104.md).
+
+Managed workspace bundle `26.1026.10807` still exposes bundled Python, Node and Poppler but no LibreOffice path; recursive inspection found zero bundled `soffice.exe` files. Desktop LibreOffice exists under `C:\Program Files\LibreOffice` but was not used because the applicable workflow expressly forbids it as a fallback. No permitted renderer exists, so page-by-page visual QA is **NOT RUN / NOT VERIFIED**. Per the authorization's conditional order, `Z:\docs transfer` existence/writability/name checks and all ZIP/DOCX copying are **NOT RUN**; neither `Z:` nor USB was touched. No source, DOCX, package, environment, permission or software change occurred. **STOP for Rob review; manual visual review or a permitted managed renderer requires a separate decision.**
+
+---
+
 ## November 4, 2026 — AUTHORIZED FOLLOW-UP: WORD VISUAL QA AND Z TRANSFER (NEXT CODEX START)
 
 Rob authorized a narrowly bounded follow-up to the blocked CRM 22.1 Word-plan/Z-transfer task. Read [the original authorization](CRM-22.1-Word-Test-Plan-Z-Transfer-Authorized-20261104.md) and [the blocked result](CRM-22.1-Word-Test-Plan-Z-Transfer-Blocked-20261104.md) first; preserve all completed work. This entry supersedes the prior STOP **only for this follow-up**, and does not assert execution has begun.
