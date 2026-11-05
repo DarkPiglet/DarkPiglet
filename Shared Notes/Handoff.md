@@ -1,3 +1,9 @@
+## November 4, 2026 — NEXT CRM 22.1 ASSIGNMENT: CONDITIONAL TEST-CANDIDATE PACKAGING; WAIT FOR ROB'S CODEX START
+
+Rob approved a two-gate, narrowly scoped [test-candidate packaging handoff](CRM-22.1-Test-Candidate-Packaging-Authorized-20261104.md) for his November 5 workplace testing. **Only after Rob explicitly starts Codex**, verify the preserved isolated Dev workspace and uncommitted source inventory, reconcile authorized changes and existing test/build/visual evidence, and resolve package provenance read-only. **If and only if readiness passes**, build/package from the verified working source with operational seed disabled, inspect archive contents, record SHA-256 and source identity, publish documentation-only results, and STOP. No unauthorized fixes, application-code commit/push, merge, production data, deployment or release. Rob's workplace acceptance remains outstanding. Publishing this authorization does not start execution.
+
+---
+
 ## November 4, 2026 — CRM 22.1 INTERACTIVE VISUAL VERIFICATION COMPLETE; 2/2 PASS; STOP
 
 Executed only the explicitly started [bounded interactive visual verification](CRM-22.1-Interactive-Visual-Verification-Authorized-20261104.md). Full evidence is in [CRM-22.1-Interactive-Visual-Verification-Completed-20261104.md](CRM-22.1-Interactive-Visual-Verification-Completed-20261104.md). In the actual isolated fictional CRM at 96 DPI / 100%, the combined zero-record export produced **No Records to Export**, named Recycle Agreement Table, stated that export did not occur and all selected existing workbooks remain unchanged, offered **OK only**, showed no success, created neither initially absent target, and later left two valid existing fictional targets byte-identical. Alias matched Street Address's fixed border, was readable/unclipped in normal view, writable in Edit Site, and Cancel + discard restored the original value without saving.
