@@ -1,3 +1,9 @@
+## November 4, 2026 — NEXT CRM 22.1 ASSIGNMENT: TWO INTERACTIVE UI CHECKS; WAIT FOR ROB'S CODEX START
+
+Rob approved a narrow follow-up documented in [CRM-22.1-Interactive-Visual-Verification-Authorized-20261104.md](CRM-22.1-Interactive-Visual-Verification-Authorized-20261104.md). Codex may, **only after Rob's standard explicit start**, use the existing Dev isolated Windows workspace and wholly fictional database to interactively verify (1) zero-record export warning with OK only and no workbook changes and (2) Alias border/readability/read-only/edit behavior. Actual interactive observation is required for PASS; otherwise report NOT VERIFIED. Preserve accumulated uncommitted changes; no source/test edits, operational data, packaging, merge or deployment. Documentation-only publication and STOP for Rob/Priya review. Rob will repeat visual acceptance at work. Earlier STOP records remain historical.
+
+---
+
 ## November 4, 2026 — CRM 22.1 ZERO-RECORD PROTECTION + FINAL MAINTENANCE COMPLETE; 14/14 PASS; STOP
 
 Executed only the explicitly started [CRM-22.1 zero-record/final-maintenance authorization](CRM-22.1-Zero-Record-Protection-and-Final-Maintenance-Authorized-20261104.md). Full evidence is in [CRM-22.1-Zero-Record-Protection-and-Final-Maintenance-Completed-20261104.md](CRM-22.1-Zero-Record-Protection-and-Final-Maintenance-Completed-20261104.md). Exporter and UI now non-overridably block the entire request before any selected workbook create/edit/stage/replace when any selected RC Log or Agreement query is empty; both empty directions, single/both selection, byte-identical existing-workbook preservation, no-new-file behavior and query-failure distinction are covered. New workbooks receive small bounded widths/wrapping/date/amount formatting while existing custom widths/styles/formulas remain preserved. Alias now matches the neighboring fixed border and readable read-only/edit states.
