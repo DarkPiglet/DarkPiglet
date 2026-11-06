@@ -1,3 +1,13 @@
+## November 5, 2026 — CRM 22.1 CONSOLIDATED INVESTIGATION COMPLETE; DOCUMENTATION PUBLISHED; STOP
+
+Executed only the November 5 consolidated A12/A02/A03/A09 investigation authorized below. The complete evidence, causes, bounded fictional reproductions, proposed minimum corrections, required tests, limitations, containment, and unchanged STOP are in [CRM-22.1-Nov05-Consolidated-Investigation-Completed-20261105.md](CRM-22.1-Nov05-Consolidated-Investigation-Completed-20261105.md).
+
+A12 is **FAIL** for date semantics: draft creation and draft reconciliation currently record a FollowUp Activity, update recipient `LastInteractionDate`, and write `MonthlyDraftFollowUp`; the reported crash/disappearance and actual workplace-row changes remain **NOT VERIFIED**. A02 is **FAIL** because clearing the nullable contact date blanks the control without updating its bound row. A03 is **FAIL** because blank email demotes but does not deactivate the stored method, allowing it to reload. A09 is **FAIL** for required byte identity even when repeated workbook generations are semantically identical. A08 was **NOT RUN**; prior PASS evidence was not rerun or broadened.
+
+No product source/test file, authoritative database, application build, existing test suite, workplace data, real mailbox, display scaling, package, deployment, or fix was changed or run under this documentation publication. **STOP for Rob/Priya review. No correction, source publication, packaging, deployment, or next phase is authorized.**
+
+---
+
 ## November 5, 2026 — NEXT AUTHORIZED CRM 22.1 CODEX ASSIGNMENT: CONSOLIDATED INVESTIGATION; WAIT FOR ROB'S START
 
 Rob authorized a broad, isolated investigation of workplace A12 crash/suspected date changes, A02 cleared contact date, A03 cleared email, and limited A09 export determinism. **Read [the complete current assignment](CRM-22.1-Nov05-Consolidated-Investigation-Authorized-20261105.md) before doing anything.** A08 scaling is separate and NOT authorized now. Codex may use verified disposable fictional DB copies and diagnostic tools, but no authoritative data changes, real email/Graph writes, Git operations, product source fixes, packaging or deployment. Report findings together and STOP for Rob/Priya review. This publication does not start Codex.
