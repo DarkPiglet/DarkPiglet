@@ -1,6 +1,6 @@
 # CRM 22.1 — Pre-commit closure plan (November 5, 2026)
 
-**Status: PLAN ONLY — WAIT FOR ROB'S EXPLICIT START.** This document records the one-at-a-time route to a reviewed source commit. It authorizes **no** Codex execution, source change, Git operation in the source workspace, packaging, transfer, deployment, operational-data access, or real email. Each gate ends with evidence and a STOP for Rob/Priya review; the next gate requires Rob's explicit approval. Do not treat this document's publication as authorization to execute it.
+**Status: GATE 1 AUTHORIZED BY ROB — EXECUTE ONLY WHEN ROB STARTS CODEX USING HIS NORMAL HANDOFF MESSAGE. GATES 2–6 REMAIN PLANNING ONLY.** This document records the one-at-a-time route to a reviewed source commit. Rob's November 5 verbal approval authorizes **only Gate 1**, a read-only source/diff reconciliation and its bounded documentation. It does **not** authorize source/test edits, source-workspace Git commands, builds, tests, GUI launches, package/transfer/deployment, operational-data access, or real email. Each gate ends with evidence and a STOP for Rob/Priya review; every later gate requires fresh explicit approval. Publication of this updated plan does not itself start Codex.
 
 ## Baseline — what is already known
 
@@ -13,7 +13,7 @@
 
 ### Gate 1 — Reconcile the real source and the complete dirty change set (READ-ONLY)
 
-Verify Windows Dev identity, the intended local CRM 22.1 workspace/branch/source baseline, and the full tracked/untracked inventory. Reconcile *all* accumulated pre-existing source/test edits plus the eleven November 5 changed paths against their authorized handoffs. Identify any unexpected changes, missing files, source drift, or dependency mismatch. Inspect diff and integrity; do not reset, discard, overwrite, stage, commit, or push anything. Produce a concise disposition for each change and STOP. **Pass:** one unambiguous reviewed source snapshot and authorized change inventory. **Fail/blocked:** document exact discrepancy and request direction.
+After Rob's normal explicit Codex start, read the **latest shared and CRM project handoffs**, this controlling plan, and the November 5 correction evidence. Verify Windows Dev identity, the intended local CRM 22.1 workspace/branch/source baseline, and the full tracked/untracked inventory using **read-only file-system and .git metadata inspection only**; do not execute Git/GitHub commands in the source workspace. Reconcile *all* accumulated pre-existing source/test edits plus the eleven November 5 changed paths against the authorized handoffs. Identify unexpected changes, missing files, source drift, dependencies and any unclear authorization. Record a concise per-file disposition with source paths, available hashes/identifiers and explicit PASS/FAIL/BLOCKED/NOT VERIFIED. **Do not build, run tests, launch the GUI, change display scaling or investigate unrelated defects.** Preserve all working files; do not reset, discard, overwrite, stage, commit, push, package or deploy. Confine any result writing to the existing authorized local handoff/report locations; no GitHub publication by Codex without separate authorization. End with a recommended smallest Gate 2 scope and **STOP**. **Pass:** one unambiguous reviewed source snapshot and authorized change inventory. **Fail/blocked:** document the exact discrepancy without guessing or broadening access.
 
 ### Gate 2 — Offline build and focused regression (separately approved execution)
 
@@ -42,7 +42,7 @@ When Rob approves the Gate 5 source inventory and the exact commit scope, use on
 
 ## Failure and handoff rule
 
-At each gate, document exact tested identity, evidence, failures/blockers, minimum safe follow-up and STOP. Investigate a failure within approved scope; continue unaffected work only if separately allowed and safe, and do not auto-escalate to new fixes. Keep one authoritative concise status in the established current handoffs, preserve history, and record oversized handoffs rather than reorganizing them without authorization. **Next action right now: wait for Rob to authorize Gate 1; nothing in this plan has been executed.**
+At each gate, document exact tested identity, evidence, failures/blockers, minimum safe follow-up and STOP. Investigate a failure within approved scope; continue unaffected work only if separately allowed and safe, and do not auto-escalate to new fixes. Keep one authoritative concise status in the established current handoffs, preserve history, and record oversized handoffs rather than reorganizing them without authorization. **Current authorization: Rob approved Gate 1 only. Run it only after his normal Codex start; no Gate 1 execution is claimed by this documentation update. After the read-only inventory report, STOP for Rob/Priya review. No Gate 2–6 execution without new authorization.**
 
 ## Source evidence
 
