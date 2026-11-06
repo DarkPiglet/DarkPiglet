@@ -1,3 +1,9 @@
+## November 5, 2026 — CRM 22.1 PRE-COMMIT CLOSURE PLAN RECORDED; WAIT FOR ROB'S GO
+
+Rob requested a one-gate-at-a-time review of what remains before committing CRM 22.1. The **planning-only** controlling document is [CRM-22.1-PreCommit-Closure-Plan-20261105.md](CRM-22.1-PreCommit-Closure-Plan-20261105.md): (1) read-only source/diff reconciliation; (2) offline build/focused regression; (3) fictional-data interactive acceptance; (4) separate A08 actual 100%/125%/150% scaling with screenshots and restore; (5) consolidated commit-readiness decision; (6) later explicitly approved source commit. A12 successful-send behavior and reported workplace crash remain unverified, and office-only email and release acceptance remain separate. The November 5 focused A12/A02/A03/A09 passes stand, with uncommitted working source. **No new tests, source changes, source Git, package, transfer, live email or deployment are authorized by publication. STOP; wait for Rob to approve Gate 1.**
+
+---
+
 ## November 5, 2026 — CRM 22.1 CORRECTIONS COMPLETE; FOCUSED PASS; SOURCE LOCAL ONLY; STOP
 
 Executed only [the authorized November 5 correction assignment](CRM-22.1-Nov05-Corrections-Authorized-20261105.md), sequentially A12 → A02 → A03 → A09, using fictional disposable data. Full evidence is in [CRM-22.1-Nov05-Corrections-Completed-20261105.md](CRM-22.1-Nov05-Corrections-Completed-20261105.md).
