@@ -1,3 +1,7 @@
+## November 5, 2026 — CRM 22.1 CORRECTION ASSIGNMENT AUTHORIZED; NOT YET EXECUTED
+
+Rob authorized the bounded correction assignment for A12, A02, A03, and A09, sequentially, with focused tests and continue-on-independent-failure rules. **Authoritative executable instruction:** [CRM-22.1-Nov05-Corrections-Authorized-20261105.md](CRM-22.1-Nov05-Corrections-Authorized-20261105.md). This supersedes the previous investigation-only STOP for the four specified corrections, but does not authorize Git operations by Codex, source publication, production data, live Graph/email, ZIP packaging, or deployment. Read the complete linked instruction before work. STOP if missing or conflicting. The completed investigation remains preserved separately. No correction has been verified or executed by this documentation publication.
+
 ## November 5, 2026 — CRM 22.1 CONSOLIDATED INVESTIGATION COMPLETE; DOCUMENTATION PUBLISHED; STOP
 
 Executed only the November 5 consolidated A12/A02/A03/A09 investigation authorized below. The complete evidence, causes, bounded fictional reproductions, proposed minimum corrections, required tests, limitations, containment, and unchanged STOP are in [CRM-22.1-Nov05-Consolidated-Investigation-Completed-20261105.md](CRM-22.1-Nov05-Consolidated-Investigation-Completed-20261105.md).
