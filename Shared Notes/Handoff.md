@@ -1,3 +1,13 @@
+## November 5, 2026 — CURRENT NEXT CODEX START: Gate 2 only; Gate 1 completed
+
+**Status and scope decision.** Rob accepted Gate 1 read-only reconciliation as complete and authorized preparing the tightly scoped next gate. Gate 1 reconciled **18 tracked modified + five untracked** files (22 source/test and one local handoff), zero staged/missing/unexplained, and all eleven November 5 correction hashes matched. The existing detailed Gate 1 file-level findings were published and verified **identically in both handoffs**. The older "NEXT CODEX START: publish existing Gate 1 results only" entry is **HISTORICAL and superseded**; do not execute it again. The ONLY next Codex task, when Rob uses his normal start message, is **Gate 2 offline build/regression**. These document updates do not start Codex. Gates 3–6 remain unapproved.
+
+**Gate 2 controlling boundaries.** Follow the new CURRENT CONTROL section of `DarkPiglet/DarkPiglet:main/Shared Notes/CRM-22.1-PreCommit-Closure-Plan-20261105.md`. Confirm Dev and isolated 22.1 workspace, branch and HEAD; verify hashes for all 22 source/test files against Gate 1 (local handoff separately), no unexpected source drift, before invoking .NET. Perform only offline CRM and GoGreen **Release builds** with `CRMIncludeOperationalSeed=false`, and established fictional-fixture automated A12/A02/A03/A09 plus directly affected regression/smoke tests. Existing assets or a verified cache-only offline restore; no network fetch or dependency change. Record actual commands/results/errors/warnings, test case counts, paths and binary/TRX hashes, and pre/post-source integrity. No code/test/project edits or source Git commands, source commits/push, operational database/seed contents, Graph/email, GUI/Excel interaction, scaling, package/ZIP, merge, release or deployment. On failure, document and propose only; safe unaffected Gate 2 tests may continue, **never auto-fix**.
+
+**Reporting and stop.** Publish complete sanitized PASS/FAIL/BLOCKED/NOT RUN results to **both** handoffs with documentation-only commits and optimistic-concurrency protection. Independently refetch and verify; on failure report HANDOFF PUBLICATION BLOCKED and deliver full sanitized findings in Codex final response. Treat office crash, successful-send date behavior, GUI Excel and A08 DPI as NOT VERIFIED, not resolved by Gate 2. **STOP for Rob/Priya review after Gate 2**; no later gate is authorized. Gate 1 documentation commit identities: shared `fdcd19449bc6c0980a4708bfca46094041a46a4a`, CRM `59603e9bb7c4ff6ba291c876b8ea94c47ea89baa`.
+
+---
+
 ## November 5, 2026 — GATE 1 RESULTS PUBLISHED; READ-ONLY RECONCILIATION PASS; STOP
 
 **Published outcome of the already completed Gate 1 only.** At 2026-11-05 22:49 PST, under `desktop-uh85jc0\dev`, the existing local report `C:\Users\Dev\CRM-22.1-Maintenance-20261103\artifacts\CRM22.1-PreCommit-Gate1-20261105\CRM-22.1-PreCommit-Gate1-ReadOnly-Reconciliation-20261105.md` was read in full and verified as 12,629 bytes, SHA-256 `7F9508B8F315AFA415B97968AE3FE18837DF647A01B23D738F0020D0EA1980EA`. This entry publishes that report's sanitized findings; Gate 1 was not rerun.
@@ -39,7 +49,7 @@
 ---
 
 
-## November 5, 2026 — NEXT CODEX START: publish existing Gate 1 results only
+## November 5, 2026 — HISTORICAL (COMPLETED): publish existing Gate 1 results only
 
 **Rob's latest authorization:** Codex has already finished the CRM 22.1 Gate 1 read-only reconciliation locally. Rob directs that its existing findings now be published to the authoritative GitHub handoffs for Priya's review. **Rob's next normal Codex start message activates ONLY this documentation-publication assignment.** This supersedes the older Gate 1 re-execution instruction; older Gate 1 start/STOP language appearing farther down these historical records is not current authority. It does not authorize Gate 2 or another investigation. Publishing these instructions is preparation only, not execution by Codex.
 
@@ -60,7 +70,7 @@
 
 **Publication gate:** After each task, verify both remote documents actually contain the new result; report their exact links and commit IDs when available. If either cannot be updated or independently verified, state **HANDOFF PUBLICATION BLOCKED**, provide the complete sanitized result in Codex's final reply for direct review, and STOP—never claim GitHub publication succeeded. This reporting step is mandatory even if work itself was blocked, and never authorizes continuing to another gate.
 
-**Current Gate 1:** Rob reports Codex has finished the read-only Gate 1 task, but its local findings are **NOT YET AVAILABLE/VERIFIED IN THESE PUBLISHED HANDOFFS**. On the next specifically instructed Codex reporting step, **publish the existing Gate 1 results without repeating the source investigation**, verify both handoffs, then STOP for Rob/Priya review. Do not infer Gate 1 PASS or start Gate 2 from Rob's completion notification.
+**Historical Gate 1 status before publication (superseded):** Rob reports Codex has finished the read-only Gate 1 task, but its local findings are **NOT YET AVAILABLE/VERIFIED IN THESE PUBLISHED HANDOFFS**. On the next specifically instructed Codex reporting step, **publish the existing Gate 1 results without repeating the source investigation**, verify both handoffs, then STOP for Rob/Priya review. Do not infer Gate 1 PASS or start Gate 2 from Rob's completion notification.
 
 ---
 
