@@ -1,3 +1,9 @@
+## November 5, 2026 — NEXT AUTHORIZED CRM 22.1 CODEX ASSIGNMENT: CONSOLIDATED INVESTIGATION; WAIT FOR ROB'S START
+
+Rob authorized a broad, isolated investigation of workplace A12 crash/suspected date changes, A02 cleared contact date, A03 cleared email, and limited A09 export determinism. **Read [the complete current assignment](CRM-22.1-Nov05-Consolidated-Investigation-Authorized-20261105.md) before doing anything.** A08 scaling is separate and NOT authorized now. Codex may use verified disposable fictional DB copies and diagnostic tools, but no authoritative data changes, real email/Graph writes, Git operations, product source fixes, packaging or deployment. Report findings together and STOP for Rob/Priya review. This publication does not start Codex.
+
+---
+
 ## November 4, 2026 — WORD QA FOLLOW-UP BLOCKED; NO PERMITTED RENDERER; Z TRANSFER NOT RUN; STOP
 
 Executed only the explicitly started bounded Word-QA/Z-transfer follow-up authorized below. The candidate ZIP remains exact at 56,534,127 bytes / `DC24A048...5E5A54`; the existing thirteen-case DOCX remains exact at 41,415 bytes / `12A3AE71...EDFA1`; the protected dirty-diff identity remains `44C77B0A...A8FE`. Full evidence is in [CRM-22.1-Word-QA-Z-Transfer-Follow-Up-Blocked-20261104.md](CRM-22.1-Word-QA-Z-Transfer-Follow-Up-Blocked-20261104.md).
