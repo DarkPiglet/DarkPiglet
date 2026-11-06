@@ -1,3 +1,42 @@
+## November 5, 2026 — GATE 2 OFFLINE BUILD/REGRESSION PASS; 60/60; STOP
+
+**Authorized scope / identity.** Executed only the current Gate 2 offline build and noninteractive regression assignment at 2026-11-05 23:39 PST under `desktop-uh85jc0\dev` in `C:\Users\Dev\CRM-22.1-Maintenance-20261103`. Direct read-only metadata confirmed branch `codex/crm-22-1-maintenance-20261103`, local HEAD `a7437f0c3070fa50a0189850e83ea9b6715f54cd`, and unchanged index SHA-256 `33A5E1BD2DC0F83981D4838A71D1019BB3BFD9281061B7386F1B86BED4A42BB5`. All 22 Gate 1 source/test paths matched their published SHA-256 values before execution (**22/22 PASS**); index/HEAD comparison remained 287/287 with zero staged/missing paths, and the expected inventory remained 18 tracked modified plus five nonignored untracked. No Git command ran in the protected source workspace.
+
+**Offline builds — final PASS.** SDK was `.NET 10.0.401`; all commands used existing assets, `--no-restore`, telemetry/first-run suppression, and `CRMIncludeOperationalSeed=false`. Exact final build commands were:
+
+- `dotnet build .\CRM.vbproj --configuration Release --no-restore --no-incremental -p:CRMIncludeOperationalSeed=false` — exit 0, **0 warnings / 0 errors**.
+- `dotnet build .\GoGreenMonthlyDrafts\src\GoGreenMonthlyDrafts\GoGreenMonthlyDrafts.vbproj --configuration Release --no-restore --no-incremental -p:CRMIncludeOperationalSeed=false` — exit 0, **0 warnings / 0 errors**.
+
+The first sandboxed CRM build attempt exited 1 before compilation with 96 access-denied cleanup warnings and `MSB3491` when writing authorized `bin/obj` output. The same command was transparently rerun once in the approved Dev write context and passed as above; the initial environmental failure is retained, not hidden. Final Release identities:
+
+| Output | SHA-256 |
+|---|---|
+| `bin\Release\net10.0-windows\CRM.exe` | `4EAC3A6CDF55CF8C36DFDD31B5561711CBCC61809D8F28D4C3CE99FA12AB8CCF` |
+| `bin\Release\net10.0-windows\CRM.dll` | `0DAB1226B5E65551F7CC563D252FB554ACB0880C1B8D2CB568EBB22089EC89D1` |
+| `GoGreenMonthlyDrafts\src\GoGreenMonthlyDrafts\bin\Release\net10.0-windows\GoGreenMonthlyDrafts.exe` | `4B64E5C7AC14DA83FCF30D6A91BBC4C1922F95D044F03A404A2E740D125DEFEB` |
+| `GoGreenMonthlyDrafts\src\GoGreenMonthlyDrafts\bin\Release\net10.0-windows\GoGreenMonthlyDrafts.dll` | `83E9FC044FA68D49B0103768E8FAA53912A2624FACBE44167B7632217EFE3766` |
+
+**Automated tests — PASS, 60 passed / 0 failed / 0 skipped.** A12 and the first CRM class used `dotnet test <project> --configuration Release --no-restore -p:CRMIncludeOperationalSeed=false`; later CRM classes added `--no-build`. Every run used its listed fully-qualified class filter, TRX logger and the contained root `artifacts\CRM22.1-PreCommit-Gate2-20261105\Run-01`.
+
+| Required group / class filter | Result | TRX SHA-256 |
+|---|---:|---|
+| A12 `DraftBatchProcessorTests` | 6/6 | `23CA310665659F389BEBC7EF4B69B7FEB188B1D09D94700E894F906033E45554` |
+| A02/A03 `CRM.Ui.Tests.ContactSaveRegressionTests` | 6/6 | `01F9E5BDCCFA7AB8640D09C7207F492AA9B4471C053EE10FA02F29AED444A65D` |
+| A02 `CRM.Ui.Tests.ContactCardsEditorTests` | 10/10 | `FBCFFE1E76C5C9011B4ED0F1466F7CF98BA4BE4785D4285DC2EA43E41E10179F` |
+| A02 `CRM.Ui.Tests.SiteInformationEditorTests` | 7/7 | `3C20BB8185A24212CF779F3BB4A0A4CFE83D21F099B6229FBDF8C9BF4356524E` |
+| A09 `CRM.Ui.Tests.CRMWorkbookExporterTests` | 15/15 | `F072D9EBDB8342EE504553328F260B78D70BB30BC3691B6855A4546A3A34546C` |
+| Regression `CRM.Ui.Tests.MaintenanceRegressionTests` | 4/4 | `2747881474CF4D4014B784E72647CF7E86A012EA62079ACC7D83F7EF3B9A5CB2` |
+| Regression `CRM.Ui.Tests.ExcelOrderFormGeneratorTests` | 12/12 | `4E53972D2B1D093ED6897DF406E303E386DD39F8FD7B55812950FFDBA055F049` |
+
+This covers A12 draft processing; A02 nullable date and Site/Contact editors; A03 email clear/reactivation/contact-save; A09 deterministic/zero-record export; safe order replacement; and FedEx/UPS dialog regression. `Form1SmokeTests` was **NOT RUN / intentionally excluded** because it launches the CRM GUI through FlaUI and the current Gate 2 control explicitly forbids GUI/interactive runs; its required affected areas were covered by the listed noninteractive component/regression classes. No broad suite was claimed.
+
+**Fixture/output containment — PASS.** CRM and GoGreen Release outputs contain zero SQLite files. The CRM test output contained only the already documented wholly fictional 421,888-byte schema-24 fixture, verified as SHA-256 `0EFDF5FD7BEB5E445CE344D2A5460153E6F3EE0F956A723CC7E330D5837C43A7`, plus its disposable 0-byte WAL and 32,768-byte SHM. This differs from the protected 1,617,920-byte operational seed, whose contents were not opened or hashed; only unchanged size/mtime metadata was checked. Tests used disposable fictional SQLite/workbook outputs only. No network restore/fetch, dependency change, real settings, operational/customer database, credentials, Graph/email, live service, GUI/Excel interaction, display scaling, package or ZIP occurred.
+
+**Postflight / decision.** All 22 source/test hashes still match Gate 1 (**22/22 PASS**); branch/HEAD/index identity is unchanged; nonignored untracked inventory remains exactly the same five paths; local protected `HANDOFF.md` remained SHA-256 `77E93058A35842BEE534E1746DED4204FD2C06EC39BAFB59D1CAF61C75BA9E8A`; and no CRM, GoGreen, testhost or vstest process remains. Gate 2 is **PASS at the authorized offline/noninteractive scope**. The workplace crash, successful-send-only date behavior, actual GUI/Excel acceptance and A08 real 100%/125%/150% scaling remain **NOT VERIFIED**. No source/test edit, source staging/commit/push, merge, package, release, deployment, Gate 3–6 or corrective follow-up is authorized. **STOP for Rob/Priya review.**
+
+---
+
+
 ## November 5, 2026 — CURRENT NEXT CODEX START: Gate 2 only; Gate 1 completed
 
 **Status and scope decision.** Rob accepted Gate 1 read-only reconciliation as complete and authorized preparing the tightly scoped next gate. Gate 1 reconciled **18 tracked modified + five untracked** files (22 source/test and one local handoff), zero staged/missing/unexplained, and all eleven November 5 correction hashes matched. The existing detailed Gate 1 file-level findings were published and verified **identically in both handoffs**. The older "NEXT CODEX START: publish existing Gate 1 results only" entry is **HISTORICAL and superseded**; do not execute it again. The ONLY next Codex task, when Rob uses his normal start message, is **Gate 2 offline build/regression**. These document updates do not start Codex. Gates 3–6 remain unapproved.
