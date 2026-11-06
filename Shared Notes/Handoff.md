@@ -1,3 +1,13 @@
+## November 5, 2026 — CRM 22.1 CORRECTIONS COMPLETE; FOCUSED PASS; SOURCE LOCAL ONLY; STOP
+
+Executed only [the authorized November 5 correction assignment](CRM-22.1-Nov05-Corrections-Authorized-20261105.md), sequentially A12 → A02 → A03 → A09, using fictional disposable data. Full evidence is in [CRM-22.1-Nov05-Corrections-Completed-20261105.md](CRM-22.1-Nov05-Corrections-Completed-20261105.md).
+
+A12 **6/6 PASS** after removing draft-create/reconciliation operational FollowUp/date writes; successful-send simulation is **NOT RUN** because no verified send boundary exists, and the reported crash remains **NOT VERIFIED**. A02 final **2/2 PASS** for load suppression, mouse/keyboard clear, cancel/replacement, SQL `NULL`, and reload. A03 final **4/4 PASS** for deactivate/history preservation, normalized reactivation, replacement, shared-email warnings, phones, audit, cancel, and rollback. A09 dedicated determinism **1/1 PASS** and complete exporter class **15/15 PASS** with exact repeated bytes/SHA plus values/formulas/tables/styles/unrelated content and recovery.
+
+Only eleven authorized source/test paths changed in `C:\Users\Dev\CRM-22.1-Maintenance-20261103`; all remain unstaged, uncommitted, and unpushed with the preserved pre-existing worktree. No protected source-workspace Git command, production/workplace database, backup/USB/`Z:`/recovery, real mailbox/live Graph/send, package, deployment, or source publication occurred. No broad suite, standalone production build, actual Excel/application acceptance, workplace validation, or Friday ZIP was run. The project handoff was 665,480 bytes and this shared handoff was 505,631 bytes before the additive updates; neither was reorganized. **Do not package yet. STOP for Rob/Priya review; no follow-on phase is authorized.**
+
+---
+
 ## November 5, 2026 — CRM 22.1 CORRECTION ASSIGNMENT AUTHORIZED; NOT YET EXECUTED
 
 Rob authorized the bounded correction assignment for A12, A02, A03, and A09, sequentially, with focused tests and continue-on-independent-failure rules. **Authoritative executable instruction:** [CRM-22.1-Nov05-Corrections-Authorized-20261105.md](CRM-22.1-Nov05-Corrections-Authorized-20261105.md). This supersedes the previous investigation-only STOP for the four specified corrections, but does not authorize Git operations by Codex, source publication, production data, live Graph/email, ZIP packaging, or deployment. Read the complete linked instruction before work. STOP if missing or conflicting. The completed investigation remains preserved separately. No correction has been verified or executed by this documentation publication.
