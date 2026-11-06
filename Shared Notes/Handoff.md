@@ -1,3 +1,44 @@
+## November 5, 2026 — GATE 1 RESULTS PUBLISHED; READ-ONLY RECONCILIATION PASS; STOP
+
+**Published outcome of the already completed Gate 1 only.** At 2026-11-05 22:49 PST, under `desktop-uh85jc0\dev`, the existing local report `C:\Users\Dev\CRM-22.1-Maintenance-20261103\artifacts\CRM22.1-PreCommit-Gate1-20261105\CRM-22.1-PreCommit-Gate1-ReadOnly-Reconciliation-20261105.md` was read in full and verified as 12,629 bytes, SHA-256 `7F9508B8F315AFA415B97968AE3FE18837DF647A01B23D738F0020D0EA1980EA`. This entry publishes that report's sanitized findings; Gate 1 was not rerun.
+
+**Identity and snapshot — PASS.** The protected source workspace was `C:\Users\Dev\CRM-22.1-Maintenance-20261103`, branch metadata `codex/crm-22-1-maintenance-20261103`, local HEAD/index base `a7437f0c3070fa50a0189850e83ea9b6715f54cd`, and application/test source baseline `dd223e6f228c236c85b89b1246b587b2a0d1f5c2`. Index v2 contained 287 entries and had SHA-256 `33A5E1BD2DC0F83981D4838A71D1019BB3BFD9281061B7386F1B86BED4A42BB5`; direct metadata parsing and isolated-tree comparison established 287/287 identical index/HEAD paths and blobs, hence **zero staged changes**. No Git command was run in the protected source workspace.
+
+**Complete Gate 1 inventory — PASS.** The snapshot contained exactly **18 tracked modified, five nonignored untracked, zero staged, zero missing, and zero unexplained** paths. All 23 were ordinary non-reparse files. The set exactly reconciled the published November 4 twelve-tracked/five-untracked checkpoint, the eleven November 5 correction paths (three earlier tracked overlaps, three earlier untracked overlaps, five newly modified tracked paths), and local handoff documentation. All eleven November 5 source/test hashes matched the correction completion report; the two untouched preexisting untracked hashes matched the November 4 evidence.
+
+| Path | Gate 1 state and disposition | SHA-256 |
+|---|---|---|
+| `CRM.vbproj` | Tracked; authorized pre-November 5 maintenance seed-exclusion switch. | `6C23B6C05033F7CC265C1940E9CE4DCC4E55E3F86ABB650DFAD9FDA565922AA1` |
+| `Data/CRMWorkbookExporter.vb` | Tracked; authorized zero-record/readability plus November 5 A09 deterministic serialization; correction hash matched. | `A2AA25ADB489F7F3EC19123F5D3390220FB771DE51040EE7392D8354D37B7C35` |
+| `ExcelOrderFormGenerator.vb` | Tracked; authorized safe same-volume replacement/recovery behavior. | `122BCDF2F3B7877077CD346AFFBDF376BDA14FA4A3CDB12DDB7546F31C9ACE0A` |
+| `FedExCompletionDialogs.vb` | Tracked; authorized shared FedEx/UPS completion-dialog behavior. | `7B4FAD7A401A367750183749B8632B505B827E603734CD4FB4D7B25721BF6A73` |
+| `Form1.Designer.vb` | Tracked; authorized Site Information, Contact cards, and Alias presentation work. | `10335A58CF0FE7CADD9F99179BD8C74024F113461F45B3EDDADAD502F5E210D3` |
+| `Form1.vb` | Tracked; authorized maintenance, Site/Contact integration, targeted contact/order/lookup corrections, and zero-record handling. | `53350D2FE35D07BC31ACE44A5EE14FB02011FB7EB2E572477C4BB990E23F49B4` |
+| `GoGreenMonthlyDrafts/src/GoGreenMonthlyDrafts/MainForm.Designer.vb` | Tracked; authorized prior layout plus November 5 A12 explanatory text; correction hash matched. | `CC6B6513035F992D6FF40FF35853CEDA4ADF9D95031A39FD26C3E6BFC8D85A86` |
+| `tests/CRM.Data.Tests/CRM.Data.Tests.vbproj` | Tracked; authorized test seed-exclusion condition. | `856587563B8E0A5E1A5822EDF3D101F1CE2348EC8632D7E422846FC89A853555` |
+| `tests/CRM.Ui.Tests/AcceptanceFeedbackTests.cs` | Tracked; authorized Stage 1/2 editor/card acceptance assertions. | `87F56C72BBC05DF62897F8AB2350A62F8B3D2638C200ECC8338C886B9926DF60` |
+| `tests/CRM.Ui.Tests/CRMWorkbookExporterTests.cs` | Tracked; authorized exporter/zero-record plus November 5 A09 determinism coverage; correction hash matched. | `26DBD1B8353847E553861BD1A035B52999273268A695615EA20E6696FC12ACC3` |
+| `tests/CRM.Ui.Tests/ExcelOrderFormGeneratorTests.cs` | Tracked; authorized replacement/failure-preservation regression. | `0EA027FE72F5BF18B5D1AADA1E422D439887D49AE5E4AE88133F1F9BB28CAA42` |
+| `tests/CRM.Ui.Tests/Form1SmokeTests.cs` | Tracked; authorized Contact cards/full-form smoke and targeted-correction verification. | `F6ED3EF55746F8D2157BC0817B7AF0AED65A4E103E80AA9C682D5D83EC0358E5` |
+| `ContactCardsEditor.vb` | Untracked; authorized Stage 2/targeted editor plus November 5 A02 date notification; correction hash matched. | `9CDC82F19E1E4AC52BCEF1A2D197DE1D4E83FDD323620B37688257056608DA9D` |
+| `SiteInformationEditor.vb` | Untracked; authorized Stage 1 editor plus November 5 A02 nullable-picker correction; correction hash matched. | `2595A138167C7C00DD8DF13B623E708438A8B2BB86DC9FF6B52035CD13F20DAE` |
+| `tests/CRM.Ui.Tests/ContactCardsEditorTests.cs` | Untracked; authorized Stage 2/targeted plus November 5 A02 clear/cancel/replacement coverage; correction hash matched. | `3280DA3F57E3CA7F7650A231523C1BBD0F271DC102904BA5269508F51E268930` |
+| `tests/CRM.Ui.Tests/MaintenanceRegressionTests.cs` | Untracked; authorized maintenance/targeted regression; unchanged from November 4. | `C68818BFFD5C9E44FAEF0A93BD5AD20172C0F1B12961F6CC06F8907AC24D685F` |
+| `tests/CRM.Ui.Tests/SiteInformationEditorTests.cs` | Untracked; authorized Stage 1 editor coverage; unchanged from November 4. | `8BC25B8D0713A6F0B0FE4A352ADE78A667DA87E9E5DBD21C94A42969EF423EEF` |
+| `Data/CRMRepository.vb` | Tracked; November 5 A03 only; correction hash matched. | `4232A01ECB3790715922DA13AA0B4EB252709BBD1A3E62E42A82413138D54DE5` |
+| `GoGreenMonthlyDrafts/src/GoGreenMonthlyDrafts/DraftBatchProcessor.vb` | Tracked; November 5 A12 only; correction hash matched. | `1FE46403F62BBC7D5E281694196C89FAF89CE91CC21FFC69E63F97C1D0DD7C8C` |
+| `GoGreenMonthlyDrafts/src/GoGreenMonthlyDrafts/MainForm.vb` | Tracked; November 5 A12 only; correction hash matched. | `8209D697F797C0CFC1EAF3349B09EBA42130842C35F0AB892A562DC6B6230476` |
+| `GoGreenMonthlyDrafts/tests/GoGreenMonthlyDrafts.Tests/DraftBatchProcessorTests.vb` | Tracked; November 5 A12 only; correction hash matched. | `F114567FC8D3D080A4942C60ADA332FF2DC05E869EEE757745B61E4DDBB4887D` |
+| `tests/CRM.Ui.Tests/ContactSaveRegressionTests.cs` | Tracked; November 5 A02/A03 only; correction hash matched. | `169CF61A160ACC5D2F8952EF92BA1A5466C2DC73BAEA205E2D3D6F6A295BC88C` |
+| `HANDOFF.md` | Tracked local documentation; authorized investigation/correction/Gate 1 entries. | Pre-Gate-1-entry: `542929CEF4A9569C2987908FD80D2AAFB0172F4CC2A15A360DFE41019B2A5D7F` |
+
+**Dependencies and protected-data exclusions.** Package references were unchanged: CRM remained `net10.0-windows` with ClosedXML 0.105.0, Microsoft.Data.Sqlite 10.0.9, SQLitePCLRaw 3.0.3 and Newtonsoft.Json 13.0.3; GoGreen retained those applicable versions plus Microsoft.Identity.Client 4.84.2. Only the already authorized project seed-copy conditions differed. `Database/CRM_seed.sqlite` was **not opened or hashed**; only its safe index/filesystem metadata was compared (1,617,920 bytes and identical mtime). No operational database/seed content, credentials, tokens, settings, logs, user records, backups, recovery, USB, `Z:`, real mailbox, or live Graph data was accessed.
+
+**Limits / STOP.** Gate 1 performed no build, restore, test, GUI/application/Excel launch, display-scaling change, source/test edit, staging, source commit/push, package, transfer, merge, deployment, or Gates 2–6. The November 5 focused results were not rerun. Corrected executable/build identity, broad regression, interactive A12/A02/A03/A09 behavior, successful-send boundary, reported workplace crash, actual Excel interaction, and A08 125%/150% remain **NOT VERIFIED or NOT RUN** as classified in the report. Only this bounded documentation publication is authorized. Gate 1 result is **PASS at read-only inventory scope**; Gate 2 is **not authorized**. STOP for Rob/Priya review.
+
+---
+
+
 ## November 5, 2026 — NEXT CODEX START: publish existing Gate 1 results only
 
 **Rob's latest authorization:** Codex has already finished the CRM 22.1 Gate 1 read-only reconciliation locally. Rob directs that its existing findings now be published to the authoritative GitHub handoffs for Priya's review. **Rob's next normal Codex start message activates ONLY this documentation-publication assignment.** This supersedes the older Gate 1 re-execution instruction; older Gate 1 start/STOP language appearing farther down these historical records is not current authority. It does not authorize Gate 2 or another investigation. Publishing these instructions is preparation only, not execution by Codex.
