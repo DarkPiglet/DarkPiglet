@@ -1,3 +1,11 @@
+## November 7, 2026 — NEXT CODEX START: ISOLATED SOURCE PREPARATION ONLY
+
+Rob approved a bounded preparation of a NEW isolated CRM 22.1 checkout from a freshly verified remote maintenance branch, transferring ONLY the 22 previously SHA-verified application/test files. The protected original and the remote handoff history must remain untouched. Recheck remote HEAD and all original hashes; permit necessary isolated clone/copy and read-only verification; expected differences are precisely the 22 allowlisted files. On identity/hash mismatch STOP without substitution. No build, regression, source commit/push, merge, release or automatic follow-on. A12 live email remains deferred/not verified; GoGreen 150% FAIL/deferred; plugin/mockup excluded.
+
+**Controlling assignment:** `DarkPiglet/DarkPiglet:main/Shared Notes/CRM-22.1-Isolated-Source-Preparation-Authorized-20261107.md` published at shared commit `1b59c701f9e14dd7c380ab99f8bc47f0605b86bb`. Activated ONLY by Rob's normal Codex start instruction. Publish sanitized results to BOTH handoffs and independently refetch. STOP for Rob/Priya review.
+
+---
+
 ## November 7, 2026 — SOURCE LINEAGE / WORK PRESERVATION INVENTORY COMPLETE; READ-ONLY PASS; STOP
 
 **Authority and identity.** Executed only `CRM-22.1-Source-Lineage-Inventory-Authorized-20261107.md` under verified non-elevated `DESKTOP-UH85JC0\Dev`. The exact protected checkout is `C:\Users\Dev\CRM-22.1-Maintenance-20261103`, branch `codex/crm-22-1-maintenance-20261103`, local HEAD `a7437f0c3070fa50a0189850e83ea9b6715f54cd`, remote `https://github.com/DarkPiglet/Weekly-Logger-Search-Application.git`, upstream `origin/codex/crm-22-1-maintenance-20261103`. All protected-checkout Git commands used `GIT_OPTIONAL_LOCKS=0` and were non-mutating. No fetch, pull, switch, stash, reset, clean, merge, rebase, source edit, build, test or launch occurred.
