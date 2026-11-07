@@ -1,3 +1,9 @@
+## November 7, 2026 — NEXT CODEX START: ISOLATED RELEASE BUILDS AND FOCUSED REGRESSION
+
+Rob approved a normal verification assignment following isolated source preparation 22/22 PASS. **Controlling assignment:** `DarkPiglet/DarkPiglet:main/Shared Notes/CRM-22.1-Release-Build-Focused-Regression-Authorized-20261107.md` published at shared commit `c24de4e2c3c40d34ebf49a172c7b99725049f32c`. After Rob's normal start instruction, verify the isolated checkout once, run appropriate Release builds and focused automated regression checks, investigate failures, continue independent safe tests and publish one consolidated report to BOTH handoffs with refetch verification. No source edit/commit, merge, real email, operational database, package or deployment. A12 workplace email remains DEFERRED/NOT VERIFIED; GoGreen 150% FAIL/deferred; broad regression not yet passed. STOP for Rob/Priya review.
+
+---
+
 ## November 7, 2026 — ISOLATED SOURCE PREPARATION COMPLETE; 22/22 PASS; STOP
 
 **Authority, identity and destination.** Executed only `CRM-22.1-Isolated-Source-Preparation-Authorized-20261107.md` under verified non-elevated `DESKTOP-UH85JC0\Dev`. Protected original remained `C:\Users\Dev\CRM-22.1-Maintenance-20261103`, branch `codex/crm-22-1-maintenance-20261103`, HEAD `a7437f0c3070fa50a0189850e83ea9b6715f54cd`. A previously unoccupied isolated destination was created at `C:\Users\Dev\.codex\visualizations\2026\11\06\01a1aee6-36eb-7600-a8fb-defcdb163b51\CRM22.1-Isolated-Source-Preparation-20261107-Run-01`.
