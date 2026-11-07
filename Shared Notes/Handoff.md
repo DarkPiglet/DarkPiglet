@@ -1,3 +1,13 @@
+## November 6, 2026 — Z: EXPORT VISIBILITY DIAGNOSTIC PASS; STOP
+
+**Scope and session.** Executed only the visibility diagnostic authorized by shared commit `a13730bcb761bfec442ec1e666d0be4ee30819c9` and CRM commit `e5242e4e213827bd26e321258d8ce915bccde20c`. Effective identity was `desktop-uh85jc0\dev`; working directory was `C:\Users\Dev\.codex\visualizations\2026\11\06\01a1aee6-36eb-7600-a8fb-defcdb163b51\authority-crm-20261106-r5-verify`. PowerShell was Core `7.6.5`, `ConsoleHost` `7.6.5`, session ID `1`, user-interactive `True`, and non-elevated. An initial command stopped before any `Z:` check with PowerShell `WriteError: Cannot overwrite variable PSEdition because it is read-only or constant.` The corrected command then completed without a path-check error.
+
+**Result — PASS.** `Get-PSDrive -Name Z` reported a present `FileSystem` provider with root `Z:\`, blank `DisplayRoot`, and description `VM-Share`. `Test-Path -LiteralPath 'Z:\Export'` returned `True`; `Test-Path -LiteralPath 'Z:\export'` returned `False`, both with no error. This verifies that the provider resolves those case variants differently in this Codex session and explains the prior lowercase-path absence. It does not establish the underlying VM-share implementation cause. The drive root and folder were not enumerated; no file was listed, opened, hashed, copied or queried.
+
+**Boundary and smallest proposed remedy.** Export reconciliation and Round 1/Round 2 were not resumed. No mapping, mount, ACL, ownership, identity, security, privilege or setting was changed; no test, GUI, build, source edit, export, application network-share access, Graph/email action or protected-workspace Git command occurred. For Rob's separate decision, the smallest proposed remedy is to use the exact verified spelling `Z:\Export` in any later explicitly authorized run. No remedy was applied. STOP for Rob/Priya review.
+
+---
+
 ## November 6, 2026 — APPROVED NEXT CODEX START: Z: EXPORT VISIBILITY DIAGNOSTIC ONLY
 
 **Authorization and precedence.** Rob approved publication of this narrowly scoped diagnostic after the targeted export continuation stopped. His next normal Codex start authorizes ONLY this diagnostic, not another export reconciliation or Round 2. This instruction supersedes the prior approved start ONLY for the next run; preserve all historical evidence and acceptance criteria. Publishing is not execution.
