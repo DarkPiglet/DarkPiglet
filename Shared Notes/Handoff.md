@@ -1,3 +1,13 @@
+## November 6, 2026 — TARGETED EXPORT CONTINUATION BLOCKED; ROUND 2 NOT RUN; STOP
+
+**Authorized attempt.** Executed only the targeted read-only continuation authorized by shared commit `820503dd22090318d0520efce27bad0249f2ef87` and CRM commit `66172fff6b54aecf4c3f052ab22c5973e709921d`, under verified identity `desktop-uh85jc0\dev`. Access was limited to the reported three evidence copies at `Z:\export`; no other `Z:` path, alternate drive/share, production, USB, recovery location or live system was accessed.
+
+**Blocking evidence.** `Get-ChildItem -LiteralPath 'Z:\export' -Force` failed because the exact directory does not exist in that execution context. A scope-limited mapping check found a filesystem `Z:` provider described as `VM-Share`; `net use Z:` reported no network connection. The drive root was not enumerated and no broader search was attempted. Therefore none of the three reported copies was opened, and exact filenames, sizes, SHA-256 hashes, provenance, SQLite snapshot/WAL/SHM consistency, workbook fields/dates/amounts/preservation, expected populations, active-state counts, distinct-key multiplicity and the 11-row residual are **BLOCKED / NOT VERIFIED**. This does not contradict the preserved prior pair analysis; it records only present evidence availability.
+
+**Gate and boundaries.** No required read-only reconciliation case newly passed, so the mandatory gate failed and Round 2 was **NOT RUN**. No source/test edit, protected-workspace Git command, build, GUI/Excel launch, export, database/workbook read or write, Graph/email action, fix, package, merge or deployment occurred. Smallest next step: Rob/Priya must make exactly the authorized `Z:\export` directory and its three copies visible to the same approved Dev execution context, then issue or preserve explicit authorization for a later start. STOP for Rob/Priya review; no further gate or fix is authorized.
+
+---
+
 ## November 6, 2026 — APPROVED NEXT CODEX START: TARGETED EXPORT CONTINUATION
 
 Rob approved this final reviewed continuation. His next normal Codex start authorizes ONLY the work below; publication does not execute it. This supersedes the earlier export start instruction, not historical findings or unrelated gates.
