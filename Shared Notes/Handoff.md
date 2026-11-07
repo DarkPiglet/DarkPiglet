@@ -10,6 +10,8 @@
 
 **Follow-up recheck — remove avoidable fixture approval blocker and contain temp files:** `Test22SyntheticFixture` uses `Path.GetTempPath()`, so the controlling assignment now requires `TEMP`/`TMP` under the disposable test root before test processes launch. It also explicitly authorizes Codex to create and verify a compatible wholly fictional fixture in that isolated workspace without seeking routine additional approval; test invariants, provenance, no-operational-seed access, and no tracked source/test edits remain mandatory. This is documentation clarification only; it does not claim any regression execution.
 
+**Further instruction recheck — bounded reading of handoff journals:** Both current handoffs are larger than a concise start brief. Codex shall read the full controlling assignment and the current/top status and authorization entries in each handoff, then consult older entries only when necessary to resolve a relevant dependency or discrepancy. Avoid a full historical reread or archive reorganization as part of regression. This prevents needless setup churn while preserving every historical record. The assignment remains not started and application source unchanged.
+
 **Controlling revised assignment:** [CRM 22.1 safe offline regression](https://github.com/DarkPiglet/DarkPiglet/blob/main/Shared%20Notes/CRM-22.1-Full-Regression-Offline-Exclusions-Authorized-20261107.md). This heading is authorization ONLY, not a completed regression or release-ready claim.
 
 ---
