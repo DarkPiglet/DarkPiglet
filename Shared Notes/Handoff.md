@@ -1,3 +1,11 @@
+## November 7, 2026 — NEXT CODEX START: READ-ONLY REMAINING-WORK ASSESSMENT ONLY
+
+Rob postponed the UI plugin proposals, November 6 layout mockup, and standalone UX prototype; retain existing CRM UI and pursue only independently approved minor UI corrections after functional review. The live mass-email test is deferred, **NOT VERIFIED**, with site/contact date-update risk still open. No merge or release is authorized.
+
+**Controlling new assignment:** [CRM-22.1-Remaining-Work-Assessment-Authorized-20261107.md](CRM-22.1-Remaining-Work-Assessment-Authorized-20261107.md), published in shared main commit `4dfdcb54f8e8a6da7b052853f9748132174d131a`. This supersedes the November 6 mockup STOP **only** to authorize a bounded read-only status assessment after Rob's normal Codex start instruction; it does not authorize UI implementation or any other execution. Preserve previous PASS scope, FAIL/deferred statuses, and the user-observed 328 local changes / 43 incoming commits without touching the affected repository. Read handoffs and already available evidence; no Git commands, code/test/database changes, build, launch, email, merge, release or publication. Report confirmed outstanding work, authorization and evidence, blockers, and the smallest next task; **STOP for Rob/Priya review**.
+
+---
+
 ## November 6, 2026 — UI LAYOUT MEASUREMENT / MOCKUP COMPLETE; DESIGN-ONLY PASS; STOP
 
 **Execution and evidence.** Completed only the design assignment in `CRM-22.1-UI-Layout-Mockup-Authorized-20261106.md` from shared commit `89798e8271137b4f991e30a94763b018dd83264d`, under verified non-elevated `DESKTOP-UH85JC0\Dev`. Read-only inspection covered `Form1.Designer.vb`, `Form1.vb`, `ContactCardsEditor.vb`, `SiteInformationEditor.vb`, and the existing sanitized Contact/Site component renders at 100%, 125% and 150%. No Git command ran in the protected CRM workspace. A live CRM launch was unnecessary; runtime DPI/layout behavior remains **NOT VERIFIED** rather than inferred.
