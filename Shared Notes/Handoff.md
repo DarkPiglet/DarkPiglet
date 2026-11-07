@@ -1,3 +1,13 @@
+## November 6, 2026 — CONTROLLING CORRECTION: EXCEL VISUAL ACCEPTED; AGREEMENT GUI ONLY
+
+Rob explicitly confirms he personally opened both existing exported Excel workbooks and inspected their appearance: data present, no anomalous display, and any preferred column widths/row heights are optional user adjustments. Combined with previously accepted automated structural/content/reconciliation PASS, **Excel visual acceptance is PASS (Rob-observed, not Codex-observed)**. No repeat Excel opening, inspection, hash, or reconciliation is authorized. Record the distinction between Rob's visual evidence and Codex's prior automated evidence.
+
+This correction **supersedes the earlier November 6 two-check next-start assignment solely in its Excel portion**. The only remaining authorized Codex execution, after Rob's normal start instruction, is the **populated CRM 22.1 Agreement GUI read-only inspection**. Verify the actual CRM 22.1 executable, non-elevated Dev account and an already-approved isolated fictional populated test database before launch. Check display of agreement values, dates, statuses, company/site association, selection between records, controls, clipping, navigation and open/close behavior; no editing or saving. If no approved safe populated fixture or verified executable is available, report **BLOCKED / NOT RUN**; do not access or create operational/customer/USB/recovery database copies or modify application settings to improvise. Record actual evidence, PASS/FAIL/BLOCKED, coverage limits and sanitized findings. Do not infer PASS from Rob's brief prior use.
+
+Preserve Round 1 and Round 2 PASS. A12 Graph/email stays ON HOLD / NOT VERIFIED. GoGreen 150% scaling remains FAIL; retest deferred until after planned control adjustments. No Excel work, source/test changes, database writes, builds, email, Graph, scaling, control edits, protected-workspace Git, package, merge, release or deployment. Publish sanitized results to both current handoffs via documentation-only operations outside protected workspace and STOP for Rob/Priya review. No automatic follow-on.
+
+---
+
 ## November 6, 2026 — ROB AUTHORIZES TWO BOUNDED VISUAL ACCEPTANCE CHECKS; NEXT CODEX START ONLY
 
 Rob accepted the completed Round 1 read-only export reconciliation and Round 2 documentation closeout as PASS. Rob explicitly authorized publication of this next, separate Codex assignment, to be executed only after his normal start instruction. Use Medium reasoning effort. This entry supersedes the previous STOP only for the two checks below; do not reopen completed rounds.
