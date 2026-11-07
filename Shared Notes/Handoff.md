@@ -1,3 +1,11 @@
+## November 7, 2026 — NEXT CODEX START: SOURCE LINEAGE / WORK PRESERVATION INVENTORY ONLY
+
+Rob reviewed Codex's completed read-only remaining-work assessment. The assessment was delivered in Codex chat, not published, as the prior assignment prohibited handoff writes. Its bounded findings: A02/A03/A09 and fictional Agreement GUI PASS in tested scope; A12 workplace email/send-success date behavior DEFERRED / NOT VERIFIED, workplace crash cause NOT VERIFIED; GoGreen 150% FAIL/deferred; full regression NOT COMPLETE; source publication NOT READY. Previously approved minor UI fixes are reportedly in local accumulated changes; plugin/mockup/prototype proposals remain excluded. The observed 328 changed files / 43 incoming commits are NOT established as the same checkout as the recorded CRM maintenance workspace.
+
+**Controlling next assignment:** [CRM-22.1-Source-Lineage-Inventory-Authorized-20261107.md](CRM-22.1-Source-Lineage-Inventory-Authorized-20261107.md), published shared commit `88ad6b38cb541d4fcdbc53f9df26e25d93e7fdac`. Rob's normal Codex start instruction activates ONLY bounded read-only source/branch/work preservation inventory, with expressly permitted non-mutating Git inspection, and sanitized documentation-only publication to BOTH handoffs with refetch verification. No pull/fetch/switch/stash/merge, source write/commit, test, build, launch, email, release or automatic follow-on. Live mass email remains deferred and need not be performed before a later separately authorized merge, but cannot be called PASS. STOP for Rob/Priya review.
+
+---
+
 ## November 7, 2026 — NEXT CODEX START: READ-ONLY REMAINING-WORK ASSESSMENT ONLY
 
 Rob postponed the UI plugin proposals, November 6 layout mockup, and standalone UX prototype; retain existing CRM UI and pursue only independently approved minor UI corrections after functional review. The live mass-email test is deferred, **NOT VERIFIED**, with site/contact date-update risk still open. No merge or release is authorized.
