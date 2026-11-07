@@ -1,3 +1,11 @@
+## November 6, 2026 — CURRENT NEXT CODEX START: AGREEMENT GUI FICTIONAL-FIXTURE UNBLOCK (REVISED)
+
+Rob authorized one bounded attempt to unblock and run the CRM 22.1 populated Agreement GUI inspection. **Controlling assignment:** [CRM-22.1-Agreement-GUI-Fixture-Unblock-Authorized-20261106.md](CRM-22.1-Agreement-GUI-Fixture-Unblock-Authorized-20261106.md), revised and independently verified at commit `b50675a8f689f911dbb83ed85ebd00dee752c169`. This supersedes the earlier November 6 fixture-related STOP **only for this single assignment**, and supersedes the initial copy-by-default wording in the first publication of this assignment. Codex must read the named document as currently published, along with applicable handoffs and AGENTS.md, after Rob's normal start instruction. No separate special instruction is needed.
+
+First verify actual existence, fictional provenance, population, identity and safe isolation of a previously documented schema-24 fixture. **Prefer reuse** only if no original database, sidecar, settings or shared profile can be modified by CRM startup, use or shutdown; never test that assumption by launching against the original. Otherwise make a disposable copy within the already-approved isolated output area; add only minimal synthetic Agreement records if needed. If safety cannot be established, STOP BLOCKED. Run one bounded read-only Agreement GUI check, report findings and STOP for Rob/Priya review. No production/operational/USB/Z:/recovery data, source changes, unrelated tests, Excel work, email/Graph, build, release or deployment. Prior Excel and Round 1/2 PASS remain accepted; A12 on hold and GoGreen 150% FAIL/deferred.
+
+---
+
 ## November 6, 2026 — AGREEMENT GUI BLOCKED / NOT RUN; SAFE POPULATED FIXTURE NOT VERIFIED; STOP
 
 **Authorized preflight.** Executed only the GUI-only preflight controlled by shared commit `3debcb7e2a6c227af8f4ae83dce268957edb2b19` and CRM commit `ed89d61cff89720259d0b61a04f6c74b35318da4`, under verified non-elevated identity `desktop-uh85jc0\dev`. Exact CRM 22.1 executable identity **PASS**: `C:\Users\Dev\CRM-22.1-Maintenance-20261103\bin\Release\net10.0-windows\CRM.exe`, 162,304 bytes, SHA-256 `4EAC3A6CDF55CF8C36DFDD31B5561711CBCC61809D8F28D4C3CE99FA12AB8CCF`, FileVersion `10.0.0.17`, ProductVersion `10.0.0-test.17+a7437f0c3070fa50a0189850e83ea9b6715f54cd`.
