@@ -1,0 +1,35 @@
+# CRM 22.1 — two UI test-assertion corrections and automatic focused verification (November 7, 2026)
+
+**Status: ROB-APPROVED FOR NEXT CODEX ASSIGNMENT; NOT YET EXECUTED.** Rob authorized preparation, repeated review, and publication so that on returning home he need only give his normal explicit Codex start instruction. Publication does not itself start Codex. This assignment supersedes only the STOP on *correcting these two test assertions* in the November 7 completed diagnostic; all other STOP/deferred boundaries remain.
+
+## Verified diagnostic basis
+The completed November 7 diagnostic in the authoritative shared handoff reproduced both failures against `DarkPiglet/Weekly-Logger-Search-Application` merged `master` commit `d0ee8bd5747c2250524e5f7d53a3ed4408fb9954`, with high-confidence test/setup classifications and no product source changes:
+1. `AcceptanceFeedbackTests.RevisedEditorLayoutContainsSearchContactDateAndSiteNotes` at `AcceptanceFeedbackTests.cs:537`: parent `Form1` never shown, so effective `contactCards.Visible` is false despite the contact-card control's own visible state being true; legacy grid is intentionally hidden.
+2. `AcceptanceFeedbackTests.CompanySelectionUsesAccordionAndLoadsFirstSiteWhileSearchKeepsMatchesExpanded` at `AcceptanceFeedbackTests.cs:644`: three rows (268px) fit inside a 753px grid; WinForms clamps `FirstDisplayedScrollingRowIndex` to zero even when company header is row one. Requested company expansion and first-site selection were correct.
+These are diagnostic findings, not proof that amended tests pass. No production defect or application fix is authorized.
+
+## Identity, environment, and safety gates
+- Read this complete assignment, current authoritative `DarkPiglet/DarkPiglet/Shared Notes/Handoff.md`, CRM-local `HANDOFF.md`, and applicable `AGENTS.md`; read relevant older diagnostic entries, not unrelated archives. Confirm exact repository, baseline, test names and latest remote refs. Use **only** pinned `d0ee8bd5747c2250524e5f7d53a3ed4408fb9954` in a fresh isolated non-elevated `DESKTOP-UH85JC0\Dev` disposable checkout. If remote master differs, report but do not silently rebase; if pinned identity or isolation cannot be verified, STOP.
+- Do not modify the original checkout or merged master. Edit only the smallest necessary assertions/setup in the two named test methods (and directly necessary local test helpers only if justified and explicitly documented). No production source, UI, schema, migration, fixtures, packages, dependencies or configuration changes.
+- Exclude `Database/CRM_seed.sqlite` entirely (do not read, hash, copy or materialize). Use **only** the previously approved wholly fictional schema-24 SQLite fixture (421,888 bytes, SHA-256 `0EFDF5FD7BEB5E445CE344D2A5460153E6F3EE0F956A723CC7E330D5837C43A7`); verify its identity before use. No operational/customer/profile/USB/Z:/recovery databases, secrets, or real account access. Build with `CRMIncludeOperationalSeed=false`. Use short disposable TEMP/TMP and isolated application data/settings/logs; no Graph/M365 login, email/draft/send, carrier action, geocoding, or external transaction.
+- No source commit/push/merge, deployment, release or packaging. Documentation-only handoff commits/pushes are permitted as required by `AGENTS.md`, with independent remote verification. If the documentation publication is blocked, report it truthfully rather than expanding permissions or working around safety controls.
+
+## Authorized implementation
+**Test A — contact-card lifecycle.** In `RevisedEditorLayoutContainsSearchContactDateAndSiteNotes`, establish the same valid shown-form/STA UI lifecycle used by neighboring layout tests before checking effective visibility; use appropriate UI message processing and deterministic disposal. Keep meaningful assertions that contact cards are visible *when the form is shown* and legacy grid remains hidden. Do not replace the check with an unconditional pass, inspect only an internal flag instead of user-visible state, or change production controls.
+
+**Test B — company-selection viewport.** In `CompanySelectionUsesAccordionAndLoadsFirstSiteWhileSearchKeepsMatchesExpanded`, retain checks for requested company expansion, first-site selection and company header displayed. Do not demand first-displayed row index 1 when all rows fit. If retaining an exact first-displayed-row assertion, first establish a truly scrollable viewport with a safe fictional fixture and verify its preconditions; otherwise assert the meaningful non-scrollable behavior without weakening selection/expansion coverage. Do not change production scroll logic to satisfy the test.
+
+## Automatic execution and evidence
+After both minimal edits, **without requiring a second Rob instruction**, perform one contained Release build of the affected UI test project and run:
+1. Each corrected named test independently.
+2. Existing `SaveActionsRemainVisibleAndGridsFillTheirAllocatedSpace` shown-form theory cases.
+3. Existing `AgreementsOverviewReturnClearsSearchAndFocusesCompanyFirstSite` test.
+If a test name is missing, renamed or cannot be safely selected, document NOT RUN and reason; do not substitute unrelated tests silently. Preserve exact commands, environment, counts, TRX/results, failures and hashes where practical. Recheck source diff, assertions, fixture integrity and isolated workspace state after tests.
+
+If a build/test fails, diagnose and document the precise failure. A single bounded correction-and-retest is allowed **only for a directly caused mistake in one of the two authorized test edits**, without weakening intended assertions; otherwise mark FAIL/BLOCKED and continue other independent safe checks. Do not loop indefinitely or broaden scope. Do not rerun full regression. Preserve two schema/fixture-incompatible cases, other seed-dependent tests, manual UI, workplace crash and real email/shipping checks as DEFERRED/NOT VERIFIED. Do not claim full regression PASS or release readiness.
+
+## Reporting and STOP
+Report exact identity/workspace, edited paths and diff, why each assertion is still meaningful, build and per-test PASS/FAIL/NOT RUN, evidence paths/hashes, any retest and unresolved limitations. Update CRM-local and authoritative shared current handoffs with factual results, publish documentation-only as permitted, and independently refetch/verify published status; if one is blocked, distinguish local from remote. **STOP for Rob/Priya review** after focused verification. Do not automatically commit/push source, merge, deploy, release or start a further assignment.
+
+## Pre-publication repeated review
+Reviewed for incorrect root-cause assumptions, assertion weakening, fixture safety, test lifecycle, exact baseline, identity drift, minimum source scope, automatic test execution, bounded failure handling, independent safe continuation, documentation-only publication and explicit STOP. Rechecked that no further material tightening or loosening is needed. This review does not claim execution or test PASS.
