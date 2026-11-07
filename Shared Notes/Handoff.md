@@ -12,6 +12,8 @@
 
 **Further instruction recheck — bounded reading of handoff journals:** Both current handoffs are larger than a concise start brief. Codex shall read the full controlling assignment and the current/top status and authorization entries in each handoff, then consult older entries only when necessary to resolve a relevant dependency or discrepancy. Avoid a full historical reread or archive reorganization as part of regression. This prevents needless setup churn while preserving every historical record. The assignment remains not started and application source unchanged.
 
+**Additional review — tested-revision drift and seed-assertion accuracy:** If `master` advances beyond the authorized merge, Codex may continue against the **exact pinned commit** when source identity and isolation remain verifiable; it must not switch silently to newer source. `CRMDatabaseTests.PackagedSeed_StartsCleanAtCurrentSchema` asserts specific operational records and counts, so substituting fictional data cannot make that original assertion PASS. Record it as NOT TESTED/DEFERRED, while still executing independent safe tests. These clarifications avoid unnecessary global stops and false regression PASS claims; no regression execution is claimed.
+
 **Controlling revised assignment:** [CRM 22.1 safe offline regression](https://github.com/DarkPiglet/DarkPiglet/blob/main/Shared%20Notes/CRM-22.1-Full-Regression-Offline-Exclusions-Authorized-20261107.md). This heading is authorization ONLY, not a completed regression or release-ready claim.
 
 ---
