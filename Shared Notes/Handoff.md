@@ -1,3 +1,21 @@
+## November 6, 2026 — APPROVED NEXT CODEX START: Z: EXPORT VISIBILITY DIAGNOSTIC ONLY
+
+**Authorization and precedence.** Rob approved publication of this narrowly scoped diagnostic after the targeted export continuation stopped. His next normal Codex start authorizes ONLY this diagnostic, not another export reconciliation or Round 2. This instruction supersedes the prior approved start ONLY for the next run; preserve all historical evidence and acceptance criteria. Publishing is not execution.
+
+**Confirmed interactive evidence.** Rob ran a normal (non-elevated) Windows PowerShell session under `desktop-uh85jc0\dev`; `whoami` confirmed that identity, and `Test-Path -LiteralPath 'Z:\Export'` returned `True`. Codex's previous execution under the same reported account found `Z:\export` absent; Z: was described as filesystem provider `VM-Share`, while `net use Z:` reported no network connection. Capital E alone is not a sufficient explanation on a normal case-insensitive Windows filesystem. These results establish a context-dependent visibility discrepancy, not its cause.
+
+**Read-only steps, in order.**
+1. Confirm the effective identity with `whoami`; report current working directory, PowerShell version/host and whether the process is elevated, without exposing unrelated environment variables or secrets.
+2. Check only drive/provider metadata for Z: (e.g., `Get-PSDrive -Name Z`), and the exact folder's visibility using `Test-Path -LiteralPath 'Z:\Export'` and `Test-Path -LiteralPath 'Z:\export'`. Record errors precisely. Do not enumerate the Z: root, other directories, or file contents.
+3. If the folder is visible, report visibility PASS and STOP; do not inspect files or resume reconciliation. If absent, compare only available non-invasive process/session and filesystem-provider metadata to explain why the interactive Dev PowerShell sees it and Codex does not. Distinguish verified facts from hypotheses; do not assume drive mapping, case, permissions or sandbox isolation without evidence.
+4. Report PASS (visible), BLOCKED (not visible, cause verified or unknown), and the smallest proposed remedy for Rob's separate decision. Never apply a remedy during this run.
+
+**Hard boundaries.** No opening, listing, hashing, copying or querying the Excel workbooks or SQLite file; no CRM tests, Round 1 or Round 2, GUI/Excel, build, source edits, exports, production/USB/other Z: paths, network or Graph/email. Do not change drive mappings, mount points, ACLs, ownership, security, identities, settings or privileges; no elevation, workarounds, or broader searches. No Git commands inside protected source workspace. Preserve prior findings and all outstanding NOT VERIFIED/FAIL statuses.
+
+**Publication and STOP.** Publish a concise sanitized diagnostic result to BOTH current handoffs only, using documentation-only GitHub commits outside the protected workspace, with fresh blob-SHA checks and remote refetch verification. Do not publish customer data, file contents or secrets. If publication is blocked, report it explicitly. STOP for Rob/Priya review; do not automatically resume export reconciliation.
+
+---
+
 ## November 6, 2026 — TARGETED EXPORT CONTINUATION BLOCKED; ROUND 2 NOT RUN; STOP
 
 **Authorized attempt.** Executed only the targeted read-only continuation authorized by shared commit `820503dd22090318d0520efce27bad0249f2ef87` and CRM commit `66172fff6b54aecf4c3f052ab22c5973e709921d`, under verified identity `desktop-uh85jc0\dev`. Access was limited to the reported three evidence copies at `Z:\export`; no other `Z:` path, alternate drive/share, production, USB, recovery location or live system was accessed.
