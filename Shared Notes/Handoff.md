@@ -14,6 +14,8 @@
 
 **Additional review — tested-revision drift and seed-assertion accuracy:** If `master` advances beyond the authorized merge, Codex may continue against the **exact pinned commit** when source identity and isolation remain verifiable; it must not switch silently to newer source. `CRMDatabaseTests.PackagedSeed_StartsCleanAtCurrentSchema` asserts specific operational records and counts, so substituting fictional data cannot make that original assertion PASS. Record it as NOT TESTED/DEFERRED, while still executing independent safe tests. These clarifications avoid unnecessary global stops and false regression PASS claims; no regression execution is claimed.
 
+**Coverage recheck — verified additional seed readers and safe disposable packaging:** Source inspection identified operational-seed references in `CRMWorkbookExporterTests`, `CRMUpgradeTests`, `CRMMaintenanceTests` and `DeploymentSafetyTests` in addition to previously noted cases. The revised assignment requires case-by-case isolation before running them. It permits purely fictional, disposable ZIP/packaging/migration regression under the contained root where the original test invariant remains valid, but never a real publish, distribution or deployment. `DeploymentSafetyTests` normally copies tracked seed even with `-SkipPublish`; without safe substitution those cases remain NOT TESTED/BLOCKED. No tests were executed during this review.
+
 **Controlling revised assignment:** [CRM 22.1 safe offline regression](https://github.com/DarkPiglet/DarkPiglet/blob/main/Shared%20Notes/CRM-22.1-Full-Regression-Offline-Exclusions-Authorized-20261107.md). This heading is authorization ONLY, not a completed regression or release-ready claim.
 
 ---
