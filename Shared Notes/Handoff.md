@@ -16,6 +16,8 @@
 
 **Coverage recheck — verified additional seed readers and safe disposable packaging:** Source inspection identified operational-seed references in `CRMWorkbookExporterTests`, `CRMUpgradeTests`, `CRMMaintenanceTests` and `DeploymentSafetyTests` in addition to previously noted cases. The revised assignment requires case-by-case isolation before running them. It permits purely fictional, disposable ZIP/packaging/migration regression under the contained root where the original test invariant remains valid, but never a real publish, distribution or deployment. `DeploymentSafetyTests` normally copies tracked seed even with `-SkipPublish`; without safe substitution those cases remain NOT TESTED/BLOCKED. No tests were executed during this review.
 
+**Mock-versus-live network recheck:** Existing `GraphApiClientTests` use a verified fake HTTP handler and may serialize configured GoGreen mailbox identifiers as test data. That is permitted; the fake must not make real network calls, authenticate, or write mailbox content. Other live APIs, including the CRM Google geocoding client, must also be blocked or faked; no chargeable/request-producing external call is authorized. The controlling assignment now distinguishes these cases so safe mock coverage proceeds without actual external activity. This is instruction review, not test execution.
+
 **Controlling revised assignment:** [CRM 22.1 safe offline regression](https://github.com/DarkPiglet/DarkPiglet/blob/main/Shared%20Notes/CRM-22.1-Full-Regression-Offline-Exclusions-Authorized-20261107.md). This heading is authorization ONLY, not a completed regression or release-ready claim.
 
 ---
