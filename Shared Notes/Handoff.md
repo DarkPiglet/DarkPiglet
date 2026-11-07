@@ -1,3 +1,13 @@
+## November 7, 2026 — CRM 22.1 HISTORICAL RETROSPECTIVE COMPLETE; DOCUMENTATION ONLY; STOP
+
+Completed only `CRM-22.1-Historical-Retrospective-ReadOnly-Authorized-20261107.md`. Detailed report: [CRM-22.1-Historical-Retrospective-Report-20261107.md](CRM-22.1-Historical-Retrospective-Report-20261107.md). The report reconciles CRM 22.1, the canceled November 2 migration, GoGreen/bounded maintenance, November 5 investigation/corrections, current Git history, the permanent historical index/volumes, and the November 7 cleanup inventory. It distinguishes verified metadata, recorded results, inference, and UNKNOWN; preserves pre-repair failures; and does not promote focused PASS results to full regression or release readiness.
+
+Principal conclusions: precise early controls protected authority, data, diffs, write routes, evidence, and publication; repeated whole-process restarts, narrow approval loops, and global stops for local failures added avoidable cost. The authoritative record does not state why the November 2 migration was canceled, so the rationale remains **UNKNOWN**. Ten lean operating rules are proposed for later Rob/Priya consideration but are **not adopted**. All seven unique-history refs, 37 identified TRX/log artifacts, dirty protected workspaces, and permanent history remain preserved pending a separate exact archive/removal authorization.
+
+No application/test/database/package/deployment/branch/cleanup change occurred; no SQLite file was opened, copied, hashed, or queried; no build or test was run. Only this report and the two current handoffs were authorized for publication. **STOP for Rob/Priya review; no automatic next phase.**
+
+---
+
 ## November 7, 2026 — NEXT CODEX ASSIGNMENT: DETAILED READ-ONLY HISTORICAL RETROSPECTIVE; NOT STARTED
 
 Rob approved a comprehensive, staged, evidence-based investigation of CRM 22.1, canceled migration, GoGreen and associated branches, handoffs, decisions, tests and repeated errors. Controlling reviewed assignment: [CRM-22.1-Historical-Retrospective-ReadOnly-Authorized-20261107.md](https://github.com/DarkPiglet/DarkPiglet/blob/main/Shared%20Notes/CRM-22.1-Historical-Retrospective-ReadOnly-Authorized-20261107.md). Recommend **High thinking effort**; compare history and assess decisions by Rob, Priya and Codex fairly; distinguish facts from inference; propose a lean rule set and preservation priorities. Produce one detailed report, verify publication to both current handoffs, then STOP for review. **No deletion, cleanup, source changes, rule adoption, release or deployment.** Publication is not execution; Rob's normal Codex start instruction is required.
