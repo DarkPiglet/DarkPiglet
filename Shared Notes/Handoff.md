@@ -1,3 +1,11 @@
+## November 6, 2026 — FINAL PRESTART CLARIFICATION: GUI ONLY; EXCEL CLOSED; NO FIXTURE ASSUMPTION
+
+**Controlling precedence.** Rob expressly approved this clarification before starting Codex. This entry and the immediately preceding GUI-only correction control the next assignment. The older November 6 two-check instruction is historical and **must not be executed**: its Excel Check B, Excel preflight, workbook/hash operations, and independent two-check language are superseded. Both Excel workbooks have **PASS (Rob visual inspection plus prior automated evidence)** and are closed; do not reopen, hash, inspect, or retest them.
+
+**Only permitted execution.** After Rob gives his normal start instruction, run only the read-only populated CRM 22.1 Agreement GUI inspection described in the preceding controlling correction. Before any launch, establish the actual 22.1 executable identity, non-elevated Dev context, and the **actual existence and prior approval** of a safely isolated populated fictional-data fixture. Neither the fixture's existence nor its approval is presumed from a path, repository seed, prior report, or user operational copy. If not independently established, report **BLOCKED — SAFE POPULATED FIXTURE NOT VERIFIED**, do not launch or create/copy/alter a fixture, and STOP. Do not switch to operational, customer, USB, recovery or other unapproved data. No code, database, settings, Excel, email/Graph, scaling, control, build, Git-in-protected-workspace, package, release or deployment operations. Preserve Round 1/2 PASS and all deferred statuses. Publish only sanitized outcome documentation to both handoffs and STOP for Rob/Priya review.
+
+---
+
 ## November 6, 2026 — CONTROLLING CORRECTION: EXCEL VISUAL ACCEPTED; AGREEMENT GUI ONLY
 
 Rob explicitly confirms he personally opened both existing exported Excel workbooks and inspected their appearance: data present, no anomalous display, and any preferred column widths/row heights are optional user adjustments. Combined with previously accepted automated structural/content/reconciliation PASS, **Excel visual acceptance is PASS (Rob-observed, not Codex-observed)**. No repeat Excel opening, inspection, hash, or reconciliation is authorized. Record the distinction between Rob's visual evidence and Codex's prior automated evidence.
