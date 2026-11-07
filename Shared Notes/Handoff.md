@@ -1,3 +1,13 @@
+## November 7, 2026 — NEXT AUTHORIZED CODEX ASSIGNMENT: FULL OFFLINE REGRESSION; EMAIL AND CARRIER ACTIONS EXCLUDED
+
+**Rob authorizes** broad automated CRM 22.1 / GoGreen regression against exact merged `master` commit `d0ee8bd5747c2250524e5f7d53a3ed4408fb9954`, in a verified disposable isolated non-elevated Dev workspace, using only wholly fictional data. The 60/60 pre-merge and 6/6 post-merge focused results remain historical PASS, not a broad regression PASS. Rob's manual control-sizing/placement review is deferred; no UI/source changes, merge, deployment or release are authorized.
+
+**External prohibitions:** No email sending or connected-mailbox drafts (including mass email and box-order email); no FedEx/UPS API, authenticated carrier requests, label creation/printing, shipment creation, or pickup scheduling. Exercise local UI/workbooks and fictional tracking/confirmation input only when fully isolated. Safe passive/static carrier-link verification may be performed without operational action. Record excluded live external actions as **NOT TESTED/DEFERRED**, never as PASS and never as FAIL solely because they were intentionally excluded. In-scope local regressions must still be reported as FAIL. Diagnose/document real failures, continue unaffected safe tests, do not modify code, and STOP if safety cannot be proven.
+
+**Controlling assignment:** [CRM 22.1 full offline regression authorization](https://github.com/DarkPiglet/DarkPiglet/blob/main/Shared%20Notes/CRM-22.1-Full-Regression-Offline-Exclusions-Authorized-20261107.md). Inventory and execute the widest safe automated suite, keep truthful test-count/evidence/coverage reporting, preserve monthly email Last Interaction/history verification, workplace crash, live FedEx/UPS, manual UI and unperformed external checks as pending; publish verified documentation outcomes to BOTH current handoffs and STOP for Rob/Priya review. **This is authorization only, NOT Codex execution, a regression result or release readiness.**
+
+---
+
 ## November 7, 2026 — TESTHOST RECOVERY PASS; CRM 22.1 MERGED TO MASTER; POST-MERGE PASS; STOP
 
 **Authority / identity / refs.** Executed only the shared `CRM-22.1-Integration-Testhost-Recovery-Conditional-Merge-Authorized-20261107.md` assignment under verified non-elevated `DESKTOP-UH85JC0\Dev` in disposable isolated worktrees. Protected original remained untouched. Fresh GitHub evidence confirmed pinned source `09c378699729535614461c037c828f262647bad1`; maintenance head `ad05b1be978ccd2efe7fb0f77e7ba241acd0ba81` contained only two later `HANDOFF.md` commits; target `master` remained `6d7eb68be29c082596b9cbce555558b9b77530d0` and was the exact source ancestor/merge base.
