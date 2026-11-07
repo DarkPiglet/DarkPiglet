@@ -1,3 +1,9 @@
+## November 7, 2026 — NEXT CODEX ASSIGNMENT: DETAILED READ-ONLY HISTORICAL RETROSPECTIVE; NOT STARTED
+
+Rob approved a comprehensive, staged, evidence-based investigation of CRM 22.1, canceled migration, GoGreen and associated branches, handoffs, decisions, tests and repeated errors. Controlling reviewed assignment: [CRM-22.1-Historical-Retrospective-ReadOnly-Authorized-20261107.md](https://github.com/DarkPiglet/DarkPiglet/blob/main/Shared%20Notes/CRM-22.1-Historical-Retrospective-ReadOnly-Authorized-20261107.md). Recommend **High thinking effort**; compare history and assess decisions by Rob, Priya and Codex fairly; distinguish facts from inference; propose a lean rule set and preservation priorities. Produce one detailed report, verify publication to both current handoffs, then STOP for review. **No deletion, cleanup, source changes, rule adoption, release or deployment.** Publication is not execution; Rob's normal Codex start instruction is required.
+
+---
+
 ## November 7, 2026 — READ-ONLY CLEANUP INVENTORY COMPLETE; NO DELETION; STOP
 
 Executed only `CRM-22.1-Cleanup-Inventory-ReadOnly-Authorized-20261107.md` under verified non-elevated Dev identity. Full factual inventory and disposition matrix: [CRM-22.1-Cleanup-Inventory-Report-20261107.md](CRM-22.1-Cleanup-Inventory-Report-20261107.md). Live canonical source is CRM `master` at pre-report head `2ed9bf00b94cf4c97967abc871d60eac9869f92e`; changes after verified source merge `0aa39d212d5a6e1f387b4444b2dcab60855462d0` were handoff-only. A future UI working branch remains unchosen and requires Rob authorization.
