@@ -1,3 +1,9 @@
+## November 7, 2026 — NEXT AUTHORIZED CODEX ASSIGNMENT: TWO UI TESTS SOURCE PUBLICATION + POST-MERGE FOCUSED VERIFICATION; NOT STARTED
+
+Rob approved a single bounded follow-up to review, commit/push, safely integrate and verify **only** the previously corrected two CRM UI test assertions. Controlling document: [CRM-22.1-Two-UI-Tests-Publication-Authorized-20261107.md](https://github.com/DarkPiglet/DarkPiglet/blob/main/Shared%20Notes/CRM-22.1-Two-UI-Tests-Publication-Authorized-20261107.md). The exact isolated test-only source diff and intended target branch must be verified before any source publication; a disposable merge preview and five focused tests must PASS before merge, followed by post-merge verification. STOP on branch ambiguity, competing GoGreen changes, unexpected diff, failed gate or unsafe fixture. No production code, operational data, full regression, release or deployment. The separate GoGreen assignment is not activated or superseded. **Publication of these instructions is not execution; Rob's normal explicit Codex start instruction is required.** STOP after reporting.
+
+---
+
 ## November 7, 2026 — TWO UI TEST ASSERTIONS CORRECTED; FOCUSED 5/5 PASS; SOURCE UNPUBLISHED; STOP
 
 **Authority / baseline / containment.** Executed only `CRM-22.1-Two-UI-Tests-Correction-Authorized-20261107.md` under non-elevated `DESKTOP-UH85JC0\Dev` in fresh detached sparse checkout `CRM221TestFix1` at exact pinned merged commit `d0ee8bd5747c2250524e5f7d53a3ed4408fb9954`; live `master` remained exact. `Database/CRM_seed.sqlite` was excluded and never read/hashed/copied/materialized. The approved wholly fictional 421,888-byte schema-24 fixture was verified before/output-copy at SHA-256 `0EFDF5FD7BEB5E445CE344D2A5460153E6F3EE0F956A723CC7E330D5837C43A7`. Short disposable `TEMP`/`TMP`, isolated data/settings and Graph-disabled environment were used; build set `CRMIncludeOperationalSeed=false`.
