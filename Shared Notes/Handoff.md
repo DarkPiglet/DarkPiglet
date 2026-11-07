@@ -1,3 +1,9 @@
+## November 7, 2026 — NEXT CODEX DIAGNOSTIC: TWO CRM UI ASSERTIONS (PUBLICATION ONLY)
+
+Rob approved preparing a bounded, **read-only-to-source** diagnosis of the two unresolved CRM UI assertions from the broad safe regression. Controlling document: [CRM-22.1-Two-UI-Failures-Diagnostic-Authorized-20261107.md](CRM-22.1-Two-UI-Failures-Diagnostic-Authorized-20261107.md), published at shared commit `ad7ab526ae8be5491de2254b6461d59efb03a62c`. Investigate contact-card visibility and company-selection first displayed row (expected 1, observed 0) separately; distinguish product defects from test/setup/fixture/requirement mismatches. Do not change app or test source, rerun the full regression, access operational seed/data, or perform real external actions. Continue independent safe diagnosis after a blocked case. Publish evidence to both current handoffs and STOP for Rob/Priya decision before any fix. **Publication is not Codex execution; Rob's normal explicit start instruction is still required.** Preserve the two fixture-incompatible cases and all external/manual checks as deferred.
+
+---
+
 ## November 7, 2026 — BROAD SAFE OFFLINE REGRESSION EXECUTED; TWO LOCAL UI ASSERTIONS FAIL; FIXTURE-LIMITED CASES DEFERRED; STOP
 
 **Authority / source / containment.** Executed only the current broad-safe-regression assignment against exact merged `master` commit `d0ee8bd5747c2250524e5f7d53a3ed4408fb9954` under non-elevated `DESKTOP-UH85JC0\Dev` in a fresh detached sparse checkout. `Database/CRM_seed.sqlite` was omitted and never read, hashed, copied or materialized. Release builds used `CRMIncludeOperationalSeed=false`; `TEMP`, `TMP`, application data/settings/log paths and test results were confined to disposable roots; Graph was disabled. No tracked source/test edit, operational/customer/profile/USB/Z: data access, real email/Graph sign-in/mailbox write, carrier transaction, package, deployment or release occurred.
