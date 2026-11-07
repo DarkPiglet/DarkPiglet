@@ -1,3 +1,9 @@
+## November 6, 2026 — NEXT CODEX START AUTHORIZED: UI LAYOUT MOCKUP ONLY; NO IMPLEMENTATION
+
+Rob approved a new design-only assignment after the Agreement GUI PASS. The prior Codex run correctly stopped because no new task had been published. **Controlling instructions:** shared `Shared Notes/CRM-22.1-UI-Layout-Mockup-Authorized-20261106.md`, published at shared commit `7c1ee93b100fb3d750dd14b0ec55c64dfee2f34a`. This newer authorization supersedes the Agreement GUI no-follow-on STOP solely for this bounded mockup task, activated only by Rob's next normal Codex start instruction. Inspect actual Company/Site/Contact WinForms geometry, propose a practical minimum window and responsive restored/maximized layouts, recover vertical Contact display space and reduce card height, propose alias appearance correction, and deliver before/after Figma or contained static mockups for Rob's review. Preserve accepted tests. **No source changes, implementation, functional search changes, scaling test, real data, Git in protected workspace, build, email, package or deployment.** STOP for Rob/Priya review after reporting.
+
+---
+
 ## November 6, 2026 — AGREEMENT GUI FICTIONAL-FIXTURE UNBLOCK PASS; BOUNDED CHECK COMPLETE; STOP
 
 **Authorized execution and identity.** Executed only the revised bounded assignment in `CRM-22.1-Agreement-GUI-Fixture-Unblock-Authorized-20261106.md` from shared commit `627866ece07571d69ed40ba50549994b09a50ca3`, under verified non-elevated `DESKTOP-UH85JC0\Dev`. The exact existing CRM executable was `C:\Users\Dev\CRM-22.1-Maintenance-20261103\bin\Release\net10.0-windows\CRM.exe`, 162,304 bytes, SHA-256 `4EAC3A6CDF55CF8C36DFDD31B5561711CBCC61809D8F28D4C3CE99FA12AB8CCF`, ProductVersion `10.0.0-test.17+a7437f0c3070fa50a0189850e83ea9b6715f54cd`.
