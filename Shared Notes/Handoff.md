@@ -1,3 +1,9 @@
+## November 7, 2026 — NEXT CODEX ASSIGNMENT: READ-ONLY CLEANUP INVENTORY; NO DELETION; NOT STARTED
+
+Rob authorized investigation of potentially redundant CRM 22.1 / GoGreen branches, local workspaces, copies and files **before** his UI changes. Controlling instructions: [CRM-22.1-Cleanup-Inventory-ReadOnly-Authorized-20261107.md](https://github.com/DarkPiglet/DarkPiglet/blob/main/Shared%20Notes/CRM-22.1-Cleanup-Inventory-ReadOnly-Authorized-20261107.md). Inventory relevant metadata, identify unique/unmerged work and dependencies (especially unfinished GoGreen scaling), propose KEEP / REVIEW FOR ARCHIVE / CANDIDATE FOR DELETE / UNKNOWN with evidence, verify canonical source and handoff locations, publish report to both current handoffs and STOP for Rob/Priya discussion. No deletion, moving, pruning, archive changes, source changes, release or deployment. **This is publication, not execution; Rob's normal Codex start instruction is required.**
+
+---
+
 ## November 7, 2026 — TWO UI TEST CORRECTIONS PUBLISHED AND MERGED; PREVIEW/POST-MERGE 5/5 PASS; STOP
 
 **Authority / identity / target.** Executed only `CRM-22.1-Two-UI-Tests-Publication-Authorized-20261107.md` as non-elevated `DESKTOP-UH85JC0\Dev`. Exact source checkout `CRM221TestFix1` was clean except the already-authorized test diff at pinned parent `d0ee8bd5747c2250524e5f7d53a3ed4408fb9954`. Remote `master` had advanced to `4bd685ca11c9ffff0e1e0031ea47fe5f64f41f23` by exactly two expected `HANDOFF.md` commits; merge base remained `d0ee8bd...`, zero competing GoGreen/application/test paths existed, and authoritative merge history confirmed `master` as target. Operational `Database/CRM_seed.sqlite` remained excluded and was never read/hashed/copied/materialized.
