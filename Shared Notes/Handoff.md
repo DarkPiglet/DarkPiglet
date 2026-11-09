@@ -1,3 +1,17 @@
+## November 8, 2026 — NEXT CODEX ASSIGNMENT: CRM 22.1 CURRENT READINESS STATUS; READ-ONLY; NOT STARTED
+
+**Authorization:** Rob authorizes ONE read-only investigation to establish the exact current CRM 22.1 status and whether a workplace test ZIP can be prepared next. This entry supersedes the prior STOP only for this investigation. Publication does NOT start execution; Rob's normal Codex start instruction is required.
+
+**Scope:** Read both current authoritative handoffs and applicable AGENTS.md. Reconcile live CRM master/source HEAD, latest merged application and test changes, existing build/test evidence, the two UI-test corrections (merged as 0aa39d212d5a6e1f387b4444b2dcab60855462d0 with focused post-merge 5/5 PASS), and any subsequent work. Distinguish focused PASS from full regression or release readiness; identify unresolved critical blockers versus deferred workplace-only checks. Do not repeat already completed builds/tests or historical investigations. Determine READY, READY WITH LIMITATIONS, or NOT READY **for creating a workplace test candidate ZIP**, not unconditional production acceptance. Report evidence, exact refs, and the smallest next step.
+
+**Database planning context, NOT access authorization:** Rob reports that Z: contains CRM.sqlite copied from his existing daily application, current through Friday November 6. It is the intended source for a later authorized workplace test package only after compatibility, integrity, and safe-copy procedures are approved. During this investigation DO NOT open, read, hash, copy, migrate, modify, or package that SQLite file or access operational/customer/USB/Z:/recovery data. Its presence and compatibility remain USER-REPORTED / NOT VERIFIED; do not claim otherwise.
+
+**Acceptance context:** Routine Order Processing email functionality has previously worked; latest merged-version live use remains to be observed at work. GoGreen monthly live sending, follow-up-date behavior, and prior crash remain deferred/not verified until a controlled workplace run, potentially next month's mailing. Do not automatically treat deferred live email checks as blockers to preparing a test ZIP; assess material risk and required safeguards. Rob's own future Visual Studio UI spacing changes are outside this assignment. Do not authorize daily cutover, release, deployment, live email, or database replacement.
+
+**Prohibitions:** No code, test, database, configuration, handoff, branch, or repository modifications; no commits, pushes, merges, builds, tests, package creation, cleanup, or external actions. Report findings to Rob in Codex's response only, and STOP for a separate packaging decision. Existing historical STOP and preservation rules remain in effect outside this exact scope.
+
+---
+
 ## November 7, 2026 — CRM 22.1 HISTORICAL RETROSPECTIVE COMPLETE; DOCUMENTATION ONLY; STOP
 
 Completed only `CRM-22.1-Historical-Retrospective-ReadOnly-Authorized-20261107.md`. Detailed report: [CRM-22.1-Historical-Retrospective-Report-20261107.md](CRM-22.1-Historical-Retrospective-Report-20261107.md). The report reconciles CRM 22.1, the canceled November 2 migration, GoGreen/bounded maintenance, November 5 investigation/corrections, current Git history, the permanent historical index/volumes, and the November 7 cleanup inventory. It distinguishes verified metadata, recorded results, inference, and UNKNOWN; preserves pre-repair failures; and does not promote focused PASS results to full regression or release readiness.
