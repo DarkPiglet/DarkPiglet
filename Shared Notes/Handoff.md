@@ -1,3 +1,9 @@
+## November 10, 2026 — NEXT CODEX TASK AUTHORIZED: FOCUSED CONTACT-METHOD ENTRY VALIDATION; NOT STARTED
+
+Rob approved the [focused implementation assignment](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-contact-method-entry-validation-implementation-authorized.md). Validate new/edited email and phone before making them current; allow ordinary valid historical reuse without prompts; revalidate `IsValid=0` exact matches rather than silently promoting them; preserve clearing, history, contact-wide behavior, transactional audit, and downstream conservative eligibility. Focused fictional-data tests and affected regressions only. No schema/customer data/import rewrite/live integrations/order/merge/release or delivery verification. Use isolated Dev worktree; report and update both handoffs, verify, STOP. **Rob's separate normal Codex start instruction is required; NOT STARTED.**
+
+---
+
 ## November 10, 2026 — CRM READ-ONLY CONTACT-METHOD STATUS SEMANTICS INVESTIGATION COMPLETE; STOP FOR ROB REVIEW
 
 - Repository: `DarkPiglet/Weekly-Logger-Search-Application`, live `master`.
