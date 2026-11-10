@@ -1,3 +1,14 @@
+## November 10, 2026 — CRM READ-ONLY CONTACT-METHOD STATUS SEMANTICS INVESTIGATION COMPLETE; STOP FOR ROB REVIEW
+
+- Repository: `DarkPiglet/Weekly-Logger-Search-Application`, live `master`.
+- Evidence report: `docs/investigations/2026-11-10-contact-method-status-semantics-readonly-report.md`, published in CRM commit `b8f44e7ad1a312bb3b9ba90346fd1ed2697089d4`.
+- CRM handoff closure: commit `b6b6e3bc4047f23ba23663b3d8b4621e1a577b0f`.
+- Decision: current `IsPrimary` / `IsActive` / `IsValid` flags do not provide reason/actor provenance and cannot prove deliberate rejection. Exact-match `0|0|0 -> 1|1|1` is explicit current code behavior.
+- Recommended future policy: ordinary valid history gets no warning; exact `IsValid=0` re-entry must be revalidated, invalid input blocked, and successful revalidation specifically audited. Any explicit-rejection exception needs separately persisted reason, actor, and timestamp.
+- Malformed-email validation and audit provenance remain separate findings. No source, tests, schema, configuration, fixtures, customer data, or production data changed; no tests were run.
+- Historical volumes were not needed because current source, focused Git history, published reports, and checked-in tests were sufficient.
+- **STOP:** no implementation or next phase is authorized. Await Rob's review.
+
 ## November 10, 2026 — NEXT CODEX TASK AUTHORIZED: READ-ONLY CONTACT-METHOD STATUS SEMANTICS; NOT STARTED
 
 Rob approved a narrow read-only investigation of `IsValid`, `IsActive`, and `IsPrimary` meanings and exact-match reactivation. Ordinary return to previously used values should not trigger history-warning dialogs; determine whether explicit invalidation can reliably be distinguished from ordinary replaced history before proposing any exception. **Controlling assignment:** [read-only status semantics investigation](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-contact-method-status-semantics-readonly-authorized.md). No product/test/schema/data changes or test execution; malformed-email and audit-provenance findings remain separate. Publish evidence-linked report, update both handoffs, verify, STOP. **Rob's normal start instruction is required; NOT STARTED.**
