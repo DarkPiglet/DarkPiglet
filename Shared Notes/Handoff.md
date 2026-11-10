@@ -1,3 +1,13 @@
+## November 10, 2026 — SITE-CONTACT HELPER CORRECTED; SINGLE POLICY A TEST PASS; STOP
+
+The authorized isolated helper correction and one-test rerun is complete. The test helper already received SiteId and ContactId; only its row predicate changed to require both, preserving every fixture, input, eligibility rule and assertion. Local test-only commit `e5dfca798daaaaa7267dbd6a96ef76be0c30237c` is clean, unmerged and unpushed.
+
+The changed project built with 0 warnings/errors, discovery selected exactly `PolicyAContactWideSelectionClearAndOrderEligibilityStayConservative`, and it ran once: **1 total, 1 passed, 0 failed, 0 skipped; no retry**. Selected current methods were eligible without generating an order. Contact-wide values matched across both sites and the other contact was unchanged. Clearing all three methods reloaded blank across both sites, retained history, left zero active primary, and blocked Order Boxes. Audit labels were present but method-row identity and reason remain absent. Final integrity and foreign-key checks passed. See the [sanitized result](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-policy-a-site-contact-helper-single-rerun-result.md).
+
+Policy A remains **NOT APPROVED OR IMPLEMENTED**. Invalid/inactive reactivation, malformed-email acceptance and audit provenance remain open. No product/source, validator, fixture, schema, importer, customer data, integration, email, shipping action, real order, merge, executable push, package, release or deployment changed. No next phase is authorized. **STOP for Rob/Priya review.**
+
+---
+
 ## November 10, 2026 — NEXT CODEX TASK AUTHORIZED: SITE-CONTACT TEST HELPER CORRECTION; NOT STARTED
 
 Rob authorized the [single-helper correction and one-test rerun](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-policy-a-site-contact-helper-single-rerun-authorized.md). Verify the two-site linkage, change only the isolated fictional test helper to select by both SiteId and ContactId, build the changed test assembly, discover exactly one test and execute `PolicyAContactWideSelectionClearAndOrderEligibilityStayConservative` once. Report actual eligibility, all-three clear/reload, audit and integrity results. No retries, product changes, customer data, importer, integration, order, merge or release. Policy A and the two validation gaps remain unresolved. Publish sanitized results to both handoffs and STOP. **Rob's normal Codex start is required; tests NOT RUN by publication.**
