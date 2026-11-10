@@ -1,3 +1,14 @@
+## November 10, 2026 — CRM FOCUSED CONTACT-METHOD ENTRY VALIDATION COMPLETE LOCALLY; 26/26 PASS; STOP
+
+- Repository: `DarkPiglet/Weekly-Logger-Search-Application`.
+- Authorized focused implementation completed on clean isolated local branch `codex/contact-method-entry-validation-20261110`; local unpushed commit `f47a73f1e8df17acf9527718e6fe94d452b1f8d1`.
+- Sanitized result: `docs/investigations/2026-11-10-contact-method-entry-validation-implementation-result.md`, CRM documentation commit `716b721555b505314d73d98c149a06a4e66b855f`; CRM handoff closure `993421f9e05bdd96a707eb73d8e860a1db3f3626`.
+- Changed/new nonblank email and phones validate before becoming current; blank clear remains supported; valid exact history is reused without prompts; `IsValid=0` exact history is revalidated and successful transition is audited transactionally with method identity.
+- Invalid current rows are excluded from CRM display, duplicate-email lookup, Order Boxes eligibility, and existing recipient eligibility. They remain stored and are not rehabilitated by unrelated saves.
+- Final bounded evidence: **26 passed, 0 failed, 0 skipped** across 10 contact-save, 8 email/recipient, and 8 phone-rule cases. Builds had 0 errors; only unavailable NuGet vulnerability-feed warnings remained. No full suite claimed.
+- No schema/migration, importer rewrite, customer/operational data, live integration, order, shipment, merge, executable push, package, release, or deployment occurred.
+- **STOP:** local implementation awaits Rob/Priya review. No follow-up phase is authorized.
+
 ## November 10, 2026 — NEXT CODEX TASK AUTHORIZED: FOCUSED CONTACT-METHOD ENTRY VALIDATION; NOT STARTED
 
 Rob approved the [focused implementation assignment](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-contact-method-entry-validation-implementation-authorized.md). Validate new/edited email and phone before making them current; allow ordinary valid historical reuse without prompts; revalidate `IsValid=0` exact matches rather than silently promoting them; preserve clearing, history, contact-wide behavior, transactional audit, and downstream conservative eligibility. Focused fictional-data tests and affected regressions only. No schema/customer data/import rewrite/live integrations/order/merge/release or delivery verification. Use isolated Dev worktree; report and update both handoffs, verify, STOP. **Rob's separate normal Codex start instruction is required; NOT STARTED.**
