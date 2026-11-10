@@ -1,3 +1,9 @@
+## November 9, 2026 — NEXT CODEX TASK AUTHORIZED: BOUNDED POLICY A FICTIONAL-DATA VERIFICATION; NOT STARTED
+
+Rob authorized preparation/publication of a focused verification assignment and will issue his normal Codex start separately. **Controlling assignment:** [Policy A fictional validation](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-09-contact-method-policy-a-fictional-validation-authorized.md). Verify existing primary-only display, intentional clear, deliberate exact re-entry, invalid/inactive matches, contact-wide sites, audit rollback, and Order Boxes eligibility using isolated disposable **fictional** tests only. Policy A and its five business questions remain NOT APPROVED; conservative expectations are testing hypotheses, not production decisions. Test-only additions solely if needed in isolation. No product/source/schema changes, customer/USB/Z/operational DB access, Contact 391 repair, importer, live integrations, orders, merge or deployment. Codex shall report evidence, update BOTH handoffs, and STOP. **Tests NOT RUN by this publication.**
+
+---
+
 ## November 9, 2026 — CONTACT-METHOD CURRENT-SELECTION DECISION MEMO COMPLETE; POLICY A RECOMMENDED, NOT APPROVED; TESTS NOT RUN; STOP
 
 The CRM project's authorized read-only decision analysis is complete. Its [published decision memo](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-09-contact-method-current-selection-decision-memo.md) recommends keeping unresolved current contact methods blank until a deliberate authorized per-contact confirmation or re-entry occurs. It does not recommend inferring intent from available history, import or merge origin, or activity notes.
