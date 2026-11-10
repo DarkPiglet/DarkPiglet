@@ -1,3 +1,9 @@
+## November 9, 2026 — NEXT CODEX TASK AUTHORIZED: READ-ONLY A02/A03 CLEAR-SEMANTICS VS CONTACT 391 COMPARISON; NOT EXECUTED
+
+Rob authorized an **investigation only** into whether A02 (blank date restored after save), A03 (cleared contact email restored after save) and the Contact 391 primary-only display regression share a code-path cause. The exact A02 date field is not verified; Codex must avoid assuming it. **Controlling assignment:** [read-only clear semantics comparison](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-09-a02-a03-contact391-clear-semantics-readonly-authorized.md). Inspect actual save/reload/clear/IsPrimary semantics and existing evidence, distinguish verified linkage from hypothesis, and report exact source paths and missing evidence. No code edits, test runs, customer-data reads, importer work, database access/repair, merge or deployment. Update both handoffs with sanitized factual outcome and STOP for Rob/Priya review. The preceding Contact 391 design-stop finding remains in force. Publication does not start Codex; Rob's normal instruction does.
+
+---
+
 ## November 9, 2026 — CONTACT 391 BOUNDED DESIGN INVESTIGATION STOPPED; NO SAFE AUTOMATIC REPAIR; DOCUMENTATION ONLY
 
 **Codex reported outcome (reviewed from its completion summary; publication authorized by Rob):** The bounded contact-primary-selection investigation reached its mandatory design STOP. The existing model cannot reliably distinguish an intentional clear from legacy, imported, or merged active/valid non-primary contact-method data. ContactMethod lacks a clear/selection reason, timestamps, and row-linked audit provenance. Historical clears, importer inserts, and maintenance merges can produce the same active/valid/non-primary state. Activity history is free text, is not bound to a specific method row, and is not consistently written by every pathway.
