@@ -1,3 +1,9 @@
+## November 10, 2026 — NEXT CODEX TASK AUTHORIZED: SINGLE FICTIONAL TEST EXPECTATION CORRECTION; NOT STARTED
+
+Rob approved one bounded follow-up to the November 9 Policy A test run. **Controlling assignment:** [single-test correction and rerun](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-policy-a-single-test-expectation-correction-authorized.md). Verify the fictional fixture really has two retained non-primary MobilePhone history rows; change only the mismatched count assertion in the isolated test-only worktree; discover and execute exactly **one** test, `PolicyAContactWideSelectionClearAndOrderEligibilityStayConservative`, once. Report the previously blocked multi-site, cross-contact, all-three clear, audit and Order Boxes assertions. No product fixes, other tests, customer data, importer, integrations, order, merge, or release. The two genuine validation policy gaps remain open; Policy A is not approved. Publish sanitized results to both handoffs and STOP. **Rob's normal Codex start is still required; tests NOT RUN by publication.**
+
+---
+
 ## November 9, 2026 — POLICY A FICTIONAL VERIFICATION COMPLETE; 2 PASS / 3 FAIL; POLICY GAPS; STOP
 
 The CRM project's authorized bounded fictional-data verification is complete. Exactly five focused tests ran once in an isolated Dev-identity worktree using disposable fictional databases: **2 passed, 3 failed, 0 skipped**. Existing email clear/re-entry/rollback and deliberate existing secondary-method selection passed. Zero-primary methods remained blank on an unrelated save, intended exact rows were selected without duplication, and a new current value preserved history.
