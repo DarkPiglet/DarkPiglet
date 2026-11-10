@@ -1,3 +1,14 @@
+## November 10, 2026 — CRM INDEPENDENT CONTACT VALIDATION REVIEW COMPLETE; GO FOR SEPARATELY AUTHORIZED OFFLINE REGRESSION ONLY; STOP
+
+- Reviewed exact clean local implementation `codex/contact-method-entry-validation-20261110` at `f47a73f1e8df17acf9527718e6fe94d452b1f8d1` against parent, authorization, actual diff, validators, transactional audit/rollback, eligibility, and the recorded 26 focused cases.
+- Review report: `docs/investigations/2026-11-10-contact-method-entry-validation-independent-review-report.md`, CRM documentation commit `73214b59ba01eb5c3c0bd8fd4600f1151748f70c`; CRM handoff closure `af1e916802e6874e654d44d968bbe323a9e8cb33`.
+- **No blockers found.** The narrow implementation matches the authorization and is ready for separately authorized broader offline regression, not merge or release.
+- **Nonblocking risks:** validation `ArgumentException` uses the UI generic save-error catch; legacy `CreateSiteContact` lacks country context and preserves permissive digit-only normalization. Both should be characterized in offline regression.
+- Follow-up coverage should include active-primary invalid revalidation, invalid phone-history revalidation/audit, invalid new-contact phone, distinct new OfficePhone, validation-dialog UI, legacy no-country behavior, and full offline CRM/Monthly Drafts suites.
+- The recorded **26 passed, 0 failed, 0 skipped** reconciles to 10 contact-save + 8 email/recipient + 8 phone cases; recorded hashes match the clean worktree. No build/test was run during this review.
+- No source/test/fixture edit, customer/operational data, integration, executable push, merge, package, release, or deployment occurred.
+- **STOP:** await Rob/Priya review and separate authorization.
+
 ## November 10, 2026 — NEXT CODEX TASK: INDEPENDENT READ-ONLY IMPLEMENTATION REVIEW; NOT STARTED
 
 Rob authorized preparation of a review assignment, to be launched later with his normal Codex instruction. Controlling document: [contact-method validation independent review](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-contact-method-entry-validation-independent-review-authorized.md). Review the local isolated unmerged implementation at `f47a73f1e8df17acf9527718e6fe94d452b1f8d1` against the prior authorization, actual diff, validators, transactional/audit behavior and 26 focused-test evidence. Classify blockers and assess readiness for separately authorized offline regression. **Read-only: no source changes, builds/tests, customer data, live integrations, executable push, merge, packaging or release.** Publish sanitized review and update BOTH handoffs; independently verify; STOP. **Rob's normal start instruction is required; review NOT STARTED.**
