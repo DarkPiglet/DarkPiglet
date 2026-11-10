@@ -1,3 +1,15 @@
+## November 10, 2026 — CRM OFFLINE CONTACT-METHOD REGRESSION STOPPED ON ISOLATION FAILURE; NO-GO; STOP
+
+- Repository: `DarkPiglet/Weekly-Logger-Search-Application`; exact local implementation `f47a73f1e8df17acf9527718e6fe94d452b1f8d1` on `codex/contact-method-entry-validation-20261110`.
+- Sanitized report: `docs/investigations/2026-11-10-contact-method-offline-regression-result.md`, CRM documentation commit `70ddccc6f16b63aedc29d6d0d9948ce2866dec92`; CRM handoff closure `9365bf12c2b26473ad55dd560d0eef01b18dc746`.
+- Four builds succeeded with 0 errors; only `NU1900` feed warnings. Discovered 414 tests. CRM data completed 71: **54 passed / 17 failed**, all from the safely omitted operational seed. CRM UI completed 77: **73 passed / 4 failed**; all 12 contact-save tests passed.
+- Workbook-export tests then read a stale/copied seed and exposed a non-fictional identifier. The mandatory real-data-risk/isolation hard stop was applied immediately: 107 UI tests remained incomplete and all 159 Monthly Drafts tests were NOT RUN. Overall: **127 passed / 21 failed / 0 skipped; 266 not completed/not run**.
+- Six requested gap cases remain NOT TESTED. N1 generic save-error UI and N2 no-country legacy normalization remain unchanged. No application log was captured in the contained disposable log folders.
+- **BLOCKER / NO-GO:** the offline suites do not enforce one provenance-verified fictional-only seed contract. No source/test/fixture change, retry, cleanup, customer mutation, integration, executable push, merge, package, release or deployment occurred.
+- **STOP:** await Rob/Priya review and separate authorization.
+
+---
+
 **November 10 logging addendum:** The controlling offline regression assignment now explicitly requires isolated CRM diagnostic-log inspection, timestamp/test-failure correlation, logging-path verification, redaction, and honest reporting of absent logs/coverage. Source review confirmed `DiagnosticLog.vb` is exception logging, not guaranteed full tracing. No production logs or settings may be accessed. Assignment update commit `0483031c18555c658f0e5237f88e0001109fd8e5`. Codex has NOT started.
 
 ## November 10, 2026 — NEXT CODEX TASK PREPARED: BROADER OFFLINE CONTACT-METHOD REGRESSION; NOT STARTED
