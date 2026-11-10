@@ -1,3 +1,13 @@
+## November 9, 2026 — CONTACT-METHOD CURRENT-SELECTION DECISION MEMO COMPLETE; POLICY A RECOMMENDED, NOT APPROVED; TESTS NOT RUN; STOP
+
+The CRM project's authorized read-only decision analysis is complete. Its [published decision memo](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-09-contact-method-current-selection-decision-memo.md) recommends keeping unresolved current contact methods blank until a deliberate authorized per-contact confirmation or re-entry occurs. It does not recommend inferring intent from available history, import or merge origin, or activity notes.
+
+Three policies were compared: (A) manual confirmation using the existing primary-only model, recommended as the smallest safe policy; (B) a larger explicit history-selection workflow with stronger audit; and (C) no proactive review, which preserves blanks and downstream blocking. Rob must decide authorization/evidence, contact-wide scope, invalid or inactive re-entry behavior, audit sufficiency, and downstream blocking before implementation.
+
+Proposed fictional-data verification was documented but **tests were NOT RUN**. No product code, tests, schema, configuration, database, importer, customer data, package, release, or deployment changed. The recommendation is **not approved or implemented**. Documentation only. **STOP for Rob/Priya review.**
+
+---
+
 ## November 9, 2026 — NEXT CODEX TASK AUTHORIZED: READ-ONLY CURRENT CONTACT METHOD DECISION MEMO; NOT STARTED
 
 Rob authorized another **investigative-only** assignment to define the minimum explicit business decision for handling current vs intentionally cleared vs ambiguous legacy/imported/merged contact methods. **Controlling reviewed document:** [contact current-selection decision assignment](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-09-contact-method-current-selection-decision-readonly-authorized.md). Codex shall compare at most three policies, recommend one with tradeoffs, propose fictional-data tests without running them, and STOP for Rob/Priya. No automatic `IsPrimary` promotion or historical fallback, product/test/schema edits, test execution, customer DB access/repair, imports, merge or deployment. Update both handoffs with sanitized outcomes. This authorization does not imply execution or approval of a policy; Rob's normal Codex start is required.
