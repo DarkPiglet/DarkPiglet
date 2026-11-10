@@ -1,3 +1,7 @@
+## November 10, 2026 — NEXT CODEX TASK PREPARED: BROADER OFFLINE CONTACT-METHOD REGRESSION; NOT STARTED
+
+Rob approved preparing and tightening the next assignment for his normal Codex launch. Controlling assignment: [bounded offline regression](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-contact-method-offline-regression-authorized.md), CRM documentation commit `3810d0d4051f29e2d7f28eef46c114d516536249`. Run existing complete offline CRM/Monthly Drafts suites on the exact clean isolated local implementation `f47a73f1e8df17acf9527718e6fe94d452b1f8d1` only after Rob's normal start. Characterize six independent-review coverage gaps and two nonblocking findings, report real pass/fail/not-run counts and isolation evidence. No unapproved code/test edits, customer data, network integrations, merge, executable push, package, release or deployment. Publish sanitized results and handoffs, verify, STOP for Rob/Priya. **This preparation does not start Codex.**
+
 ## November 10, 2026 — CRM INDEPENDENT CONTACT VALIDATION REVIEW COMPLETE; GO FOR SEPARATELY AUTHORIZED OFFLINE REGRESSION ONLY; STOP
 
 - Reviewed exact clean local implementation `codex/contact-method-entry-validation-20261110` at `f47a73f1e8df17acf9527718e6fe94d452b1f8d1` against parent, authorization, actual diff, validators, transactional audit/rollback, eligibility, and the recorded 26 focused cases.
