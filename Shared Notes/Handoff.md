@@ -1,3 +1,9 @@
+## November 10, 2026 — NEXT CODEX TASK AUTHORIZED: SITE-CONTACT TEST HELPER CORRECTION; NOT STARTED
+
+Rob authorized the [single-helper correction and one-test rerun](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-policy-a-site-contact-helper-single-rerun-authorized.md). Verify the two-site linkage, change only the isolated fictional test helper to select by both SiteId and ContactId, build the changed test assembly, discover exactly one test and execute `PolicyAContactWideSelectionClearAndOrderEligibilityStayConservative` once. Report actual eligibility, all-three clear/reload, audit and integrity results. No retries, product changes, customer data, importer, integration, order, merge or release. Policy A and the two validation gaps remain unresolved. Publish sanitized results to both handoffs and STOP. **Rob's normal Codex start is required; tests NOT RUN by publication.**
+
+---
+
 ## November 10, 2026 — SINGLE POLICY A TEST CORRECTION COMPLETE; 1 TEST FAILED IN HELPER; NO RETRY; STOP
 
 The authorized one-assertion correction and one-test rerun is complete. Static fictional-fixture evidence confirmed two retained active non-primary MobilePhone history rows, so only that expected count changed from one to two. The clean local test-only correction commit is `e2c55774df75dfc5e2a86d744524f6f2a6071705`, unmerged and unpushed.
