@@ -1,3 +1,9 @@
+## November 10, 2026 — NEXT CODEX TASK AUTHORIZED: READ-ONLY CONTACT-METHOD STATUS SEMANTICS; NOT STARTED
+
+Rob approved a narrow read-only investigation of `IsValid`, `IsActive`, and `IsPrimary` meanings and exact-match reactivation. Ordinary return to previously used values should not trigger history-warning dialogs; determine whether explicit invalidation can reliably be distinguished from ordinary replaced history before proposing any exception. **Controlling assignment:** [read-only status semantics investigation](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-contact-method-status-semantics-readonly-authorized.md). No product/test/schema/data changes or test execution; malformed-email and audit-provenance findings remain separate. Publish evidence-linked report, update both handoffs, verify, STOP. **Rob's normal start instruction is required; NOT STARTED.**
+
+---
+
 ## November 10, 2026 — SITE-CONTACT HELPER CORRECTED; SINGLE POLICY A TEST PASS; STOP
 
 The authorized isolated helper correction and one-test rerun is complete. The test helper already received SiteId and ContactId; only its row predicate changed to require both, preserving every fixture, input, eligibility rule and assertion. Local test-only commit `e5dfca798daaaaa7267dbd6a96ef76be0c30237c` is clean, unmerged and unpushed.
