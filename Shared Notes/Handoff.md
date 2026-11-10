@@ -1,3 +1,9 @@
+## November 10, 2026 — NEXT CODEX TASK: INDEPENDENT READ-ONLY IMPLEMENTATION REVIEW; NOT STARTED
+
+Rob authorized preparation of a review assignment, to be launched later with his normal Codex instruction. Controlling document: [contact-method validation independent review](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-contact-method-entry-validation-independent-review-authorized.md). Review the local isolated unmerged implementation at `f47a73f1e8df17acf9527718e6fe94d452b1f8d1` against the prior authorization, actual diff, validators, transactional/audit behavior and 26 focused-test evidence. Classify blockers and assess readiness for separately authorized offline regression. **Read-only: no source changes, builds/tests, customer data, live integrations, executable push, merge, packaging or release.** Publish sanitized review and update BOTH handoffs; independently verify; STOP. **Rob's normal start instruction is required; review NOT STARTED.**
+
+---
+
 ## November 10, 2026 — CRM FOCUSED CONTACT-METHOD ENTRY VALIDATION COMPLETE LOCALLY; 26/26 PASS; STOP
 
 - Repository: `DarkPiglet/Weekly-Logger-Search-Application`.
