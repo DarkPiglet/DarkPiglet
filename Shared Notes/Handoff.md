@@ -1,3 +1,13 @@
+## November 10, 2026 — CRM PUBLICATION VERIFIED; SHARED LOCAL/REMOTE HASH RECONCILIATION FAILED CLOSED
+
+- Independently refetched the CRM isolated seed-guard report and both current handoff entries from GitHub. Published content matched; the initial CRM result handoff commit was `292df72215bf37dc33b020bf05bd7c6410d2e763`, shared result commit was `20760c6da97a5f70ea86967450e99488727c7798`, and CRM reconciliation addendum commit is `a1ca24dec6f03a6a233b5d5793349229b36161c0`.
+- Required shared local/remote equality could not be established safely. The local checkout `C:\Users\Dev\source\repos\DarkPiglet` is on `main` at `601abb0546bb59d9ee08a20a9f84746612cd24c9`; after an explicit fetch, `origin/main` was `20760c6da97a5f70ea86967450e99488727c7798`. Local has 1 unique commit and is 305 commits behind. The fast-forward-only merge aborted without changing tracked files.
+- The local-only commit is `601abb0546bb59d9ee08a20a9f84746612cd24c9` (`Established Test 22.1 documentation Handoffs`). Its merge/rebase/reset/publication disposition is outside this assignment. Existing untracked `Test/` was not touched.
+- Remote publication verification is **PASS**. The project-required shared local/remote hash match is **FAIL / unresolved**. The prior seed-guard implementation, mixed focused-test result, unexpected SDK certificate side effect and stop conditions are unchanged.
+- **STOP:** await Rob's explicit direction for the divergent shared checkout; do not merge, rebase, reset, delete or publish the unrelated local commit by inference.
+
+---
+
 ## November 10, 2026 — CRM ISOLATED TEST SEED GUARD IMPLEMENTED LOCALLY; CONTAINMENT PASSED; FOCUSED RESULT MIXED; STOP
 
 - Completed only the authorized CRM isolated test seed-guard assignment on `DarkPiglet/Weekly-Logger-Search-Application` branch `codex/contact-method-entry-validation-20261110`. Local unpushed guard commit: `a1416eed1c6837604f235ec09990b19e979b3176`, parent `f47a73f1e8df17acf9527718e6fe94d452b1f8d1`.
