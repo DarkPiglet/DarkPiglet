@@ -1,3 +1,17 @@
+## November 10, 2026 — CRM ISOLATED TEST SEED GUARD IMPLEMENTED LOCALLY; CONTAINMENT PASSED; FOCUSED RESULT MIXED; STOP
+
+- Completed only the authorized CRM isolated test seed-guard assignment on `DarkPiglet/Weekly-Logger-Search-Application` branch `codex/contact-method-entry-validation-20261110`. Local unpushed guard commit: `a1416eed1c6837604f235ec09990b19e979b3176`, parent `f47a73f1e8df17acf9527718e6fe94d452b1f8d1`.
+- Published sanitized CRM result `docs/investigations/2026-11-10-isolated-test-seed-guard-result.md` in documentation commit `492a75cde408f50f952236fbcb5a26bf1d608ee5`; CRM handoff result commit `292df72215bf37dc33b020bf05bd7c6410d2e763`.
+- The two isolated test projects now default/require `CRMIncludeOperationalSeed=false`, the UI project reference propagates it, and post-copy checks reject a seed in fresh build output. A fail-closed script checks containment/reparse points, operational seed identity, empty post-build SQLite state and exact approved fictional pre-test seed. Normal release packaging defaults were unchanged.
+- Both fresh focused builds passed with 0 errors and only `NU1900` warnings; both negative property checks failed closed. The final disposable-root scan found 399 files, 0 reparse points, 0 operational-length candidates and 0 operational-hash matches. Each test output contained exactly the approved 421,888-byte fictional seed, SHA-256 `0EFDF5FD7BEB5E445CE344D2A5460153E6F3EE0F956A723CC7E330D5837C43A7`.
+- Focused results: UI exporter **15/15 passed**; Data maintenance **15 passed / 1 failed**. The ordinary independent failure occurs before its diagnostic scenario because the test supplies blank mobile input that the preceding contact-validation implementation now rejects. No retry or unrelated fix occurred.
+- `CRM_LOG_FOLDER` was contained and **no application log was captured**. Schema-incompatible, operational-seed-dependent, live/manual, external and full-regression checks remain **NOT TESTED**.
+- Unexpected environment result: the .NET SDK reported installing an ASP.NET Core development HTTPS certificate despite contained SDK/TEMP routing and first-time-experience suppression. No cleanup/system modification was attempted.
+- No operational/customer/USB/`Z:`/recovery database was materialized, opened, queried, copied, altered or newly hashed. No schema/fixture/application-logic change, merge, executable push, release, deployment, full regression, cleanup or speculative repair occurred.
+- **STOP:** local implementation is unpushed. Await Rob review; no follow-up repair, merge, executable push or further test phase is authorized.
+
+---
+
 ## November 10, 2026 — NEXT CODEX ASSIGNMENT PUBLISHED: ISOLATED TEST SEED GUARD (EXECUTION NOT YET VERIFIED)
 
 **Authority:** Rob approved publication after tighten/loosen review. This entry prepares the next bounded Codex task; it does not report execution, test success, merge, release or deployment. Read the complete current shared and CRM project handoffs, historical index as needed, applicable AGENTS.md and `docs/investigations/2026-11-10-regression-seed-provenance-readonly-report.md` before executing. CRM project repository `DarkPiglet/Weekly-Logger-Search-Application` uses `master` for the current handoff; shared repository `DarkPiglet/DarkPiglet` uses `main`. Verify implementation commit `f47a73f1e8df17acf9527718e6fe94d452b1f8d1` and exact branch identity locally; if unavailable, STOP rather than substituting a different branch.
