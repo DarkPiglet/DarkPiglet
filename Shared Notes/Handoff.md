@@ -1,3 +1,9 @@
+## November 11, 2026 — NEXT CODEX TASK AUTHORIZED: CRM 22.1 PHASE 2 isolated real-data regression; NOT EXECUTED
+
+Rob approved read-only access to exactly `Z:\CRM.sqlite` for creation of ONE isolated disposable local database copy; all tests and edits must run against that local copy only. Source must remain unchanged. Proposed new local destination: `%LOCALAPPDATA%\Temp\CRM221-Phase2-20261111\CRM.sqlite` (no overwrite; use uniquely named fresh directory if occupied). Controlling assignment: [Phase 2 isolated real-data regression](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-phase2-isolated-realdata-regression-authorized.md). Phase 1 focused 8/8 PASS; legacy 418 PASS / 2 BLOCKED preserved separately. External email, drafts, labels, pickups, Graph and orders NOT TESTED; G5 rendered UI still requires visual evidence. Standard tightening and continue-independent-tests/failure-investigation loop applies. No merge, packaging, deployment, or cleanup. Codex must be launched by Rob and STOP for Rob/Priya review after publishing results.
+
+---
+
 ## November 11, 2026 — CRM 22.1 Phase 1 PASS 8/8; legacy 418/2 preserved; Phase 2 gated
 
 CRM executed only the authorized synthetic Phase 1 on `codex/contact-method-entry-validation-20261110` at guard `a1416eed1c6837604f235ec09990b19e979b3176`. Detailed evidence: [Phase 1 result](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-synthetic-to-isolated-realdata-regression-phase1-result.md).
