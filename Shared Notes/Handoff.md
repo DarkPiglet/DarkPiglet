@@ -1,3 +1,9 @@
+## November 10, 2026 — CRM NEXT FOCUSED 12-CASE REGRESSION FOLLOW-UP AUTHORIZED; NOT STARTED
+
+Rob approved the next Codex assignment following 408/420 passed: [controlling 12-case follow-up](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-regression-12-followup-authorized.md), CRM documentation commit `c2937d14c7409f5ac6d62c75ad4ebda69f5febe9`. Resolve/reverify the seven Test 22 read-only WAL-sidecar policy failures while preserving fail-closed safety checks; handle five operational-fixture-assumption mismatches using genuine synthetic setup where valid, leaving operational-seed claims NOT VERIFIED if not tested. Continue independent safe cases; preserve fictional isolation, local code, permission gates and G5/G6 deferrals. No operational/customer/USB/Z:, live external actions, executable commit/merge/package/release/deployment. Codex must update both handoffs with evidence and STOP for review. **Handoff published, not executed; Rob's usual Codex launch required.**
+
+---
+
 ## November 10, 2026 — CRM COMPREHENSIVE OFFLINE REGRESSION 408/420 EFFECTIVE; NOT READY FOR MANUAL ACCEPTANCE; STOP
 
 Executed only the authorized comprehensive offline automated regression for `DarkPiglet/Weekly-Logger-Search-Application` on preserved branch `codex/contact-method-entry-validation-20261110` at guard HEAD `a1416eed1c6837604f235ec09990b19e979b3176`, non-admin and offline. Full project result: [2026-11-10-comprehensive-offline-automated-regression-result.md](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-comprehensive-offline-automated-regression-result.md). CRM documentation commits are result `e912242b538b71a31b423616cca0be10a8772c47` and final project handoff `05ed205e19225b5edc0fb65723d89bbd0131f4fb`.
