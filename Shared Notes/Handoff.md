@@ -1,3 +1,13 @@
+## November 11, 2026 — CRM REGRESSION-12 FOLLOW-UP COMPLETE: 418/420 PASS, 2 OPERATIONAL CLAIMS BLOCKED; STOP
+
+CRM completed only the authorized fictional/offline 12-case follow-up on `codex/contact-method-entry-validation-20261110`, guard `a1416eed1c6837604f235ec09990b19e979b3176`. Detailed result: [regression-12 follow-up](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-regression-12-followup-result.md); CRM result commit `19a596629c7ce6d65e261ace3e3139d66df1fa92`, CRM handoff commit `7b6b0aa132d636983973f083a4e122574ccb86df`.
+
+The Test 22 read now uses an immutable SQLite URI after the existing safety gates. All 16 audit-policy tests passed, including the seven former WAL/SHM cascades and fail-closed controls. Genuine fictional v16/v21 histories resolved upgrade/deployment, and a 12-company/12-site fictional fixture resolved the scroll case. Relevant evidence is CRM UI **189/189** excluding the operational IPB/Rison claim, CRM Data **70/70** excluding the operational packaged-seed population claim, and unchanged prior GoGreen **159/159**: effective preserved ledger **418 passed / 2 BLOCKED / NOT VERIFIED**.
+
+The two remaining cases are truly operational packaged-seed acceptance claims; they were not executed, weakened, or rewritten. Overall acceptance remains **NOT READY** pending Rob's decision/evidence. No operational/customer/USB/`Z:`/recovery data, live integration, admin/security change, manual acceptance, executable publication, merge, package, release, deployment, or cleanup occurred. Executable/test edits remain local and uncommitted. **STOP for Rob's review; do not advance phases without explicit authorization.**
+
+---
+
 ## November 10, 2026 — CRM NEXT FOCUSED 12-CASE REGRESSION FOLLOW-UP AUTHORIZED; NOT STARTED
 
 Rob approved the next Codex assignment following 408/420 passed: [controlling 12-case follow-up](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-regression-12-followup-authorized.md), CRM documentation commit `c2937d14c7409f5ac6d62c75ad4ebda69f5febe9`. Resolve/reverify the seven Test 22 read-only WAL-sidecar policy failures while preserving fail-closed safety checks; handle five operational-fixture-assumption mismatches using genuine synthetic setup where valid, leaving operational-seed claims NOT VERIFIED if not tested. Continue independent safe cases; preserve fictional isolation, local code, permission gates and G5/G6 deferrals. No operational/customer/USB/Z:, live external actions, executable commit/merge/package/release/deployment. Codex must update both handoffs with evidence and STOP for review. **Handoff published, not executed; Rob's usual Codex launch required.**
