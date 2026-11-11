@@ -1,3 +1,17 @@
+## November 11, 2026 — CRM packaged-seed provenance-only review complete; seed resolved, archive unresolved
+
+Executed only the published provenance-only assignment at guard `a1416eed1c6837604f235ec09990b19e979b3176`. Detailed result: `docs/investigations/2026-11-11-operational-packaged-seed-provenance-readonly-result.md`.
+
+**Historical intended seed — RESOLVED.** The two blocked cases are test.14 snapshot contracts introduced in `0289ba9d72118723d105fc7703c7d2813d7b2470`. On September 30, commit `c8b93283fb27a55b371da1d85cc48da19df75134` recorded recovery of the actual test.14 working `Data\CRM.sqlite` and byte-identical replacement of tracked `Database\CRM_seed.sqlite`, with 141 active companies, 423 active sites, 482 active contacts, 41 active agreements, IPB/Rison coverage and 35/35 Data plus 66/66 UI PASS. The independent November 10 provenance record pins that tracked snapshot at 1,617,920 bytes, SHA-256 `3363942E28E35C3F19E3B502CDB528FF8D2D1051B70025C656EE66420D51E4A9`, Git blob `d6b6c6867a82863041f6c0fb5ab8c9e2bc6019f5`.
+
+**Archive/current package — IDENTITY UNRESOLVED / NOT VERIFIED.** Current handoffs, the permanent index, relevant numbered volume 002, Git source/test history and existing package records contain no trustworthy size/SHA-256 for `Z:\CRM-v10-test.14-win-x64.zip` and do not bind a current CRM 22.1 release candidate to the pinned seed. Later Test20/Test22 databases are different mutable lineages with 44 total agreements; clean Test22/Stage7 packages excluded the Database tree. Whole-archive hashes for later releases are not seed identities.
+
+Recommendation: keep both tests unchanged and BLOCKED, scoped as a named legacy-seed gate rather than a universal release contract. The same exact pinned seed historically satisfied both, but any future UI run must follow Data content PASS against the same verified isolated copy. Smallest next action is separate approval to draft a no-overwrite, non-reparse, exact-size/hash isolated verification procedure; execution remains separately gated.
+
+No operational/customer/work/USB/`Z:`/recovery/seed database or package archive was enumerated, statted, opened, hashed, copied, queried or staged. No build/test/source change/cleanup/merge/package/release/deployment occurred. Snapshot manifest/patch hashes remain exact and all 11 preserved source copies match. Ledger remains **418 PASS / 2 BLOCKED**; manual acceptance blocked; G5 **NOT VERIFIED**; G6 deferred; executable/test edits local and unpublished. STOP for Rob/Priya review.
+
+---
+
 **November 11 — provenance handoff tightening loop:** Controlling provenance-only assignment refined in CRM documentation commit `4ca672a12fe1bfb5fce5c7129b257f33cb56f1ac`. The review clarified that only the required GitHub documentation publication is permitted network activity, that uncertain worktree identity requires read-only reconciliation and STOP if unresolved, and that missing provenance evidence is reported without ending independent documentation review. No operational database access, tests, source modifications or release authorized. Existing **418 PASS / 2 BLOCKED** remains unchanged.
 
 ## November 11, 2026 — NEXT CODEX TASK AUTHORIZED: IDENTIFY PACKAGED-SEED PROVENANCE ONLY; NOT STARTED
