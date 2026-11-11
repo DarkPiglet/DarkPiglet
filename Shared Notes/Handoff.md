@@ -1,3 +1,13 @@
+## November 10, 2026 — TEST 22.1 DOCUMENTATION PRESERVATION POINTER
+
+- The preserved Test 22.1 documentation sequence is in `Shared Notes/Test 22.1`.
+- The current numbered handoff is `Test-22.1-Handoff-001.md`; cumulative history is `Test-22.1-Handoff-history.md`.
+- These files were transplanted from preserved local-only commit `601abb0546bb59d9ee08a20a9f84746612cd24c9` with exact Git blobs `bb461ea83f146c2c157051f5f12b2260c9c57748` and `6669fb91ea2d960e7349963e1649020f19b230d9`. Their verified UTF-8 byte-stream SHA-256 values are `80CAAEBA92BF3C67DFBA38D7D2876A9ED3A7FA693ED39A8EFDA3AA8BC2B59AED` and `FF8C8F65E68D068F4D217793ABE9AD9EFE27005DFBE3133E3FDAFCD21C41B529`.
+- The numbered file records the last verified current state of that isolated documentation sequence; the history file remains cumulative context. Neither file independently authorizes CRM source, database, configuration, test, merge, release or deployment work.
+- The original divergent shared checkout, its preservation ref/bundle and untracked `Test/` remain intentionally unreconciled and untouched pending separate review.
+
+---
+
 ## November 10, 2026 — CRM PUBLICATION VERIFIED; SHARED LOCAL/REMOTE HASH RECONCILIATION FAILED CLOSED
 
 - Independently refetched the CRM isolated seed-guard report and both current handoff entries from GitHub. Published content matched; the initial CRM result handoff commit was `292df72215bf37dc33b020bf05bd7c6410d2e763`, shared result commit was `20760c6da97a5f70ea86967450e99488727c7798`, and CRM reconciliation addendum commit is `a1ca24dec6f03a6a233b5d5793349229b36161c0`.
