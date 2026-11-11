@@ -1,3 +1,11 @@
+## November 10, 2026 — CRM COMPREHENSIVE SAFE AUTOMATED REGRESSION AUTHORIZED; NOT STARTED
+
+Rob approved the next CRM 22.1 Codex assignment: run all relevant automated tests that are safe using contained fictional data, including outside-sandbox VSTest only after any required exact platform approval. Controlling document: `DarkPiglet/Weekly-Logger-Search-Application/docs/investigations/2026-11-10-comprehensive-offline-automated-regression-authorized.md`; documentation commit `edebdce225ba7ae6dbf7bee96bdd0e0b8d5a52e2`; CRM handoff commit `cf9cb916bf9d972a716a38aeef3316327179b6ed`. No arbitrary elapsed-time cutoff during the authorized execution. Run independent cases despite ordinary failures, skip true dependents, preserve first-failure evidence and give each failure a substantive bounded investigation and proposed smallest safe remedy. Global stop for integrity, isolation and unsafe effects. No production edits to force passing tests.
+
+Retain isolated worktree, all uncommitted changes and the approved hashed fictional seed. No operational/customer/USB/Z:/recovery data, live Graph/email/order/carrier, downloads, admin/security changes, executable commits, merge, packaging or deployment. Record per-test/suite results, confirmed causes versus hypotheses, limitations (G5 modal unverified; G6 countryless behavior deferred) and manual-acceptance readiness only. Codex to update both handoffs, publish documentation evidence and stop for Rob/Priya review. **Codex has not been launched by this handoff publication; Rob's normal start instruction is still required.**
+
+---
+
 ## November 10, 2026 — CRM NEXT CODEX ASSIGNMENT: COMPREHENSIVE OFFLINE AUTOMATED REGRESSION; NOT STARTED
 
 Rob approved full safely executable CRM 22.1 automated test coverage, with detailed evidence-based failure investigations and continuation past ordinary independent failures. The controlling authorized task is [CRM comprehensive offline regression](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-comprehensive-offline-automated-regression-authorized.md), published and refined through CRM documentation commit `edebdce225ba7ae6dbf7bee96bdd0e0b8d5a52e2`; CRM HANDOFF.md pointer updated in `cf9cb916bf9d972a716a38aeef3316327179b6ed`.
