@@ -1,3 +1,9 @@
+## November 11, 2026 — NEXT CODEX TASK AUTHORIZED: IDENTIFY PACKAGED-SEED PROVENANCE ONLY; NOT STARTED
+
+Rob approved investigating the two remaining operational packaged-seed blockers while protecting the verified local source snapshot and **418 PASS / 2 BLOCKED** cumulative test ledger. Controlling assignment: [packaged-seed provenance-only read-only investigation](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-operational-packaged-seed-provenance-readonly-authorized.md), CRM documentation commit `da404e9dbca86c782a09c93a9a9511fa93ae7b7b`. Codex shall trace existing historical test/package records to identify the intended immutable Test 22/test.14 operational seed, any independently trusted recorded size/hash, and whether the two historical population assertions are appropriate for the current candidate. **Do not open, enumerate, hash, copy or query any operational database or package archive; do not run tests, modify source, merge, package or deploy.** Existing snapshot and evidence remain protected. Produce evidence matrix, identify unknowns, recommend smallest separately authorized stage, update both handoffs and STOP for Rob/Priya review. Publication is not execution; Rob's normal Codex launch is required.
+
+---
+
 ## November 11, 2026 — CRM regression evidence preserved; two operational claims reviewed
 
 Executed only the published preservation and two-claim review assignment on branch `codex/contact-method-entry-validation-20261110`, guard `a1416eed1c6837604f235ec09990b19e979b3176`, as non-admin Dev. The detailed result is `docs/investigations/2026-11-11-preserve-regression-evidence-and-review-two-operational-claims-result.md`.
