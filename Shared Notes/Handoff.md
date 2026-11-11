@@ -1,3 +1,9 @@
+## November 10, 2026 — NEXT CRM CODEX HANDOFF: FOUR FOCUSED TEST GAPS; TWO DECISIONS DEFERRED
+
+Rob approved preparation of a tightly bounded six-gap contact-method handoff; controlling CRM document `docs/investigations/2026-11-10-six-contact-method-gaps-focused-authorized.md` in `DarkPiglet/Weekly-Logger-Search-Application`, publication commit `b87cd4a501ae95851600ccc91e097244eaee4e0c`. Only four concrete fictional-data test gaps are authorized for focused test-only work after Rob's normal Codex start: invalid active-primary exact revalidation, invalid phone-history/audit, invalid phone during new-contact creation/rollback, and unmatched OfficePhone insertion. Validation-dialog classification and no-country legacy phone behavior are read-only findings needing separate business decisions. Preserve already verified Data 9/9, logged test correction and focused UI 1/1; the testhost sandbox socket 10013 root cause is settled, not license for security changes or automatically approved sandbox escape. Use proven isolated offline fictional seed, SDK/network/certificate guards and stop conditions. No product/schema changes, real databases/integrations, broad regression, executable push, merge, release or deployment. Codex not yet started by this documentation publication; publish factual results and STOP for review.
+
+---
+
 ## November 10, 2026 — TEST 22.1 DOCUMENTATION PRESERVATION POINTER
 
 - The preserved Test 22.1 documentation sequence is in `Shared Notes/Test 22.1`.
