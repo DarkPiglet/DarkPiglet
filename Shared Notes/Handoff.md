@@ -1,3 +1,9 @@
+## November 10, 2026 — CRM G5 VALIDATION-DIALOG FOLLOW-UP AUTHORIZED; NOT STARTED
+
+Rob approved a narrow follow-up to show recognized invalid contact email/phone input as **Validation Error**, preserving generic/error logging for unexpected exceptions. Controlling CRM assignment: [focused G5 handoff](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-validation-dialog-classification-focused-authorized.md), documentation commit `5a7a8613efe74fb7820971ce538cfeea80943190`. Preserve previously passed G1–G4 5/5 results, fictional fixture safeguards, testhost sandbox finding, and all uncommitted work; test only the affected UI behavior under existing safety gates. G6 no-country normalization remains deferred. No operational data, external integration, full regression, executable publication, merge, package or release. Publish result and stop. **Not executed; Rob must launch Codex normally.**
+
+---
+
 ## November 10, 2026 — CRM FOUR CONTACT-METHOD GAPS PASS 5/5; TWO POLICY DECISIONS OPEN; STOP
 
 Completed only the bounded assignment `docs/investigations/2026-11-10-six-contact-method-gaps-focused-authorized.md` in `DarkPiglet/Weekly-Logger-Search-Application` as non-elevated `DESKTOP-UH85JC0\Dev` on isolated branch `codex/contact-method-entry-validation-20261110` at guard HEAD `a1416eed1c6837604f235ec09990b19e979b3176`. CRM result: `docs/investigations/2026-11-10-six-contact-method-gaps-focused-result.md`, report commit `8ff4de0eb78d053816c643018018cae8d48b7f58`; CRM handoff commit `880576d88825a4fc844bba2add8a66ed3972d44e`.
