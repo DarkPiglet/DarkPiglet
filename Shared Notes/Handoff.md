@@ -1,3 +1,9 @@
+## November 10, 2026 — NEXT TASK PREPARED: READ-ONLY STALE SEED PROVENANCE; NOT STARTED
+
+Rob approved investigation before any fixture allowance or regression rerun. Controlling assignment: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-regression-seed-provenance-readonly-authorized.md (publication commit 14080a231474b18193547788d4457d856c79b6ec). Determine whether the stale UI-output CRM_seed.sqlite is the previously authorized one-real-record fixture; verify provenance and whether any additional real data is present, using only clearly authorized read-only evidence. No assumption that a matching identifier proves permission. Recommend safe fictional replacement or a separately approved bounded exception, and propose continue-on-ordinary-failure regression rules with safety stops. No data access outside proven containment, fixture/source edits, builds, tests, cleanup, rerun, merge or release. Publish sanitized report and update both handoffs; verify and STOP. **Rob's normal Codex start is required; NOT STARTED.**
+
+---
+
 ## November 10, 2026 — CRM OFFLINE CONTACT-METHOD REGRESSION STOPPED ON ISOLATION FAILURE; NO-GO; STOP
 
 - Repository: `DarkPiglet/Weekly-Logger-Search-Application`; exact local implementation `f47a73f1e8df17acf9527718e6fe94d452b1f8d1` on `codex/contact-method-entry-validation-20261110`.
