@@ -1,3 +1,9 @@
+## November 11, 2026 — NEXT AUTHORIZED CODEX TASK: read-only decision on two legacy-seed requirements; NOT STARTED
+
+Rob authorized only the [focused read-only applicability investigation](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-two-legacy-seed-tests-requirement-decision-focused-authorized.md). Determine using existing release/build/test documentation whether current CRM 22.1 intentionally includes the pinned Test14 operational seed or is clean/no operational seed; reconcile source project defaults against prior clean Test22/Stage7 release policy. Analyze applicability of the two historical IPB/Rison population/UI tests. **Research and recommendations only:** do not change, reclassify or rerun tests or code, do not open/hash/copy/enumerate operational data or ZIPs, do not package/release/merge. If inapplicable, recommend smallest later correction and focused fictional checks; if applicable, recommend separately approved isolated verification; if uncertain, surface exact decision to Rob. Preserve all 418 verified passes, 2 blocked statuses and the 11-file source snapshot. Document and STOP for review. This entry supersedes the broader test-editing authority described in the immediately previous handoff entry. Rob's normal Codex launch is still required.
+
+---
+
 ## November 11, 2026 — CRM packaged-seed provenance-only review complete; seed resolved, archive unresolved
 
 Executed only the published provenance-only assignment at guard `a1416eed1c6837604f235ec09990b19e979b3176`. Detailed result: `docs/investigations/2026-11-11-operational-packaged-seed-provenance-readonly-result.md`.
