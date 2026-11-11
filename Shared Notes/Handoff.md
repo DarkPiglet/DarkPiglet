@@ -1,3 +1,15 @@
+## November 11, 2026 — CRM 22.1 Phase 1 PASS 8/8; legacy 418/2 preserved; Phase 2 gated
+
+CRM executed only the authorized synthetic Phase 1 on `codex/contact-method-entry-validation-20261110` at guard `a1416eed1c6837604f235ec09990b19e979b3176`. Detailed evidence: [Phase 1 result](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-synthetic-to-isolated-realdata-regression-phase1-result.md).
+
+The two original Test14 method bodies remain byte-identical and are now only tagged `AcceptanceScope=LegacyTest14Seed`; discovery returned exactly those methods. Current-candidate selection is `AcceptanceScope!=LegacyTest14Seed`. The historical ledger remains **418 PASS / 2 BLOCKED**, not 420/420, and was not rerun or reclassified.
+
+Focused fictional coverage passed **8/8** for seedless output, current schema/existing-data load with absent seed and no row mutation, missing installed/source fail-closed, two-agreement assigned/pending UI selection without mutation, email/office/mobile display, ContactID-wide selection independent of old primary flags, and blank-clearing email/date. Initial harness/filter failures were fully investigated and only targeted retests were run. The generic clean-install seed discrepancy remains open; no product/deployment default changed.
+
+No real/operational/customer/work/USB/`Z:`/recovery data or ZIP was identified or accessed. No source/test executable change was published, and no merge, package, release, deployment, cleanup or external action occurred. G5 rendered modal remains NOT VISUALLY VERIFIED; G6 remains deferred. Phase 2 is **NOT AUTHORIZED** until exact source/destination disclosure and a new explicit Rob approval. **STOP for Rob/Priya review.**
+
+---
+
 **November 11 — final tightening loop complete:** Re-reviewed latest controlling assignment after failure-analysis edits. Clarified immutable 418 PASS / 2 BLOCKED historical ledger versus separately denominated current acceptance, separate dated result file (authorization immutable), G5 rendered UI and real-data gates, proportionate investigation, and no real-data copy access before separate permission. Final amendment `a145ded1e6418a429acc0a48f5727f818a76dc7c`. No Codex execution, source/test changes, or real-data access performed.
 
 **November 11 failure-analysis clarification:** Controlling assignment now requires per-failure investigation, exact expected/actual and reproduction evidence, confirmed cause vs hypothesis, impact/dependencies, smallest corrective recommendation and targeted retest; independent tests continue. No silent test-expectation changes or Phase 2 data access. Assignment amendment `41f25fad4dfaeda67441cd752d62354494c598a1`.
