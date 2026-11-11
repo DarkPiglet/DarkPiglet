@@ -1,3 +1,11 @@
+## November 11, 2026 — NEXT CODEX TASK AUTHORIZED: synthetic regression first; isolated real-data stage GATED / NOT STARTED
+
+Rob approved retaining two historical Test14 seed-dependent tests as historical (not PASS), excluding only those from current CRM 22.1 acceptance selection, and completing focused synthetic regression first. Then prepare a separately approved isolated-copy real workplace database compatibility stage; no real-data access authorized by this publication. External email, drafts, UPS/FedEx labels and pickup operations are out of scope and NOT TESTED. Priority remains contact email/office/mobile display and controlled persistence. Preserve original **418 PASS / 2 BLOCKED** ledger, 11-file source snapshot, and unchanged workplace ZIP workflow. No merge, release or package.
+
+**Controlling assignment:** [CRM 22.1 synthetic-to-isolated-realdata regression](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-synthetic-to-isolated-realdata-regression-authorized.md), documentation commit `bf73c894a7a8136e1df382e88b4dcb9d1d7b5746`. Run standard tightening/review loop, Phase 1 only, publish results, STOP for Rob/Priya before any Phase 2 data access. Rob's normal Codex launch is required.
+
+---
+
 ## November 11, 2026 — CRM 22.1 legacy-seed applicability decision complete; candidate excludes Test14 seed
 
 Executed only the focused read-only current-requirement assignment. Detailed result: `docs/investigations/2026-11-11-two-legacy-seed-tests-requirement-decision-focused-result.md`.
