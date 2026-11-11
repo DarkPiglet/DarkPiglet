@@ -1,3 +1,5 @@
+**November 11 failure-analysis clarification:** Controlling assignment now requires per-failure investigation, exact expected/actual and reproduction evidence, confirmed cause vs hypothesis, impact/dependencies, smallest corrective recommendation and targeted retest; independent tests continue. No silent test-expectation changes or Phase 2 data access. Assignment amendment `41f25fad4dfaeda67441cd752d62354494c598a1`.
+
 **November 11 clarification — continue independent tests:** The controlling CRM 22.1 assignment now explicitly requires Codex to log a failed test and continue all safely independent tests; dependent cases become BLOCKED/SKIPPED with reasons, never false PASS. Stop only for safety, integrity, authority or external-side-effect risks. Phase 2 still requires separate approval. Assignment amendment commit `19d5d44e5e96d42dfcac10506b636476e0d06640`.
 
 ## November 11, 2026 — NEXT CODEX TASK AUTHORIZED: synthetic regression first; isolated real-data stage GATED / NOT STARTED
