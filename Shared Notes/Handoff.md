@@ -1,3 +1,16 @@
+## November 10, 2026 — CRM SEED PROVENANCE INVESTIGATION COMPLETE; OPERATIONAL COPY CAUSE VERIFIED; STOP
+
+- Repository: `DarkPiglet/Weekly-Logger-Search-Application`; read-only report `docs/investigations/2026-11-10-regression-seed-provenance-readonly-report.md`, CRM documentation commit `2655ded9336fb3272a445455328811a2f0a79bab`; CRM handoff closure `163c09eb3a79b2bc9fc1d86cf43e48ff75a6ef29`.
+- **VERIFIED:** November 10 CRM/UI outputs contained a newly copied byte-identical tracked operational seed: 1,617,920 bytes, SHA-256 `3363942E...D51E4A9`. Existing sanitized evidence proves many records, not one. No database was opened or queried now.
+- **CAUSE:** `CRMIncludeOperationalSeed` defaults true and the build commands omitted explicit false. New creation timestamps prove the CRM build copied it and the UI ProjectReference propagated it. The prior “stale seed” label is corrected. CRM data output stayed seed-free because that test project did not define the default.
+- **ONE REAL RECORD: NOT VERIFIED.** The permanent index, relevant newest volume and targeted history found no such authorization. The likely remembered record was one minimum **fictional Agreement** in a disposable fictional fixture; its source/derivative hashes `0EFDF5FD...3C43A7` / `F83184DE...572EDE` do not match the operational seed.
+- Preferred future route requires separate authorization: new no-overwrite outputs, explicit `CRMIncludeOperationalSeed=false`, version-compatible verified fictional fixtures, pre-test operational-hash rejection, and deferral of any test whose invariant requires operational contents.
+- Proposed future failure handling: continue independent safe cases after ordinary assertions; quarantine dependents; stop affected suites on safety/isolation failure; global stop when containment is uncertain or operational data appears; no automatic retry/fix; contained logs and explicit no-log reporting.
+- No build/test/rerun/cleanup, fixture/source edit, database query/copy, broad data search, production/work/USB/Z access, merge, package, release or deployment occurred.
+- **STOP:** no fixture exception, correction or rerun is authorized. Await Rob/Priya review.
+
+---
+
 ## November 10, 2026 — NEXT TASK PREPARED: READ-ONLY STALE SEED PROVENANCE; NOT STARTED
 
 Rob approved investigation before any fixture allowance or regression rerun. Controlling assignment: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-10-regression-seed-provenance-readonly-authorized.md (publication commit 14080a231474b18193547788d4457d856c79b6ec). Determine whether the stale UI-output CRM_seed.sqlite is the previously authorized one-real-record fixture; verify provenance and whether any additional real data is present, using only clearly authorized read-only evidence. No assumption that a matching identifier proves permission. Recommend safe fictional replacement or a separately approved bounded exception, and propose continue-on-ordinary-failure regression rules with safety stops. No data access outside proven containment, fixture/source edits, builds, tests, cleanup, rerun, merge or release. Publish sanitized report and update both handoffs; verify and STOP. **Rob's normal Codex start is required; NOT STARTED.**
