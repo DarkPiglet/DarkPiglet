@@ -1,3 +1,13 @@
+## November 11, 2026 — CRM 22.1 TWO-PAGE MANUAL ACCEPTANCE PLAN PUBLISHED; ORIGINALS PRESERVED; STOP
+
+Executed only the authorized short-plan documentation assignment. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-short-manual-acceptance-plan-result.md . Guard branch/HEAD remained `codex/contact-method-entry-validation-20261110` / `a1416eed1c6837604f235ec09990b19e979b3176`; index and protected unpublished work were preserved. Current handoffs, applicable `AGENTS.md`, controlling assignment, evidence/package results, and retained ten-page plan were read; no historical volume was needed.
+
+Published only the new short DOCX (43,100 bytes / `F8E6A261...9581C7`) and PDF (8,324 bytes / `94810335...BCCA10`) beside the unchanged four original files in `Z:\11-12-26_22.1_CRM`. The two pages contain only remaining exact-package/workstation/provenance/smoke/conditional-log checks, the Plans 1-8 evidence map and boundaries, blank actual/status/notes/disposition fields, and signoff. Plan 8 stays **NOT RUN** without fresh action-specific Rob authorization.
+
+DOCX reopen/package/landscape/explicit-break/locked-row checks and full text parity passed; the PDF is exactly two landscape pages, unencrypted, no JavaScript, and both latest rendered pages are visually clean. The bundled DOCX renderer lacked bundled LibreOffice, so no desktop fallback was used. Final Z read-back found exactly six children; original ZIP/checksum/ten-page DOCX/PDF hashes are unchanged. No tests/app/source/test/DB/settings/live action/branch operation/merge/package/release/deploy/cleanup occurred. **STOP for Rob/Priya review.**
+
+---
+
 ## November 11, 2026 — NEXT AUTHORIZED TASK: TWO-PAGE CRM 22.1 MANUAL ACCEPTANCE PLAN; NOT EXECUTED
 
 Rob approved replacing repeated manual testing with a concise two-page DOCX/PDF acceptance plan, citing proven real-window UI Plans 1–7 while keeping exact-package startup/restart, optional actual diagnostic-log inspection and explicit live-integration gating as remaining tasks. **Controlling assignment:** https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-short-manual-acceptance-plan-authorized.md. Create only the two new documents in existing `Z:\11-12-26_22.1_CRM`, preserve the original ten-page DOCX/PDF, ZIP and checksum without overwriting, and verify two-page readability, content parity and hashes. No tests, app/source/DB changes, live actions, merge, release or cleanup. Preserve guarded Windows checkout and unpublished work. Publish outcome and **STOP for Rob/Priya review**.
