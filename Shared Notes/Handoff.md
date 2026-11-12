@@ -1,3 +1,9 @@
+## November 11, 2026 — NEXT AUTHORIZED TASK: TWO-PAGE CRM 22.1 MANUAL ACCEPTANCE PLAN; NOT EXECUTED
+
+Rob approved replacing repeated manual testing with a concise two-page DOCX/PDF acceptance plan, citing proven real-window UI Plans 1–7 while keeping exact-package startup/restart, optional actual diagnostic-log inspection and explicit live-integration gating as remaining tasks. **Controlling assignment:** https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-short-manual-acceptance-plan-authorized.md. Create only the two new documents in existing `Z:\11-12-26_22.1_CRM`, preserve the original ten-page DOCX/PDF, ZIP and checksum without overwriting, and verify two-page readability, content parity and hashes. No tests, app/source/DB changes, live actions, merge, release or cleanup. Preserve guarded Windows checkout and unpublished work. Publish outcome and **STOP for Rob/Priya review**.
+
+---
+
 ## November 11, 2026 — CRM 22.1 FULL SAFE RENDERED-UI ACCEPTANCE PLANS 1–7 PASS; PLAN 8 NOT RUN; STOP
 
 Executed only the authorized full safe rendered-UI acceptance assignment. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-full-rendered-ui-acceptance-result.md . Guard branch/HEAD stayed `codex/contact-method-entry-validation-20261110` / `a1416eed1c6837604f235ec09990b19e979b3176`; protected dirty/index/untracked state was preserved. Current handoffs, applicable `AGENTS.md`, controlling assignment, exact ten-page plan PDF, and required current evidence were read completely; historical volumes were unnecessary. The PDF was the only Z item opened.
