@@ -1,3 +1,9 @@
+## November 11, 2026 — NEXT CODEX TASK AUTHORIZED: FINAL OFFLINE REGRESSION; NOT EXECUTED
+
+Rob approved the [final regression readiness assignment](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-final-regression-authorized.md). Preserve guarded local CRM 22.1 branch/HEAD, unpublished rendered-contact and Shipping History tests and all prior evidence. Run contained seedless build and broadest safe offline existing tests, prioritize ContactID-specific email/office display and blank-clearing, verify History retrieval and other existing regression coverage. Historical 418 PASS / 2 BLOCKED and focused phase tallies remain separate. No new Z:/USB/real DB access, external Graph/carrier/email operations, product fixes, commit of local source/tests, merge, ZIP, packaging, deployment or cleanup. Document G5 rendered modal as unverified unless safely proven, G6 deferred. Publish redacted results and STOP for Rob/Priya review.
+
+---
+
 ## November 11, 2026 — CRM 22.1 SHIPPING HISTORY RETRIEVAL PASS 3/3; EXISTING PRODUCT SATISFIES SCOPE; STOP
 
 Executed only the focused Shipping History assignment in `DarkPiglet/Weekly-Logger-Search-Application` as non-admin `DESKTOP-UH85JC0\Dev`, branch `codex/contact-method-entry-validation-20261110`, unchanged guard HEAD `a1416eed1c6837604f235ec09990b19e979b3176`. Full sanitized result: [2026-11-11-crm221-shipping-history-retrieval-result.md](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-shipping-history-retrieval-result.md).
