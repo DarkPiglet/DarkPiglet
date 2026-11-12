@@ -1,3 +1,9 @@
+## November 11, 2026 — NEXT AUTHORIZED TASK: READ-ONLY CRM 22.1 UI ACCEPTANCE COVERAGE INVESTIGATION; NOT EXECUTED
+
+Rob approved a read-only investigation of the gap between 425/425 offline regression evidence and the 10-page manual acceptance plan. Controlling instruction: [docs/investigations/2026-11-11-crm221-ui-acceptance-coverage-investigation-authorized.md](docs/investigations/2026-11-11-crm221-ui-acceptance-coverage-investigation-authorized.md). Compare exact assignment language, UI execution type and evidence for every acceptance scenario; distinguish real user-like UI interaction, rendered harness checks, and lower-level tests. No test runs, launches, code/data/plan changes, integrations, package, merge or deployment. Documentation-only result permitted subject to existing publication rules; STOP for Rob review. This supersedes the completed packaging task as the next instruction only.
+
+---
+
 ## November 11, 2026 — CRM 22.1 MANUAL-ACCEPTANCE ZIP PUBLISHED; VERIFIED; CONDITIONAL; STOP
 
 Executed only the authorized CRM 22.1 test-ZIP packaging assignment. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-test-zip-packaging-result.md . Guard HEAD remained `a1416eed1c6837604f235ec09990b19e979b3176`; existing dirty source/test work and the empty index were preserved. A fresh seedless Debug build passed with zero errors and exact final-regression binary parity. The final 49-entry ZIP is 5,162,903 bytes / SHA-256 `204A3C37...E4145`, embeds tested `CRM.exe` `6CE0F07D...63032`, and contains zero database/sidecar, settings/profile, secret/token-cache, PDB, TRX/test-result, snapshot or source/project/repository metadata.
