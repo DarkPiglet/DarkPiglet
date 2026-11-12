@@ -1,3 +1,9 @@
+## November 11, 2026 — NEXT CODEX TASK AUTHORIZED: SHIPPING HISTORY RETRIEVAL; NOT EXECUTED
+
+Rob authorized the [focused CRM 22.1 Shipping History assignment](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-shipping-history-retrieval-authorized.md). Inspect existing FedEx/UPS label tracking and pickup confirmation persistence, History display/search/copy, and Shipping History Only filter; correct only confirmed narrow defects, without schema change. Preserve unpublished rendered UI tests, local source guard and all earlier result ledgers. Fictional isolated tests only; iterative tightening, failure investigation and continue-independent-tests rule. No real carrier/email operations, real database access, merge, ZIP, packaging or deployment. STOP for Rob/Priya review; Rob launches Codex normally.
+
+---
+
 ## November 11, 2026 — RENDERED CONTACT CONTROLS PASS 2/2; CONTACTID 391 REDACTED PASS; G5 STILL NOT VISUALLY VERIFIED; STOP
 
 Executed only `docs/investigations/2026-11-11-crm221-rendered-contact-controls-ui-automation-authorized.md` as non-admin `DESKTOP-UH85JC0\Dev` on `codex/contact-method-entry-validation-20261110` at unchanged guard HEAD `a1416eed1c6837604f235ec09990b19e979b3176`. Detailed result: [2026-11-11-crm221-rendered-contact-controls-ui-automation-result.md](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-rendered-contact-controls-ui-automation-result.md).
