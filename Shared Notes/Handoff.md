@@ -2,6 +2,9 @@
 
 Rob approved a read-only investigation of the gap between 425/425 offline regression evidence and the 10-page manual acceptance plan. Controlling instruction: [docs/investigations/2026-11-11-crm221-ui-acceptance-coverage-investigation-authorized.md](docs/investigations/2026-11-11-crm221-ui-acceptance-coverage-investigation-authorized.md). Compare exact assignment language, UI execution type and evidence for every acceptance scenario; distinguish real user-like UI interaction, rendered harness checks, and lower-level tests. No test runs, launches, code/data/plan changes, integrations, package, merge or deployment. Documentation-only result permitted subject to existing publication rules; STOP for Rob review. This supersedes the completed packaging task as the next instruction only.
 
+
+**Final instruction review (same authorization):** Tightened controlling assignment to preserve guarded local HEAD/uncommitted work, limit Z access to the named plan document if safely available, distinguish UI harness evidence from real interactive UI, require scenario-by-scenario evidence and tool feasibility, and permit only report/handoff documentation writes. No expansion of executable authorization. Codex investigation has NOT RUN.
+
 ---
 
 ## November 11, 2026 — CRM 22.1 MANUAL-ACCEPTANCE ZIP PUBLISHED; VERIFIED; CONDITIONAL; STOP
