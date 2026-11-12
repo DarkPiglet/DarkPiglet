@@ -1,3 +1,13 @@
+## November 11, 2026 — CRM 22.1 MANUAL-ACCEPTANCE ZIP PUBLISHED; VERIFIED; CONDITIONAL; STOP
+
+Executed only the authorized CRM 22.1 test-ZIP packaging assignment. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-test-zip-packaging-result.md . Guard HEAD remained `a1416eed1c6837604f235ec09990b19e979b3176`; existing dirty source/test work and the empty index were preserved. A fresh seedless Debug build passed with zero errors and exact final-regression binary parity. The final 49-entry ZIP is 5,162,903 bytes / SHA-256 `204A3C37...E4145`, embeds tested `CRM.exe` `6CE0F07D...63032`, and contains zero database/sidecar, settings/profile, secret/token-cache, PDB, TRX/test-result, snapshot or source/project/repository metadata.
+
+Created only `Z:\11-12-26_22.1_CRM` and published exactly four verified files: ZIP, checksum, ten-page DOCX acceptance plan and matching PDF. Final read-back found four children, matching hashes, a valid 49-entry archive with zero prohibited content, and valid document/PDF structure and metadata. The plan covers ContactID 391 contact-method rendering, blank email/date persistence, order eligibility, Shipping History, hidden Graph IDs, diagnostics, G5 visual verification and deliberately authorized-only external actions.
+
+Status remains **CONDITIONAL**. G5 still awaits Rob's human visual execution; G6 remains deferred; seedless clean-install behavior, live integrations and work-site acceptance remain unverified. No operational database or unrelated Z item was accessed. CRM documentation commits: result `17bdad759452745f3c6cfb6a09dea526a66d0a0b`, handoff `4b6772a41b652933e8321373ca5be5d7e56ff479`. No merge/release/deployment/promotion or cleanup. **STOP for Rob's review.**
+
+---
+
 ## November 11, 2026 — NEXT TASK AUTHORIZED: CRM 22.1 TEST ZIP PACKAGING; NOT EXECUTED
 
 Rob authorized conditional manual-acceptance test ZIP packaging after 425/425 offline regression. Controlling assignment: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-test-zip-packaging-authorized.md . Preserve guarded local source/unpublished tests, verify build parity, seedless contained ZIP and SHA-256; G5 visual unverified, G6 deferred, live/work-site acceptance untested. No merge/deploy/release or production data. STOP for review after package or on provenance mismatch. This supersedes previous next-task instructions.
