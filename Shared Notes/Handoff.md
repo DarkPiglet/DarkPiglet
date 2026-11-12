@@ -1,3 +1,13 @@
+## November 11, 2026 — CRM 22.1 UI ACCEPTANCE COVERAGE INVESTIGATION COMPLETE; 425/425 DOES NOT REPLACE PLAN; STOP
+
+Executed only the authorized CRM 22.1 UI acceptance-coverage investigation. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-ui-acceptance-coverage-investigation-result.md . The exact ten-page plan was the only `Z:` item opened; no test/build/CRM launch or package/database/settings/integration operation occurred. Guard branch/HEAD, empty index and all existing dirty/untracked state remain intact. CRM documentation commits: result `8b9f08b628841d8ab81b90578102515eea99fdc5`, handoff `82ed91061cf480933b5e38d5eda588216024ec60`.
+
+Conclusion: **425/425** proves offline regression assertions, not execution of the plan. Only `RCUI-01`/`RCUI-02` are visible-`CRM.exe` FlaUI/UIA3 user-like coverage, proving the core fictional and ContactID 391 rendered contact-method paths; resize remains separate. Safe package restart is partial. Clear email/date, order eligibility, Shipping History, and Graph-ID hiding are mainly lower-level/in-process evidence; Shipping History did not prove Ctrl+C. The visible Maintenance smoke never opened/inspected diagnostic logs. G5 classification passed but its owned rendered modal, icon, dismissal, screenshot, and visible persistence remain **NOT VERIFIED**. Live integrations remain **NOT RUN**; G6 remains deferred.
+
+Smallest recommended next pilot, not authorized here: one fictional invalid-email case in the existing real-window FlaUI fixture, with owned-modal assertions, redacted evidence, UIA dismissal, and visible/database invariance. Do not broaden without Rob's review. **STOP for Rob's review.**
+
+---
+
 ## November 11, 2026 — NEXT AUTHORIZED TASK: READ-ONLY CRM 22.1 UI ACCEPTANCE COVERAGE INVESTIGATION; NOT EXECUTED
 
 Rob approved a read-only investigation of the gap between 425/425 offline regression evidence and the 10-page manual acceptance plan. Controlling instruction: [docs/investigations/2026-11-11-crm221-ui-acceptance-coverage-investigation-authorized.md](docs/investigations/2026-11-11-crm221-ui-acceptance-coverage-investigation-authorized.md). Compare exact assignment language, UI execution type and evidence for every acceptance scenario; distinguish real user-like UI interaction, rendered harness checks, and lower-level tests. No test runs, launches, code/data/plan changes, integrations, package, merge or deployment. Documentation-only result permitted subject to existing publication rules; STOP for Rob review. This supersedes the completed packaging task as the next instruction only.
