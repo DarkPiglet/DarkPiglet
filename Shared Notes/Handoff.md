@@ -1,3 +1,9 @@
+## November 11, 2026 — CRM 22.1 FULL REAL-WINDOW ACCEPTANCE AUTOMATION AUTHORIZED; NOT EXECUTED
+
+Rob approved whole-suite safe UI automation, not the earlier one-test G5 pilot. Controlling instruction: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-full-rendered-ui-acceptance-authorized.md . Cover all eight acceptance scenarios as far as safe with existing FlaUI/UIA3, real visible CRM window and fictional isolated data; preserve historical evidence and protected unpublished local work. No live integrations, actual orders, real databases, Z: ZIP use, product-code changes, merge/package/release. Report a scenario matrix and minimal remaining manual acceptance; do not rewrite the ten-page plan yet. G5-only pilot is superseded; Codex not started. **STOP after reporting for Rob/Priya review.**
+
+---
+
 ## November 11, 2026 — CRM 22.1 UI ACCEPTANCE COVERAGE INVESTIGATION COMPLETE; 425/425 DOES NOT REPLACE PLAN; STOP
 
 Executed only the authorized CRM 22.1 UI acceptance-coverage investigation. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-ui-acceptance-coverage-investigation-result.md . The exact ten-page plan was the only `Z:` item opened; no test/build/CRM launch or package/database/settings/integration operation occurred. Guard branch/HEAD, empty index and all existing dirty/untracked state remain intact. CRM documentation commits: result `8b9f08b628841d8ab81b90578102515eea99fdc5`, handoff `82ed91061cf480933b5e38d5eda588216024ec60`.
