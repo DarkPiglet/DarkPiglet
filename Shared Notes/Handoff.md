@@ -1,3 +1,9 @@
+## November 11, 2026 — NEXT TASK AUTHORIZED: CRM 22.1 TEST ZIP PACKAGING; NOT EXECUTED
+
+Rob authorized conditional manual-acceptance test ZIP packaging after 425/425 offline regression. Controlling assignment: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-test-zip-packaging-authorized.md . Preserve guarded local source/unpublished tests, verify build parity, seedless contained ZIP and SHA-256; G5 visual unverified, G6 deferred, live/work-site acceptance untested. No merge/deploy/release or production data. STOP for review after package or on provenance mismatch. This supersedes previous next-task instructions.
+
+---
+
 ## November 11, 2026 — CRM 22.1 FINAL OFFLINE REGRESSION 425/425 PASS; CONDITIONAL; STOP
 
 Executed only the authorized final offline regression in `DarkPiglet/Weekly-Logger-Search-Application` as non-admin `DESKTOP-UH85JC0\Dev`, branch `codex/contact-method-entry-validation-20261110`, unchanged guard HEAD `a1416eed1c6837604f235ec09990b19e979b3176`. Full result: [2026-11-11-crm221-final-regression-result.md](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-final-regression-result.md).
