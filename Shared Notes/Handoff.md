@@ -1,3 +1,16 @@
+## November 11, 2026 — CRM 22.1 PHASE 2 ISOLATED REAL-DATA REGRESSION PASS 1/1; SOURCE UNCHANGED; STOP
+
+Executed only Phase 2 of `docs/investigations/2026-11-11-crm221-phase2-isolated-realdata-regression-authorized.md` as non-admin `DESKTOP-UH85JC0\Dev` on `codex/contact-method-entry-validation-20261110` at unchanged guard HEAD `a1416eed1c6837604f235ec09990b19e979b3176`. Detailed result: [2026-11-11-crm221-phase2-isolated-realdata-regression-result.md](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-phase2-isolated-realdata-regression-result.md).
+
+The exact `Z:\CRM.sqlite` source was read-only preflighted at 2,551,808 bytes / SHA-256 `3815DEC6FCDCE64B8A672160068C82CBA60606191CB03F0D53AF9D7BC85681CF`, schema 24, integrity `ok`, zero FK failures and no WAL/SHM/journal. Exactly one non-overwriting copy was created at `C:\Users\Dev\AppData\Local\Temp\CRM221-Phase2-20261111\CRM.sqlite`. Final source hash/length/sidecar state remained identical. The changed copy ended integrity `ok`, zero FK failures and no sidecars.
+
+One local, unpublished test-only harness passed **1/1** after one harness-only correction. It verified customer/site/contact loading; ContactID-matched email/office/mobile including ContactID 391; quick search; multi-agreement selection/rendering without mutation; order eligibility display without submission; controlled email/date clear-save-reload; exact unrelated-row preservation; and one expected new ContactUpdated audit. The first executed run failed because the harness incorrectly entered structured site-edit mode, where contact cards are intentionally read-only; the copy remained byte-identical. Removing only that click and selecting the site through the established grid path produced the pass. Build passed with 0 errors/9 warnings; final TRX SHA-256 `7CBEDE8297786B28BEB495CBE3182612997DC8F41BF2E028C34487D3F78AB3E3`.
+
+The disposable root contains one SQLite file and zero logs/backups/orders/exports/agreement documents; settings remained loopback/reserved-only and Graph-disabled. G5 rendered modal remains **NOT VISUALLY VERIFIED**; G6 remains deferred; all live external actions are **NOT TESTED**. Executable/test edits remain local and unpublished. No full 418 rerun, merge, package, deployment, cutover or cleanup occurred. **STOP for Rob's review.**
+
+---
+
+
 **November 11 — Phase 2 final tightening loop complete:** Reviewed the authorized isolated real-data assignment against Phase 1 evidence and scope; clarified local guard versus GitHub documentation commits, WAL/active-source stop conditions, disposable-copy audit effects, conditional known-record checks and sensitive-data redaction. Second review found no further material changes. Controlling assignment updated at commit `1259e786d09fd4bcb0f420e70317822d118ee119`. Codex NOT launched; Rob may launch with standard instruction. Phase 2 source remains read-only `Z:\CRM.sqlite`, local disposable copy only; no merge/package/deploy.
 
 ## November 11, 2026 — NEXT CODEX TASK AUTHORIZED: CRM 22.1 PHASE 2 isolated real-data regression; NOT EXECUTED
