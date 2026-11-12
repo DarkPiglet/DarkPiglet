@@ -1,3 +1,9 @@
+## November 11, 2026 — NEXT CODEX TASK AUTHORIZED: rendered contact-control UI automation; NOT EXECUTED
+
+Rob authorized the [targeted CRM 22.1 rendered-contact UI assignment](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-rendered-contact-controls-ui-automation-authorized.md). Investigate why prior UI tests (including simulated orders/labels) did not establish actual visible control verification; reuse existing UI automation if possible; verify contact email/office/mobile in correct controls on the selected card with real-window navigation, using synthetic data first. Distinguish G5 modal visual gate from contact-card verification. Test-only changes only, local/unpublished; no new dependencies or product changes without review. No new Z: access or source copy; external operations excluded. Standard tightening/failure-investigation/continue-independent-tests loop; publish redacted findings and STOP. Preserve historical 418 PASS / 2 BLOCKED, Phase 1 8/8 and Phase 2 1/1 separately. No merge/package/deploy. Rob launches Codex normally.
+
+---
+
 ## November 11, 2026 — CRM 22.1 PHASE 2 ISOLATED REAL-DATA REGRESSION PASS 1/1; SOURCE UNCHANGED; STOP
 
 Executed only Phase 2 of `docs/investigations/2026-11-11-crm221-phase2-isolated-realdata-regression-authorized.md` as non-admin `DESKTOP-UH85JC0\Dev` on `codex/contact-method-entry-validation-20261110` at unchanged guard HEAD `a1416eed1c6837604f235ec09990b19e979b3176`. Detailed result: [2026-11-11-crm221-phase2-isolated-realdata-regression-result.md](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-phase2-isolated-realdata-regression-result.md).
