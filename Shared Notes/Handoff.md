@@ -1,3 +1,13 @@
+## November 12, 2026 — CRM 22.1 PRIMARY CONTACT-METHOD CORRECTION GATE FAIL; NO CODE OR TESTS; STOP
+
+Executed only the mandatory decision gate. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-contact-method-primary-correction-gate-result.md . CRM documentation commits: result `23615dfe1a32b3120597bc0c11d7c09cb49466ef`; handoff `ec38c84dff00229f6ef62cd6c57fa13beacf0de4`. No code/test/schema/data/configuration change, test/build/app/database/Z:/USB access, branch operation, cleanup, merge, package, release or deployment occurred.
+
+The gate **FAILS**: active+valid+non-primary can mean an unselected import/merge candidate or retained history, including older active rows left after replacement and a later explicit clear. Existing rows have no selection/clear reason, actor, timestamp, supersession link or method-linked audit, so current intent cannot be inferred safely. ContactID 391's filter cause is confirmed, but rows 817/818 cannot be truthfully auto-classified.
+
+No fallback, newest-ID heuristic, promotion, normalization, implementation, build or test was permitted. Today's two-contact cases remain unverified. Rob/Priya must choose deliberate per-contact confirmation/re-entry, separately design explicit selection/clear provenance, or retain status quo. **STOP for Rob/Priya review.**
+
+---
+
 ## November 12, 2026 — CRM 22.1 CONTACT-METHOD ID RECONCILIATION COMPLETE; HISTORICAL FILTER DEFECT CONFIRMED; CURRENT CASES UNVERIFIED; STOP
 
 Executed only the authorized static read-only reconciliation. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-contact-method-id-reconciliation-readonly-result.md . CRM documentation commits: result `63f3f7d0d63cfaf0c712df1486d11992789257e2`; handoff `6296797a40dfcbfce3785b24b30e3ab2342e9211`. No code/test/data/configuration change, test/build/app/database/Z:/USB access, branch operation, cleanup, merge, package, release or deployment occurred.
