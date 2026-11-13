@@ -1,3 +1,13 @@
+## November 12, 2026 — CRM THREE-STATE CONTACT-METHOD ASSESSMENT COMPLETE; INTENT LEDGER RECOMMENDED; NO IMPLEMENTATION; STOP
+
+Completed only the authorized read-only design/feasibility assessment. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-three-state-contact-method-implementation-assessment-result.md . CRM documentation commits: result `ac3d9b36e46c7943f32aea6ef679e23d8e027a37`; handoff `9a0c032240e921f5356bf4fe9e91b29c9c53b0e4`. No code/test/schema/data/configuration change, test/build/app/database/Z:/USB access, branch operation, cleanup, merge, package, release, or deployment occurred; guarded work remains preserved.
+
+Recommendation: preserve `IsPrimary` and add one append-only per-contact/per-field `Selected|Cleared` intent-event ledger. Latest Clear represents intentionally blank; absence of an event plus no primary remains legacy/never-populated unknown. Existing active+valid primaries remain provisionally current by Rob's policy with no backfill. Imported/merged methods stay non-primary candidates, invalid values remain unselectable, and no fallback, ID/recency inference, bulk reclassification, or global phone uniqueness is allowed. A per-row three-valued status is rejected because cleared is whole-field state without a row and Current would duplicate `IsPrimary`.
+
+A future additive schema-25 repository proof is feasible but not authorized. Old 22.0/22.1 binaries fail closed on newer schema, so later migration requires coordinated application cutover and backup-restore rollback; 22.0 cannot use the upgraded database. Rob/Priya must approve the ledger, legacy-primary policy, explicit Clear/unknown UI semantics, actor identity, merge-event policy, and cutover before any fictional-only implementation. **STOP for Rob/Priya review; no implementation authorized.**
+
+---
+
 ## November 12, 2026 — CRM 22.0 CONTACT-METHOD BEHAVIOR PROVEN; FALLBACK UNSAFE; NO IMPLEMENTATION; STOP
 
 Completed only the authorized source/document read-only investigation. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-crm220-contact-method-behavior-readonly-result.md . CRM documentation commits: result `f2517c182c61dee0ae771f0a7f8d836ea9ab05b7`; handoff `4f6f1fbdd122f8d28fb5ca09878309a0db4031df`. No code/test/schema/data/configuration change, test/build/app/database/Z:/USB access, branch operation, cleanup, merge, package, release, or deployment occurred; guarded work remains preserved.
