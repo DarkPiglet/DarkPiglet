@@ -1,3 +1,13 @@
+## November 12, 2026 — CRM 22.0 CONTACT-METHOD BEHAVIOR PROVEN; FALLBACK UNSAFE; NO IMPLEMENTATION; STOP
+
+Completed only the authorized source/document read-only investigation. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-crm220-contact-method-behavior-readonly-result.md . CRM documentation commits: result `f2517c182c61dee0ae771f0a7f8d836ea9ab05b7`; handoff `4f6f1fbdd122f8d28fb5ca09878309a0db4031df`. No code/test/schema/data/configuration change, test/build/app/database/Z:/USB access, branch operation, cleanup, merge, package, release, or deployment occurred; guarded work remains preserved.
+
+The direct pre-22.1 parent `f87bb9a...` proves CRM 22.0 displayed any active method, ignored validity, ordered primary first and otherwise lowest ContactMethodId, and could promote a displayed fallback on save. Clear only demoted active rows, so reload could redisplay the cleared value or older retained history. Imports create non-primary rows, merges copy them as non-primary, and replacement retains old active rows. Restoring this fallback could therefore expose invalid, superseded, imported/merged, or deliberately cleared values and is unsafe.
+
+Guarded CRM 22.1 remains primary+active+valid only and preserves explicit clear. The prior correction gate failure stands. Exact observed 22.0 binary identity, rows 817/818 intent, and today's two contacts remain unverified. Rob/Priya must choose deliberate confirmation/re-entry, a separately authorized review-only candidate/history surface, durable provenance design, or status quo. **STOP for Rob/Priya review; no implementation authorized.**
+
+---
+
 ## November 12, 2026 — CRM 22.1 PRIMARY CONTACT-METHOD CORRECTION GATE FAIL; NO CODE OR TESTS; STOP
 
 Executed only the mandatory decision gate. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-contact-method-primary-correction-gate-result.md . CRM documentation commits: result `23615dfe1a32b3120597bc0c11d7c09cb49466ef`; handoff `ec38c84dff00229f6ef62cd6c57fa13beacf0de4`. No code/test/schema/data/configuration change, test/build/app/database/Z:/USB access, branch operation, cleanup, merge, package, release or deployment occurred.
