@@ -1,3 +1,9 @@
+## November 13, 2026 — CRM READ-ONLY SCHEMA-24 COPY PROVENANCE AUTHORIZED; NOT EXECUTED
+
+Rob approved a ~20-minute, read-only investigation of the exact prior isolated Phase-2 CRM.sqlite copy after Stage B stopped on changed hash/timestamp and SHM evidence. Controlling assignment: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema24-isolated-copy-readonly-provenance-authorized.md. Inspect metadata/provenance first; only query SQLite if non-mutating access is assured; classify findings and STOP. No live/USB/Z: access, migration, repair, checkpoint, operational actions, source publication, release, or deployment. Preserve existing fictional-only candidate. **CODEX NOT STARTED.**
+
+---
+
 ## November 13, 2026 — CRM SCHEMA-25 FICTIONAL PORTABLE TEST CANDIDATE READY; STAGE B STOPPED; SOURCE UNPUBLISHED
 
 Completed only the CRM [schema-25 portable acceptance assignment](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-portable-acceptance-candidate-authorized.md). Detailed CRM result: `docs/investigations/2026-11-13-schema25-portable-acceptance-candidate-result.md`.
