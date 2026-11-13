@@ -1,3 +1,15 @@
+## November 13, 2026 — CRM SCHEMA-24 ISOLATED COPY INTERNALLY VALID; FRESHNESS UNPROVEN; METADATA STOP
+
+Completed only the authorized bounded provenance investigation. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema24-isolated-copy-readonly-provenance-result.md .
+
+Disposition: **B — internally valid, but freshness/suitability as a source remains unproven.** The exact isolated main remains 2,551,808 bytes / `AD387B077E53B53FA778880B27F87632F08B62B572F33723036B18D14E7D57DB`. Preserved evidence proves its change from the original `3815DEC6...85681CF` copy was the authorized Phase-2 clear/save plus one audit row; later rendered/final-regression reads retained this hash and explain the zero-byte WAL/32,768-byte SHM. It is a documented dated derivative, not proof of current freshness.
+
+The OS-write-denied read-only SQLite view found version 24, 24 SchemaVersion rows/max 24, integrity `ok`, zero FK failures, and the documented counts. All content hashes, lengths, creation/last-write times, attributes, sidecar bytes, and absent journal remained unchanged. Stop condition: the inspection sequence changed only main/SHM `LastAccessTimeUtc`; hashing, read-handle opens, and SQLite all occurred, so the specific read responsible is unproved. All further DB access stopped immediately. Independent review **PASS** after wording correction; no material disposition/scope defect.
+
+Guard remained `codex/contact-method-entry-validation-20261110` / `a1416eed1c6837604f235ec09990b19e979b3176`, empty index, 44 default dirty/untracked entries. No operational/USB/Z: access, migration, checkpoint, repair, copy, backup/restore, cleanup, source publication, integration, package, release, or deployment occurred. Smallest separately authorized later action is a fresh non-overwriting isolated copy from an explicitly identified closed source with pre/post hashes, sidecar/writer gates and a separately reviewed non-mutating inspection method. Preserve this derivative as evidence only. **STOP for Rob/Priya review.**
+
+---
+
 ## November 13, 2026 — CRM READ-ONLY SCHEMA-24 COPY PROVENANCE AUTHORIZED; NOT EXECUTED
 
 Rob approved a ~20-minute, read-only investigation of the exact prior isolated Phase-2 CRM.sqlite copy after Stage B stopped on changed hash/timestamp and SHM evidence. Controlling assignment: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema24-isolated-copy-readonly-provenance-authorized.md. Inspect metadata/provenance first; only query SQLite if non-mutating access is assured; classify findings and STOP. No live/USB/Z: access, migration, repair, checkpoint, operational actions, source publication, release, or deployment. Preserve existing fictional-only candidate. **CODEX NOT STARTED.**
