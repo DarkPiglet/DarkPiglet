@@ -1,3 +1,9 @@
+## November 13, 2026 — CRM BOUNDED SCHEMA-25 CORRECTIONS AUTHORIZED; CODEX NOT STARTED
+
+Rob approved one bounded F1–F5 correction-and-test assignment. Controlling instruction: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-contact-method-intent-ledger-bounded-corrections-authorized.md . CRM master HANDOFF.md now points to it. Correct transactional migration/version stamp, legacy intent bypass, normalized-equivalent audit mismatch and Selected-event validation; benchmark resolver startup before optimizing. Fictional-only tests, non-seed regression, targeted rendered UI, one independent review. Preserve guarded unpublished source. No real DB, Z:/USB, integrations, source publication, migration, package, merge, release or deployment. STOP for Rob/Priya review; **Codex NOT STARTED**.
+
+---
+
 ## November 12, 2026 — CRM INDEPENDENT SCHEMA-25 SOURCE REVIEW FAILS RELEASE GATE; SOURCE UNPUBLISHED; STOP
 
 Completed only the authorized read-only source review. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-contact-method-intent-ledger-independent-source-review-result.md . CRM documentation commit: `d55390a032cb875cd5091584ae0b29610465b891`. Current source/evidence was sufficient; no historical volume was needed. No code, schema, data, test, build, app, package, integration, migration, release, deployment, or guarded-work change occurred.
