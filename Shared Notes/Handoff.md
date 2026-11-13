@@ -1,3 +1,9 @@
+## November 13, 2026 — NEXT AUTHORIZED: FRESH SCHEMA-24 COPY → GATED SCHEMA-25 ACCEPTANCE; CODEX NOT STARTED
+
+Rob authorized a fresh copy from the specifically supplied Z: source, with strict closed/consistent snapshot checks, non-overwriting local preservation, source/copy SHA-256 checks, pristine backup restore test, migration of a distinct disposable copy only, reconciliation, rendered UI/functional verification, and independent review. External Graph/shipping actions must be fail-closed. No Z: source mutation, operational migration, source publication, release or cutover. Real-customer-data packages must NOT be transferred/shared without separate approval. Existing fictional-only ZIP preserved. Controlling assignment: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-fresh-schema24-copy-gated-acceptance-authorized.md. Stop on any failed gate; **CODEX NOT STARTED**.
+
+---
+
 ## November 13, 2026 — CRM SCHEMA-24 ISOLATED COPY INTERNALLY VALID; FRESHNESS UNPROVEN; METADATA STOP
 
 Completed only the authorized bounded provenance investigation. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema24-isolated-copy-readonly-provenance-result.md .
