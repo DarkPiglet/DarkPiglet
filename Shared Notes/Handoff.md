@@ -1,3 +1,15 @@
+## November 12, 2026 — CRM LIMITED SYNTHETIC WINFORMS INTENT INTEGRATION COMPLETE LOCALLY; SOURCE UNPUBLISHED; STOP
+
+Completed only the authorized limited schema-25 WinForms integration. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-contact-method-intent-ledger-ui-synthetic-integration-result.md . CRM documentation commits: result `42cd1a94dfba15ae975319218c21a30966fc06a8`; handoff `19cda48c26260a852750a9b1ce04012a033e2f3d`. Current evidence was sufficient; no historical volume was needed.
+
+The interaction gate passed because resolver-driven contact values are loaded before the bound `DataRow` baseline is accepted: nonblank→blank is explicit Clear, untouched blank unknown/Cleared creates no event, and new nonblank text is Select. The local unpublished Form1 path now displays fail-closed resolver values and atomically saves ordinary contact fields with classified Select/Clear actions. New-contact nonblank values append Selected events; blank new values remain unknown. Actor remains null, imports/merges remain non-selecting, shared phones remain valid, and no control/layout change, fallback, inference, promotion, normalization, or historical loss was added.
+
+Verification: seedless WinForms build **0 warnings/0 errors**; focused fictional schema-25 integration **11/11 PASS**; final non-seed regression **65/65 PASS**; `git diff --check` PASS. Display/reload is independently proven read-only, and invalid input or event failure rolls back the complete save. No executable/rendered window was launched, so this is not end-to-end UI proof.
+
+Guarded source and prior dirty/untracked work remain local/unpublished at unchanged base HEAD `a1416eed1c6837604f235ec09990b19e979b3176`. No real DB/data, Z:/USB, credential, live integration, package, merge, release, deployment, or cutover action occurred. Future gates require separate authorization for rendered fictional UI acceptance and coordinated schema-25 application/database cutover with verified backup/restore. **STOP for Rob/Priya review; no source publication or next phase is authorized.**
+
+---
+
 ## November 12, 2026 — CRM SYNTHETIC CONTACT-METHOD INTENT LEDGER PROOF COMPLETE; LOCAL SOURCE UNPUBLISHED; STOP
 
 Completed only the authorized isolated schema/repository proof. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-contact-method-intent-ledger-synthetic-proof-result.md . CRM documentation commits: result `3dfa0db927e3d1420b3373b9d5fcf083d3cd694d`; handoff `ecb1c688bb1c884c92729b3aad48e87f43e4cd11`. Current evidence was sufficient; no historical volume was needed.
