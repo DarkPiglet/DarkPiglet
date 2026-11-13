@@ -1,3 +1,17 @@
+## November 13, 2026 — CRM SCHEMA-25 FICTIONAL PORTABLE TEST CANDIDATE READY; STAGE B STOPPED; SOURCE UNPUBLISHED
+
+Completed only the CRM [schema-25 portable acceptance assignment](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-portable-acceptance-candidate-authorized.md). Detailed CRM result: `docs/investigations/2026-11-13-schema25-portable-acceptance-candidate-result.md`.
+
+Verdict: **TEST CANDIDATE READY — fictional data only; not daily-use approved.** Fresh seedless Release publish passed; non-seed regression passed **72/72**. Actual rendered WinForms acceptance completed display, clear/re-enter/save/reopen, intent/audit, unknown no-promotion, shared-office isolation, invalid rollback, and equivalent-format no-op scenarios. Fictional v24→v25 migration preserved counts, proved interruption rollback/retry, and finished at version 25 with integrity `ok` and zero FK failures.
+
+Stage B stopped before any SQLite open/migration because the exact prior isolated Phase-2 copy now differs from its documented source identity, has later modification evidence, and retains an SHM sidecar; its post-test provenance/restore state is therefore insufficient. No operational drive was searched or accessed.
+
+Authoritative local fictional-only ZIP: `C:\Users\Dev\AppData\Local\Temp\CRMSchema25Portable-20261113-A\Package\DistributionFinal\CRM-Schema25-Portable-Test-Candidate.zip`, 39,288,783 bytes, SHA-256 `B4144CB91A40824A5F348AEEFA90893AA56BC6DA0EECE85F60BC7097E6F2CC90`. It contains 87 verified files, two identical fictional schema-25 DB copies, zero PDB/sidecar/operational-seed files, TEST ONLY instructions, and a required fail-closed contained launcher with Graph disabled, loopback-only carrier URLs, and `.example.test` recipients. Real WinForms smoke and clean-extraction verification passed. Independent read-only review returned **PASS**; non-blocking evidence-retention limits are recorded in the CRM result.
+
+Guard remained `codex/contact-method-entry-validation-20261110` / `a1416eed1c6837604f235ec09990b19e979b3176`, empty index, 44 default dirty/untracked entries. Product source/tests remain local and unpublished. No customer DB migration/package, source publication, transfer, release, deployment, operational migration, cutover, or cleanup occurred. **STOP for Rob/Priya review.**
+
+---
+
 ## November 13, 2026 — CRM SCHEMA-25 PORTABLE ACCEPTANCE CANDIDATE AUTHORIZED; NOT EXECUTED
 
 Rob approved a timeboxed, fictional-first schema-25 test candidate assignment. Controlling instruction: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-portable-acceptance-candidate-authorized.md. Test fictional migration and actual rendered UI first; only reuse an existing isolated schema-24 copy after verified provenance/authorization and safe isolation, then preserve original and migrate a distinct working copy. Disable external actions, verify packaging isolation and hashes; no operational DB/USB/Z:/Graph/shipping, source publication, release, deployment or cutover. Stop on uncertainty and report. **CODEX NOT STARTED.**
