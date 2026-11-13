@@ -1,3 +1,15 @@
+## November 12, 2026 — CRM SYNTHETIC CONTACT-METHOD INTENT LEDGER PROOF COMPLETE; LOCAL SOURCE UNPUBLISHED; STOP
+
+Completed only the authorized isolated schema/repository proof. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-contact-method-intent-ledger-synthetic-proof-result.md . CRM documentation commits: result `3dfa0db927e3d1420b3373b9d5fcf083d3cd694d`; handoff `ecb1c688bb1c884c92729b3aad48e87f43e4cd11`. Current evidence was sufficient; no historical volume was needed.
+
+The local unpublished guarded proof adds additive schema v25, immutable per-contact/per-field Selected/Cleared intent events, a fail-closed resolver, and atomic repository Select/Clear operations while preserving `IsPrimary`, existing rows/flags, non-selecting imports/merges, invalid rejection, shared office numbers, and nullable actor identity. No intent backfill, fallback to non-primary, inferred intent, flag normalization, or global phone uniqueness was added.
+
+Independent fictional verification: focused proof **7/7 PASS** and all non-seed data tests **61/61 PASS**. Full seed-disabled accounting was 61 pass / 17 fail / 78 total; only 16 maintenance seed-fixture cases and the packaged-seed test failed because operational seed inclusion was explicitly disabled. Migration preservation/zero events, backup-restore rollback, clear/re-entry, ambiguity/mismatch fail-closed, append-only enforcement, and transactional rollback are covered. No customer/production/USB/Z: data, app/UI, integration, credential, package, merge, release, deployment, or operational migration action occurred. Protected unpublished work remains preserved; source was not staged, committed, or published.
+
+This is not application-ready: current WinForms save paths bypass the ledger; UI Clear/unknown integration and proof require separate authorization. Schema-25 cutover requires coordinated application upgrade and verified backup/restore; an old schema-24 executable was not directly tested against v25. **STOP for Rob/Priya review; no UI integration, source publication, operational cutover, or next phase is authorized.**
+
+---
+
 ## November 12, 2026 — CRM THREE-STATE CONTACT-METHOD ASSESSMENT COMPLETE; INTENT LEDGER RECOMMENDED; NO IMPLEMENTATION; STOP
 
 Completed only the authorized read-only design/feasibility assessment. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-three-state-contact-method-implementation-assessment-result.md . CRM documentation commits: result `ac3d9b36e46c7943f32aea6ef679e23d8e027a37`; handoff `9a0c032240e921f5356bf4fe9e91b29c9c53b0e4`. No code/test/schema/data/configuration change, test/build/app/database/Z:/USB access, branch operation, cleanup, merge, package, release, or deployment occurred; guarded work remains preserved.
