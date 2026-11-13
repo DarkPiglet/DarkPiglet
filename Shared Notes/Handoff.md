@@ -1,3 +1,13 @@
+## November 12, 2026 — CRM 22.1 CONTACT-METHOD ID RECONCILIATION COMPLETE; HISTORICAL FILTER DEFECT CONFIRMED; CURRENT CASES UNVERIFIED; STOP
+
+Executed only the authorized static read-only reconciliation. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-contact-method-id-reconciliation-readonly-result.md . CRM documentation commits: result `63f3f7d0d63cfaf0c712df1486d11992789257e2`; handoff `6296797a40dfcbfce3785b24b30e3ab2342e9211`. No code/test/data/configuration change, test/build/app/database/Z:/USB access, branch operation, cleanup, merge, package, release or deployment occurred.
+
+The contact-method pipeline consistently uses ContactId; a ContactMethodId/ContactId mismatch is eliminated for the proven path. Historical ContactID 391 remains a confirmed current-selection failure: method IDs 817/818 were active/valid but non-primary while the candidate loader requires active+primary+valid. The November 10 validation correction did not add a non-primary fallback.
+
+November 11 Phase 2 derived its 391 expected values from the same loader, and rendered RCUI-02 independently repeated the same primary-only filter without asserting nonblank Email/Office; blank-to-blank therefore passed. The 425/425 ledger remains valid for its actual assertions but does not establish this defect was repaired. November 12 current observations lack exact IDs and runtime/database provenance, so their cause is UNVERIFIED. Smallest next step requires separate authorization for masked, non-writing provenance capture of one current failing and one working contact. No fallback, promotion or data correction is authorized. **STOP for Rob/Priya review.**
+
+---
+
 ## November 11, 2026 — CRM 22.1 TWO-PAGE MANUAL ACCEPTANCE PLAN PUBLISHED; ORIGINALS PRESERVED; STOP
 
 Executed only the authorized short-plan documentation assignment. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-11-crm221-short-manual-acceptance-plan-result.md . Guard branch/HEAD remained `codex/contact-method-entry-validation-20261110` / `a1416eed1c6837604f235ec09990b19e979b3176`; index and protected unpublished work were preserved. Current handoffs, applicable `AGENTS.md`, controlling assignment, evidence/package results, and retained ten-page plan were read; no historical volume was needed.
