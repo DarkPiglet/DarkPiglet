@@ -1,3 +1,13 @@
+## November 12, 2026 — CRM INDEPENDENT SCHEMA-25 SOURCE REVIEW FAILS RELEASE GATE; SOURCE UNPUBLISHED; STOP
+
+Completed only the authorized read-only source review. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-contact-method-intent-ledger-independent-source-review-result.md . CRM documentation commit: `d55390a032cb875cd5091584ae0b29610465b891`. Current source/evidence was sufficient; no historical volume was needed. No code, schema, data, test, build, app, package, integration, migration, release, deployment, or guarded-work change occurred.
+
+Verdict: **FAIL for source publication, release, and schema-25 cutover.** High blocker: the v25 script commits schema objects and `SchemaVersion(25)` before stamping `user_version=25`, so interruption in that gap strands a database that reports v24 but cannot rerun the migration. Medium findings: public legacy repository write paths bypass intent events; WinForms startup performs three connection-heavy resolver calls per contact with no scale evidence; and normalization-equivalent edits can log a display change without persisting it. Low hardening gap: a Selected-event trigger does not require the referenced method to be active, valid, and primary. Prior 11/11 focused, 65/65 non-seed, and rendered 7/7 fictional evidence remains valid but does not close these recovery, bypass, scale, or audit-consistency risks.
+
+The result outlines but does not execute the later coordinated binary/database plan: fix and re-review, freeze exact hashes, stop all writers, verify schema/integrity/FKs/counts, create and hash a non-overwriting SQLite backup, restore-test it separately before cutover, migrate once with the exact schema-25 binary, run database/operator gates, and roll back schema-24 database and binaries together if any gate fails. Guard branch/HEAD remain `codex/contact-method-entry-validation-20261110` / `a1416eed1c6837604f235ec09990b19e979b3176`; product source remains local, preserved, and unpublished. **STOP for Rob/Priya review; no fix, source publication, operational migration, release, or next phase is authorized.**
+
+---
+
 ## November 12, 2026 — CRM RENDERED SYNTHETIC WINFORMS CONTACT-METHOD UI ACCEPTANCE PASS 7/7; SOURCE UNPUBLISHED; STOP
 
 Completed only the authorized visible schema-25 contact-method acceptance. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-12-contact-method-intent-ledger-rendered-ui-acceptance-result.md . CRM documentation commit: `3f1e079ed11c4db10b2f673066df9e3d26f73979`. Current evidence was sufficient; no historical volume was needed.
