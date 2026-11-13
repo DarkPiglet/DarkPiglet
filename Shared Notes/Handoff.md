@@ -1,3 +1,9 @@
+## November 13, 2026 — CRM SCHEMA-25 PORTABLE ACCEPTANCE CANDIDATE AUTHORIZED; NOT EXECUTED
+
+Rob approved a timeboxed, fictional-first schema-25 test candidate assignment. Controlling instruction: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-portable-acceptance-candidate-authorized.md. Test fictional migration and actual rendered UI first; only reuse an existing isolated schema-24 copy after verified provenance/authorization and safe isolation, then preserve original and migrate a distinct working copy. Disable external actions, verify packaging isolation and hashes; no operational DB/USB/Z:/Graph/shipping, source publication, release, deployment or cutover. Stop on uncertainty and report. **CODEX NOT STARTED.**
+
+---
+
 ## November 13, 2026 — CRM BOUNDED SCHEMA-25 F1–F5 CORRECTIONS PASS LOCALLY; SOURCE UNPUBLISHED; STOP
 
 Completed only the authorized bounded fictional correction-and-test assignment. Detailed result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-contact-method-intent-ledger-bounded-corrections-result.md . CRM documentation commit: `1d745b44c99053982e51d25373e758a6b81b8563`. Current evidence was sufficient; no historical volume was needed.
