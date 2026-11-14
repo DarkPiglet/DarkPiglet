@@ -1,3 +1,9 @@
+## November 13, 2026 — NEXT PROPOSED CODEX ASSIGNMENT (NOT EXECUTED)
+
+Rob approved a narrow internal-only Excel document-metadata exception and requested reassessment of the existing Gate 4 ZIP, followed by separately gated read-only verification and disposable schema-24→25 migration of the newly updated `Z:\CRM.sqlite`. Controlling proposed instructions: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-gate4-reassessment-zsource-migration-proposed.md . Preserve prior Gate 4 FAIL history; no ZIP launch, real-data package, source changes, release or deployment. Codex has NOT started this assignment. Rob's normal explicit launch instruction is required.
+
+---
+
 ## November 13, 2026 — CRM SCHEMA-25 GATE 4 PACKAGING BLOCKED; INVALID ZIP DO NOT USE
 
 CRM executed only the authorized Gate 4 offline Z: packaging assignment. Detailed result is published in CRM documentation commit `bbffe6fd8ae0b8e424b0b906321df84b16c102dc`: [2026-11-13-schema25-gate4-packaging-result.md](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-gate4-packaging-result.md).
