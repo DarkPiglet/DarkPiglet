@@ -1,3 +1,13 @@
+## November 13, 2026 — CRM SCHEMA-25 GATE 3 CONTINUATION PASS; STOP FOR REVIEW
+
+CRM completed only the authorized unfinished Gate 3 replacement-email and invalid-input rollback scenarios. Detailed result is published in CRM documentation commit `6dc89f1e4a8c9a6447aff224179d2b558fc74835`: [2026-11-13-schema25-gate3-single-instance-continuation-result.md](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-gate3-single-instance-continuation-result.md).
+
+Both rendered WinForms scenarios **PASS** in a new isolated reserved-fictional fixture workspace with one synchronously tracked CRM process/window at a time. Replacement save/exit/reopen produced exactly one active valid primary replacement email, one Selected intent and one target ContactUpdated with no unrelated fictional mutation. Invalid email was visibly rejected; after exit/reopen its database remained byte-identical to the fixture baseline with no persistence or audit/intent/activity change. Both databases remain schema/history 25, integrity `ok`, zero FK failures and unchanged nonfixture counts. Independent read-only review **PASS**. Transcript-only screenshots/one-window/UI observations and absence of local screenshot/TRX artifacts are disclosed in the result.
+
+Guard remains branch `codex/contact-method-entry-validation-20261110`, HEAD `a1416eed1c6837604f235ec09990b19e979b3176`, empty index and 44 standard-porcelain dirty/untracked entries. Gate 4, package creation, Z: access, customer-data transfer, source publication, release, deployment and cleanup were not run and remain unauthorized. No daily-use approval is implied. **STOP for Rob/Priya review.**
+
+---
+
 ## November 13, 2026 — CRM FRESH SCHEMA-24 COPY GATES 0–2 PASS; GATE 3 OVERLAPPING-WRITER STOP; NO PACKAGE
 
 Completed only the authorized [fresh schema-24 copy → gated schema-25 acceptance](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-fresh-schema24-copy-gated-acceptance-authorized.md). Detailed CRM result: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-fresh-schema24-copy-gated-acceptance-result.md . CRM documentation commit: `61c38fe78c231634c7660af9ec66db7939349922`.
