@@ -1,3 +1,13 @@
+## November 13, 2026 — CRM GATE 4 REASSESSMENT STAGE A BLOCKED; STAGE B NOT RUN
+
+CRM executed only the explicitly launched [Gate 4 reassessment and fresh Z: source migration handoff](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-gate4-reassessment-zsource-migration-proposed.md). Detailed result is published in CRM documentation commit `29bea00069fa634c5bd4ace501d201dcd10de65f`: [result](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-gate4-reassessment-zsource-migration-result.md).
+
+Stage A is **BLOCKED**, not a proven security-defect FAIL. The exact ZIP remains unchanged at 5,131,148 bytes / SHA-256 `2575C3F944196D8D43207239FDF79CD8D0622ADA2126F9461F8C6B88A42FB237`; archive, manifest, binary/dependency, offline-launcher and no-database/secret checks pass. All 24 workbook OOXML members were inspected. The single identity email, author/editor fields and historical local path are routine internal metadata accepted by Rob's exception; there are zero external relationships, live worksheet endpoints, macros, embeddings, connections or visible-cell contact/path values. A hidden product-reference sheet and two operational shipping/price comments are non-metadata workbook content outside the narrow exception. They are not classified as customer data, but independent review confirmed they require an explicit Rob/Priya internal-package acceptance decision.
+
+Stage B is **NOT RUN**. `Z:\CRM.sqlite` and sidecars were not opened, copied, hashed, queried or migrated. Guard remains `codex/contact-method-entry-validation-20261110` / `a1416eed1c6837604f235ec09990b19e979b3176`, empty index, 44 standard-porcelain entries and zero CRM processes. The ZIP was not launched, distributed, renamed, overwritten, deleted, rebuilt or repackaged. **STOP for Rob/Priya review.**
+
+---
+
 ## November 13, 2026 — NEXT PROPOSED CODEX ASSIGNMENT (NOT EXECUTED)
 
 Rob approved a narrow internal-only Excel document-metadata exception and requested reassessment of the existing Gate 4 ZIP, followed by separately gated read-only verification and disposable schema-24→25 migration of the newly updated `Z:\CRM.sqlite`. Controlling proposed instructions: https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-gate4-reassessment-zsource-migration-proposed.md . Preserve prior Gate 4 FAIL history; no ZIP launch, real-data package, source changes, release or deployment. Codex has NOT started this assignment. Rob's normal explicit launch instruction is required.
