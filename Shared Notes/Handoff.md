@@ -1,3 +1,15 @@
+## November 13, 2026 — CRM SCHEMA-25 GATE 4 PACKAGING BLOCKED; INVALID ZIP DO NOT USE
+
+CRM executed only the authorized Gate 4 offline Z: packaging assignment. Detailed result is published in CRM documentation commit `bbffe6fd8ae0b8e424b0b906321df84b16c102dc`: [2026-11-13-schema25-gate4-packaging-result.md](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-gate4-packaging-result.md).
+
+Gate 4 is **FAIL/BLOCKED**. Binary/dependency identity, Z: permission probe and no-overwrite creation, zero database/SQL/PDB/secret files, offline launcher, 29-file archive integrity, 28/28 manifest, exact local/Z: ZIP identity and fresh extraction passed. Required independent review then found prohibited real-person/corporate-contact metadata and an absolute local-machine path embedded in `Blank Order Form.xlsx` OOXML metadata.
+
+The exact invalid artifact is `Z:\CRM-Schema25-Offline-Manual-Test-a1416eed-20261113-173211.zip`, 5,131,148 bytes, SHA-256 `2575C3F944196D8D43207239FDF79CD8D0622ADA2126F9461F8C6B88A42FB237`. **Do not use, distribute, launch, rename, overwrite or represent it as a valid package.** Per the assignment's failed-check stop/no-cleanup boundary, it remains unchanged pending explicit Rob/Priya direction. Any deletion/quarantine or sanitized replacement requires separate authorization and a new unique filename.
+
+Guard remains `codex/contact-method-entry-validation-20261110` / `a1416eed1c6837604f235ec09990b19e979b3176`, empty index and 44 standard-porcelain dirty/untracked entries; zero CRM processes. No gate was repeated, no operational/customer database was accessed or transferred, and no manual test, source change, build, migration, release, deployment or later phase occurred. **STOP for Rob/Priya review.**
+
+---
+
 ## November 13, 2026 — CRM SCHEMA-25 GATE 3 CONTINUATION PASS; STOP FOR REVIEW
 
 CRM completed only the authorized unfinished Gate 3 replacement-email and invalid-input rollback scenarios. Detailed result is published in CRM documentation commit `6dc89f1e4a8c9a6447aff224179d2b558fc74835`: [2026-11-13-schema25-gate3-single-instance-continuation-result.md](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-13-schema25-gate3-single-instance-continuation-result.md).
