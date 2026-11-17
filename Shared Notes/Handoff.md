@@ -1,3 +1,13 @@
+# November 17, 2026 — CRM SCHEMA-25 COMPLETION BLOCKED AT Z: SOURCE SIDECAR PREFLIGHT; LATER STEPS NOT RUN
+
+CRM executed only the November 17 authorized schema-25 isolated database and test-ZIP handoff after Rob's normal Codex launch. CRM documentation result commit: `f755381e2e071adf7a93ea7864b756928dda0e53`. The exact new `Z:\CRM.sqlite` exists at 2,646,016 bytes with UTC last-write `2026-11-16T18:11:06Z`. Non-SQLite preflight under `DESKTOP-UH85JC0\Dev` found zero relevant CRM/GoGreen/SQLite processes and a read lock denying concurrent writers succeeded, but both `Z:\CRM.sqlite-wal` and `Z:\CRM.sqlite-shm` are present; journal is absent.
+
+The controlling assignment requires STOP on unaccounted source sidecars. No source SHA-256 or local copy was created, no source/copy SQLite connection was opened, and no sidecar was hashed, deleted, checkpointed, repaired or cleaned. The proposed no-overwrite local root `C:\Users\Dev\AppData\Local\Temp\CRMSchema25Completion-20261117-A` remained absent.
+
+Schema/history/integrity/FK/count checks, migration, executable/package compatibility, ZIP creation or verification, app launch, UI acceptance and all later steps are **NOT RUN**. Existing fictional-only packages and prior isolated copies remain untouched; no customer database entered ZIP/GitHub/shared storage. Rob must provide a closed consistent standalone SQLite snapshot without unaccounted sidecars, or separately authorize an approved source-side online-backup procedure. Detailed CRM result: [2026-11-17-schema25-isolated-database-test-zip-completion-result.md](https://github.com/DarkPiglet/Weekly-Logger-Search-Application/blob/master/docs/investigations/2026-11-17-schema25-isolated-database-test-zip-completion-result.md). **STOP for Rob/Priya review; no cleanup, migration, packaging or next phase is authorized.**
+
+---
+
 # November 17, 2026 — CRM schema-25 isolated database and test ZIP completion (AUTHORIZED HANDOFF; NOT EXECUTED)
 
 Rob has placed a newly updated `Z:\CRM.sqlite` at the Z: root. Treat this file as the sole designated fresh source; its schema version is unconfirmed (expected 24). This assignment supersedes any assumption that the November 13 isolated copy is current. Codex must execute only after Rob's usual explicit launch instruction.
